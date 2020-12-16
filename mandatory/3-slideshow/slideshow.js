@@ -12,9 +12,9 @@ let images = [
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector("img").src = images[0];
 	let counter = 0;
-	let backTimer;
-	let forwardTimer;
+	let myTimer;
 	let timeInterval = 5000;
+	let direction = "off";
 
 	function assignImage() {
     	counter = counter < 0 ? images.length - 1 : counter % images.length;
@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let autoBack = document.querySelector("#autoBack")
 	autoBack.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);
-		backTimer = setInterval(() => {
+		clearInterval(myTimer);
+		direction = "back";
+		myTimer = setInterval(() => {
 			counter--;
 			assignImage();
 		}, timeInterval);
@@ -33,31 +33,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let back = document.querySelector("#back")
 	back.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);
+		clearInterval(myTimer);
 		counter--;
 		assignImage();
 	});
 
 	let stop = document.querySelector("#stop")
 	stop.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);		
+		clearInterval(myTimer);	
 	});
 
 	let forward = document.querySelector("#forward")
 	forward.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);
+		clearInterval(myTimer);
 		counter++;
 		assignImage();
 	});
 
 	let autoForward = document.querySelector("#autoForward")
 	autoForward.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);
-		forwardTimer = setInterval(() => {
+		clearInterval(myTimer);
+		direction = "forward";
+		myTimer = setInterval(() => {
 			counter++;
 			assignImage();
 		}, timeInterval);
@@ -65,10 +62,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let changeTime = document.querySelector("#uiButton")
 	changeTime.addEventListener("click", () => {
-		clearInterval(backTimer);
-		clearInterval(forwardTimer);
 		timeInterval = document.querySelector("#ui").value * 1000;
-		console.log(timeInterval)
+		clearInterval(myTimer);
+		if (direction === "back") {
+			myTimer = setInterval(() => {
+				counter--;
+				assignImage();
+			}, timeInterval);
+		} else if (direction === "forward") {
+			myTimer = setInterval(() => {
+				counter++;
+				assignImage();
+			}, timeInterval);
+		}
 	});
 });
 
