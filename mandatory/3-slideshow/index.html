@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
+    <script defer src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+      <div class="slider">
+         <div class="slide"><img src="img-1.jpg" alt="Photo 1" /></div>
+        <div class="slide"><img src="img-2.jpg" alt="Photo 2" /></div>
+        <div class="slide"><img src="img-3.jpg" alt="Photo 3" /></div>
+        <div class="slide"><img src="img-4.jpg" alt="Photo 4" /></div> 
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <button class="slider__btn btn__auto--off--on" data-state="true">Auto On</button>
+      </div>
+    </section>
   </body>
 </html>
+

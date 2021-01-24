@@ -1,1 +1,44 @@
 /** Write your CSS in here **/
+body {
+    background-color: orange;
+}
+
+div {
+    position: relative;
+    background-color: white;
+    margin: 30px;
+    height: auto;
+    padding: 50px;
+}
+
+h1, h2 {
+    color: orange;
+    position: relative;
+    display: block;
+    text-align: right;
+}
+
+h1 {
+font-size: 2em;
+height: auto;
+padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 1em;
+    padding: 20px, 0, 20px, 0;
+}
+button {
+    /* display: inline-block; */
+    float: right;
+    /* position: right; */
+    /* bottom: 8px;
+    right: 16px; 
+    float: right;  */
+    /* background-position: 80% 80%; */
+  /* position: relative; 
+  /* margin-bottom: 20px;
+  right: 0; */
+
+
+}
