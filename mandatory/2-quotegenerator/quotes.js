@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.querySelector("#autoPlay").innerHTML = "auto-play:ON";
 			timer = setInterval(() => {
 				chooseQuote();
-			}, 60000);
+			}, 3000);
 		} else {
 			document.querySelector("#autoPlay").innerHTML = "";
 			clearInterval(timer);
