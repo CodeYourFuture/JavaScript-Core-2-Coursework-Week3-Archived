@@ -34,6 +34,11 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
+
+
+
+
+
 const movies = [
   {
     title: "Color Out of Space",
@@ -62,9 +67,34 @@ const movies = [
 ];
 
 // create showMovies function
+let count = 0;
+let allMovies = document.getElementById("all-movies");
+movies.forEach(function (movie){
+console.log(movie);
+  count++;
+ let p = document.createElement("p");
+  p.innerHTML = "<h2> " + movie.title + "</h2><b>  " + movie.director + " </b> : " + movie.type;
+  allMovies.appendChild(p);
+  
+})
+ console.log(count);
+let movieN = document.getElementById("movies-number");
+movieN.innerText = count;
+
+
 
 
 // create a new movie object for your favorite movie
 
+let favMovie =  {
+  title: "The Shawshank Redemption",
+  director: "Frank Darabont",
+  type: "Drama",
+  haveWatched: true,
+};
 
 // create addMovies function
+
+function addMovies(movie){
+
+}
