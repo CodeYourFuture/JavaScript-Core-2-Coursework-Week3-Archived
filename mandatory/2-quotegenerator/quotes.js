@@ -223,7 +223,7 @@ const quotes = [
   },
   {
     quote:
-      "Teach thy tongue to say, “I do not know,” and thous shalt progress.",
+      "Teach thy tongue to say, “I do not know,” and thou shalt progress.",
     author: "Maimonides",
   },
   {
@@ -497,11 +497,11 @@ let button = document.querySelector("#button");
 // Event listener
 button.addEventListener("click", pickFromArray);
 
-// Random number generator is used to generate random index number each time when the button above is clicked.
+// Random number generator is used to generate random index number each time the button above is clicked.
 function pickFromArray() {
   let index = Math.floor(Math.random() * quotes.length);
 
   quote.innerHTML = '<span>"</span>' + quotes[index].quote +  '<span>"</span>';
-  author.innerHTML = '<span>-- </span>' + quotes[index].author;
+  author.innerHTML = '<span>- </span>' + quotes[index].author;
 
 }
