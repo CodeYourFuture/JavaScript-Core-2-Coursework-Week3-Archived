@@ -110,6 +110,8 @@ function addMovie(movie, movies) {
 	}, 2000);	
 }
 
+showMovies(movies);
+
 // update list of movies when form is POSTed
 let saveBtn = document.querySelector("#saveBtn");
 
