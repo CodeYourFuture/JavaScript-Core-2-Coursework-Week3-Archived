@@ -5,7 +5,9 @@ console.log("Testing JS file loaded!")
 // Without changing any of the HTML or CSS, update the <section> tags so that they have white backgrounds.
 
 
-
+let background = document.querySelectorAll("section").forEach(colour => 
+    colour.style.backgroundColor = "white"
+    );
 
 
 
@@ -16,7 +18,9 @@ console.log("Testing JS file loaded!")
 // Hint: look at the CSS to see if there are any classes already written which you can use.
 
 
-
+let images = document.querySelectorAll("img").forEach(pic => 
+    pic.style.cssText += "display: block; margin:auto"
+    );
 
 
 
