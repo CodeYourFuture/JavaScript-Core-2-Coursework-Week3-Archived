@@ -12,7 +12,9 @@ h1 {
     color: rgb(214, 221, 230);
     padding-top: 1em;
     background-color: rgb(24, 50, 71);
-
+}
+h1::first-letter {
+    color: firebrick;
 }
 #quotes {
     display: block;
@@ -20,17 +22,16 @@ h1 {
     height: 250px;
     background-color: rgb(59, 81, 109);
     text-align: center;
-    margin: 0 10% 0 10%;
-    
+    margin: 0 10% 0 10%; 
 }
 h3 {
     color: rgb(201, 201, 228);
     text-align: center;
     transform: translateY(50%);
-     -ms-transform: translateX(50%);
-     position: relative;
-     font-family: 'Rye', cursive;
-     top: 5%;
+    -ms-transform: translateX(50%);
+    position: relative;
+    font-family: 'Rye', cursive;
+    top: 5%;
 }
 #author {
     display: block;
@@ -63,11 +64,11 @@ h4 {
 }
  #button {
     margin-top: 25px;
-    padding: 8px;
+    padding: 5px;
     background-color:rgb(24, 50, 71);
     color: whitesmoke;
     width: 150px;
-    font-weight: bold;
+    font-size: 1.25em;
 } 
 #button:hover {
     background-color: rgb(4, 4, 248);
