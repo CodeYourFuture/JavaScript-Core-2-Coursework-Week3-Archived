@@ -16,7 +16,9 @@ You can stop the alarm sound by pressing the `Stop Alarm` button.*/
 function setAlarm() {
   var clickAlarmBtn = document.getElementById("set");
   clickAlarmBtn.addEventListener("click", function() {
-    var inputNumber = document.getElementById("alarmSet").type;
+    var inputNumber = document.getElementById("alarmSet").valueAsNumber;
+    var message = document.getElementById("timeRemaining");
+    message.innerHTML = "Time Remaining:" `${inputNumber}`;
     
   })
 }
