@@ -14,13 +14,8 @@ When the `Time Remaining` reaches `00:00` the alarm should play a sound. You can
 
 You can stop the alarm sound by pressing the `Stop Alarm` button.*/
 function setAlarm() {
-  var clickAlarmBtn = document.getElementById("set");
-  clickAlarmBtn.addEventListener("click", function() {
-    var inputNumber = document.getElementById("alarmSet").valueAsNumber;
-    var message = document.getElementById("timeRemaining");
-    message.innerHTML = "Time Remaining:" `${inputNumber}`;
-    
-  })
+  
+
 }
 
 // DO NOT EDIT BELOW HERE
