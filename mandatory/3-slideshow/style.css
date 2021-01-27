@@ -1,1 +1,23 @@
 /** Write your CSS in here **/
+#carousel{
+  
+  margin:auto;
+  text-align: center;
+}
+#display-area{
+  display:flex;
+  flex-direction: column;
+}
+
+.large-image{
+  width:600px;
+  height: 400px;
+}
+
+.prev-next{
+  font-size: 40px;
+}
+
+button{
+  background-color: deepskyblue;
+}

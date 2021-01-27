@@ -490,3 +490,22 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+/*
+ * Solution
+ */ 
+
+window.onload = generateQuote();
+
+function generateQuote() {
+  console.log("hi");
+  // let quoteArea = document.getElementById("generate-quote"); // the area where the quote is to be displayed in the html page
+  let quote = document.getElementById("quote"); // a quote made by a (famous) person
+  let name = document.getElementById("name"); // name of the person the quote belongs to
+  
+  quote.textContent = `"${pickFromArray(quotes).quote}"`;
+  name.textContent = `- ${pickFromArray(quotes).author}`;
+}
+
+let btnNewQuote = document.getElementById("btn-new-quote");
+btnNewQuote.addEventListener("click", generateQuote);

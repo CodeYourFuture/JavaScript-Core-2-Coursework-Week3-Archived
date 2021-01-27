@@ -1,1 +1,33 @@
 /** Write your CSS in here **/
+body{
+  background-color: gold;
+
+}
+
+#quote-generator{
+  position: absolute;
+  top:25%;
+  left:20%;
+  width:60%;
+  border:2px salmon solid;
+  padding:30px;
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+#quote{
+  font-size:3em;
+  text-align: left;
+}
+
+#name{
+  font-size: 1.8em;
+  font-weight:600;
+  text-align: right;
+}
+
+button{
+  font-size: 1.5em;
+  margin-top:30px;
+  background-color: dodgerblue;
+}

@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +11,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <div id="carousel">
+      <div id="display-area">
+        <div>
+          <span class="prev-next" id="prev">&#60;</span>
+          <img class="large-image" id= "img-lake" src="" alt="">
+          <span class="prev-next" id="next">&#62;</span>
+        </div>
+        <p>Image <span id="img-number"></span> of <span id="total-images"></span></p>
+      </div>
+      <div>
+        <button name="slideFwd" id="btn-backward"><<- Auto Backward</button>
+        <button name="slideBwd" id="btn-forward">Auto Forward ->></button>
+      </div>
+      
+    </div>
+    <script src="slideshow.js"></script>
   </body>
 </html>
