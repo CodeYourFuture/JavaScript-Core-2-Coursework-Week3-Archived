@@ -13,13 +13,13 @@ Create a function called "showMovies" that
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
-- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
 
 Task 3
-Can you make sure the new movie you just added is showing on the screen? 
+Can you make sure the new movie you just added is showing on the screen?
 TIP: use callbacks
 
 Task 4 - **Extra**
@@ -62,9 +62,22 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies() {
+  movies.forEach((movie) => {
+    let newP = document.createElement("p");
+    newP.innerHTML = movie.title + " " + "by " + movie.director;
+    // console.log(newP);
+    let allMovies = document.getElementById("all-movies");
+    allMovies.appendChild(newP);
+  });
+let count = document.getElementById("movies-number");
+count.innerText = movies.length;
 
+console.log(count);
+
+}
+ showMovies();
 
 // create a new movie object for your favorite movie
-
 
 // create addMovies function
