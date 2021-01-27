@@ -1,4 +1,44 @@
-function setAlarm() {}
+function setAlarm() {
+  let timeRemaining = document.getElementById("timeRemaining");
+  let inputField = document.getElementById("alarmSet");
+  
+  let hour = inputField.valueAsNumber
+  console.log(inputField)
+  console.log(hour)
+
+  if (hour >= 10) {
+     timeRemaining.innerText = "Time Remaining: 00:" + hour;
+  } else{
+       timeRemaining.innerText = "Time Remaining: 00:0" + hour;
+  }
+
+  let counter = hour;
+  
+  function startCounter(counter) {
+    if (counter>0) { 
+      counter--;
+      setTimeout(function () {
+       startCounter(counter)
+        console.log(counter);
+      }, 1000);
+      timeRemaining.innerText = "Time Remaining: 00:" + (counter < 10 ? "0" + counter : counter )
+    } else {
+      playAlarm();
+    }
+  };
+  /*
+  if (counter<10){
+ timeRemaining.innerText ="Time Remaining: 00:" + "0" +counter
+}else{
+ timeRemaining.innerText ="Time Remaining: 00:" + counter
+}
+  
+  */
+  startCounter(counter)
+  
+
+}
+
 
 // DO NOT EDIT BELOW HERE
 

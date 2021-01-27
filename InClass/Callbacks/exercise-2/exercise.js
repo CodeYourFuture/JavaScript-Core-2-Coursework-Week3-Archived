@@ -61,10 +61,93 @@ const movies = [
   },
 ];
 
-// create showMovies function
-
-
 // create a new movie object for your favorite movie
+const favMovies = {
+  title: "The Graduate",
+  director: "Mike Nichols",
+  type: "drama",
+  HaveWatched: true,
+};
 
+// create showMovies function
+function showMovies(index) {
+  if (index < movies.length) {
+    let movie = movies[index];
+    let allMovieIdDiv = document.getElementById("all-movies");
+    let moviesNumberSpan = document.getElementById("movies-number");
+    let movieNumberSpan = (document.getElementById("movies-number").innerHTML =
+      movies.length);
+    let paragraph = document.createElement("p");
+    paragraph.innerHTML = `<strong>Movie Tile:</strong>${movie.title} <strong>Movie Director:</strong> ${movie.director}`;
+
+    setTimeout(function () {
+      allMovieIdDiv.appendChild(paragraph);
+      showMovies(index + 1);
+    }, 1000);
+  }
+}
+showMovies(0);
 
 // create addMovies function
+
+function addMovies(movieObject) {
+  setTimeout(function () {
+    movies.push(movieObject);
+  }, 2000);
+}
+
+addMovies(favMovies);
+
+// Task 4 - **Extra**
+// Create a form anywhere on your page. The form should have
+// - 4 input text fields, one for each property of your movie object
+// - a "save" button.
+// When the button is clicked
+// - The field values should be used to create a new movie object literal
+// - The new movie is then added to the list of movies and gets displayed on your page
+// TIP: Use the functions you created on tasks 1-3
+
+function createNewMovies() {
+  let mainDiv = document.getElementById("main");
+  let formElement = document.createElement("FORM");
+
+  let movieTitleField = document.createElement("INPUT");
+  movieTitleField.placeholder = "Type movie title here";
+
+  let movieDirectorField = document.createElement("INPUT");
+  movieDirectorField.placeholder = "Type movie director here";
+
+  let typeOfMovieField = document.createElement("INPUT");
+  typeOfMovieField.placeholder = "Type the type of movie here";
+  // condition true or false
+
+  let haveWatchedField = document.createElement("INPUT");
+  let saveButton = document.createElement("BUTTON");
+
+  formElement.appendChild(movieDirectorField);
+  formElement.appendChild(movieTitleField);
+  formElement.appendChild(typeOfMovieField);
+  formElement.appendChild(haveWatchedField);
+  formElement.appendChild(saveButton);
+
+  mainDiv.appendChild(formElement);
+  //body.appendChild(formElement);
+
+  saveButton.innerHTML = "Save";
+  saveButton.style.backgroundColor = "#D0FBF7";
+  
+  saveButton.addEventListener("click", function (input) {
+    alert("Your film has been added to the database");
+  });
+  console.log(formElement);
+}
+createNewMovies();
+
+// Task 4 - **Extra**
+// Create a form anywhere on your page. The form should have
+// - 4 input text fields, one for each property of your movie object
+// - a "save" button.
+// When the button is clicked
+// - The field values should be used to create a new movie object literal
+// - The new movie is then added to the list of movies and gets displayed on your page
+// TIP: Use the functions you created on tasks 1-3
