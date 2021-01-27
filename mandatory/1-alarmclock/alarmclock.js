@@ -14,6 +14,11 @@ When the `Time Remaining` reaches `00:00` the alarm should play a sound. You can
 
 You can stop the alarm sound by pressing the `Stop Alarm` button.*/
 function setAlarm() {
+  //Manually added a value property to the input tag
+  let setAlarmBtn = document.getElementById("set");
+  let randomNumber = Math.ceil(Math.random() * 60);
+  
+  
   
 
 }
