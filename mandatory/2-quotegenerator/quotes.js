@@ -490,3 +490,9 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+document.addEventListener('DOMContentLoaded', () => {
+  let displayQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.querySelector("h5").innerHTML = displayQuote.quote;
+	document.querySelector("p").innerHTML = `By: ${displayQuote.author}`;
+});

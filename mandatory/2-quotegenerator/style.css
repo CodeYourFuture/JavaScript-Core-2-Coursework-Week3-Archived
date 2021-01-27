@@ -1,1 +1,10 @@
-/** Write your CSS in here **/
+body {
+    background-color: beige;
+}
+
+#main {
+    text-align: center;
+    margin: 1.5em;
+}
+
+
