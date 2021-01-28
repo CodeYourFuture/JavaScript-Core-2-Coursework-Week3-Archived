@@ -491,8 +491,16 @@ const quotes = [
   },
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function quoteGenerator() {
   let displayQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  document.querySelector("h5").innerHTML = displayQuote.quote;
-	document.querySelector("p").innerHTML = `By: ${displayQuote.author}`;
+  document.querySelector("h5").innerHTML = `"${displayQuote.quote}"`;
+  document.querySelector("p").innerHTML = `by: ${displayQuote.author}`;
+
+  let btn = document.getElementById("button");
+  btn.addEventListener("click", quoteGenerator);
 });
+  
+
+
+  
+  
