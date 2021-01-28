@@ -15,13 +15,35 @@ When the `Time Remaining` reaches `00:00` the alarm should play a sound. You can
 You can stop the alarm sound by pressing the `Stop Alarm` button.*/
 function setAlarm() {
   //Manually added a value property to the input tag
-  let setAlarmBtn = document.getElementById("set");
-  let randomNumber = Math.ceil(Math.random() * 60);
+  
+  let inputValue = document.getElementById("alarmSet").value;
+
+  let buttonClick = document.getElementById("set");
+  buttonClick.addEventListener('click', function() {
+    document.getElementById("timeRemaining").innerHTML = `Time Remaining: 00:${inputValue}`;}); 
+    
+    let inputValueToCountDown = inputValue;
+    let countDown = setInterval(function() {
+      inputValueToCountDown--;
+      document.getElementById("timeRemaining").textContent = inputValueToCountDown;}, 1000);
+      
+      var myAudio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3");
+      
+      if(inputValueToCountDown === 0) {
+        myAudio.auto
+
+      }
+   
+    }
+    
+
+  
+
   
   
   
 
-}
+
 
 // DO NOT EDIT BELOW HERE
 
