@@ -62,9 +62,57 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(movies){
+  const allMovies = document.getElementById("all-movies")
+  movies.forEach((movie) =>{
+    let newPara = document.createElement('p');
+    newPara.innerHTML = `${movie.title} by ${movie.director}`;
+    allMovies.appendChild(newPara);
+  })
+  document.getElementById("movies-number").innerHTML = movies.length;;
+}
 
+ showMovies(movies);
 
+// setTimeout(showMovies, 3000);
 // create a new movie object for your favorite movie
+const myMovie = [];
+//  function addMovie(){
+//    movies.map((movie) => {
+//      if(movie.haveWatched === true){
+//        myMovie.push(movie);
+//      }
+//    })
+//   // return myMovie;
+//   let newh1 = document.createElement("h1");
+//   newh1.innerHTML = "My favourite Movies";
+//   document.getElementById("all-movies").appendChild(newh1);
+//   //call-back
+//   showMovies(myMovie);
+// }
+
+// addMovie();
+
+setTimeout(function addMovie(){
+  movies.map((movie) => {
+    if(movie.haveWatched === true){
+      myMovie.push(movie);
+    }
+  })
+ // return myMovie;
+ let newh1 = document.createElement("h1");
+ newh1.innerHTML = "My favourite Movies";
+ document.getElementById("all-movies").appendChild(newh1);
+ //call-back
+ showMovies(myMovie);}
+ , 2000);
+
+
+
+
+
+
+
 
 
 // create addMovies function
