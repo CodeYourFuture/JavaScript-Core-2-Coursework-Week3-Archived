@@ -490,18 +490,60 @@ const quotes = [
   },
 ];
 
+function quoteGenerator() {
+    let chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").innerHTML = chosenQuote.quote;
+    document.getElementById("author").innerHTML = chosenQuote.author;
+}
 
 function createRandomQuote() {
+
   let body = document.getElementsByTagName("body");
   let button = document.createElement("button");
   button.innerHTML = "Start";
   button.style.backgroundColor = "#D0FBF7";
   document.body.append(button);
+  
+  let btn = document.getElementById("button")
+  btn.addEventListener("click", quoteGenerator)
 
-button.addEventListener ("click", function() {
-  alert("did something");
-});
-console.log(body);
-console.log(button);
+
+  
+
+button.addEventListener("click", function () {
+    alert("did something");
+    // quote.quote 
+  });
+  console.log(body);
+  console.log(button);
 }
-createRandomQuote()
+
+window.onload = () => {
+  createRandomQuote(quotes);
+};
+
+/**
+ let chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+		document.getElementById("quote").innerHTML = chosenQuote.quote;
+		document.getElementById("author").innerHTML = chosenQuote.author
+ 
+ 
+ 
+ */
+
+
+
+
+//createRandomQuote(quotes)
+
+// function createRandomQuote() {
+//   let button = document.createElement("button");
+//   button.innerHTML = "Start";
+//   button.style.backgroundColor = "#D0FBF7";
+//   document.body.appendChild(button)
+//   console.log(button)
+// button.addEventListener ("click", function() {
+//   alert("did something");
+// });
+// }
+// createRandomQuote()
