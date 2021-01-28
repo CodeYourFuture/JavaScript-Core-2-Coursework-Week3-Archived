@@ -4,7 +4,7 @@ var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 function setAlarm() {
   if (input.value > 0) {
-    input.value = input.value - 1;
+    input.value--;
     let time = input.value;
     let minutes = Math.floor(time/60);
     let seconds = time % 60;
@@ -12,7 +12,7 @@ function setAlarm() {
     minutes = minutes < 10 ? '0' + minutes:minutes;
     timeRemaining.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
   } else if (timeRemaining.innerHTML === 'Time Remaining: ' + '00:' + '00') {
-      audio.play();
+      playAlarm();
       document.body.style.backgroundColor = '#' + randomColor;
     }
 }
@@ -27,7 +27,7 @@ function setup() {
     setAlarm();
 
   document.getElementById("stop").addEventListener("click", () => { 
-    clearInterval(countdown, 10);
+    clearInterval(countdown);
     pauseAlarm();
   });
   });

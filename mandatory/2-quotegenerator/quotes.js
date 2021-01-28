@@ -496,6 +496,7 @@ let button = document.querySelector("#button");
 
 // Event listener
 button.addEventListener("click", pickFromArray);
+window.addEventListener("load", pickFromArray);
 
 // Random number generator is used to generate random index number each time the button above is clicked.
 function pickFromArray() {
