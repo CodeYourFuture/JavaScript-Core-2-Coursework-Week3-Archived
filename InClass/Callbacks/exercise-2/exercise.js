@@ -76,7 +76,7 @@ count.innerText = movies.length;
 console.log(count);
 
 }
- showMovies();
+ setTimeout( showMovies, 10000);
 
 // create a new movie object for your favorite movie
 
