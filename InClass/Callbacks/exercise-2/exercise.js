@@ -67,21 +67,29 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(){
 let count = 0;
 let allMovies = document.getElementById("all-movies");
+allMovies.innerHTML = '';
 movies.forEach(function (movie){
 console.log(movie);
   count++;
  let p = document.createElement("p");
   p.innerHTML = "<h2> " + movie.title + "</h2><b>  " + movie.director + " </b> : " + movie.type;
   allMovies.appendChild(p);
-  
+
 })
  console.log(count);
 let movieN = document.getElementById("movies-number");
 movieN.innerText = count;
+};
 
+window.setTimeout(showMovies, 1000);
 
+function addMovie(movie){
+  movies.push(movie);
+  showMovies();
+};
 
 
 // create a new movie object for your favorite movie
@@ -91,10 +99,6 @@ let favMovie =  {
   director: "Frank Darabont",
   type: "Drama",
   haveWatched: true,
-};
-
-// create addMovies function
-
-function addMovies(movie){
-
 }
+
+window.setTimeout(() => addMovie(favMovie), 2000);
