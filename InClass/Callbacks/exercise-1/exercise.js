@@ -11,3 +11,19 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+
+
+function getRandomColor () {
+    return '#' + (
+      '000000' + (Math.random() * 0x1000000).toString(16)
+    ).slice(-6)
+  }
+
+function color (h1){
+    h1.style.backgroundColor = getRandomColor();
+}
+
+setInterval(color, 5000, document.querySelector('h1'));
+
+

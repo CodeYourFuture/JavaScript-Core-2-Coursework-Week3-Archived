@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -13,5 +13,20 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <div class="carousel">
+      <div class="image-container" id="imgs">
+        <img src="/img/aligator.jpg" alt="first-image">
+        <img src="/img/Elephant.jpg" alt="second-image">
+        <img src="/img/monkey.jpg" alt="third-image">
+        <img src="/img/zebra.jpg" alt="fourth-image">
+      </div>
+
+      <div class="buttons-container">
+        <button id="left" class="btn">Previous</button>
+        <button id="right" class="btn">Next</button>
+      </div>
+    </div>
+
+    <script src="slideshow.js"></script>
   </body>
 </html>

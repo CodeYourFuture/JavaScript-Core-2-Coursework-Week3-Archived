@@ -1,3 +1,4 @@
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -17,9 +18,9 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
+
+//getting the created elements
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +491,31 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// document.getElementById('quoteBtn');
+// document.getElementById('#quote');
+// document.getElementById('#author');
+
+
+function generateQuote() {
+	let chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+		document.getElementById("quote").innerHTML = chosenQuote.quote;
+		document.getElementById("author").innerHTML = chosenQuote.author;
+
+}
+//generateQuote(); called function to check is working.
+
+
+
+// get button element and add event listner then call the generate quote method.
+let btn = document.getElementById('quoteBtn');
+btn.addEventListener('click', () => {
+    generateQuote();
+});
+
+function pickFromArray(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+
+
