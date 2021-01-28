@@ -79,5 +79,16 @@ console.log(count);
  setTimeout( showMovies, 10000);
 
 // create a new movie object for your favorite movie
+let favoriteMovie = [{
+  title: "Color Out of Space",
+    director: "Richard Stanley",
+    type: "sci-fi",
+    haveWatched: true,
+}];
+
+let addMovie = (movie) =>{
+  setTimeout(() => { movies.push(movie); showMovies(movies)}, 2000);
+};
+addMovie(favoriteMovie);
 
 // create addMovies function
