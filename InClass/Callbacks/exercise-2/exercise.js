@@ -63,8 +63,45 @@ const movies = [
 
 // create showMovies function
 
+       
+function showMovies () {
+
+let span = document.getElementById("movies-number");
+span.innerHTML = movies.length;
+
+for (let i = 0; i < movies.length; i ++) {
+let div = document.getElementById("all-movies");
+let p = document.createElement("p");
+
+setTimeout(function () {
+  p.innerHTML = `${movies[i].title} - ${movies[i].director}`;
+  delete movies[i];
+  div.appendChild(p);
+}, 1000);
+};
+};
+
+showMovies();
 
 // create a new movie object for your favorite movie
 
+let myMovies = {
+    title: "The Black Prince",
+    director: "Kavi Raz",
+    type: "Historical Drama",
+    haveWatched: true,
+};
 
 // create addMovies function
+
+function addMovies (movie) {
+    setTimeout(function () {
+      movies.push(movie);
+      showMovies(movies);
+    }, 2000);
+  };
+
+addMovies(myMovies);
+
+
+
