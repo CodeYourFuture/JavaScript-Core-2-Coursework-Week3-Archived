@@ -1,3 +1,17 @@
+window.onload = generateQuote();
+
+function generateQuote() {
+  console.log("Ziga Marley");
+  // let quoteArea = document.getElementById("generate-quote"); // the area where the quote is to be displayed in the html page
+  let sentence = document.getElementById("sentence"); // a quote made by a (famous) person
+  let author = document.getElementById("author"); // name of the person the quote belongs to
+
+  sentence.textContent = `"${pickFromArray(quotes).quote}"`;
+  author.textContent = `- ${pickFromArray(quotes).author}`;
+}
+
+let btnNewQuote = document.getElementById("btn-new-quote");
+btnNewQuote.addEventListener("click", generateQuote);
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,6 +34,8 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
