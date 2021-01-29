@@ -38,6 +38,10 @@ body {
   background-color: rgb(2, 2, 2);
   color: rgb(231, 102, 42);
 }
+#input-id {
+  height: 50px;
+  width: 50px;
+}
 #quote {
   font-size: 28px;
 }

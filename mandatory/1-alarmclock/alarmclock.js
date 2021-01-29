@@ -20,6 +20,7 @@ function setAlarm() {
 
 function decreaseTimeByOne() {
   time--;
+
   timeRemaining.innerHTML = `Time remaining: ${String(
     Math.floor(time / 60)
   ).padStart(2, "0")}:${String(Math.floor(time % 60)).padStart(2, "0")}`;
@@ -29,7 +30,6 @@ function decreaseTimeByOne() {
   if (time === 0) {
     playAlarm();
     clearInterval(intervalId); // clear set interval using interval id;
-    inputAlarmSet.value = ""; // clear input field after clearing interval
   }
 }
 

@@ -497,6 +497,9 @@ const container = document.createElement("div");
 const quote = document.createElement("p");
 const author = document.createElement("p");
 const button = document.createElement("button");
+// for the extra
+const input = document.createElement("input");
+input.type = "checkbox";
 
 // give elements id to bring styling choices from styles file
 title.id = "title";
@@ -511,6 +514,7 @@ document.body.appendChild(container);
 container.appendChild(quote);
 container.appendChild(author);
 container.appendChild(button);
+
 // end of appending children
 
 // setting inner html of button element
@@ -518,6 +522,7 @@ title.innerHTML = "Inspirational Quotes";
 button.innerHTML = "next";
 
 // creating function that displays random quotes using the pickfromArray() function
+
 function display(quotes) {
   quote.innerHTML = `${pickFromArray(quotes).quote}`;
   author.innerHTML = `- ${pickFromArray(quotes).author}`;
