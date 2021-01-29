@@ -62,7 +62,7 @@ var autoBackFunction = function () {
       i = myImages.length;
     }
     content.innerHTML = "<img src =myImages/" + myImages[i - 1] + ">";
-  }, 2000);
+  }, 5000);
 };
 var autoNextFunction = function () {
   intervalId = setInterval(() => {
@@ -72,7 +72,7 @@ var autoNextFunction = function () {
       i = 1;
     }
     content.innerHTML = "<img src =myImages/" + myImages[i - 1] + ">";
-  }, 2000);
+  }, 5000);
 };
 
 // all event listeners
