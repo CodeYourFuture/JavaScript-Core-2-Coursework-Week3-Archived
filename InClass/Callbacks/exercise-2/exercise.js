@@ -77,21 +77,6 @@ function showMovies(movies){
 // setTimeout(showMovies, 3000);
 // create a new movie object for your favorite movie
 const myMovie = [];
-//  function addMovie(){
-//    movies.map((movie) => {
-//      if(movie.haveWatched === true){
-//        myMovie.push(movie);
-//      }
-//    })
-//   // return myMovie;
-//   let newh1 = document.createElement("h1");
-//   newh1.innerHTML = "My favourite Movies";
-//   document.getElementById("all-movies").appendChild(newh1);
-//   //call-back
-//   showMovies(myMovie);
-// }
-
-// addMovie();
 
 setTimeout(function addMovie(){
   movies.map((movie) => {

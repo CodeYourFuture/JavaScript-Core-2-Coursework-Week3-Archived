@@ -1,5 +1,12 @@
 function setAlarm() {
-  
+  let timeRemainCounter = document.getElementById("timeRemaining");
+  let inputText = document.getElementById("alarmSet");
+  let btnSet = document.getElementById("set");
+  let btnStop = document.getElementById("stop");
+  // console.log(inputText.value);
+  let timeRemainingValue = inputText.value;
+  timeRemainingValue--;
+  timeRemainCounter.innerHTML = `Time Remaining: 00:0${timeRemainingValue}`;
 }
 
 // DO NOT EDIT BELOW HERE
