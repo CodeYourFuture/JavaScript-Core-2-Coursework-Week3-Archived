@@ -63,8 +63,15 @@ const movies = [
 
 // create showMovies function
 
-
 // create a new movie object for your favorite movie
-
-
 // create addMovies function
+function showMovies(movies){
+  const allmovies = document.getElementById(‘all-movies’);
+  for(let i = 0; i < movies.length; i++){
+    let para = document.createElement(‘p’);
+    para.innerHTML = `${movies[i].title} ${movies[i].director}`;
+    allmovies.append(para);
+    }
+  const movieTot = document.getElementById(‘movies-number’).innerHTML =  movies.length;;
+  }
+showMovies(movies);
