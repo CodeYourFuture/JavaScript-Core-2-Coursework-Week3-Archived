@@ -28,44 +28,57 @@ const images = [
   },
 ];
 
-// console.log(images[0].src);
+// timer handle for SetTimeout
+let timer = 0;
 let counter = 0;
 let btnForward = document.getElementById("forwardBtn");
 let btnBackward = document.getElementById("backwardBtn");
-let btnAuto = document.getElementById("backwardBtn");
+let btnAuto = document.getElementById("autoBtn");
+let btnStop = document.getElementById("autoStop");
 
 function slideShow(){
  let imageId = document.getElementById("carouselImage");
- imageId.setAttribute("src", images[counter].src)
+ imageId.setAttribute("src", images[counter].src);
 }
 
 btnForward.addEventListener("click", () =>{
   counter++;
   slideShow();
 //  loops over the images
-console.log(counter);
+// console.log(counter);
  if(counter === images.length - 1){
    counter = 0;
  }
 })
 
 btnBackward.addEventListener("click", () =>{
-  counter--;
-  slideShow();
-//  loops over the images
+ //  loops over the images
 console.log(counter);
  if(counter === 0){
-   counter = 3;
+   counter = 4;
  }
- return counter;
+ slideShow();
+ counter--;
 })
 
+function autoSlide(){
+  counter++;
+  slideShow();
+ //  loops over the images
+//  console.log(counter);
+ if(counter === images.length - 1){
+   counter = 0;
+ }
+}
+
+//auto slide show btn
 btnAuto.addEventListener("click", () =>{
-  counter = 0;
-  setInterval(slideShow, 2000);
+  timer = setInterval(autoSlide, 2000);
 })
 
-
+//stops auto loop
+btnStop.addEventListener("click", () =>{
+   clearTimeout(timer);
+})
 
 window.onload = slideShow;
-// slideShow();{}
