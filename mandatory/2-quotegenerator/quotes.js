@@ -506,3 +506,21 @@ function pickFromArray() {
   author.innerHTML = '<span>- </span>' + quotes[index].author;
 
 }
+
+// A toggle switch styled checkbox slider to auto-generate quotes.
+let autoGen = document.querySelector('.checkbox');
+let hidden = document.querySelector('.hidden-text')
+
+let autoGenerate;
+$('.checkbox').click(function() {
+  var checkbox = $('input[type="checkbox"]');
+  if ($(checkbox).prop('checked')) {
+    autoGenerate = setInterval(pickFromArray, 60000);
+    hidden.classList.remove('hidden-text');
+    hidden.classList.add('visible'); 
+  } else {
+    clearInterval(autoGenerate);
+    hidden.classList.remove('visible');
+    hidden.classList.add('hidden-text');
+  }
+});

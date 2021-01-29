@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
   <body>
     <!-- Write your HTML in here -->
@@ -26,6 +27,13 @@
     <div id="button-container">
       <div id="awesome-button">
         <button id="button">New <span style="color:firebrick">Q</span>uote</button>
+        <label class="switch">
+          <input type="checkbox" class="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="hidden">
+        <h5 class="hidden-text">Auto-play: ON</h5>
       </div>
     </div>
     <script src="quotes.js"></script>
