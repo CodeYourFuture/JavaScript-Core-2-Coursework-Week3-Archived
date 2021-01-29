@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(175, 165, 165);
+}
 .centre {
   position: fixed;
   top: 50%;
