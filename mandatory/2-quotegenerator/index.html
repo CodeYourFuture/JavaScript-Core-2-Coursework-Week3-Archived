@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <div class = "container">
+      <div class ="row flex-top justify-content-center">
+        <header class="border shadow">
+          <h1>Quote Generator</h1>
+        </header> 
+      </div>
+
+      <div class ="row flex-top justify-content-center">
+        <button id="button" class="btn-large new-quote-button" onclick="getQuote()">New Quote</button>
+      </div>
+      
+      <div class ="row justify-content-center">
+        <main class="card">
+          <p class="quote card-body center" id="QuoteText">...</p>
+          <p id="QuoteAuthor"></p>
+      </div>
+
+    </div> 
+  
   </body>
 </html>
+

@@ -1,1 +1,29 @@
-/** Write your CSS in here **/
+header{
+    padding: 2em;
+    background-color: rgb(196, 194, 211);
+    margin-top: 2em;
+    text-align: center;
+    color: rgb(15, 15, 15);
+}
+
+.quote{
+    font-size: 2em;
+}
+
+.btn-large{
+    margin: 0.8em;
+}
+
+.card{
+    text-align: center;
+    width: 40em;
+}
+
+.new-quote-button{
+    background-color: rgb(1, 10, 17);
+    border-color: rgb(243, 5, 5);
+}
+
+#button:hover{
+    background-color: rgb(5, 30, 53);
+}

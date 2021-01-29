@@ -1,3 +1,14 @@
+function getQuote()
+{
+  const selectedQuote =  pickFromArray(quotes);
+ // var randomNumber = Math.floor( math.random() * quotes.length );
+  
+}
+
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
