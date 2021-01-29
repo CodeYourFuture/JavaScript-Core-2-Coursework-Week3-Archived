@@ -1,8 +1,8 @@
 function setAlarm() {
-  let timeRemainCounter = document.getElementById("timeRemaining");
-  let inputText = document.getElementById("alarmSet");
-  let btnSet = document.getElementById("set");
-  let btnStop = document.getElementById("stop");
+  // let timeRemainCounter = document.getElementById("timeRemaining");
+  // let inputText = document.getElementById("alarmSet");
+  // let btnSet = document.getElementById("set");
+  // let btnStop = document.getElementById("stop");
   // console.log(inputText.value);
   let timeRemainingValue = inputText.value;
   timeRemainingValue--;
