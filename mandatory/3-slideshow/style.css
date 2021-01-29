@@ -2,18 +2,19 @@
 body {
   background-color: #d8d6d5;
 }
+#title {
+  text-align: center;
+}
 #slider {
   width: 50%;
   height: 500px;
   margin: 50px auto;
-  border: 5px solid #eab676;
   position: relative;
 }
 #slider img {
   height: 500px;
   width: 100%;
   padding-bottom: 5px;
-  border: 5px solid rgb(26, 30, 31);
 }
 #auto-back {
   margin-left: 620px;
