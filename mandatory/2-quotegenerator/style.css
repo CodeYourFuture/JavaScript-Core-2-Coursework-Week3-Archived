@@ -1,1 +1,48 @@
 /** Write your CSS in here **/
+body {
+  background-color: #030303;
+}
+#title {
+  text-align: center;
+  color: rgb(236, 98, 34);
+  font-weight: 100;
+  font-size: 5rem;
+  font-family: tangerine;
+}
+#container {
+  overflow: hidden;
+  width: 800px;
+  height: 350px;
+  background-color: rgb(250, 248, 246);
+  border: 5px solid rgb(197, 192, 192);
+  border-radius: 8px;
+  margin-top: 100px;
+  margin-left: 350px;
+  position: absolute;
+}
+#button {
+  height: 50px;
+  width: 90px;
+  background-color: rgb(197, 90, 18);
+  border: 2px solid rgb(223, 219, 219);
+  border-radius: 5px;
+  font-size: large;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 700px;
+  margin-top: 290px;
+  position: absolute;
+}
+#button:hover {
+  background-color: rgb(2, 2, 2);
+  color: rgb(231, 102, 42);
+}
+#quote {
+  font-size: 25px;
+}
+#author {
+  font-family: tangerine;
+  font-size: 3rem;
+  margin-left: 450px;
+}
