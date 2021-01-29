@@ -125,7 +125,7 @@ function controlSlideShow(e) {
         activeBtn.textContent = "<<- Auto Backward";
       }
       break;
-  }
+    }
 }
 
 // Function to show image slides at the set interval
