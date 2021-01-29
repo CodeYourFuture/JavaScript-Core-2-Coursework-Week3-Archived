@@ -25,16 +25,23 @@ function setAlarm() {
     let inputValueToCountDown = inputValue;
     let countDown = setInterval(function() {
       inputValueToCountDown--;
-      document.getElementById("timeRemaining").textContent = inputValueToCountDown;}, 1000);
-      
-      var myAudio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3");
-      
-      if(inputValueToCountDown === 0) {
-        myAudio.auto
-
-      }
+     document.getElementById("timeRemaining").textContent = "Time Remaining: 00:" + " " + inputValueToCountDown;
+  if(inputValueToCountDown < 0) {
+    clearInterval(countDown);
+    isAlarmSound = yes;
+   audio.play();
+   isAlarmSound = false;
+   audio.pause();
+   audio.currentTime = 0.0;
    
-    }
+  }
+    }, 1000);
+  }
+  
+
+      
+    
+    
     
 
   
