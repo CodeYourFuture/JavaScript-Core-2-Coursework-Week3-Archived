@@ -14,10 +14,16 @@
     <div id="main">
       <h1>Image Carousel</h1>
       <div id="img-div">
-        <img id = "image" src="https://source.unsplash.com/random" alt="Image Carousel">
+        <img id = "image" src="" alt="Image Carousel">
       </div>
-      <button id="backBtn">Previous</button>
-      <button id="nextBtn">Next</button>
+      <div class="buttons">
+        <button id="auto-back" class="btn btn-success">Auto back</button>
+        <button id="backBtn" class="btn btn-success">Previous</button>
+        <button id="stop" class="btn btn-success">Stop</button>
+        <button id="nextBtn" class="btn btn-success">Next</button>
+        <button id="auto-next" class="btn btn-success">Auto Forward</button>
+      </div>
+      
     </div>
 
     <script src="slideshow.js"></script>
