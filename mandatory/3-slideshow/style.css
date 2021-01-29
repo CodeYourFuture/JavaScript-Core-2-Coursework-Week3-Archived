@@ -1,1 +1,26 @@
-/** Write your CSS in here **/
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+}
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 800px;
+    height: 500px;
+}
+
+#buttons{
+    display: flex;
+    justify-content: baseline;
+    color: rgb(158, 180, 200);
+}

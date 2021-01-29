@@ -1,3 +1,16 @@
+function getQuote()
+{
+  const selectedQuote =  pickFromArray(quotes);
+ // var randomNumber = Math.floor( math.random() * quotes.length );
+  document.getElementById( "QuoteText" ).innerHTML = selectedQuote.quote;
+  document.getElementById( "QuoteAuthor" ).innerHTML = selectedQuote.author;
+  
+}
+
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
