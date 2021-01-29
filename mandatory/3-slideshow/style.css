@@ -1,1 +1,41 @@
 /** Write your CSS in here **/
+body {
+  background-color: #d8d6d5;
+}
+#slider {
+  width: 50%;
+  height: 500px;
+  margin: 50px auto;
+  border: 5px solid #eab676;
+  position: relative;
+}
+#slider img {
+  height: 500px;
+  width: 100%;
+  padding-bottom: 5px;
+  border: 5px solid rgb(26, 30, 31);
+}
+#auto-back {
+  margin-left: 620px;
+  height: 50px;
+  width: 50px;
+}
+#prev {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(86, 117, 68);
+}
+#next {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(67, 104, 67);
+}
+#stop {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(231, 112, 65);
+}
+#auto-next {
+  height: 50px;
+  width: 50px;
+}
