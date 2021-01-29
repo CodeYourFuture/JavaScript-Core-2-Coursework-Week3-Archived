@@ -17,7 +17,7 @@ document.querySelector("section").style.backgroundColour = "White";
 // Hint: look at the CSS to see if there are any classes already written which you can use.
 
 let images = document.querySelectorAll("img").forEach(img =>
-  img.style.cssText += "display: inline; margin: center"
+  img.style.cssText += "display: block; margin: center"
   );
 
 
