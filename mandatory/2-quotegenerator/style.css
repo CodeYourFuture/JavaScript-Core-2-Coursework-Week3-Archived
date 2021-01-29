@@ -3,11 +3,13 @@ body {
     box-sizing: border-box;
     background-color: rgb(37, 55, 78);
 }
+/* Container of the header and quote displaying area */
 #container {
     display: block;
     text-align: center;
     height: 20em;
 }
+/* Header */
 h1 {
     color: rgb(214, 221, 230);
     padding-top: 1em;
@@ -16,6 +18,7 @@ h1 {
 h1::first-letter {
     color: firebrick;
 }
+/* Container div of the quotes and authors displaying canvas */
 #quotes {
     display: block;
     width: 80%;
@@ -24,6 +27,7 @@ h1::first-letter {
     text-align: center;
     margin: 0 10% 0 10%; 
 }
+/* The actual quotes */
 h3 {
     color: rgb(201, 201, 228);
     text-align: center;
@@ -33,14 +37,15 @@ h3 {
     font-family: 'Rye', cursive;
     top: 5%;
 }
+/* container of the author's names */ 
 #author {
     display: block;
     text-align: right;
     bottom: 0;
     right: 0;
     position: relative;
-
 }
+/* The actual author's names */
 h4 {
     color:rgb(201, 201, 228);
     text-align: right;
@@ -51,6 +56,7 @@ h4 {
     right: 50px;
     font-family: 'Rye', cursive;
 }
+/* The main button to generate new quotes */
 #button-container { 
   height: 200px;
   position: relative;
@@ -73,6 +79,7 @@ h4 {
 #button:hover {
     background-color: rgb(4, 4, 248);
 }
+/* Auto-play: ON message goes visible and hidden */
 .visible {
     transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -93,6 +100,7 @@ h4 {
   display: inline-block;
   width: 60px;
   height: 34px;
+  bottom: 7px;
 }
 
 /* Hide default HTML checkbox */
