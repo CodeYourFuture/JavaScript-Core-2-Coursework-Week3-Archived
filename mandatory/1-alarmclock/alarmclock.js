@@ -26,14 +26,6 @@ function setAlarm() {
       playAlarm();
     }
   };
-  /*
-  if (counter<10){
- timeRemaining.innerText ="Time Remaining: 00:" + "0" +counter
-}else{
- timeRemaining.innerText ="Time Remaining: 00:" + counter
-}
-  
-  */
   startCounter(counter)
   
 

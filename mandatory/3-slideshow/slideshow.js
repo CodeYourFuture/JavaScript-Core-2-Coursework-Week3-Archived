@@ -16,6 +16,33 @@ autoBackwardBtn.innerHTML = "auto-backward";
 let stopBtn = document.getElementById("stop");
 stopBtn.innerHTML = "stop";
 
+function forwardSlide() {
+  index++;
+  if (index < photoURLs.length) {
+  } else {
+    index = 0;
+  }
+  getImages(index);
+}
+
+function backwardSlide() {
+  index--;
+  if (index >= 0) {
+  } else {
+    index = photoURLs.length - 1; // or 4
+  }
+  getImages(index);
+}
+
+let timer = 1100; // amount of seconds
+
+
+let forwardImage;
+let backwardImage;
+
+
+
+
 //Image sources
 const photoURLs = [
   {
@@ -44,59 +71,38 @@ const photoURLs = [
     alt: "man playing the cello",
   },
 ];
+
+
 // function maps array of img objects
 function getImages(index) {
   let photos = document.getElementById("photos");
-  //let source0 = photoURLs[0].src;
   let image0 = document.getElementById("photo0");
   image0.src = photoURLs[index].src;
-
-  // photoURLs.forEach((element) => {
-  // let source = element.src;
-  //     let image = (document.getElementById("photo1").src = source);
-  //     console.log(source)
-  // });
+ 
 }
 getImages(index);
-//document.getElementById("myImg").src = "hackanm.gif";
 
-// button
-// function buttonFunction() {
 
-// }
-forwardBtn.addEventListener("click", function () {
-  index++;
-  if (index < photoURLs.length) {
-  } else {
-    index = 0;
-  }
-  getImages(index);
-});
+// Control buttons for the slideshow
+forwardBtn.addEventListener("click",forwardSlide);
 
-backwardBtn.addEventListener("click", function () {
-  index--;
-  if (index >= 0) {
-  } else {
-    index = photoURLs.length - 1; // or 4
-  }
-  getImages(index);
+backwardBtn.addEventListener("click",backwardSlide);
+
+autoBackwardBtn.addEventListener("click", function () {
+  backwardImage = setInterval(backwardSlide, timer);
+  clearInterval(() => {
+    backwardImage;
+  }, timer);
 });
 
 autoForwardBtn.addEventListener("click", function () {
-  setInterval(getNextImageForwardBtn, 2000);
-}); // calls the function after 1second 
+  forwardImage = setInterval(forwardSlide, timer);
+  clearInterval(() => {
+    forwardImage;
+  }, timer);
+});
 
-function getNextImageForwardBtn() {
-  index++;
-  if (index < photoURLs.length) {
-  } else {
-    index = 0;
-  }
-    getImages(index);
-  setInterval(getNextImageForwardBtn, 2000);  
-}
-
-
-stopBtn.addEventListener("click", function () {});
-
-autoForwardBtn.addEventListener("click", function () {});
+stopBtn.addEventListener("click", () => {
+  clearInterval(forwardImage);
+  clearInterval(backwardImage);
+});
