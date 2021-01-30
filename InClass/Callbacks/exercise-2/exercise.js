@@ -62,9 +62,33 @@ const movies = [
 ];
 
 // create showMovies function
+let list = document.querySelector("#all-movies");
+function showMovies(){
+  document.getElementById("movies-number").innerHTML= movies.length;
+  for(let i = 0;i<movies.length;i++){
+    let para = document.createElement("P");
+    list.appendChild(para).innerText=`movie name =${movies[i].title}` +
+    " " + `Director's name = ${movies[i].director}`
+
+  }
+}
+setTimeout(showMovies,5000);
 
 
 // create a new movie object for your favorite movie
+function addMovie(){
+  let myMovie = {
+ title: "Alien",
+    director: "Mark",
+    type: "horror",
+    haveWatched: false,
+  };
+ movies.push(myMovie);
+   
+
+}
+setTimeout(addMovie,2000);
+
 
 
 // create addMovies function
