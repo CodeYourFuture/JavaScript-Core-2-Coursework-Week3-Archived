@@ -4,11 +4,9 @@ console.log("Testing JS file loaded!");
 
 // Without changing any of the HTML or CSS, update the <section> tags so that they have white backgrounds.
 
-const list = document.querySelectorAll("section");
-for (let item in list) {
-  list[item].style.backgroundColor = "white";
-}
-document.querySelector("section").style.backgroundColour = "White";
+ document.querySelectorAll("section").forEach(section =>
+  section.style.backgroundColor = "white");
+ 
 
 // Task 2
 
@@ -16,13 +14,31 @@ document.querySelector("section").style.backgroundColour = "White";
 
 // Hint: look at the CSS to see if there are any classes already written which you can use.
 
-let images = document.querySelectorAll("img").forEach(img =>
-  img.style.cssText += "display: block; margin: center"
-  );
-
+document.querySelectorAll("img").forEach(img =>
+img.style.cssText += "display: block; margin-left: auto; margin-right: auto; width: 50%");
 
 
 // Task 3
 
 // Google the date of birth and death of each of the people on the page. Without changing any of the HTML or CSS, add this in a paragraph to the end of their <section>.
-//let age = document.querySelectorAll("").forEach(=>
+var dateOfBirth = [
+  "9.12.1906",
+  "29.12.1918",
+  "10.12.1815"];
+
+  var dateOfDeath = [
+    "1.1.92",
+    "24.2.20",
+    "27.11.1852"];
+
+    document.querySelectorAll("section").forEach((section,index)=>{
+    var p = document.createElement("p")
+    var dob = document.createElement("span")
+    var dod = document.createElement("span")
+  dob.innerHTML=` Date of Birth : ${dateOfBirth[index]}    `;
+  dod.innerHTML=` Date of Death: ${dateOfDeath[index]}     `;
+  p.appendChild(dob);
+  p.appendChild(dod);
+  section.appendChild(p);
+
+    });
