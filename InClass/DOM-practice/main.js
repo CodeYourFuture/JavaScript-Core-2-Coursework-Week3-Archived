@@ -52,3 +52,4 @@ for (let i = 0; i < info.length; i++) {
     let paragraph = document.createElement("p");
 	paragraph.innerHTML = `Born on ${i.birthday} and died on ${i.deathDate}`;
 }
+
