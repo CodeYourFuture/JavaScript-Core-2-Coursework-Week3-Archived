@@ -27,7 +27,7 @@ let image = document.querySelector("img").src;
 let intervalId;
 
 let i = myImages.length;
-
+console.log(i);
 // all functions
 
 // next function
