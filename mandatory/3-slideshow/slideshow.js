@@ -1,68 +1,3 @@
-// Write your code here
-function imgCarousel(arr) {
-  let bodyDoc = document.getElementsByTagName("body")[0];
-  let newDiv = document.createElement("div");
-  bodyDoc.appendChild(newDiv);
-  let headerOne = document.createElement("h1");
-  headerOne.innerText = "My Image Carousel";
-  newDiv.appendChild(headerOne);
-  let image = document.createElement("img");
-  //   image.src =
-  //     "https://images.unsplash.com/photo-1577083165350-16c9f88b4a25?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80";
-  newDiv.appendChild(image);
-  let imgPara = document.createElement("p");
-  newDiv.appendChild(imgPara);
-  let divBtn = document.querySelector(".btnDiv");
-  newDiv.appendChild(divBtn);
-  let backBtn = document.createElement("button");
-  backBtn.innerText = "BACK";
-  divBtn.appendChild(backBtn);
-  
-    backBtn.addEventListener("click", function () {
-            for (let i = 0; i < arr.length; i++){ 
-        image.src = arr[i]["imageLink"];
-        imgPara.innerText = arr[i]["imageName"];
-     }
-      })
-    // images.forEach(function (obj) {
-    //   image.src = [obj]["imageLink"];
-    //   image -= 1;
-
-    //   imgPara.innerText = [obj]["imageName"];
-
-    // });
-    
-//   };
-
-  let frwdBtn = document.createElement("button");
-  frwdBtn.innerText = "FORWARD";
-  divBtn.appendChild(frwdBtn);
-  frwdBtn.addEventListener("click", function () {
-    for (let i = 0; i < arr.length; i++) {
-      image.src = arr[i]["imageLink"];
-      imgPara.innerText = arr[i]["imageName"];
-    }
-  });
-  let autoBackBtn = document.createElement("button");
-  autoBackBtn.innerText = "AUTOBACK";
-  divBtn.appendChild(autoBackBtn);
-  autoBackBtn.addEventListener("click", function () {
-    for (let i = 0; i < arr.length; i--) {
-      image.src = arr[i]["imageLink"];
-      imgPara.innerText = arr[i]["imageName"];
-    }
-  });
-  let autoFrwdBtn = document.createElement("button");
-  autoFrwdBtn.innerText = "AUTOFORWARD";
-  divBtn.appendChild(autoFrwdBtn);
-  autoFrwdBtn.addEventListener("click", function () {
-    for (let i = 0; i < arr.length; i++) {
-      image.src = arr[i]["imageLink"];
-      imgPara.innerText = arr[i]["imageName"];
-    }
-  });
-}
-
 let images = [
   {
     imageName: "Design 1",
@@ -85,5 +20,81 @@ let images = [
       "https://images.unsplash.com/photo-1519974719765-e6559eac2575?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
   },
 ];
+console.log(images.length);
 
-imgCarousel(images);
+let divImg = document.querySelector(".imgDiv");
+let headerOne = document.createElement("h1");
+headerOne.innerText = "My Image Carousel";
+divImg.appendChild(headerOne);
+let defaultImg = document.createElement("img");
+defaultImg.src = images[0]["imageLink"];
+divImg.appendChild(defaultImg);
+let imgNam = document.createElement("h4");
+imgNam.innerText = images[0]["imageName"];
+divImg.appendChild(imgNam);
+
+let divBtn = document.querySelector(".btnDiv");
+divImg.appendChild(divBtn);
+
+let backBtn = document.createElement("button");
+backBtn.innerText = "Back";
+divBtn.appendChild(backBtn);
+
+let autoBackBtn = document.createElement("button");
+autoBackBtn.innerText = "Auto Back";
+divBtn.appendChild(autoBackBtn);
+
+let stopBtn = document.createElement("button");
+stopBtn.innerText = "Stop";
+divBtn.appendChild(stopBtn);
+
+let forwardBtn = document.createElement("button");
+forwardBtn.innerText = "Forward";
+divBtn.appendChild(forwardBtn);
+
+let autoForwardBtn = document.createElement("button");
+autoForwardBtn.innerText = "Auto Forward";
+divBtn.appendChild(autoForwardBtn);
+
+let counter = 0;
+let stopBtnInterval;
+
+function forwardBtnFunc() {
+  counter += 1;
+  counter = counter % images.length;
+  defaultImg.src = images[counter]["imageLink"];
+  imgNam.innerText = images[counter]["imageName"];
+  console.log(counter);
+}
+
+function backBtnFunc() {
+  if (counter === 0) {
+    counter = images.length - 1;
+  } else {
+    counter -= 1;
+  }
+  // counter = counter % images.length;
+  defaultImg.src = images[counter]["imageLink"];
+  imgNam.innerText = images[counter]["imageName"];
+  console.log(counter);
+}
+
+function stopBtnFunc() {
+  clearInterval(stopBtnInterval);
+}
+
+function autoForwardFunc() {
+  stopBtnFunc();
+  stopBtnInterval = setInterval(forwardBtnFunc, 1000);
+}
+
+function autoBackFunc() {
+  stopBtnFunc();
+  stopBtnInterval = setInterval(backBtnFunc, 1000);
+}
+
+forwardBtn.addEventListener("click", forwardBtnFunc);
+backBtn.addEventListener("click", backBtnFunc);
+stopBtn.addEventListener("click", stopBtnFunc);
+autoForwardBtn.addEventListener("click", autoForwardFunc);
+autoBackBtn.addEventListener("click", autoBackFunc);

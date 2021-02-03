@@ -4,9 +4,11 @@ function quoteGenerator(arr) {
   // document.body.appendChild(newDiv);
   // console.log(newDiv);
   let quoteHeader = document.createElement("h2");
+  quoteHeader.innerHTML = arr[0]["quote"];
   newDiv.appendChild(quoteHeader);
   // console.log(quoteHeader);
   let authorHeader = document.createElement("h4");
+  authorHeader.innerHTML = arr[0]["author"];
   newDiv.appendChild(authorHeader);
   let newButton = document.createElement("button");
   newButton.innerHTML = "New Quote";
