@@ -57,7 +57,7 @@ var life = [
 function addDetails() { 
 life.forEach(function (element) {
     let p = document.createElement('p');
-    p.innerHTML = `${element.name} was born ${element.born} and died ${element.died}.`;
+    p.innerHTML = `${element.name} (${element.born} - ${element.died}).`;
     let sect = document.getElementById(`${element.identifier}`).parentElement;
     sect.insertBefore(p, sect.children[sect.children.length - 1]);
 })
