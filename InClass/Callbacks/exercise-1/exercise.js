@@ -1,13 +1,23 @@
-/*
-================
-EXERCISE 1
+let div = document.getElementById("main");
 
-Task 1
-Using setTimeout, change the background colour of the page after 5 seconds (5000 milliseconds).
+function changeColour() {
+  div.style.backgroundColor = "yellow";
+}
 
-Task 2
-Update your code to make the colour change every 5 seconds to something different. Hint: try searching for setInterval.  Complete the exercises in this CodePen
+setTimeout(changeColour, 5000);
 
-Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
-================
-*/
+
+// task 2
+
+let i = 0;
+let colours = ["pink", "red", "green"  "#efefef", "#0ae071"];
+
+function changeColourFiveSeconds() {
+  div.style.backgroundColor = colours[i];
+  i++;
+
+  if (i > colours.length) {
+    i = 0;
+  };
+};
+setInterval(changeColourFiveSeconds, 5000);
