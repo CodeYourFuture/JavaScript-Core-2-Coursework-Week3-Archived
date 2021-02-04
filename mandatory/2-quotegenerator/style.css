@@ -1,1 +1,37 @@
 /** Write your CSS in here **/
+body {
+    background-color: rgb(177, 167, 167);
+}
+
+
+#Box {
+    background-color: rgb(46, 141, 148);
+    border: 5px solid black;
+    height: 300px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+#btn {
+    margin: 10px auto;
+    height: 50px;
+    width: 250px;
+    border-radius: 5%;
+}
+
+#output {
+    margin: 10px auto;
+    font-size: 20px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin: 2% 30% 3% 30%;
+    background-color: rgb(8, 8, 8);
+    color: white;
+    padding: 1%;
+}
+
+h3 {
+    color: white; }
