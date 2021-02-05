@@ -34,8 +34,7 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
-
-// Global variable 
+// Global variable
 let saveButton = document.getElementById("saveBtn");
 
 const movies = [
@@ -65,7 +64,7 @@ const movies = [
   },
 ];
 
-// create a new movie object for your favourite movie
+// create a new movie object for your favorite movie
 const favMovies = {
   title: "The Graduate",
   director: "Mike Nichols",
@@ -73,43 +72,39 @@ const favMovies = {
   HaveWatched: true,
 };
 
-// create showMovies function
-function showMovies(index) {
-  if (index < movies.length) {
-    let movie = movies[index];
-    let allMovieIdDiv = document.getElementById("all-movies");
-    let moviesNumberSpan = document.getElementById("movies-number");
-    let movieNumberSpan = (document.getElementById("movies-number").innerHTML =
-      movies.length);
+function showMovies() {
+  document.getElementById("movies-number").innerHTML = movies.length;
+  movies.forEach((element, index) => {
+    let allMoviesIdDiv = document.getElementById("all-movies");
     let paragraph = document.createElement("p");
-    paragraph.innerHTML = `<strong>Movie Tile:</strong>${movie.title} <strong>Movie Director:</strong> ${movie.director}`;
-
+    delete movies[index];
     setTimeout(function () {
-      allMovieIdDiv.appendChild(paragraph);
-      showMovies(index + 1);
+      paragraph.innerHTML = `<strong>Movie Tile:</strong> ${element.title} <strong>Movie Director:</strong> ${element.director}`;
+      allMoviesIdDiv.appendChild(paragraph);
     }, 1000);
-  }
+  });
 }
-showMovies(0);
+showMovies();
 
+// 2nd step
 // create addMovies function
 function addMovies(movieObject) {
   setTimeout(function () {
     movies.push(movieObject);
+    showMovies(movies);
   }, 2000);
 }
 addMovies(favMovies);
 
-
+// 3rd step  add new items to the movie list
 saveButton.addEventListener("click", (event) => {
   event.preventDefault();
   let createMovieEntries = {
     title: document.getElementById("movie-title").value,
-    director:document.getElementById("movie-director").value ,
+    director: document.getElementById("movie-director").value,
     type: document.getElementById("movie-type").value,
     haveWatched: document.getElementById("movie-watched").value,
-  }
+  };
   addMovies(createMovieEntries, movies);
-  showMovies(0)
+  document.getElementById("form").reset(); // clears form text
 });
- 
