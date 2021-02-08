@@ -63,26 +63,4 @@ backward.addEventListener("click",backwardFunction);
     
     
 
-// var autoBackward = function(){
-//     intervalId = setInterval(()=>{
-//         if(i < images.length){
-//             i++;
-//         }else{
-//             i=1;
-//         }
-//         slide.innerHTML = "<img src=" + images[i-1] + ">";
-//     },5000);
-// };
-
-// forward.addEventListener("click",forwardFunction);
-// backward.addEventListener("click",backwardFunction);
-//  autoForward.addEventListener("click",autoForward);
-// autoBackward.addEventListener("click",autoBackwardFunction);
-
-// stop.addEventListener("click",()=>{
-//     slide .innerHTML = "<img = example-screenshots/marina-hB5YYChCX18-unsplash.jpg";
-//     clearInterval(intervalId);
-// })
-
-
 
