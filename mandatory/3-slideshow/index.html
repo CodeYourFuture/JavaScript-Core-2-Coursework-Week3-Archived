@@ -14,16 +14,17 @@
   <body>
     <!-- Write your HTML in here -->
     <div class = "container">
-      <div class = "img-slide">
-        <img src = "example-screenshots/marina-glX-mw1ZlkU-unsplash.jpg"alt=""/>
-        <img src = "example-screenshots/marina-hB5YYChCX18-unsplash.jpg"alt=""/>
-        <img src = "example-screenshots/marina-WhLJc_z0eEI-unsplash.jpg"alt=""/>
-        <img src = "example-screenshots/marina-YmQ0-nmWcV0-unsplash.jpg"alt=""/>
-        <img src = "example-screenshots/tomas-malik-0LH8_S04sUY-unsplash.jpg"alt=""/>
+      <div id="container" class = "img-slide">
+      
+        <img src = "example-screenshots/tomas-malik-0LH8_S04sUY-unsplash.jpg"/>
       </div>
       <div id ="btn">
-      <button class="btn" onclick="forward()">forward</button>
-      <button class="btn" onclick="back()">back</button>
+      <button id="forward" class="btn" >forward</button>
+      <button id="backward" class="btn" >backward</button>
+      <button id="auto-forward" class="btn" >auto-forward</button>
+      <button id="auto-backward" class="btn" >auto-backward</button>
+      <button id="stop" class="btn" >stop</button>
+
     </div>
   </div>
     <script src="slideshow.js"></script>
