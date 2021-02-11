@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+body {
+    background-color: 
+}
+
+#container {
+    background-color:#ffff00;
+    border: 10px solid #FFFFFF;
+    height: 350px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#btn {
+margin: 50px;
+height: 50px;
+width: 250px;
+font-size: 20px;
+background-color: #FFA500;
+}
+
+#output {
+    margin: 30px auto;
+    font-size: 40px;
+    color: #FFFFFF;
+}

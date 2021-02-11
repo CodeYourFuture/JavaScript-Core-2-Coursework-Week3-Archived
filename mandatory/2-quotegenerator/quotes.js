@@ -17,9 +17,29 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
+// function pickFromArray(choices) {
+//   return choices[Math.floor(Math.random() * choices.length)];
+// }
+
+// function newQuote(){
+//   let randomNumber = Math.floor(Math.random()) * (quotes.length));
+// }
+// {
+
+// let quote = [
+//   {
+//     quote: "Life isn’t about getting and having, it’s about giving and being.",
+//     author: "Kevin Kruse",
+//   },
+//   {
+//     quote: "Whatever the mind of man can conceive and believe, it can achieve.",
+//     author: "Napoleon Hill",
+//   },
+//   {
+//     quote: "Strive not to be a success, but rather to be of value.",
+//     author: "Albert Einstein",
+//   }
+// ]
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +510,21 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+document.addEventListener("DOMContentLoaded", function onLoadQuote() {
+  let btn = document.getElementById("btn");
+
+  btn.addEventListener("click", displayQuote);
+  displayQuote();
+});
+
+function displayQuote() {
+  let quoteText = document.getElementById("quoteText");
+
+  let quoteAuthor = document.getElementById("quoteAuthor");
+
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)];
+
+  quoteText.innerHTML = randomNumber.quote;
+  quoteAuthor.innerHTML = randomNumber.author;
+}
