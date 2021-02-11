@@ -26,8 +26,6 @@
 // }
 // {
 
-
-
 // let quote = [
 //   {
 //     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -42,9 +40,6 @@
 //     author: "Albert Einstein",
 //   }
 // ]
-
-
-
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -516,25 +511,20 @@ const quotes = [
   },
 ];
 
+document.addEventListener("DOMContentLoaded", function onLoadQuote() {
+  let btn = document.getElementById("btn");
 
+  btn.addEventListener("click", displayQuote);
+  displayQuote();
+});
 
-document.addEventListener("DOMContentLoaded" , function onLoadQuote(){
+function displayQuote() {
+  let quoteText = document.getElementById("quoteText");
 
-  let btn = document.getElementById('btn');
-  
-  let quoteText = document.getElementById('quoteText');
-  
-  let quoteAuthor = document.getElementById('quoteAuthor');
-    
-  let randomNumber = quotes [Math.floor(Math.random() * quotes.length)];
-  
+  let quoteAuthor = document.getElementById("quoteAuthor");
+
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)];
+
   quoteText.innerHTML = randomNumber.quote;
   quoteAuthor.innerHTML = randomNumber.author;
-  btn.addEventListener('click', onLoadQuote);
-
-})
-
-
- 
-  
-
+}
