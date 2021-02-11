@@ -1,4 +1,7 @@
-/** Write your CSS in here **/
+body * {
+  font-size: 0.95em;
+}
+
 #carousel {
   margin: auto;
   text-align: center;
@@ -12,6 +15,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .large-image {
@@ -25,4 +29,20 @@
 
 button {
   background-color: deepskyblue;
+  border-radius: 5px;
+}
+
+/************* Style for Extra Feature ***********/
+.interval-div {
+  margin-top: 20px;
+}
+
+#time-interval {
+  height: 25px;
+  width: 50px;
+  text-align: center;
+}
+
+#set-interval {
+  width: 50px;
 }

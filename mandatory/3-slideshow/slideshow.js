@@ -22,6 +22,9 @@ let img, spanNum, spanTot, spanPrev, spanNext, buttonFwd, buttonBwd; // html ele
 let lowerIndex, higherIndex; // carousel navigation related
 let runAtIntervals; // related carousel auto navigation control
 
+// *Extra feature- declare and initalise variable
+let interval = document.getElementById("time-interval").value;
+
 // initial setup
 function setup() {
   // initialize variables
@@ -100,24 +103,30 @@ function onMouseHover(e) {
 function controlSlideShow(e) {
   let activeBtn = e.target;
   let inactiveBtn;
-
   switch (activeBtn.textContent) {
     case "Auto Forward ->>":
       stopSlideShow();
       inactiveBtn = document.getElementById("btn-backward");
       inactiveBtn.textContent = "<<- Auto Backward";
-      runAtIntervals = setInterval(startSlideShow, 3000, activeBtn.id);
+      runAtIntervals = setInterval(
+        startSlideShow,
+        interval * 1000,
+        activeBtn.id
+      );
       activeBtn.textContent = "Stop";
       break;
     case "<<- Auto Backward":
       stopSlideShow();
       inactiveBtn = document.getElementById("btn-forward");
       inactiveBtn.textContent = "Auto Forward ->>";
-      runAtIntervals = setInterval(startSlideShow, 3000, activeBtn.id);
+      runAtIntervals = setInterval(
+        startSlideShow,
+        interval * 1000,
+        activeBtn.id
+      );
       activeBtn.textContent = "Stop";
       break;
     case "Stop":
-      console.log(activeBtn.id);
       stopSlideShow();
       if (activeBtn.id === "btn-forward") {
         activeBtn.textContent = "Auto Forward ->>";
@@ -141,4 +150,47 @@ function startSlideShow(id) {
 // Function to stop the slideshow
 function stopSlideShow() {
   clearInterval(runAtIntervals);
+}
+
+/******************** Extra Feature ****************/
+// enable or disable the "Set" button depending on the value entered in the input box
+document
+  .getElementById("time-interval")
+  .addEventListener("input", controlSetButton);
+
+function controlSetButton(e) {
+  const btn = document.getElementById("set-interval");
+  if (!e.target.value || e.target.value <= 0) {
+    btn.disabled = true;
+  } else {
+    btn.disabled = false;
+  }
+}
+
+// add click-event listener to the "Set" button to update the slideshow interval "automatically"
+document
+  .getElementById("set-interval")
+  .addEventListener("click", updateInterval);
+
+function updateInterval() {
+  // get the newly set slideshow interval
+  interval = document.getElementById("time-interval").value;
+  // get the auto-slideshow control buttons, i.e. buttonFwd and buttonBwd
+  let buttons = [buttonFwd, buttonBwd];
+
+  // first verify if auto-slideshow has been started by either button. If so,...
+  let myButton = buttons.find((button) => button.textContent === "Stop");
+  if (myButton !== undefined) {
+    // ...identify the button
+    const index = buttons.indexOf(myButton);
+    if (index === 0) {
+      myButton = buttonFwd;
+    } else {
+      myButton = buttonBwd;
+    }
+    // create and simulate click event for myButton
+    let myEvent = new MouseEvent("click");
+    myButton.dispatchEvent(myEvent); // stops the slideshow momentarily
+    myButton.dispatchEvent(myEvent); // restarts the slideshow with updated interval
+  }
 }
