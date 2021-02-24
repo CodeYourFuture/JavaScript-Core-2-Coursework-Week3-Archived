@@ -1,1 +1,38 @@
 /** Write your CSS in here **/
+body{
+    background-color: rgb(178, 221, 223);
+    width:100%;
+    height: 100%;
+    margin:10rem;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(212, 137, 214);
+    margin: 10em;
+}
+
+h2{
+    color:rgb(111, 47, 212);
+    text-align: left;
+    padding: 2em;
+}
+h4{
+    color:rgb(18, 16, 24);
+    text-align: right;
+    margin: 1em;
+}
+
+button{
+    display: flex;
+    /* flex-direction: row; */
+    width: 7em;
+    height: 2em;
+    background-color: rgb(30, 210, 75);
+    text-align: center;
+    margin: 0.5em;
+}
