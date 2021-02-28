@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Alarm Clock</title>
-    <script src="alarmclock.js"></script>
+    <script defer src="alarmclock.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body id='main'>
     <div class="centre">
       <h1 id="timeRemaining">Time Remaining: 00:00</h1>
       <div>
-        Set Time to:
+        Set Time in seconds to:
         <input id="alarmSet" type="number" />
       </div>
       <div>
