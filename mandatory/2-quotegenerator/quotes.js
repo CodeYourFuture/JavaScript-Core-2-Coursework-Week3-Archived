@@ -1,3 +1,29 @@
+function quoteGenerator(arr) {
+  let myBodyDoc = document.getElementsByTagName("body")[0];
+  console.log(myBodyDoc);
+  
+  let myDiv = document.createElement("div");
+  let myH2Quote = document.createElement("h2");
+  let myAuthorH4 = document.createElement("h4");
+  let myNewButton = document.createElement("button");
+  
+  myNewButton.innerHTML = "New Quote";
+  myAuthorH4.innerHTML = quotes[0]["author"]
+  myH2Quote.innerHTML = quotes[0]["quote"]
+
+  myDiv.appendChild(myH2Quote);
+  myDiv.appendChild(myAuthorH4);
+  myDiv.appendChild(myNewButton);
+  myBodyDoc.appendChild( myDiv);
+  
+  myNewButton.addEventListener("click", function () {
+  let MyRandomQuote = Math.floor(Math.random() * arr.length);
+  myH2Quote.innerHTML = arr[MyRandomQuote]["quote"];
+  myAuthorH4.innerHTML = arr[MyRandomQuote]["author"];
+  });
+
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -17,9 +43,24 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
+// let myQuote = function(Idoms){
+//   for (var i = 0; i < Idoms.length; i++);
+//   console.log(myQuote);
+// function pickFromArray(choices) {
+
+//   return choices[Math.floor(Math.random() * choices.length)];
+// }
+// };
 function pickFromArray(choices) {
+
   return choices[Math.floor(Math.random() * choices.length)];
+
 }
+ let myQuote = function(pickFromArray){
+  for (var i = 0; i < pickFromArray.length; i++);
+  console.log(myQuote);
+
+ }
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +531,4 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+quoteGenerator(quotes);
