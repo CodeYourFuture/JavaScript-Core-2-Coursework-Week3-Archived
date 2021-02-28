@@ -1,1 +1,54 @@
 /** Write your CSS in here **/
+body {
+  background-color: gold;
+}
+
+#quote-generator {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+}
+
+.quote-area {
+  border: 2px salmon solid;
+  padding: 30px;
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+#quote {
+  font-size: 3em;
+  text-align: left;
+}
+
+#name {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: right;
+}
+
+#auto-play,
+label,
+button {
+  display: inline-block;
+  position: relative;
+}
+
+#auto-play,
+label {
+  top: 30px;
+  left: 25px;
+}
+
+label {
+  font-size: 1em;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  background-color: dodgerblue;
+}

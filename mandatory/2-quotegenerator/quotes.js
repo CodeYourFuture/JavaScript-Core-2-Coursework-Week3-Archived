@@ -490,3 +490,44 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+/*
+ * Solution
+ */
+
+// declare global variables
+let quote, name, btnNewQuote, checkBox, spanOnOff, timer;
+// initial document setup
+function setup() {
+  quote = document.getElementById("quote"); // a quote made by a (famous) person
+  name = document.getElementById("name"); // name of the person the quote belongs to
+  btnNewQuote = document.getElementById("btn-new-quote"); // to generate a new quote
+  checkBox = document.getElementById("auto-play"); // to toggle quote generator autoplay on or off
+  spanOnOff = document.getElementById("on-off"); // a text showing the status of the autoplay
+  // set initial content of spanOnOff
+  spanOnOff.textContent = "OFF";
+  // add required event listeners
+  btnNewQuote.addEventListener("click", generateQuote);
+  checkBox.addEventListener("change", toggleAutoGenerate);
+  // show random initial quote
+  generateQuote();
+}
+
+window.onload = setup();
+// This function generates a random quote from the quotes collection
+function generateQuote() {
+  quote.textContent = `"${pickFromArray(quotes).quote}"`;
+  name.textContent = `- ${pickFromArray(quotes).author}`;
+}
+// This function controls quote generator autoplay feature
+function toggleAutoGenerate() {
+  if (checkBox.value === "on") {
+    timer = setInterval(generateQuote, 5000);
+    checkBox.value = "off";
+    spanOnOff.textContent = "ON";
+  } else {
+    clearInterval(timer);
+    checkBox.value = "on";
+    spanOnOff.textContent = "OFF";
+  }
+}
