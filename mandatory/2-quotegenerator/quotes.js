@@ -17,6 +17,12 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
+function generateQuote() {
+  let chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").innerHTML = chosenQuote.quote;
+  document.getElementById("author").innerHTML = chosenQuote.author;
+}
+
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
