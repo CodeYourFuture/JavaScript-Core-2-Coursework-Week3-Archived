@@ -11,3 +11,14 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+// Task 1
+// setTimeout(function () {
+//   document.querySelector("#main").style.backgroundColor = 'red';
+// }, 5000);
+
+// Task 2
+setInterval(function () {
+  let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.querySelector("#main").style.backgroundColor = `#${randomColor}`;
+}, 5000);

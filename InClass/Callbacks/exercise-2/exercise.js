@@ -63,8 +63,66 @@ const movies = [
 
 // create showMovies function
 
+// function showMovies(movies) {
+// 	let i = 0;
+// 	document.querySelector("#movies-number").innerText = movies.length;
+// 	setInterval(function () {
+// 		if (i < movies.length) {
+// 			let paragraph = document.createElement("p");
+// 			paragraph.innerHTML = `"${movies[i].title}" by ${movies[i].director}`
+// 			document.querySelector("#all-movies").appendChild(paragraph); 
+// 		}
+// 		else return
+
+// 		i++;
+// 	}, 1000);
+// }
+
+function showMovies(movies) {
+	document.querySelector("#movies-number").innerText = movies.length;
+	document.querySelectorAll('.movie-item').forEach(e => e.remove());
+	for (let i = 0; i < movies.length; i++) {
+		setTimeout(function () {
+			let paragraph = document.createElement("p");
+			paragraph.className = "movie-item";
+			paragraph.innerHTML = `"${movies[i].title}" by ${movies[i].director}`
+			document.querySelector("#all-movies").appendChild(paragraph); 
+		}, 1000 + (1000 * i));
+	}
+}
 
 // create a new movie object for your favorite movie
 
+let newMovie = {
+	title: "The Lord of The Rings",
+	director: "Peter Jackson",
+	type: "fantasy",
+	haveWatched: true,
+}
 
 // create addMovies function
+
+function addMovie(movie, movies) {
+	setTimeout(function () {
+		movies.push(movie);
+		showMovies(movies);
+		//document.querySelector("#movies-number").innerText = movies.length;
+	}, 2000);	
+}
+
+showMovies(movies);
+
+// update list of movies when form is POSTed
+let saveBtn = document.querySelector("#saveBtn");
+
+saveBtn.addEventListener("click", function (event) {
+	event.preventDefault();
+	let newMovie = {
+		title: document.querySelector("#title").value,
+		director: document.querySelector("#director").value,
+		type: document.querySelector("#type"),
+		haveWatched: document.querySelector("#watched").value
+	}  
+	
+	addMovie(newMovie, movies);
+});
