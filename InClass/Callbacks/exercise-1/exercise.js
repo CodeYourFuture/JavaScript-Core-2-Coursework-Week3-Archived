@@ -11,3 +11,28 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+// Task 1
+
+let div = document.getElementById("main");
+
+function changeColour() {
+  div.style.backgroundColor = "red";
+}
+setTimeout(changeColour, 5000);
+
+//Task 2
+
+let i = 0;
+let colours = ["blue", "green", "purple"];
+
+function changeColourFiveSeconds() {
+  div.style.backgroundColor = colours[i];
+  i++;
+
+  if (i > colours.length) {
+    i = 0;
+  };
+};
+
+setInterval(changeColourFiveSeconds, 5000);
