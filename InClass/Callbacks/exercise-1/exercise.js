@@ -11,3 +11,31 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+const main = document.getElementById("main");
+// Task 1:
+// const changeBgColour = () => {
+//   main.style.backgroundColor = "yellow";
+// };
+
+// setTimeout(changeBgColour, 5000);
+
+// Task 2:
+const coloursArray = [
+  "pink",
+  "blue",
+  "green",
+  "grey",
+  "yellow",
+  "orange",
+  "red",
+  "brown",
+  "purple",
+];
+
+const changeBgToRandomColor = () => {
+  const randomColor = Math.floor(Math.random() * coloursArray.length);
+  main.style.backgroundColor = coloursArray[randomColor];
+};
+
+setInterval(changeBgToRandomColor, 5000);
