@@ -1,1 +1,41 @@
 /** Write your CSS in here **/
+body {
+    background-color:orange;
+    margin: auto;
+}
+
+#box {
+    background-color: #fff;
+    padding: 5px;
+    width: 50%;
+    height: 250px;
+    margin:200px 250px;
+    
+}
+#content {
+    text-align: center;
+    /* align-items: center; */
+    margin-top: 5px;
+    justify-content: center;
+    padding: 30px;
+}
+#button {
+    background-color: orange;
+    align-items: right;
+    color: #fff;
+    padding: 5px;
+    justify-content: right;
+    border: none;
+}
+#author {
+    text-align: center;
+    align-items: right;
+    margin-top: 2px;
+    color: orange;
+}
+
+#section {
+    margin-left: 290px;
+    margin-top:30px;
+    color: orange;
+}

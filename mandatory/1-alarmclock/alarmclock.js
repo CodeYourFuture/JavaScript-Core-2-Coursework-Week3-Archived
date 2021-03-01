@@ -1,4 +1,16 @@
-function setAlarm() {}
+function setAlarm() {
+  const set = document.querySelector('#set');
+  const stop = document.querySelector('#stop');
+  const input = document.querySelector('#alarmSet');
+  const timeRemanining = document.querySelector('#timeRemaining');
+  let inputValue = input.value;
+  let minutes = Math.floor(inputValue / 60);
+  let seconds = inputValue % 60;
+  seconds -=1;
+  set.addEventListener('click', () => {
+    timeRemanining.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
+  })
+}
 
 // DO NOT EDIT BELOW HERE
 
