@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+body {
+  background-color: gray;
+}
+#quote-generator {
+  position: relative;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  border: 3px solid;
+  padding: 30px;
+  text-align: right;
+}
+#quote {
+  font-size: 4em;
+  text-align: left;
+}
+#name {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: right;
+}
+button {
+  font-size: 2em;
+  margin-top: 40px;
+  background-color: greenyellow;
+}
