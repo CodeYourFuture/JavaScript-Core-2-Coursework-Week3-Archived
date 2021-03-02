@@ -11,3 +11,7 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+function changeBackgroundColor() {
+    setTimeout(() => document.querySelector('body').style.backgroundColor = 'red', 5000);
+}
+changeBackgroundColor();
