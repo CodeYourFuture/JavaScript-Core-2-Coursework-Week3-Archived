@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +11,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <div class="container-fluid">
+      <div class="row  justify-content-stretch align-self-center align-items-center">
+        <div id="columnContainer" style="background-color:rgb(103, 255, 82);" class="d-flex p-5 my-auto flex-column col-12 justify-content-center align-self-center align-items-center">
+        <div id="quoteHere" style="font-size:2em;" class="row"> quote here</div>
+        <div id="authorHere" style="font-size:1.2em;" class="row"> author here </div>
+        <div id="button" class="row"><br></div>
+        <div id="button" class="row"><button>New Quote</button></div>
+        </div>
+      </div>
+    </div>
+      
+    <script src="quotes.js"></script>
   </body>
 </html>
