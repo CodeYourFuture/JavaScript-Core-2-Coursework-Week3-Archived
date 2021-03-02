@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +11,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    
+    <div id="imageDiv" class="d-flex justify-content-center"><img id="image" max`width="80%" src="example-screenshots/1.jpg"></div>
+    <div id="controls" class="d-flex justify-content-center">
+      <button id="AutoBack">Auto Back</button>
+      <button id="Backward">Backward</button>
+      <button id="Stop">Stop</button>
+      <button id="Forward">Forward</button>
+      <button id="AutoForward">Auto Forward</button> 
+    </div>
+    
+    <script src="slideshow.js"></script>
   </body>
 </html>
