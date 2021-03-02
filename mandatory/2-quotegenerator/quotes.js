@@ -17,12 +17,43 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
+
+// A list of quotes you can use in your app.
+// Feel free to edit them, and to add your own favourites.
+
+let quoteEl;
+let authorEl;
+
+const setUp = () => {
+  const bodyTag = document.querySelector("body");
+  bodyTag.style.backgroundColor = "yellow";
+
+  const newQuoteBtn = document.createElement("button");
+  newQuoteBtn.innerText = "New Quote";
+  newQuoteBtn.addEventListener("click", () => {
+    getRandomQuote();
+  });
+
+  const quotesContainer = document.createElement("div");
+  quoteEl = document.createElement("h2");
+  authorEl = document.createElement("p");
+
+  quotesContainer.append(quoteEl, authorEl);
+  bodyTag.append(quotesContainer, newQuoteBtn);
+};
+
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
+const getRandomQuote = () => {
+  let randomQuote = pickFromArray(quotes);
+  quoteEl.innerText = randomQuote.quote;
+  authorEl.innerText = randomQuote.author;
+};
+
+setUp();
+
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
