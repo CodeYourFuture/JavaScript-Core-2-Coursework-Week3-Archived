@@ -1,3 +1,31 @@
+function quoteGenerator(arr) {
+  let bodyDoc = document.getElementsByTagName("body")[0];
+  let newDiv = document.createElement("div");
+  // document.body.appendChild(newDiv);
+  // console.log(newDiv);
+  let quoteHeader = document.createElement("h2");
+  quoteHeader.innerHTML = arr[0]["quote"];
+  newDiv.appendChild(quoteHeader);
+  // console.log(quoteHeader);
+  let authorHeader = document.createElement("h4");
+  authorHeader.innerHTML = arr[0]["author"];
+  newDiv.appendChild(authorHeader);
+  let newButton = document.createElement("button");
+  newButton.innerHTML = "New Quote";
+  newDiv.appendChild(newButton);
+  bodyDoc.appendChild(newDiv);
+  // console.log(newButton);
+  // console.log(authorHeader);
+  // arr.forEach(function(obj){
+  newButton.addEventListener("click", function () {
+    let randomQuote = Math.floor(Math.random() * arr.length);
+    quoteHeader.innerHTML = arr[randomQuote]["quote"];
+    authorHeader.innerHTML = arr[randomQuote]["author"];
+  });
+  // })
+  // return (quoteHeader, authorHeader);
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -23,7 +51,7 @@ function pickFromArray(choices) {
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
-const quotes = [
+let quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
     author: "Kevin Kruse",
@@ -490,3 +518,5 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+quoteGenerator(quotes);
