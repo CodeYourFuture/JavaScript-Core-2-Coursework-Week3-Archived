@@ -24,8 +24,9 @@ function setAlarm() {
   }, 1000);
 }
 // Background color flash
+var interval = 0;
 function backgroundColor() {
-  const xxx = setInterval(() => {
+  interval = setInterval(() => {
     let color1 = Math.floor(Math.random() * 256);
     let color2 = Math.floor(Math.random() * 256);
     let color3 = Math.floor(Math.random() * 256);
@@ -35,7 +36,7 @@ function backgroundColor() {
 }
 
 function pauseFlash() {
-  location.reload();
+  clearInterval(interval);
 }
 
 // DO NOT EDIT BELOW HERE
