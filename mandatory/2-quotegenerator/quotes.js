@@ -1,3 +1,98 @@
+/*
+ * This is the event listener that generates new quotes
+ * every time the button is pressed.
+ */
+function generateQuote() {
+  // get all the needed elements into javascript variables
+  let body = document.body;
+  let mainDiv = document.getElementsByClassName("quoteContainer");
+  let quote = document.getElementById("quote");
+  let author = document.getElementById("author");
+  let newQuoteBtn = document.getElementById("newQuoteBtn");
+
+  // pick the quote to be displayed
+  let quoteOfTheDay = pickFromArray(quotes);
+
+  // update the quote and its author on the page
+  quote.innerHTML = quoteOfTheDay.quote;
+  author.innerHTML = "- " + quoteOfTheDay.author;
+
+  // update the theme of the page
+
+  // change the background colours of various elements
+  body.style.backgroundColor = colorPalette[chosenStyle].pageBackground;
+  mainDiv[0].style.backgroundColor = colorPalette[chosenStyle].quoteBackground;
+  newQuoteBtn.style.backgroundColor = colorPalette[chosenStyle].buttonColour;
+
+  // change the font colours of various elements
+  quote.style.color = colorPalette[chosenStyle].quoteFontColour;
+  author.style.color = colorPalette[chosenStyle].authorFontColour;
+  newQuoteBtn.style.color = colorPalette[chosenStyle].buttonFontColour;
+
+  // update the chosen theme for when next time the button is pressed
+  chosenStyle = (chosenStyle + 1) % numOfStyles;
+}
+
+/*
+ * Main function of the program
+ */
+function quoteGenerator() {
+  let newQuoteBtn = document.getElementById("newQuoteBtn");
+
+  // attach the event listener to the button
+  newQuoteBtn.addEventListener("click", generateQuote);
+}
+
+window.onload = generateQuote;
+quoteGenerator();
+
+// A list of available themes which will be applied to the quotes
+const colorPalette = [
+  {
+    pageBackground: "#c7d4db",
+    quoteBackground: "#ffffff",
+    buttonColour: "#0ae071",
+    quoteFontColour: "#48179e",
+    authorFontColour: "#0ae071",
+    buttonFontColour: "#48179e",
+  },
+  {
+    pageBackground: "#f5f6f7",
+    quoteBackground: "#c9d6d5",
+    buttonColour: "#e0a315",
+    quoteFontColour: "#4d7171",
+    authorFontColour: "#bb570c",
+    buttonFontColour: "#f6f6f6",
+  },
+  {
+    pageBackground: "#cca98c",
+    quoteBackground: "#f5f6f7",
+    buttonColour: "#12bb65",
+    quoteFontColour: "#12bb65",
+    authorFontColour: "#cca98c",
+    buttonFontColour: "white",
+  },
+  {
+    pageBackground: "#4e5da4",
+    quoteBackground: "#e4cb40",
+    buttonColour: "#4e5da4",
+    quoteFontColour: "#4e5da4",
+    authorFontColour: "#4e5da4",
+    buttonFontColour: "#e4cb40",
+  },
+  {
+    pageBackground: "#4f6f9e",
+    quoteBackground: "#eefeef",
+    buttonColour: "#ea0040",
+    quoteFontColour: "#2c2a5b",
+    authorFontColour: "#4f6f9e",
+    buttonFontColour: "#eefeef",
+  }
+];
+
+const numOfStyles = colorPalette.length;
+let chosenStyle = 0;
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

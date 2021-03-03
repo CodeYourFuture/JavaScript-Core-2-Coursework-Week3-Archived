@@ -13,13 +13,13 @@ Create a function called "showMovies" that
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
-- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
 
 Task 3
-Can you make sure the new movie you just added is showing on the screen? 
+Can you make sure the new movie you just added is showing on the screen?
 TIP: use callbacks
 
 Task 4 - **Extra**
@@ -61,10 +61,71 @@ const movies = [
   },
 ];
 
-// create showMovies function
+let moviesDisplayed = 0;
 
+// create showMovies function
+function showMovies() {
+  let allMovies = document.getElementById("all-movies");
+  let moviesNumber = document.getElementById("movies-number");
+
+  // show movies after 1s
+  setTimeout(() => {
+    // add the number of movies to the moviesNumber
+      moviesNumber.innerText = movies.length;
+
+    // display movies on the page
+    for(let i = moviesDisplayed; i < movies.length; i++) {
+      let para = document.createElement("p");
+      para.innerText = movies[i].title + " - " + movies[i].director;
+      allMovies.appendChild(para);
+      moviesDisplayed++;
+    }
+  }, 1000);
+}
+
+showMovies();
 
 // create a new movie object for your favorite movie
-
+const myFavMovie = {
+  title: "Inception",
+  director: "Christopher Nolan",
+  type: "sci-fi",
+  haveWatched: true,
+}
 
 // create addMovies function
+function addMovie(movie) {
+  // add this new movie to the movies array
+  setTimeout(() => {
+    movies.push(movie);
+  }, 1000);
+}
+
+addMovie(myFavMovie);
+setTimeout(showMovies, 2100);
+
+// task 4
+function task4() {
+
+  let submitbtn = document.getElementById("submitBtn");
+
+  submitbtn.addEventListener("click", event => {
+
+    event.preventDefault();
+
+    let moveTitle = document.getElementById("movieTitle");
+    let movieDirector = document.getElementById("movieDirector");
+    let movieGenre = document.getElementById("movieGenre");
+    let movieWatched = document.getElementById("movieWatched");
+    let newMovie = {
+      title: moveTitle.value,
+      director: movieDirector.value,
+      type: movieGenre.value,
+      haveWatched: movieWatched.value,
+    };
+    addMovie(newMovie);
+    setTimeout(showMovies, 2100);
+  });
+}
+
+task4();

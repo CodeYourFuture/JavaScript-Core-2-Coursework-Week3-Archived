@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +11,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <main>
+      <h1 class="heading">Enjoy the eclectic view of <span id="highlight">Italy!</span></h1>
+      <div id="slider-img-container">
+        <button class="slider-button" onclick="previous()"> &lt </button>
+        <img id="slider-img" src="images/italy_1.jpeg"
+          alt="poster image">
+        <button class="slider-button" onclick="next()"> &gt </button>
+      </div>
+      <div id="slide-show-button-container">
+        <button class="slide-show" id="back-slide-show">Back</button>
+        <button class="slide-show" id="stop-slide-show">Stop</button>
+        <button class="slide-show" id="forward-slide-show">Forward</button>
+      </div>
+    </main>
+    <script src="slideshow.js"></script>
   </body>
 </html>
