@@ -1,3 +1,24 @@
+function setup() {
+  const quoteParagraph = document.getElementById("quote");
+  const authorParagraph = document.getElementById("author");
+  let randomQuoteElement = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteParagraph.innerText = '"' + randomQuoteElement.quote + '"';
+  authorParagraph.innerText = '"' + randomQuoteElement.author + '"';
+  document.getElementById("button").addEventListener("click", setup);
+}
+// Toggle switch
+document.addEventListener("DOMContentLoaded", function () {
+  let checkbox = document.querySelector('input[type="checkbox"]');
+  var interval = 0;
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      interval = setInterval(setup, 5000);
+    } else {
+      clearInterval(interval);
+    }
+  });
+});
+window.onload = setup;
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
