@@ -7,7 +7,7 @@
 }
 
 #myImg{
-width: 400px;
+width: 600px;
 height: 400px;
 }
 
@@ -29,7 +29,7 @@ border: 0;;
 }
 
 .br{
-  
+  border: 4px solid greenyellow;
   animation-name: fade;
   animation-duration: 4s;
 }

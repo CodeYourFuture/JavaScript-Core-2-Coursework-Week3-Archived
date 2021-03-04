@@ -60,7 +60,11 @@ function backWard() {
 
 let start, startBack;
 
-document.querySelector(".forward").addEventListener("click", forward);
+document.querySelector(".forward").addEventListener("click",  () =>{
+  imageEl.classList.add("br");
+   forward();
+  
+});
 document.querySelector(".backward").addEventListener("click", backWard);
 
 document.querySelector(".autoForward").addEventListener("click", () => {
@@ -78,5 +82,11 @@ document.querySelector(".autoBackward").addEventListener("click", () => {
 });
 
 document.querySelector(".stop").addEventListener("click", () => {
-  clearInterval(start);
+
+  if(start){
+    clearInterval(start);
+  }else{
+    clearInterval(startBack);
+  }
+  
 });
