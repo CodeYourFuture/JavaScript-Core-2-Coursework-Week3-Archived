@@ -1,1 +1,172 @@
 /** Write your CSS in here **/
+
+*{
+box-sizing: border-box;
+margin:0;
+padding: 0;
+}
+
+
+#switch-container{
+    display: flex;
+    
+     
+  justify-content: center;
+ width: 17%;
+  align-items: center;
+}
+.switch-text{
+  padding-left: 10px;
+  padding-right: 15px;
+  width: 100%;
+  flex:1;
+  font-weight: bold;
+  
+ 
+   
+}
+#container{
+width: 90%;
+background-color: orange;
+margin: 0 auto;
+padding-top: 100px;
+padding-bottom: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+ 
+}
+#quotes-container{
+align-items: center;
+display: flex;
+flex-direction: column;
+background-color:white;
+width: 70%;
+padding-bottom: 190px;
+position: relative;
+padding-top: 40px;
+max-height: 300px;
+
+
+}
+
+#btnNew{
+background-color: orange;
+color: white;
+padding: 15px;
+font-weight: bold;
+border: none;
+outline: 0;
+
+}
+#btnHolder{
+width: 100%;
+text-align: right;
+padding-right: 50px;
+}
+
+#author{
+color: orange;
+font-weight: bold;
+text-align: right;
+padding-right: 50px;
+width: 100%;
+}
+h1{
+ color: orange;
+font-size:1.5rem;
+padding: 0 20px 0 20px;
+text-align: left;
+max-height: 100px;
+}
+
+
+/* Here we construct our Toggle Switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+ 
+  
+}
+
+.switch #check { 
+opacity: 0;
+width: 0;
+height: 0;
+
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+
+}
+
+#check:checked + .slider {
+background-color: #2196F3;
+}
+
+#check:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+#check:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.slider:after
+{
+ content:'OFF';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+right: 0%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{ 
+ position: absolute;
+ top: 50%;
+ left: 40%;
+  content:'ON';
+}
