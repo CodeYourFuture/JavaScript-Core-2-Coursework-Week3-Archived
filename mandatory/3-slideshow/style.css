@@ -1,1 +1,35 @@
 /** Write your CSS in here **/
+
+body{
+    background-color: #b7b7a4;
+}
+
+
+.text-div{
+    color: 2a9d8f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 700;
+    font-size: 2rem;
+}
+
+/* .image-div{
+    max-width: 500px;
+} */
+
+img{
+    
+    max-height: 330px;
+}
+
+.btns{
+    min-width: 150px;
+    font-size: large;
+    background-color: #ffe8d6;
+    color: #6b705c;
+    font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+}
+
+#forwardbtn{
+  margin-left: 14%;
+}

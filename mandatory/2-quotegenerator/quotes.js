@@ -1,3 +1,14 @@
+
+function pickquote(){
+  
+  let quote = pickFromArray(quotes);
+  let theQuote = document.getElementById("the-quote");
+  let whoSaid = document.getElementById("who-said");
+  theQuote.innerText = quote.quote;
+  whoSaid.innerText = quote.author;  
+}
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,6 +31,9 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+
+// console.log(quotes.length);
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
