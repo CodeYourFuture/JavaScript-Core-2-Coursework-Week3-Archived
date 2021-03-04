@@ -1,5 +1,5 @@
 let imageEl = document.querySelector("#myImg");
-let fname = document.querySelector(".flowerName");
+let imgName = document.querySelector(".flowerName");
 
 const flowers = [
   {
@@ -29,40 +29,39 @@ const flowers = [
 ];
 
 imageEl.src = flowers[0].src;
-fname.innerText = flowers[0].name;
-let i = 0;
+imgName.innerText = flowers[0].name;
+let currentSlide = 0;
 
 function forward() {
-  i++;
+  currentSlide++;
 
-  if (i < flowers.length) {
-    imageEl.src = flowers[i].src;
-    fname.innerText = flowers[i].name;
+  if (currentSlide < flowers.length) {
+    imageEl.src = flowers[currentSlide].src;
+
+    imgName.innerText = flowers[currentSlide].name;
   } else {
-    i = 0;
-    imageEl.src = flowers[i].src;
-    fname.innerText = flowers[i].name;
+    currentSlide = 0;
+    imageEl.src = flowers[currentSlide].src;
+    imgName.innerText = flowers[currentSlide].name;
   }
 }
 
 function backWard() {
-  i--;
+  currentSlide--;
 
-  if (i >= 0) {
-    imageEl.src = flowers[i].src;
-    fname.innerText = flowers[i].name;
+  if (currentSlide >= 0) {
+    imageEl.src = flowers[currentSlide].src;
+    imgName.innerText = flowers[currentSlide].name;
   } else {
-    i = flowers.length - 1;
-    imageEl.src = flowers[i].src;
-    fname.innerText = flowers[i].name;
+    currentSlide = flowers.length - 1;
+    imageEl.src = flowers[currentSlide].src;
+    imgName.innerText = flowers[currentSlide].name;
   }
 }
 
 let start, startBack;
 
-document.querySelector(".forward").addEventListener("click",  forward)
-  
-  
+document.querySelector(".forward").addEventListener("click", forward);
 
 document.querySelector(".backward").addEventListener("click", backWard);
 
@@ -70,22 +69,21 @@ document.querySelector(".autoForward").addEventListener("click", () => {
   if (startBack) {
     clearInterval(startBack);
   }
-  start = setInterval(forward, 5000);
+  start = setInterval(forward, 2000);
 });
 
 document.querySelector(".autoBackward").addEventListener("click", () => {
   if (start) {
     clearInterval(start);
   }
-  startBack = setInterval(backWard, 5000);
+  startBack = setInterval(backWard, 2000);
 });
 
 document.querySelector(".stop").addEventListener("click", () => {
-
-  if(start){
+  if (start) {
     clearInterval(start);
-  }else{
+  }
+  if (startBack) {
     clearInterval(startBack);
   }
-  
 });
