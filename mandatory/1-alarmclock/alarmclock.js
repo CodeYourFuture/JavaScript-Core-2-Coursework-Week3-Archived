@@ -1,6 +1,6 @@
 function setAlarm() {
-  const inputEl = document.getElementById("alarmSet").value;
-  let myTimer = inputEl;
+  const input = document.getElementById("alarmSet").value;
+  let myTimer = input;
 
   let timeInterval = setInterval(() => {
     const timeDisplay = document.getElementById("timeRemaining");
