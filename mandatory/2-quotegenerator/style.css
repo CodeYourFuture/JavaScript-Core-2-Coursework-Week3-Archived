@@ -1,1 +1,42 @@
 /** Write your CSS in here **/
+
+body{
+    background-color: 	#ffba66;
+    width:100%;
+    height: 100%;
+    margin:10rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 40%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(245, 243, 243);
+    margin: 15em;
+    padding: 2em;
+}
+
+h1{
+    color:#000067;
+    text-align: center;
+    margin: 0.5 em;
+}
+h4{
+    color:#000067;
+    text-align: right;
+    margin: 1em;
+}
+
+button{
+    width: 8em;
+    height: 3em;
+    background-color: #ffba66;
+    color: #000067;
+    align-self: flex-end;
+    text-align: center;
+    margin: 0.5em;
+} 
+

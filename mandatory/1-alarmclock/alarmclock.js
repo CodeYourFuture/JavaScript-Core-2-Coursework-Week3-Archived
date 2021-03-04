@@ -25,7 +25,6 @@ function setAlarm() {
           playAlarm();
           document.body.style.backgroundColor = "#add8e6";
           clearInterval(myTimer);
-          
         } else {
           let minutes = Math.floor(input / 60);
           let seconds = input % 60;

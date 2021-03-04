@@ -490,3 +490,40 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+/*
+## How the Quote Generator should work
+  When the page loads it should show a random quote from the `quotes` array on the screen. 
+  It should also show who said the quote.
+  When you click a button on the screen it should change the quote on the screen.
+  It can look however you like but there is an example in this folder at `quote_generator_example.png`
+*/
+
+  let body = document.querySelector("body");
+  let main = document.createElement("div");
+  let quote = document.createElement("h1");
+  let authorQuote = document.createElement("h4");
+  let newQuoteBtn = document.createElement("button");
+  newQuoteBtn.innerHTML = "New Quote";
+  
+  body.appendChild(main);
+  main.appendChild(quote);
+  main.appendChild(authorQuote);
+  main.appendChild(newQuoteBtn);
+
+function generateQuote(quotes) {
+  let randomQuote = Math.floor(Math.random() * quotes.length);
+  quote.innerHTML = `“ ${quotes[randomQuote]["quote"]}”`;
+  authorQuote.innerHTML = `- ${quotes[randomQuote]["author"]}`;
+}
+
+
+newQuoteBtn.addEventListener("click", () => {
+  let randomQuote = Math.floor(Math.random() * quotes.length);
+  quote.innerHTML = `“ ${quotes[randomQuote]["quote"]}”`;
+  authorQuote.innerHTML = `- ${quotes[randomQuote]["author"]}`;
+})
+
+generateQuote(quotes);
+
