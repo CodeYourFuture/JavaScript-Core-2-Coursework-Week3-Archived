@@ -60,25 +60,24 @@ function backWard() {
 
 let start, startBack;
 
-document.querySelector(".forward").addEventListener("click",  () =>{
-  imageEl.classList.add("br");
-   forward();
+document.querySelector(".forward").addEventListener("click",  forward)
   
-});
+  
+
 document.querySelector(".backward").addEventListener("click", backWard);
 
 document.querySelector(".autoForward").addEventListener("click", () => {
   if (startBack) {
     clearInterval(startBack);
   }
-  start = setInterval(forward, 2000);
+  start = setInterval(forward, 5000);
 });
 
 document.querySelector(".autoBackward").addEventListener("click", () => {
   if (start) {
     clearInterval(start);
   }
-  startBack = setInterval(backWard, 2000);
+  startBack = setInterval(backWard, 5000);
 });
 
 document.querySelector(".stop").addEventListener("click", () => {
