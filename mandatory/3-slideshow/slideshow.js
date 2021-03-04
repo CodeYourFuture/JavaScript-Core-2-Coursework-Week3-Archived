@@ -37,7 +37,6 @@ function forward() {
 
   if (i < flowers.length) {
     imageEl.src = flowers[i].src;
-    imageEl.classList.add("br") ;
     fname.innerText = flowers[i].name;
   } else {
     i = 0;
