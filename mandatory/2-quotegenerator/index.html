@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
+    <script type="module" src="quotes.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -13,5 +13,29 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+
+    <div class="container bg-orange align-items-center main-section">
+      <div class="container bg-light w-75 inner-canvas">
+        <div class="raw align-items-center">
+          <div class="col-md">
+            <p id="p-quote"></p>
+          </div>
+        </div>
+        <div class="raw align-items-center">
+          <div class="col-md offset-9">
+            <p id="author-name"></p>
+          </div>
+        </div>
+        <button id="quote" type="button" class="btn bg-orange">
+          New Quote
+        </button>
+        <!-- Rectangular switch -->
+        <label class="switch">
+          <input id="checkbox" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span id="generator-info">genenerator: on</span>
+      </div>
+    </div>
   </body>
 </html>
