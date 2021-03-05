@@ -17,9 +17,38 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
+function makeQuote() {
+  let selectedQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").innerHTML = ` ❝ ${selectedQuote.quote}`;
+  document.getElementById("author").innerHTML = selectedQuote.author; 
+ 
 }
+
+//select checkbox
+let hidBox = document.querySelector('#check');
+
+
+// Trigger Toggle Switch and shows quotes 
+hidBox.addEventListener('change', function (e){
+  if(hidBox.checked ){
+      start =   setInterval(makeQuote,60000);
+      }else{
+      clearInterval(start);
+  }
+});
+
+// lad new quote every time page is loaded.  
+window.addEventListener('load', makeQuote);
+
+//selecting the button and add click event to it.
+let btn = document.querySelector("#btnNew");
+btn.addEventListener("click", makeQuote);
+  
+function pickFromArray(choices) {
+ return choices[Math.floor(Math.random() * choices.length)];
+
+}
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.

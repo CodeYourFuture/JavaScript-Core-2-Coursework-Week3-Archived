@@ -1,1 +1,32 @@
 /** Write your CSS in here **/
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;   
+}
+
+#myImg{
+width: 600px;
+height: 400px;
+}
+
+
+
+#img-section{
+ text-align: center;
+}
+
+#btn-holder button{
+background-color: darkred;
+padding: 10px;
+color: white;
+outline: none;
+border: 0;;
+transition: 0.6s;
+}
+
+#btn-holder button:hover{
+  background-color:#000000 ;
+}
+

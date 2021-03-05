@@ -12,11 +12,11 @@ London Class 7 - Chris Owen - HTMl/CSS - Week 1
 
 # Your Details
 
-- Your Name:
-- Your City:
-- Your Slack Name:
+- Your Name:Ali Nosratipour
+- Your City: London
+- Your Slack Name: Alinosratipour
 
 # Homework Details
 
-- Module:
-- Week:
+- Module: js-core-2
+- Week:week 3
