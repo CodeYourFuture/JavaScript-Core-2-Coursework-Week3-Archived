@@ -17,12 +17,10 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
+
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -225,7 +223,7 @@ const quotes = [
   },
   {
     quote:
-      "Teach thy tongue to say, “I do not know,” and thous shalt progress.",
+      "Teach thy tongue to say, “I do not know,” and thou shalt progress.",
     author: "Maimonides",
   },
   {
@@ -490,3 +488,39 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// Selecting elements and defining variables to provide access for dom manipulation.
+let quote = document.querySelector("h3");
+let author = document.querySelector("h4");
+let button = document.querySelector("#button");
+
+// Event listener
+button.addEventListener("click", pickFromArray);
+window.addEventListener("load", pickFromArray);
+
+// Random number generator is used to generate random index number each time the button above is clicked.
+function pickFromArray() {
+  let index = Math.floor(Math.random() * quotes.length);
+
+  quote.innerHTML = '<span>"</span>' + quotes[index].quote +  '<span>"</span>';
+  author.innerHTML = '<span>- </span>' + quotes[index].author;
+
+}
+
+// A toggle switch styled checkbox slider to auto-generate quotes.
+let autoGen = document.querySelector('.checkbox');
+let hidden = document.querySelector('.hidden-text')
+
+let autoGenerate;
+$('.checkbox').click(function() {
+  var checkbox = $('input[type="checkbox"]');
+  if ($(checkbox).prop('checked')) {
+    autoGenerate = setInterval(pickFromArray, 60000);
+    hidden.classList.remove('hidden-text');
+    hidden.classList.add('visible'); 
+  } else {
+    clearInterval(autoGenerate);
+    hidden.classList.remove('visible');
+    hidden.classList.add('hidden-text');
+  }
+});

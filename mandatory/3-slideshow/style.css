@@ -1,1 +1,82 @@
 /** Write your CSS in here **/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+.image-wrapper {
+    background-color: black;
+}
+.slides {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+}
+.slide-hidden{
+    display: none;
+}
+.slide-visible {
+    display: block;
+}
+.slide img {
+    width: 100%;
+    height: 680px;
+}
+#buttons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.auto-back, 
+.stop, 
+.auto-forward {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid whitesmoke;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color:#100236;
+    text-align: center;
+    transition: all 0.2s;
+    background-color: rgb(127, 136, 163);
+    border-radius: 4px;
+}
+.arrow-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    padding: 0;
+    background: none;
+}
+#backBtn, 
+#forwardBtn {
+    border-radius: 50%;
+    border: 0;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+.back {
+   margin-left: 10px;
+
+}
+.forward {
+   margin-right: 10px;
+
+}
+.auto-back:hover, 
+.stop:hover, 
+.auto-forward:hover {
+    color:#030c20;
+    background-color:#85aeeb;
+}
+

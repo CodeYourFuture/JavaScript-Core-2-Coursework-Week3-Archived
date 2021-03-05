@@ -61,10 +61,34 @@ const movies = [
   },
 ];
 
-// create showMovies function
+// Task 1 - Create showMovies function
+let moviesToWatch = document.getElementById('all-movies');
+function showMovies() {
+  movies.forEach(function(item) {
+    let para = document.createElement('p');
+    para.innerHTML = `${item.title}: ${item.director}`;
+    moviesToWatch.appendChild(para);
+  })
+  let moviesIndex = document.querySelector('#movies-number');
+  moviesIndex.innerHTML = movies.length;
+}
+setTimeout(showMovies, 1000);
+// Task 2 - Create a new movie object for your favorite movie
+myMovie = [{
+  title: 'Pay It Forward',
+  director: 'Mimi Leder',
+  type: 'Drama',
+  haveWatched: true,
+}]
 
-
-// create a new movie object for your favorite movie
-
-
-// create addMovies function
+// Task 3 - Create addMovies function
+function addMovies() {
+    myMovie.forEach(function(elem) {
+    let newPara = document.createElement('p');
+    newPara.innerHTML = `${elem.title}: ${elem.director}`;
+    moviesToWatch.appendChild(newPara);
+  })
+  let moviesIndex = document.querySelector('#movies-number');
+  moviesIndex.innerHTML = movies.length + myMovie.length;
+}
+setTimeout(addMovies, 2000);

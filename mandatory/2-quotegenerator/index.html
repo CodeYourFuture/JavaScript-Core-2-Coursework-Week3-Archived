@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -10,8 +11,31 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <div id="container">
+      <h1 id="header">Quote Generator</h1>
+      <div id="quotes">
+        <h3></h3>
+        <div id="author">
+          <h4></h4>
+        </div>
+      </div>
+    </div>
+    <div id="button-container">
+      <div id="awesome-button">
+        <button id="button">New <span style="color:firebrick">Q</span>uote</button>
+        <label class="switch">
+          <input type="checkbox" class="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="hidden">
+        <h5 class="hidden-text">Auto-play: ON</h5>
+      </div>
+    </div>
+    <script src="quotes.js"></script>
   </body>
 </html>
