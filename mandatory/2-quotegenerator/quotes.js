@@ -490,3 +490,17 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+let quoteEL = document.querySelector('#quote');
+let authorEL = document.querySelector('#author');
+let newQuoteEl = document.querySelector('#newQuoteBtn');
+
+function displayQuote() {
+  let singleQuote = pickFromArray(quotes);
+  quoteEL.innerText = singleQuote.quote;
+  authorEL.innerText = singleQuote.author;
+  newQuoteEl.addEventListener('click', displayQuote);
+}
+
+displayQuote();

@@ -1,1 +1,45 @@
 /** Write your CSS in here **/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcyan;
+}
+
+.quote-container {
+  border: solid greenyellow;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 25px;
+}
+
+h1 {
+  color: orangered;
+  margin: 20px;
+  align-self: center;
+}
+
+p {
+  color: orangered;
+  margin: 20px 40px;
+}
+
+button {
+  color: white;
+  background-color: orangered;
+  width: 150px;
+  height: 50px;
+  margin: 20px;
+  border: transparent;
+  border-radius: 10px;
+}
