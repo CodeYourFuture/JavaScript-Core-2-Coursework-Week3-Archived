@@ -8,6 +8,7 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: lightcyan;
@@ -42,4 +43,11 @@ button {
   margin: 20px;
   border: transparent;
   border-radius: 10px;
+}
+
+#quoteLabel {
+  color: blue;
+  font-weight: 700;
+  font-size: large;
+  margin: 30px;
 }

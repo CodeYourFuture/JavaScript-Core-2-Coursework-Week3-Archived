@@ -504,3 +504,24 @@ function displayQuote() {
 }
 
 displayQuote();
+
+
+let quoteGenEl = document.querySelector('#toggle');
+
+let checked = true;
+
+let changeQuote;
+
+let labelEl = document.querySelector('#quoteLabel');
+
+quoteGenEl.addEventListener('click', function () {
+  if (checked) {
+    changeQuote = setInterval(displayQuote, 30000);
+    checked = false;
+    labelEl.innerHTML = 'Auto-play: ON';
+  } else {
+    clearInterval(changeQuote);
+    checked = true;
+    labelEl.innerHTML = 'Tick the box to get random quote every 30 seconds';
+  }
+})
