@@ -37,7 +37,6 @@ function forward() {
 
   if (currentSlide < flowers.length) {
     imageEl.src = flowers[currentSlide].src;
-
     imgName.innerText = flowers[currentSlide].name;
   } else {
     currentSlide = 0;
