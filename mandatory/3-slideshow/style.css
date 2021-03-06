@@ -1,1 +1,13 @@
 /** Write your CSS in here **/
+h1 {
+    margin: 1em;
+}
+
+img {
+    height: 40em;
+    margin: 1em;
+}
+
+.buttons-container {
+    margin: 1em;
+}
