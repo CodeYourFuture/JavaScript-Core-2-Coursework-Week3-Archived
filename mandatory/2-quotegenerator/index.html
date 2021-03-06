@@ -11,7 +11,32 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="pickquote()">
     <!-- Write your HTML in here -->
+    <header></header>
+    <main>
+      <div id="containerid" class="container">
+        <div id="quote-div-id" class="quote-div">
+          
+          <div>
+            <img src="quote-sign.jpg" alt="Quote of the day">
+          </div>
+          <div>
+            <p id="the-quote" class="thequote"></p>
+          </div>
+          
+        </div>
+        <div class="last-container">
+          <div class="cont-last"><p id="who-said" class="thequote"></p></div>
+          <div class="cont-last"><button id="change-quote" class="changebtn" onclick="pickquote()">New quote</button></div>
+        </div>
+        <div class="auto-play-div">
+          <input type="checkbox" id="autoplaycheck" onchange="auotPlayRun()">
+          <label for="autoplaycheck" id="checklabel">Auto Play</label>
+          <span id="chekedText"></span>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
   </body>
 </html>

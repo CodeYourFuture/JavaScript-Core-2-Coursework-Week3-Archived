@@ -13,5 +13,33 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <header></header>
+    <main>
+      <div class="container">
+        <div class="text-div">
+          <p>Image Carousel Simplest Demo</p>
+        </div>
+        <div id="imgdivid" class="image-div">
+          <img id="the-images" src="eagles/photo-161.jpg" alt="The images will appears here">
+        </div>
+        <div class="separator">
+          <br>
+        </div>
+        <div id="divbtns" class="buttons-div">
+          <button id="backbtn" class="btns" onclick="backImage()">Back</button>
+          <button id="forwardbtn" class="btns" onclick="forwardImage()">Forward</button>
+        </div>
+        <div  id="divbtns2" class="buttons-div">
+          <button id="auto-backbtn" class="btns" onclick="autoGo(backImage)">Auto Back</button>
+          <button id="stopbtn" class="btns" onclick="stopIt()">Stop</button>
+          <button id="auto-forwardbtn" class="btns" onclick="autoGo(forwardImage)">Auto Forward</button>
+        </div>
+        <div class="buttons-div">
+          Auto play Time:
+          <input id="timeSet" type="number" />
+        </div>
+      </div>
+    </main>
+    <footer></footer>
   </body>
 </html>

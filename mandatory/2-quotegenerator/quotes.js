@@ -1,3 +1,42 @@
+
+function pickquote(){
+  
+  let quote = pickFromArray(quotes);
+  let theQuote = document.getElementById("the-quote");
+  let whoSaid = document.getElementById("who-said");
+  theQuote.innerText = quote.quote;
+  whoSaid.innerText = quote.author;  
+}
+
+function auotPlayRun(){
+  let checkAuto = document.getElementById("autoplaycheck");
+  let autoSpan = document.getElementById("chekedText");
+  if (checkAuto.checked){
+    autoGo(pickquote);
+    autoSpan.innerHTML = "<br/>Auto Play is on";
+
+  }
+  else
+  {
+    stopIt();
+    autoSpan.innerHTML = "<br/>Auto Play is off";
+  }
+
+}
+
+var myInterval;
+
+function autoGo(callback){
+    clearInterval(myInterval);
+    myInterval = setInterval(() => {
+        callback();
+    }, 60000);
+}
+
+function stopIt(){
+    clearInterval(myInterval);
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,6 +59,9 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+
+// console.log(quotes.length);
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
