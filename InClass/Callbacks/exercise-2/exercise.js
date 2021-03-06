@@ -62,8 +62,15 @@ const movies = [
 ];
 
 // create showMovies function
-
-
+const contentDiv = document.getElementById('all-movies');
+const showMovies = (movie) => {
+  movie.forEach( item => {
+    let pTag = document.createElement('p');
+    contentDiv.appendChild(pTag);
+    pTag.innerHTML = `${item.title} - ${item.director}`;
+  });
+}
+showMovies(movies);
 // create a new movie object for your favorite movie
 
 
