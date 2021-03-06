@@ -490,3 +490,39 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+  let bodyElement = document.querySelector("body");
+  let mainElement = document.createElement("div");
+  let quote = document.createElement("h1");
+  let authorElement = document.createElement("h4");
+  let btnElement = document.createElement("button");
+
+  
+  btnElement.innerHTML = "Refresh";
+  bodyElement.appendChild(mainElement);
+  mainElement.appendChild(quote);
+  mainElement.appendChild(authorElement);
+  mainElement.appendChild(btnElement);
+
+function actionElement (quotes) {
+  let randomBtn = Math.floor(Math.random() * quotes.length);
+  quote.innerHTML = `“ ${quotes[randomBtn]["quote"]}”`;
+
+  authorElement.innerHTML = `- ${quotes[randomBtn]["author"]}`;
+}
+
+// When you click a button on the screen it should change the quote on the screen.
+
+btnElement.addEventListener("click", () => {
+
+  let randomBtn = Math.floor(Math.random() * quotes.length);
+  quote.innerHTML = `“ ${quotes[randomBtn]["quote"]}”`;
+  authorElement.innerHTML = `- ${quotes[randomBtn]["author"]}`;
+
+
+
+  
+})
+
+actionElement(quotes);
