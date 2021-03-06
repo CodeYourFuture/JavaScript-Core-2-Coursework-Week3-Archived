@@ -1,3 +1,4 @@
+
 let timerValue = 0;
 let colorSet = 0;
 let iscount = 0;
@@ -106,7 +107,6 @@ function ResetColor(){
 function stopIt(){
     clearInterval(myInterval);
 }
-
 
 // DO NOT EDIT BELOW HERE
 

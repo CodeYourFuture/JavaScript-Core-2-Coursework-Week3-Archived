@@ -8,6 +8,34 @@ function pickquote(){
   whoSaid.innerText = quote.author;  
 }
 
+function auotPlayRun(){
+  let checkAuto = document.getElementById("autoplaycheck");
+  let autoSpan = document.getElementById("chekedText");
+  if (checkAuto.checked){
+    autoGo(pickquote);
+    autoSpan.innerHTML = "<br/>Auto Play is on";
+
+  }
+  else
+  {
+    stopIt();
+    autoSpan.innerHTML = "<br/>Auto Play is off";
+  }
+
+}
+
+var myInterval;
+
+function autoGo(callback){
+    clearInterval(myInterval);
+    myInterval = setInterval(() => {
+        callback();
+    }, 60000);
+}
+
+function stopIt(){
+    clearInterval(myInterval);
+}
 
 // DO NOT EDIT BELOW HERE
 

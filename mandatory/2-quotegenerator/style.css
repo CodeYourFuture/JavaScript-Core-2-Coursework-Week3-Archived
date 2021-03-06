@@ -1,19 +1,18 @@
-
 /** Write your CSS in here **/
 
-body{
-    background-color: #2a9d8f;
+body {
+  background-color: #2a9d8f;
 }
 
-.container{
-    padding-left: 2%;
-    padding-bottom: 5%;
-    margin-top: 5%;
-    padding-top: 0.1%;
-    background-color: #e76f51;
+.container {
+  padding-left: 2%;
+  padding-bottom: 5%;
+  margin-top: 5%;
+  padding-top: 0.1%;
+  background-color: #e76f51;
 }
 
-.quote-div{
+.quote-div {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -21,49 +20,55 @@ body{
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2rem;
 }
 
-img{
-    width: 50px;
+img {
+  width: 50px;
 }
 
-.thequote{
-   /* font-size: 2rem; */
-   
-    padding-left: 10px;
+.thequote {
+  /* font-size: 2rem; */
+
+  padding-left: 10px;
 }
 
-.last-container{
+.last-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-size: 2rem;
 }
 
-.cont-last{
-    display: flex;
+.cont-last {
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   /* align-content: center; */
 }
 
-#who-said{
-     
-     margin-right: 10%; 
-     
-} 
+#who-said {
+  margin-right: 10%;
+}
 
-.changebtn{
-    /* align: right; */
-    margin-right: 15%;
-    width: 220px;
-    font-size: large;
-    background-color: #264653;
-    color: #e9c46a;
-    font-family: 'Times New Roman', Times, serif;
+.changebtn {
+  /* align: right; */
+  margin-right: 15%;
+  width: 220px;
+  font-size: large;
+  background-color: #264653;
+  color: #e9c46a;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1.5rem;
+}
+
+.auto-play-div {
+  
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.4rem;
 }

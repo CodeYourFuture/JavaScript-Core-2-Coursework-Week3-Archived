@@ -29,9 +29,12 @@
         <div class="last-container">
           <div class="cont-last"><p id="who-said" class="thequote"></p></div>
           <div class="cont-last"><button id="change-quote" class="changebtn" onclick="pickquote()">New quote</button></div>
-          
         </div>
-        
+        <div class="auto-play-div">
+          <input type="checkbox" id="autoplaycheck" onchange="auotPlayRun()">
+          <label for="autoplaycheck" id="checklabel">Auto Play</label>
+          <span id="chekedText"></span>
+        </div>
       </div>
     </main>
     <footer></footer>
