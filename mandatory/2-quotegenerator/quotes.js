@@ -20,7 +20,13 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
-
+function loadQuote() {
+  let index = Math.floor(Math.random() * quotes.length);
+  let quoteElement = document.getElementById("quote");
+  quoteElement.innerHTML = quotes[index].quote;
+  let authorElement = document.getElementById("author");
+  authorElement.innerHTML = quotes[index].author;
+}
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
 const quotes = [
