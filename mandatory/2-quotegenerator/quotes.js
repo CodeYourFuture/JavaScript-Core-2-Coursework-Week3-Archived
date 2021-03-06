@@ -512,18 +512,14 @@ const quotes = [
   main.appendChild(authorQuote);
   main.appendChild(newQuoteBtn);
 
-function generateQuote(quotes) {
+function generateQuote() {
   let randomQuote = Math.floor(Math.random() * quotes.length);
   quote.innerHTML = `“ ${quotes[randomQuote]["quote"]}”`;
   authorQuote.innerHTML = `- ${quotes[randomQuote]["author"]}`;
 }
 
 
-newQuoteBtn.addEventListener("click", () => {
-  let randomQuote = Math.floor(Math.random() * quotes.length);
-  quote.innerHTML = `“ ${quotes[randomQuote]["quote"]}”`;
-  authorQuote.innerHTML = `- ${quotes[randomQuote]["author"]}`;
-})
+newQuoteBtn.addEventListener("click", generateQuote);
 
 generateQuote(quotes);
 

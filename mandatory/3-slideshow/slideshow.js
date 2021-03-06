@@ -12,13 +12,13 @@ Make auto-forward and auto-back buttons to _automatically_ move in that directio
 */// Write your code here
 
 let flowers = [
-    "https://images.unsplash.com/photo-1463554050456-f2ed7d3fec09?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fGZsb3dlcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1505129013025-ecf8f0168373?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGZsb3dlcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1533616688419-b7a585564566?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1476994230281-1448088947db?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGZsb3dlcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
-    "https://images.unsplash.com/photo-1468327768560-75b778cbb551?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1528756514091-dee5ecaa3278?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Zmxvd2Vyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-]
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg",
+    "images/image4.jpg",
+    "images/image5.jpg",
+    "images/image6.jpg",
+];
 
 let body = document.querySelector("body");
 let main = document.createElement("div");
@@ -28,6 +28,7 @@ let image = document.createElement("img");
 
 image.alt = "Photo of the flowers";
 let buttonDiv = document.createElement("div");
+buttonDiv.className = "buttons-container";
 let backBtn = document.createElement("button");
 backBtn.innerHTML = "Back";
 let forwardBtn = document.createElement("button");
@@ -39,16 +40,11 @@ autoForwardBtn.innerHTML = "Auto Forward";
 let stopBtn = document.createElement("button");
 stopBtn.innerHTML = "Stop";
 
-body.appendChild(main);
-body.appendChild(buttonDiv)
-main.appendChild(header);
-main.appendChild(image);
-buttonDiv.appendChild(autoBackBtn);
-buttonDiv.appendChild(backBtn);
-buttonDiv.appendChild(stopBtn);
-buttonDiv.appendChild(forwardBtn);
-buttonDiv.appendChild(autoForwardBtn);
 
+
+body.append(main, buttonDiv);
+main.append(header, image,);
+buttonDiv.append(autoBackBtn, backBtn, stopBtn, forwardBtn, autoForwardBtn);
 
 let index = 1;
 image.src = flowers[index];
@@ -70,7 +66,7 @@ function back() {
     } 
     image.src = flowers[index];
 };
-// let timeScale = input.value;
+
 let interval = 0;
 autoForwardBtn.addEventListener("click", () =>{
     interval = setInterval(forward, 1000);
