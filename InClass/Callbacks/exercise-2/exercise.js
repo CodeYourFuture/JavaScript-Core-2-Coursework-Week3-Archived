@@ -62,9 +62,60 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies() {
+  const targetEl = document.getElementById('all-movies');
+    console.log(targetEl);
+  
+  setTimeout(() => {
+    
+    movies.forEach(element => {
+    
+      let pEl = document.createElement('p');
+      pEl.innerHTML = `${element.title} directed by ${element.director}`;
+      
+      const movieNum = document.getElementById('movies-number');
+        console.log(movieNum);
+      movieNum.innerHTML = movies.length;
+      
+      targetEl.appendChild(pEl);
+    });
+  
+  }, 1000);
 
+} 
+showMovies(movies);
 
 // create a new movie object for your favorite movie
-
+const myMovies = [
+  {
+    title: "Bourne Identity",
+    director: "Matt Damon",
+    type: "action",
+    haveWatched: true,
+  },
+];
 
 // create addMovies function
+function addMovie(movie, callback) {
+  setTimeout(callback, 2000);
+}
+
+function addToMovieList(movies, movie) {
+  console.log('before', movies);  
+  movies.push(movie);
+  console.log('after', movies);
+}
+// Task 3
+addMovie(movies, () => addToMovieList(movies, myMovies));
+
+/*
+Task 4 - **Extra**
+Create a form anywhere on your page. The form should have
+- 4 input text fields, one for each property of your movie object
+- a "save" button.
+When the button is clicked
+- The field values should be used to create a new movie object literal
+- The new movie is then added to the list of movies and gets displayed on your page
+TIP: Use the functions you created on tasks 1-3
+
+*/
