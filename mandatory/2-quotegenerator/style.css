@@ -1,1 +1,46 @@
-/** Write your CSS in here **/
+/** Body **/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(81, 128, 124);
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 40%;
+    height: 20%;
+    text-align: center;
+    background-color: rgb(245, 243, 243);
+    margin: 15em;
+    padding: 2em;
+}
+
+/** Quote **/
+h1{
+    color:#40464b;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+/** Author **/
+h4{
+   color:#40464b;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+/** Button characteristics**/
+button{
+    display: block;
+    border: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color: rgb(241, 167, 81);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+} 
