@@ -1,1 +1,37 @@
 /** Write your CSS in here **/
+body {
+  text-align: center;
+  background-color: orange;
+  font-family: "EB Garamond", serif;
+}
+div {
+  top: 100px;
+  text-align: center;
+  background-color: white;
+  color: orange;
+  width: 70%;
+  margin: 10%;
+  padding: 100px 100px;
+  text-justify: start;
+  font-weight: bold;
+}
+h1 {
+  text-align: justify;
+  text-justify: inter-word;
+}
+h4 {
+  text-align: end;
+  font-weight: bold;
+  padding: 20px 0;
+}
+#newQuote {
+  display: block;
+  text-align: end;
+  background-color: orange;
+  color: white;
+  float: right;
+  padding: 15px;
+  margin: 10px;
+  font-size: 1.4em;
+  
+}
