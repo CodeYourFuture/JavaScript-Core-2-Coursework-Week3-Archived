@@ -28,12 +28,16 @@ function forwardImage(){
 }
 
 var myInterval;
+var timer;
 
 function autoGo(callback){
     clearInterval(myInterval);
+    let timeSet = document.getElementById("timeSet");
+    timer = timeSet.value*1000;
+    // alert(timer);
     myInterval = setInterval(() => {
         callback();
-    }, 3000);
+    }, timer);
 }
 
 function stopIt(){
