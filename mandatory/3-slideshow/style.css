@@ -1,1 +1,66 @@
 /** Write your CSS in here **/
+body {
+    background-color: #F5F5DD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 5% 0;
+    font-family: 'Sacramento', cursive;
+}
+
+.image-holder {
+    width: 65%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+}
+ 
+.buttons {
+    display: inline-block;
+    border-radius: 0.625rem;
+    color: white;
+    background-color: #64447C;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+    border: none;
+    font-family: 'Lobster Two', cursive;
+    font-size: larger;
+    text-align:center;
+    margin-top: 4%;
+    width: 100px; 
+    max-width: 90%;
+    transition: all 0.2s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+#interval-timer {
+    display: block;
+    border-radius: 0.625rem;
+    border-color: #64447C;
+    background-color: #b19cd9;
+    color: #64447C;
+    font-weight: bolder;
+    width: 625px;
+    max-width: 100%;
+    font-size: larger;
+    text-align:center;
+    margin-top: 4%;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+    font-family: 'Lobster Two', cursive;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+.buttons:hover{
+    color:#DDDDDD;
+}

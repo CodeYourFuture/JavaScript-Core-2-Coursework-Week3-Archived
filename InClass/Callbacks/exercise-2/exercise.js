@@ -7,7 +7,7 @@ You are given the following list of movies
 Task 1
 Create a function called "showMovies" that
 - iterates through the "movies" array and
-- for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+- for each movie, it creates an <li> element with the movie title and director and append it to the #all-movies div.
 - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
 
 Task 2
@@ -62,9 +62,64 @@ const movies = [
 ];
 
 // create showMovies function
-
+function showMovies() {
+  let allMovies = document.querySelector("#all-movies");
+  // Antigoni's example
+  allMovies.innerHTML = "";
+  movies.forEach((movie) => {
+    let li = document.createElement("li");
+    li.textContent = `Movie title: ${movie.title} by director: ${movie.director}`;
+    allMovies.appendChild(li);
+  });
+  // My own iteration example
+  // for (let movie of movies) {
+  //   let li = document.createElement("li");
+  //   li.innerText = `${movie.title} by ${movie.director}`;
+  //   allMovies.appendChild(li);
+  // }
+  let newMovieAddition = (document.querySelector("#movies-number").innerText =
+    movies.length); // you can avoid storing it in a variable if you are not using it afterwards
+}
+showMovies();
 
 // create a new movie object for your favorite movie
-
+const myNewFavMovie = {
+  title: "Interstellar",
+  director: "Christopher Nolan",
+  type: "sci-fi",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovie(movie, callback) {
+  setTimeout(function () {
+    movies.push(movie);
+    callback();
+  }, 2000);
+}
+
+// addMovie(myNewFavMovie);
+// If you print out the array of movies you have, you will see the length of the array increased by one
+// But it is not displayed, because it has not been added to the previous showMovies()
+// console.log("Updated movies: ", movies);
+
+// Here is where the callback on line 93 will need to be introduced:
+addMovie(myNewFavMovie, showMovies);
+
+// create a form
+const formEl = document.querySelector("#add-movies");
+const titleEl = document.querySelector("#title");
+const directorEl = document.querySelector("#director");
+const typeEl = document.querySelector("#type");
+const haveWatchedEl = document.querySelector("#haveWatched");
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newMovie = {
+    title: titleEl.value,
+    director: directorEl.value,
+    type: typeEl.value,
+    haveWatched: haveWatchedEl.checked,
+  };
+  addMovie(newMovie, showMovies);
+  //console.log(e.target); // e.target would focus on the whole form, so that's not going to work
+});
