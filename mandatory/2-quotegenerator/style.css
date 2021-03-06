@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+.sectionDesign{
+    width: 350px;
+    height: 200px;
+    position: relative;
+    margin: 30px;
+    background-color:orange;
+    color:orangered;
+    align-items: center;
+}
+.quoteStructure {
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    align-items: center;
+    background: white;
+    margin: 30px;
+   
+}
+.author{
+    padding-left: 100px;
+}
+.buttonClicked{
+    text-align: right;
+}

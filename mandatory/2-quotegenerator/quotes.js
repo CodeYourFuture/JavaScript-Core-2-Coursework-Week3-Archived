@@ -1,3 +1,26 @@
+let quoteName = document.querySelector(".quoteName");
+let authorName = document.querySelector(".author")
+let buttonClicked = document.querySelector("button")
+
+function outputQuotes(quotes) {
+  let anyQuote = Math.floor(Math.random() * quotes.length)
+  quoteName.innerHTML = `${quotes[anyQuote]["quote"]}`;
+  authorName.innerHTML = `-${quotes[randomQuote]["author"]}`;
+} 
+buttonClicked.addEventListener("click", whenButtonClicked)
+function whenButtonClicked() {
+  let anyQuote = Math.floor(Math.random() * quotes.length)
+  quoteName.innerHTML = `${quotes[anyQuote]["quote"]}`;
+  authorName.innerHTML = `-${quotes[randomQuote]["author"]}`;
+}
+outputQuotes(quotes)
+// When the page loads it should show a random quote from the `quotes` array on the screen. It should also show who said the quote.
+
+// When you click a button on the screen it should change the quote on the screen.
+
+// It can look however you like but there is an example in this folder at `quote_generator_example.png`
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
