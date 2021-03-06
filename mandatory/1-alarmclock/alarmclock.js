@@ -6,35 +6,28 @@ function flashing(col) {
     document.getElementsByTagName("body")[0].style.background = "silver";
   }
 }
-let timeInterval;
 let flashingInterval;
+let timeCount;
 function setAlarm() {
+  let timeRemainingInput = document.getElementById("timeRemaining");
   let inputElement = document.getElementById("alarmSet");
-  let inputContent = inputElement.value;
-  if (inputContent != "") {
-    inputElement.value = "";
-    let timeRemainingInput = document.getElementById("timeRemaining");
-    timeRemainingInput.innerHTML = `Time Remaining 00:${inputContent}`;
-    timeInterval = setInterval(function () {
-      if (inputContent === 0) {
-        playAlarm();
-        inputContent--;
-      } else if (inputContent > 0) {
-        inputContent--;
-        let twoDigitTime = inputContent.toLocaleString("en-US", {
-          minimumIntegerDigits: 2,
-          useGrouping: false,
-        });
-        timeRemainingInput.innerHTML = `Time Remaining 00:${twoDigitTime}`;
-      } else if (inputContent <= 0) {
-        flashingInterval = setInterval(function () {
+  let time = inputElement.value;
+    if (time > 0) {
+      let minutes = Math.floor(time / 60);
+      let second = time % 60;
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      second = second < 10 ? `0${second}` : second;
+      inputElement.value--;
+      timeRemainingInput.innerHTML = `Time Remaining ${minutes}:${second}`;
+    } else if (inputElement.value === "0") {
+      timeRemainingInput.innerHTML = `Time Remaining 00:00`;
+      playAlarm();
+       flashingInterval = setInterval(function () {
           flashing("purple");
           flashing("blue");
           flashing("red");
         }, 1);
-      }
-    }, 1000);
-  } else alert("Please enter the time!");
+   }
 }
 
 // DO NOT EDIT BELOW HERE
@@ -43,10 +36,13 @@ var audio = new Audio("alarmsound.mp3");
 
 function setup() {
   document.getElementById("set").addEventListener("click", () => {
-    setAlarm();
+   if(document.getElementById("alarmSet").value!="")
+     timeCount = setInterval(setAlarm, 1000);
+    else alert("Please enter the time!");
   });
 
   document.getElementById("stop").addEventListener("click", () => {
+    clearInterval(timeCount);
     pauseAlarm();
   });
 }
@@ -60,7 +56,7 @@ function pauseAlarm() {
 }
 
 function pauseBtn() {
-  clearInterval(timeInterval);
+  clearInterval(timeCount);
   clearInterval(flashingInterval);
 }
 
