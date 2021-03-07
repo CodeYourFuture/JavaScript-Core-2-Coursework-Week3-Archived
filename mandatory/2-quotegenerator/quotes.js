@@ -16,6 +16,14 @@
 // pickFromArray([1,2,3,4])     //maybe returns 2
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
+document.addEventListener("DOMContentLoaded", function quoteGenerator() {
+  let displayQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.querySelector("h4").innerHTML = `"${displayQuote.quote}"`;
+  document.querySelector("p").innerHTML = `by: ${displayQuote.author}`;
+
+  let btn = document.querySelector('#button');
+  btn.addEventListener("click", quoteGenerator);
+});
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
