@@ -16,10 +16,69 @@
 </head>
 
 <body>
-  <div id="main">
+  <div id="main1">
     <h1>Change my background color</h1>
+  </div>
+  <div id="main">
+    <div class="jumbotron">
+      <h1>My movies list</h1>
+      <ul id="all-movies"></ul>
+      <p class="alert alert-info">
+        Number of movies: <span id="movies-number"></span>
+      </p>
+    </div>
+    <form id="add-movies">
+      <fieldset>
+        <legend>New movie info:</legend>
+        <label class="form-group" for="title">
+          Title
+          <input placeholder="Movie title" class="form-control" id="title" name="title" required />
+        </label>
+        <label class="form-group" for="director">
+          Director
+          <input placeholder="Movie director" class="form-control" id="director" name="director" required />
+        </label>
+        <label class="form-group" for="type">
+          Type
+          <input placeholder="Movie type" class="form-control" id="type" name="type" required />
+        </label>
+        <label class="form-group" for="haveWatched">
+          Watched
+          <input class="form-control" id="haveWatched" name="haveWatched" type="checkbox" /></label>
+      </fieldset>
+      <button type="submit" id="movie-submit" class="btn btn-primary">
+        Add movie
+      </button>
+    </form>
   </div>
   <script src="exercise.js"></script>
 </body>
 
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <style>
+fieldset {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-right: 20px;
+}</style> -->
+  <!-- <title>Document</title>
+</head>
+<body>
+  
+  <script src="exercise.js"></script>
+</body>
+</html> -->
