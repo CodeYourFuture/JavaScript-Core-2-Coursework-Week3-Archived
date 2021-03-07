@@ -490,3 +490,39 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function quoteGen(){
+  let chosenQuote = pickFromArray(quotes);
+  
+  let quoteElem = document.getElementById('quote');
+  let authorElem = document.getElementById('author');
+  let nextBtn = document.getElementById('next');
+
+  quoteElem.innerText = chosenQuote.quote;
+  authorElem.innerText = chosenQuote.author;
+
+  nextBtn.addEventListener('click', quoteGen);
+}
+
+// function autoplay(){
+//   if 
+// }
+// let checked = document.getElementById('customSwitch1').checked;
+// console.log(checked);
+document.getElementById('customSwitch1').addEventListener('change', () => {
+  let checked = document.getElementById('customSwitch1').checked;
+
+  if (checked == true) {
+    let autoPlay = setInterval(function (){
+      console.log(autoPlay);
+      quoteGen();
+      if (checked == false) {
+        clearInterval(autoPlay);
+      }
+    }, 5000 );
+  }
+
+  
+})
+
+quoteGen()

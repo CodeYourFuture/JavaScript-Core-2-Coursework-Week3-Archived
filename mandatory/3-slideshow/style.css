@@ -1,1 +1,8 @@
 /** Write your CSS in here **/
+/* #div {
+    display: flex;
+    flex-direction: column;
+} */
+img {
+    height: 300px;
+}

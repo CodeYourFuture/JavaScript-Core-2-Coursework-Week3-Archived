@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -13,5 +12,20 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <img id="img" src="https://www.humanesociety.org/sites/default/files/styles/1441x612/public/2018/08/kitten-440379.jpg?h=c8d00152&itok=HVqvfhtg" alt="">
+      </div>
+        
+      <button id="prev">Auto Backwards</button>
+      <button id="stop">Stop</button>
+      <button id="next">Auto Forward</button>
+      <label for="time-change"></label>
+      <input type="text" id="input" name="time-change">
+      <button id="enter">enter</button>
+    </div>
+
+
+    <script src="slideshow.js"></script>
   </body>
 </html>
