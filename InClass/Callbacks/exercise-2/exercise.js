@@ -62,9 +62,66 @@ const movies = [
 ];
 
 // create showMovies function
-
+const showMovies=function (movies){
+  //let access the content
+  //let access the spam
+  let getSpan=document.getElementById('movies-number');
+  let content=document.getElementById('all-movies');
+  movies.forEach((movie,index) => {
+    delete movies[index];
+    //in each iteration create a paragraph and append it to the content div
+    let createParagraph=document.createElement('p');
+    // done that every 1 seconds which is 1000 milliseconds
+    setTimeout(() =>{
+      createParagraph.innerHTML=`<strong>Movie Title</strong>${movie.title} <strong>Director</strong> ${movie.director}`
+    content.appendChild(createParagraph);
+    
+    },1000)
+    getSpan.textContent=movies.length;
+ 
+  
+  });
+ 
+}
+showMovies(movies)
 
 // create a new movie object for your favorite movie
-
+const myFavMovie =[
+ {
+  title: "The Fallen",
+  director: "Lauren Kate",
+  type: "horror",
+  haveWatched: false,
+}
+]
 
 // create addMovies function
+const addMovies= (movie) => {
+  setTimeout(() =>{
+    movies.push(movie);
+    showMovies(movies)
+  },2000)
+}
+addMovies(myFavMovie);
+
+// let get the button to add the movie
+var btnSubmit=document.getElementById('movie-submit');
+
+// add a click event listener to it
+btnSubmit.addEventListener('click', (e) =>{
+  // 
+    
+  let inputField={
+    title:document.getElementById('title').value,
+    director:document.getElementById('director').value,
+    type:document.getElementById('type'),
+    haveWatched:document.getElementById('haveWatched').value
+
+  }
+  //add into the movies object whatever values is enter in the field
+  addMovies(inputField,movies)
+  // let us reset the form to normal
+  // access the form id
+  let formReset=document.getElementById('add-movies');
+  formReset.reset();
+})

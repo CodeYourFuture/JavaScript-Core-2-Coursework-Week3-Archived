@@ -11,3 +11,19 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+var content=document.querySelector('#main')
+var colours=[
+    'red',
+    'orange',
+    'green',
+    'maroon',
+    'pink',
+    'yellow',
+    'purple'
+]
+colours.forEach((colour,index)=> {
+    setTimeout(function (){
+        content.style.backgroundColor=colour;
+        //index++;
+    },index * 5000)
+})
