@@ -4,23 +4,23 @@ function setAlarm() {
   let = timeRemainingValue = document.querySelector("#timeRemaining");
   timeRemainingValue.innerHTML = "Time Remaining: <span>00:00</span>";
 
-  let time = document.querySelector("span")
-  time.innerText = timeConvert(setTime.value)
+  let time = document.querySelector("span");
+  time.innerText = timeConvert(setTime.value);
 
   function timeConvert(value) {
-    let number = +value
+    let number = +value;
 
     let minutes = Math.floor(number / 60);
     let seconds = number % 60;
 
     minutes = (minutes < 10 ? "0" : "") + minutes;                                  //We created the two conditions, so when setTime.value = 60 seconds or more,
-    seconds = (seconds < 10 ? "0" : "") + seconds                                   //we show the "time remaining" in 01: 00 format rather than 1: 00.                            
+    seconds = (seconds < 10 ? "0" : "") + seconds;                                   //we show the "time remaining" in 01: 00 format rather than 1: 00.                            
 
-    return `${minutes}:${seconds}`
+    return `${minutes}:${seconds}`;
   }
 
   let getSecondsRightDigit = +time.innerText.slice(-1);                             //as an example, this will give us the number inside this bracket 00:0[0]
-  let getSecondsLeftDigit = +time.innerText.slice(-2, -1)                           //as an example, this will give us the number inside this bracket 00:[0]0
+  let getSecondsLeftDigit = +time.innerText.slice(-2, -1);                           //as an example, this will give us the number inside this bracket 00:[0]0
   let getMinutesRightDigit = +time.innerText.slice(1, -3);                          //as an example, this will give us the number inside this bracket 0[0]:00
   let getMinutesLeftDigit = +time.innerText.slice(0, -4);                           //as an example, this will give us the number inside this bracket [0]0:00
 
@@ -78,9 +78,9 @@ function setAlarm() {
 
       }
 
-      time.innerText = `${getMinutesLeftDigit}${getMinutesRightDigit}:${getSecondsLeftDigit}${getSecondsRightDigit}`
+      time.innerText = `${getMinutesLeftDigit}${getMinutesRightDigit}:${getSecondsLeftDigit}${getSecondsRightDigit}`;
 
-    } else {                                                                                 //This condition when the it is this format e.g 123:00
+    } else {                                                                                 //This condition when it's in this format e.g 123:00
 
       let getMinutes = +time.innerText.slice(0, -3)
 
@@ -117,7 +117,7 @@ function setAlarm() {
         });
       }
 
-      time.innerText = `${getMinutes}:${getSecondsLeftDigit}${getSecondsRightDigit}`
+      time.innerText = `${getMinutes}:${getSecondsLeftDigit}${getSecondsRightDigit}`;
 
     }
   }

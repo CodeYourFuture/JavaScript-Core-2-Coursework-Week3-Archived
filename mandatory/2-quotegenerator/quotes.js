@@ -490,3 +490,18 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+document.addEventListener("DOMContentLoaded", getQuote)              //or we can use window.addEventListener("load" , getQuote)
+
+let ourQuote = document.querySelector(".text")
+let ourAuthor = document.querySelector(".author")
+let quoteButton = document.querySelector(".new-quotes")
+quoteButton.addEventListener("click", getQuote)
+
+function getQuote() {
+  let randomNumber = Math.floor(Math.random() * quotes.length)
+  ourQuote.innerText = quotes[randomNumber].quote
+  ourAuthor.innerText = quotes[randomNumber].author
+}
+
