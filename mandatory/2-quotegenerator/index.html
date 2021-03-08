@@ -2,16 +2,37 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class=" container-fluid">
     <!-- Write your HTML in here -->
+    <div class="quote-container row text-center">
+      <div class="col-8 offset-1 quote-div">
+        <div>
+          <h1 id="quote"></h1>
+          <p id="author"></p>
+        </div>
+      </div>
+      <div class="col-10 btnToggle">
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Auto quote</label>
+      </div>
+      <button id="next" class="btn btn-primary new-quote">New Quote</button>
+    </div>
+    </div>
+    <p id="autoPlayOn">Auto-Play: ON</p>
+
+    
+      
+    <script src="quotes.js"></script>
   </body>
 </html>

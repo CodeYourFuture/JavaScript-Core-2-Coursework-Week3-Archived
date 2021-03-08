@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -13,5 +12,39 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <div id="cont" class="container-fluid justify-content-center">
+      <div class="row imgCont">
+        <img
+          id="img"
+          src="https://www.humanesociety.org/sites/default/files/styles/1441x612/public/2018/08/kitten-440379.jpg?h=c8d00152&itok=HVqvfhtg"
+          alt=""
+        />
+      </div>
+
+      <div class="row justify-content-center all-btns">
+        <!-- manual prev -->
+        <button id="prev" type="button" class="btn prev"><</button>
+        <!-- auto btns and stop -->
+        <button id="autoPrev" type="button" class="btn btn-info col-3 col-md-3">
+          Auto Backwards
+        </button>
+        <button id="stop" type="button" class="btn btn-danger">Stop</button>
+        <button id="autoNext" type="button" class="btn btn-info col-3 col-md-3">
+          Auto Forward
+        </button>
+        <!-- manual next -->
+        <button id="next" type="button" class="btn next">></button>
+        
+      </div>
+
+      <div class="row justify-content-center input-div">
+        <label for="time-change">Slideshow Speed: </label>
+        <input type="text" id="input" name="time-change" class="col-3" />
+        <button id="enter" class="btn btn-secondary">enter</button>
+      </div>
+    </div>
+    <p class="text-center">Takes value in milliseconds (e.g 5000 = 5 seconds).</br>Once you click enter, click either the auto forward or auto backward button for slideshow to start. </p>
+
+    <script src="slideshow.js"></script>
   </body>
 </html>
