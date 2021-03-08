@@ -1,17 +1,37 @@
 /** Write your CSS in here **/
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
     height: 100vh;
+    font-family: 'DotGothic16', sans-serif;
 }
 
 .quote-container {
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
+    background-image: url("https://webstockreview.net/images/tv-frame-png-9.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 15%;
+    position: relative;
+    height: 665px;;
+}
+
+.quote-div {
+    height: 40%;
+}
+
+p {
+    margin-top: 30px;
+    font-size: 1.3rem;
+}
+
+.new-quote {
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+#autoPlayOn {
+    visibility: hidden;
 }
 

@@ -504,25 +504,29 @@ function quoteGen(){
   nextBtn.addEventListener('click', quoteGen);
 }
 
-// function autoplay(){
-//   if 
-// }
-// let checked = document.getElementById('customSwitch1').checked;
-// console.log(checked);
+
 document.getElementById('customSwitch1').addEventListener('change', () => {
   let checked = document.getElementById('customSwitch1').checked;
+  let autoOn = document.getElementById('autoPlayOn');
+  console.log(checked)
 
+  if (checked == true ) {
+    autoOn.style.visibility = "visible";
+  } else if (checked == false) {
+    autoOn.style.visibility = "hidden";
+  }
+  
   if (checked == true) {
     let autoPlay = setInterval(function (){
-      console.log(autoPlay);
       quoteGen();
-      if (checked == false) {
+      document.getElementById('customSwitch1').addEventListener('change', () =>{
+        if (checked == false) {
+          autoOn.style.visibility = "hidden";
+        }
         clearInterval(autoPlay);
-      }
-    }, 5000 );
+      });
+    }, 2000 );
   }
-
-  
 })
 
 quoteGen()

@@ -1,8 +1,54 @@
-/** Write your CSS in here **/
-/* #div {
-    display: flex;
-    flex-direction: column;
-} */
+body {
+  box-sizing: border-box;
+}
+
+.imgCont {
+  overflow: hidden;
+}
+
 img {
-    height: 300px;
+  height: 400px;
+  object-fit: contain;
+}
+
+#cont {
+  position: relative;
+}
+
+.next,
+.prev {
+  position: absolute;
+  top: 0;
+  font-size: 4rem;
+  color: #17a2b8;
+  background-color: aliceblue;
+  height: 400px;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: -20px;
+}
+
+.all-btns {
+  margin-top: 10px;
+}
+
+#input {
+  margin-left: 5px;
+}
+
+.input-div {
+  margin: 20px;
+}
+
+button {
+  margin-left: 20px;
+}
+
+.btn:hover {
+  color: #17a2b8;
 }
