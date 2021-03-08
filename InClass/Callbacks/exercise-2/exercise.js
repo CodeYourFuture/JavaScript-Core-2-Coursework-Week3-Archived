@@ -60,11 +60,39 @@ const movies = [
     haveWatched: false,
   },
 ];
+const allMovies = document.getElementById("all-movies");
+const moviesNumber = document.getElementById("movies-number");
+const moviesContainer = document.createElement("div");
+allMovies.append(moviesContainer);
 
 // create showMovies function
+const showMovies = () => {
+  moviesContainer.innerHTML = "";
 
+  for (let movie of movies) {
+    const paragraph = document.createElement("p");
+    paragraph.innerText = `${movie.title} by ${movie.director}`;
+    moviesContainer.append(paragraph);
+  }
+
+  moviesNumber.innerText = movies.length;
+};
 
 // create a new movie object for your favorite movie
-
+const myFavMovie = {
+  title: "Into the Wild",
+  director: "Sean Penn",
+  type: "drama",
+  haveWatched: false,
+};
 
 // create addMovies function
+const addMovies = (movie) => {
+  movies.push(movie);
+};
+
+setTimeout(showMovies, 1000);
+setTimeout(() => {
+  addMovies(myFavMovie);
+  showMovies();
+}, 3000);

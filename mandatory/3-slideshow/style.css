@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+.button {
+  width: 150px;
+  border: none;
+}
+
+.forward {
+  background-color: pink;
+}
+
+.back {
+  background-color: lightblue;
+}
+
+.image {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
