@@ -1,3 +1,33 @@
+let chooseButton = document.getElementById("choose");
+let isAutoPlayOn = false;
+let sentenceSpace = document.querySelector("#sentence");
+let authorSpace = document.querySelector("#author");
+let toggleButton = document.getElementsByTagName("input")[0];
+let random;
+let interval;
+
+function selectQuote() {
+  random = Math.floor(Math.random() * Math.floor(quotes.length));
+  sentenceSpace.textContent = quotes[random].quote;
+  authorSpace.textContent = quotes[random].author;
+}
+chooseButton.addEventListener("click", selectQuote);
+
+function autoGenerate() {
+  if (!isAutoPlayOn) {
+    interval = setInterval(() => {
+      random = Math.floor(Math.random() * Math.floor(quotes.length));
+      sentenceSpace.textContent = quotes[random].quote;
+      authorSpace.textContent = quotes[random].author;
+    }, 5000);
+    isAutoPlayOn = true;
+  } else {
+    clearInterval(interval);
+    isAutoPlayOn = false;
+  }
+}
+toggleButton.addEventListener("click", autoGenerate);
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -38,7 +68,7 @@ const quotes = [
   },
   {
     quote:
-      "Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.",
+      "Two roads diverged in a wood, I took the one less traveled by and that has made all the difference.",
     author: "Robert Frost",
   },
   {
@@ -81,7 +111,7 @@ const quotes = [
   },
   {
     quote:
-      "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails.  Explore, Dream, Discover.",
+      "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover.",
     author: "Mark Twain",
   },
   {

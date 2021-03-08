@@ -2,16 +2,45 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <main>
+      <section class="container">
+        <!-- Write your HTML in here -->
+        <div class="sentence-wrapper">
+          <h1 id="sentence">
+            Be the woman who fixes another woman's crown without telling the
+            world it was crooked.
+          </h1>
+        </div>
+        <div class="author-wrapper">
+          <h4 id="author">by Anonymous</h4>
+        </div>
+        <div class="switch-wrapper">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="button-wrapper">
+          <button id="choose" type="button">Select the next quote up</button>
+        </div>
+      </section>
+    </main>
+    <script src="quotes.js"></script>
   </body>
 </html>
