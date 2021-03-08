@@ -5,7 +5,6 @@ let authorSpace = document.querySelector("#author");
 let toggleButton = document.getElementsByTagName("input")[0];
 let random;
 let interval;
-let resetForm;
 
 function selectQuote() {
   random = Math.floor(Math.random() * Math.floor(quotes.length));
@@ -28,6 +27,7 @@ function autoGenerate() {
   }
 }
 toggleButton.addEventListener("click", autoGenerate);
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

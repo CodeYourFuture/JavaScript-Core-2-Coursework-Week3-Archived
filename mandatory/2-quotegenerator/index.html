@@ -18,24 +18,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
-    <div id="quotes">
-      <!-- Space for quotes to be displayed -->
-      <h1 id="sentence">
-        Be the woman who fixes another woman's crown without telling the world
-        it was crooked.
-      </h1>
-      <h4 id="author">by Anonymous</h4>
-      <!-- Toggle switch -->
-      <label class="switch">
-        <input type="checkbox" />
-        <span class="slider round"></span>
-      </label>
-    </div>
-    <div>
-      <!-- Button -->
-      <button id="choose" type="button">Select the next quote up</button>
-    </div>
+    <main>
+      <section class="container">
+        <!-- Write your HTML in here -->
+        <div class="sentence-wrapper">
+          <h1 id="sentence">
+            Be the woman who fixes another woman's crown without telling the
+            world it was crooked.
+          </h1>
+        </div>
+        <div class="author-wrapper">
+          <h4 id="author">by Anonymous</h4>
+        </div>
+        <div class="switch-wrapper">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="button-wrapper">
+          <button id="choose" type="button">Select the next quote up</button>
+        </div>
+      </section>
+    </main>
     <script src="quotes.js"></script>
   </body>
 </html>

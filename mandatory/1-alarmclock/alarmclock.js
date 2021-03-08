@@ -4,21 +4,24 @@ let remainingSeconds; // you can't use this variable name on line 15, because on
 let isButtonThere = false; // pause button is not visible until setAlarm() is called
 let isPauseOn = false; // response on second click of pause button
 let flashing;
+let decreaseTimerID;
 
 function setAlarm() {
   // setting variables, getting input and making sentence
   let body = document.getElementsByTagName("body")[0];
-  body.style.backgroundColor = "pink";
+  body.style.backgroundColor = "#e1c699";
   let timeRemaining = document.getElementById("timeRemaining");
   remainingSeconds = document.getElementById("alarmSet").value;
   let formattedTime = formatTimer(remainingSeconds);
   timeRemaining.textContent = `Time Remaining: ${formattedTime}`;
+
   // adding a set interval to decrease time, change colours and sentence
-  let decreaseTimer = setInterval(function () {
-    document.getElementById("alarmSet").value = " ";
+  decreaseTimerID = setInterval(function () {
+    document.getElementById("alarmSet").value = "";
     remainingSeconds--;
     formattedTime = formatTimer(remainingSeconds);
     timeRemaining.textContent = `Time Remaining: ${formattedTime}`;
+
     // determining what to do if it reaches zero
     if (remainingSeconds === 0) {
       clearInterval(decreaseTimer);
@@ -34,6 +37,7 @@ function setAlarm() {
   if (remainingSeconds <= 0) {
     return;
   }
+
   // adding a pause button with a restart aspect
   if (!isButtonThere) {
     let buttons = document.getElementById("buttons");
@@ -42,7 +46,7 @@ function setAlarm() {
     buttons.appendChild(pauseButton);
     function pauseAlarm() {
       if (!isPauseOn) {
-        clearInterval(decreaseTimer);
+        clearInterval(decreaseTimerID);
         pauseButton.textContent = "Resume Alarm";
         isPauseOn = true;
       } else {
@@ -56,6 +60,7 @@ function setAlarm() {
     isButtonThere = true;
   }
 }
+
 // formatting time [found on Google]
 function formatTimer(seconds) {
   if (seconds <= 0) {
