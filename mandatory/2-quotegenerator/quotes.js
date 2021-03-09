@@ -490,3 +490,35 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function createPage() {
+  let divEl = document.createElement("div");
+  let h5El = document.createElement("h5");
+  let h6El = document.createElement("h6");
+  let btnEl = document.createElement("button");
+
+  btnEl.innerHTML = "New Quote";
+  let newObj = pickFromArray(quotes);
+  h5El.innerHTML = newObj.quote;
+  h6El.innerHTML = newObj.author;
+  h6El.className = ".col-4 .offset-4";
+  btnEl.className = ".col-4 .offset-4";
+
+  divEl.appendChild(h5El);
+  divEl.appendChild(h6El);
+  divEl.appendChild(btnEl);
+  divEl.className = "col-6 align-item-end align-items-center";
+  document.body.appendChild(divEl);
+  document.body.className = "row justify-content-md-center align-items-center";
+
+  btnEl.addEventListener("click", (e) => {
+    e.preventDefault();
+    newObj = pickFromArray(quotes);
+    h5El.innerHTML = newObj.quote;
+    h6El.innerHTML = newObj.author;
+  });
+}
+
+//createPage();
+
+window.onload = createPage;
