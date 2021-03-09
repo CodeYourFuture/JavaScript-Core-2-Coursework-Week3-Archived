@@ -62,16 +62,36 @@ const movies = [
 ];
 
 // create showMovies function
-const contentDiv = document.getElementById('all-movies');
+
+const contentDiv = document.getElementById("all-movies");
+const spanEl = document.getElementById("movies-number");
+
 const showMovies = (movie) => {
-  movie.forEach( item => {
-    let pTag = document.createElement('p');
+  movie.forEach((item) => {
+    let pTag = document.createElement("p");
     contentDiv.appendChild(pTag);
     pTag.innerHTML = `${item.title} - ${item.director}`;
+    spanEl.innerHTML = `${movies.length}`;
   });
-}
+};
 showMovies(movies);
+
 // create a new movie object for your favorite movie
+
+const newMovie = {
+  title: "47 Ronin",
+  director: "Carl Rinsch",
+  type: "action",
+  haveWatched: true,
+};
 
 
 // create addMovies function
+
+const addMovie = (movie) => {
+  setTimeout(() => {
+    movie.push(newMovie);
+    showMovies(movies.slice(-1));
+  }, 2000);
+};
+addMovie(movies);
