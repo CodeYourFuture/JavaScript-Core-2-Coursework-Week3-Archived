@@ -59,19 +59,8 @@ btnsName.forEach((name) => {
   btnGroup.appendChild(btn);
 });
 
+let mybody = document.getElementsByTagName("body");
+
 //document.body.appendChild(img);
 //document.body.appendChild(btnGroup);
 document.body.append(img, btnGroup);
-
-const parent = document.createElement("div");
-const child = document.createElement("p");
-const child1 = document.createElement("p");
-// Appending Node Objects
-parent.append(child); // Works fine
-parent.append(child, child1); // Works fine
-parent.appendChild(child); // Works fine
-parent.appendChild(child,child1); // Throws error
-// Appending DOMStrings
-parent.append("Hello world"); // Works fine
-parent.appendChild("Hello world"); // Throws error
-
