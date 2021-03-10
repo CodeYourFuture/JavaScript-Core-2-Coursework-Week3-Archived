@@ -76,7 +76,7 @@ function showMovies() {
 const myFavMovie = {
   title: "Spirited Away",
   director: "Hayao Miyazaki",
-  type: "Animation",
+  type: "Animation, Fantasy",
   haveWatched: true,
 }
 

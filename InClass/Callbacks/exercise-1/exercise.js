@@ -15,7 +15,7 @@ Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 let colorBackground = document.getElementById("main")[0];
 
 function changeBackground1() {
-  setTimeout(function() { main.style.backgroundColor = "red"}, 5000)
+  setTimeout(function() { main.style.backgroundColor = "red"}, 5001)
 }
 changeBackground1();
 
