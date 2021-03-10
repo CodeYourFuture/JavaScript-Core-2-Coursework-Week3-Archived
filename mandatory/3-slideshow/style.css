@@ -1,1 +1,9 @@
 /** Write your CSS in here **/
+#my-image {
+  height: 20em;
+  width: auto;
+}
+
+body {
+  margin: 2em;
+}
