@@ -1,4 +1,33 @@
-function setAlarm() {}
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+}
+
+let test = document.getElementById("set");
+
+console.log(test);
+
+function displayTime (timeRemain) {
+  let timeTitle = document.getElementById('timeRemaining');
+  let minutes = pad(Math.floor(timeRemain/60), 2);
+  let seconds = pad(timeRemain % 60, 2);
+  timeTitle.innerText = `Time Remaining: ${minutes}:${seconds}`;
+}
+
+function setAlarm() {
+  let timeRemain = document.getElementById('alarmSet').value;
+  displayTime(timeRemain);
+  window.setInterval(function (){
+    if (timeRemain > 0) {
+      timeRemain -= 1;
+    displayTime(timeRemain);
+    } else {
+      playAlarm();
+      document.body.style.backgroundColor = 'red';
+    }
+  }, 1000);
+}
 
 // DO NOT EDIT BELOW HERE
 
@@ -23,3 +52,5 @@ function pauseAlarm() {
 }
 
 window.onload = setup;
+
+
