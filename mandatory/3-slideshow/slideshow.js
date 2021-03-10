@@ -71,9 +71,11 @@ function hold() {
 }
 
 function autoBackward() {
+    hold();
     timeInterval = setInterval(goBack, 2000)
 }
 
 function autoGoForward() {
+    hold();
     timeInterval = setInterval(goForward, 2000)
 }

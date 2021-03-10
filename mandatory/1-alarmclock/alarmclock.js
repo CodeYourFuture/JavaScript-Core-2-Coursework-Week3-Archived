@@ -11,6 +11,7 @@ btnPause.textContent = "Pause";
 divElement[1].appendChild(btnPause);
 let timeInterval;
 let inputValue;
+let countDown = 0;
 
 // Events
 stopAlarm.addEventListener("click", stopAlarmFunc)
@@ -20,23 +21,27 @@ btnPause.addEventListener("click", pause);
 function setAlarm() {
   inputValue = input.value;
 
-  if (!inputValue) {
+  if (!countDown && !inputValue) {
     alert("Please enter a valid number");
   }
 
+  if (!countDown) {
+    countDown = inputValue;
+  }
+
   timeInterval = setInterval(() => {
-    if (inputValue <= 0) {
+    if (countDown <= 0) {
       clearInterval(timeInterval);
       playAlarm();
       body.style.backgroundColor = "red";
     }
 
-    let minutes = Math.floor(inputValue / 60);
+    let minutes = Math.floor(countDown / 60);
     minutes = minutes > 9 ? minutes : "0" + minutes;
-    let seconds = inputValue % 60;
+    let seconds = countDown % 60;
     seconds = seconds > 9 ? seconds : "0" + seconds;
     timeRemaining.textContent = `Time Remaining: ${minutes}:${seconds}`;
-    inputValue--;
+    countDown--;
 
   }, 1000)
 
@@ -45,6 +50,7 @@ function setAlarm() {
 
 function stopAlarmFunc() {
   pauseAlarm();
+  countDown = 0;
   body.style.backgroundColor = "white";
   timeRemaining.textContent = `Time Remaining: 00:00`;
 }
