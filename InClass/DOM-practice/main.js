@@ -6,7 +6,7 @@ console.log("Testing JS file loaded!");
 
 const changeSectionColor = (colour) => {
   let sectionTag = document.querySelectorAll("section");
-  sectionTag.forEach(item => item.style.backgroundColor = colour);
+  sectionTag.forEach((item) => (item.style.backgroundColor = colour));
 };
 changeSectionColor("white");
 
@@ -14,9 +14,11 @@ changeSectionColor("white");
 
 // Without changing any of the HTML or CSS, update the images on the page so that they are all centered.
 const centerImages = () => {
-    let imgTag = document.querySelectorAll("img");
-    imgTag.forEach(element => element.style.textAlign = 'center');
-}
+  let imgCenter = document.querySelectorAll("img");
+  imgCenter.forEach((element) => {
+    element.classList.add("content-title");
+  });
+};
 centerImages();
 // Hint: look at the CSS to see if there are any classes already written which you can use.
 
