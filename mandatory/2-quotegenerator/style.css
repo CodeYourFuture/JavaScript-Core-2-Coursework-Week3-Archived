@@ -1,1 +1,49 @@
 /** Write your CSS in here **/
+
+body {
+  background-color: rgba(247, 121, 17, 255);
+  font-family: "Times New Roman", Times, serif;
+}
+main {
+  background-color: white;
+  margin: 10%;
+}
+#quotes-image {
+  width: 35px;
+  height: auto;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+#message-div {
+  display: flex;
+  flex-direction: row;
+  max-height: fit-content;
+  align-items: baseline;
+}
+
+#quote-message {
+  font-size: 28px;
+  margin-left: 1em;
+  margin-right: 2em;
+  font-weight: bold;
+  color: rgba(247, 121, 17, 255);
+}
+#bottom-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#quote-author {
+  margin-left: 2em;
+  margin-right: 2em;
+  color: rgba(247, 121, 17, 255);
+  font-size: 18px;
+  font-weight: bold;
+}
+#next-button {
+  margin-left: 2em;
+  margin-bottom: 1em;
+  margin-right: 2em;
+  background-color: rgba(247, 121, 17, 255);
+  color: white;
+}
