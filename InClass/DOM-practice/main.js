@@ -31,3 +31,31 @@ for (let image = 0; image < targetImage.length; image++) {
 // Task 3
 
 // Google the date of birth and death of each of the people on the page. Without changing any of the HTML or CSS, add this in a paragraph to the end of their <section>.
+
+let addParagraph = [
+    {
+        name: 'Grace Hopper',
+        dateOfBirth: '9 December 1906',
+        dateOfDeath: '1 January 1992',
+    },
+    {
+        name: 'Katherine Johnson',
+        dateOfBirth: '26 August 1918',
+        dateOfDeath: '24 February 2020',
+    },
+    {
+        name: 'Ada Lovelace',
+        dateOfBirth: '10 December 1815',
+        dateOfDeath: '27 November 1852',
+    },
+];
+
+
+addParagraph.forEach(element => {
+    console.log(element);
+        let task3Paragraph = document.createElement('p');
+        task3Paragraph.innerHTML = `${element.name} was born on ${element.dateOfBirth} and died on ${element.dateOfDeath}`;
+        console.log(task3Paragraph);
+        
+    targetSection.appendChild(task3Paragraph);
+});
