@@ -9,7 +9,7 @@ console.log(targetSection);
 for (let section = 0; section < targetSection.length; section++) {
     targetSection[section].style.backgroundColor = 'white';    
 }
-// targetSection.style.backgroundColor = 'white';
+
 
 
 
@@ -19,7 +19,11 @@ for (let section = 0; section < targetSection.length; section++) {
 // Without changing any of the HTML or CSS, update the images on the page so that they are all centered.
 
 // Hint: look at the CSS to see if there are any classes already written which you can use.
-
+const targetImage = document.querySelectorAll('img');
+console.log(targetImage);
+for (let image = 0; image < targetImage.length; image++) {
+    targetImage[image].className = 'content-title';
+}
 
 
 
