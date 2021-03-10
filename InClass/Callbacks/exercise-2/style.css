@@ -1,0 +1,16 @@
+fieldset {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-right: 20px;
+}
+
+body {
+  padding: 30px;
+}

@@ -1,29 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CodeYourFuture - Callbacks</title>
+    <meta name="description" content="Callbacks" />
+    <meta name="author" content="CodeYourFuture" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>CodeYourFuture - Callbacks</title>
-  <meta name="description" content="Callbacks">
-  <meta name="author" content="CodeYourFuture">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      padding: 30px;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="main">
-    <div class="jumbotron">
-      <h1>My movies</h1>
-      <div id="all-movies">
-        <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
+  <body>
+    <div id="main">
+      <div class="jumbotron">
+        <h1>My movies list</h1>
+        <ul id="all-movies"></ul>
+        <p class="alert alert-info">
+          Number of movies: <span id="movies-number"></span>
+        </p>
       </div>
+      <form id="add-movies">
+        <fieldset>
+          <legend>New movie info:</legend>
+          <label class="form-group" for="title">
+            Title
+            <input
+              placeholder="Movie title"
+              class="form-control"
+              id="title"
+              name="title"
+              required
+            />
+          </label>
+          <label class="form-group" for="director">
+            Director
+            <input
+              placeholder="Movie director"
+              class="form-control"
+              id="director"
+              name="director"
+              required
+            />
+          </label>
+          <label class="form-group" for="type">
+            Type
+            <input
+              placeholder="Movie type"
+              class="form-control"
+              id="type"
+              name="type"
+              required
+            />
+          </label>
+          <label class="form-group" for="haveWatched">
+            Watched
+            <input
+              class="form-control"
+              id="haveWatched"
+              name="haveWatched"
+              type="checkbox"
+          /></label>
+        </fieldset>
+        <button type="submit" id="movie-submit" class="btn btn-primary">
+          Add movie
+        </button>
+      </form>
     </div>
     <script src="exercise.js"></script>
-</body>
-
+  </body>
 </html>
