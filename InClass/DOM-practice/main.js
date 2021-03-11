@@ -25,3 +25,17 @@ centerImages();
 // Task 3
 
 // Google the date of birth and death of each of the people on the page. Without changing any of the HTML or CSS, add this in a paragraph to the end of their <section>.
+let pTag = document.createElement("p");
+// sectionTag = document.querySelectorAll("section");
+ sectionTag.appendChild(pTag);
+const lifeAndDeath = (dob, dod) => {
+  
+  
+  section.forEach(element => {
+   
+    pTag.innerHTML = `Date of birth: ${dob} - Date of death: ${dod}`;
+  });
+}
+lifeAndDeath("9 December 1906", "1 January 1992");
+lifeAndDeath("26 August 1918", "24 February 2020");
+lifeAndDeath("10 December 1815", "27 November 1852");
