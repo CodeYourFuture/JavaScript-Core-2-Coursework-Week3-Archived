@@ -107,15 +107,3 @@ function addToMovieList(movies, movie) {
 }
 // Task 3
 addMovie(movies, () => addToMovieList(movies, myMovies));
-
-/*
-Task 4 - **Extra**
-Create a form anywhere on your page. The form should have
-- 4 input text fields, one for each property of your movie object
-- a "save" button.
-When the button is clicked
-- The field values should be used to create a new movie object literal
-- The new movie is then added to the list of movies and gets displayed on your page
-TIP: Use the functions you created on tasks 1-3
-
-*/

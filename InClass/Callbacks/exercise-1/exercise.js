@@ -7,13 +7,13 @@ Using setTimeout, change the background colour of the page after 5 seconds (5000
 */
 const targetDiv = document.getElementById('main');
 
-// function changeColor() {
-//   setTimeout(() => {
-//     targetDiv.style.backgroundColor = 'red';
-//   }, 5000);
-// }
+function changeColor() {
+  setTimeout(() => {
+    targetDiv.style.backgroundColor = 'red';
+  }, 5000);
+}
 
-// changeColor();
+changeColor();
 /*
 Task 2
 Update your code to make the colour change every 5 seconds to something different. Hint: try searching for setInterval.  Complete the exercises in this CodePen
@@ -21,18 +21,16 @@ Update your code to make the colour change every 5 seconds to something differen
 let arrayOfColors = ['red', 'green', 'blue'];
 
 function changeColor() {
+  let i = 0;
   setInterval(() => {
-    let i = 0;
+    if (i === arrayOfColors.length) i = 0;
     targetDiv.style.backgroundColor = arrayOfColors[i];
     i++;
-}, 5000);
+      console.log(i);
+    
+  }, 2000);
 }
-
 changeColor();
-// for (let i = 0; i < arrayOfColors.length; i++) {
-//   console.log(arrayOfColors[i]);
-  // return arrayOfColors[i];
-
 /*
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
@@ -42,7 +40,7 @@ Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 
 
 
-/*
+
 const greekGods = [
   "Aphrodite",
   "Ares",
@@ -61,6 +59,5 @@ const greekGods = [
 for (i = 0; i < greekGods.length; i++) {
     console.log(
         greekGods[greekGods.indexof[0] + i])
-        // greekGods.indexOf[0])
+  greekGods.indexOf[0];
 }
-*/
