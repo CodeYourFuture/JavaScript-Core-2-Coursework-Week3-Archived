@@ -74,7 +74,7 @@ function showMovies() {
       pEl.innerHTML = `${element.title} directed by ${element.director}`;
       
       const movieNum = document.getElementById('movies-number');
-        console.log(movieNum);
+        console.log('movienum',movieNum);
       movieNum.innerHTML = movies.length;
       
       targetEl.appendChild(pEl);
