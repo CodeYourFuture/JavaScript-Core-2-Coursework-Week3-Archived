@@ -1,7 +1,8 @@
-const timeLimit = 20;
+let timeLimit = 10;
 let timePassed = 0;
 let timeLeft = timeLimit;
 let timerInterval = null;
+let input = document.getElementById('alarmSet');
 
 const timesUp = () => {
   clearInterval(timerInterval);
