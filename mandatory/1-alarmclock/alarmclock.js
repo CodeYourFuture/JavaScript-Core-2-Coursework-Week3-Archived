@@ -1,4 +1,10 @@
-function setAlarm() {}
+function setAlarm() {
+  let alarmInput = document.getElementById("alarmSet");
+  if (alarmInput.value > 0 ){
+    alarmInput.value -= 1;
+  }
+  setTimeout(playAlarm, alarmInput.value)
+}
 
 // DO NOT EDIT BELOW HERE
 
