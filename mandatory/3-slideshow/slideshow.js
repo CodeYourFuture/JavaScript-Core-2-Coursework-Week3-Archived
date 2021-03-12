@@ -7,6 +7,7 @@ imgUrl = [
 ];
 
 let img = document.createElement("img");
+img.style.height = "300px";
 let index = 0;
 img.src = imgUrl[index];
 
@@ -15,6 +16,7 @@ let btnGroup = document.createElement("div");
 let btnsName = ["Auto Back", "Back", "Stop", "Forward", "Auto Forward"];
 let autoBackTimer;
 let autoForwardTimer;
+
 btnsName.forEach((name) => {
   let btn = document.createElement("button");
   btn.innerHTML = name;
@@ -27,7 +29,7 @@ btnsName.forEach((name) => {
           index--;
         }
         img.src = imgUrl[index];
-      }, 2000);
+      }, autoPeriod);
     } else if (name === btnsName[1]) {
       if (index === 0) {
         index = imgUrl.length - 1;
@@ -53,14 +55,29 @@ btnsName.forEach((name) => {
           index++;
         }
         img.src = imgUrl[index];
-      }, 2000);
+      }, autoPeriod);
     }
   });
   btnGroup.appendChild(btn);
 });
 
-let mybody = document.getElementsByTagName("body");
+//extra
+let autoPeriod = 1000;
+let label = document.createElement("label");
+label.innerText = "Choose auto change period:";
+let select = document.createElement("select");
+for (i = 1; i < 4; i++) {
+  let option = document.createElement("option");
+  option.value = (i * 1).toString();
+  option.innerHTML = (i * 1).toString() + " Second";
+  select.appendChild(option);
+}
+label.appendChild(select);
+select.addEventListener("change", (event) => {
+  autoPeriod = parseInt(event.target.value) * 1000;
+});
+///extra end
 
 //document.body.appendChild(img);
 //document.body.appendChild(btnGroup);
-document.body.append(img, btnGroup);
+document.body.append(img, btnGroup, label);
