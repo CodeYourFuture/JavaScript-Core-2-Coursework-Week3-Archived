@@ -16,13 +16,7 @@
 // pickFromArray([1,2,3,4])     //maybe returns 2
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
-// You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
 
-// A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -490,3 +484,46 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function pickFromArray(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+// Selectors
+const body = document.querySelector("body");
+const container = document.createElement("div");
+container.setAttribute("class", "container");
+const btn = document.createElement("button");
+btn.setAttribute("id", "btn");
+btn.textContent = "New Quote";
+const toggleBtn = document.createElement("div");
+toggleBtn.setAttribute("class", "colorful-switch");
+toggleBtn.innerHTML = `<label class="switch">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
+                       </label>`
+body.append(container, btn, toggleBtn);
+
+// Events
+btn.addEventListener("click", display);
+toggleBtn.addEventListener("change", toggle);
+
+// Functions
+function display() {
+  const randomQuote = pickFromArray(quotes);
+  container.innerHTML = `<p class="quote">${randomQuote.quote}</p>
+                         <p class="author">${randomQuote.author}</p>`
+}
+
+function toggle() {
+  const isChecked = document.querySelector('.colorful-switch input[type="checkbox"]').checked;
+  if (isChecked) {
+    timeInterval = setInterval(display, 60000);
+  } else {
+    clearInterval(timeInterval);
+  }
+}
+
+// When the page loads it  shows a random quote on the screen.
+window.onload = display();
+

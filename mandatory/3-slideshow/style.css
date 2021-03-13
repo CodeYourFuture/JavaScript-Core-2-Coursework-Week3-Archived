@@ -1,1 +1,45 @@
 /** Write your CSS in here **/
+body{
+   box-sizing: border-box;
+    margin: 2rem;
+}
+
+.place, .counter {
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 2rem;
+    height: 60vh;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    border: 2px solid rgb(211, 175, 108);
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+    padding: 0.4rem;
+    outline: none;
+}
+
+button:hover {
+ background-color: rgb(22, 88, 16);
+}
