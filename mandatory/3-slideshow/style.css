@@ -1,1 +1,23 @@
 /** Write your CSS in here **/
+
+
+.img-slide{
+  height: 500px;
+  width: 1000px;
+  overflow: hidden;
+  border: 5px solid black;
+}
+.img-slide img{
+  width: 1000px;
+  height: 500px;
+}
+.btn{
+  border: none;
+  background-color: blueviolet;
+  font-size: 2em;
+  border:5px solid chartreuse;
+  cursor: pointer;
+}
+.btn:hover{
+  background: brown;
+}

@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+body {
+  background-color: blue;
+}
+#container {
+  background-color: chartreuse;
+  border: 5px solid #141313;
+  height: 350px;
+  width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+#btn {
+  margin: 50px;
+  height: 50px;
+  width: 200px;
+  font-size: 1.5em;
+  background-color: crimson;
+}
+#output {
+  font-size: 1.5em;
+  color: rgb(7, 99, 116);
+}
+#author {
+  font-size: 2em;
+  color: #000;
+}

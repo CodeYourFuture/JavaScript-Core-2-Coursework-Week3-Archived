@@ -1,3 +1,12 @@
+ let btn = document.getElementById("btn");
+ let output = document.getElementById("output");
+let author = document.getElementById("author");
+btn.addEventListener("click",function(){
+  var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+  output.innerHTML = randomQuote.quote;
+  author.innerHTML = randomQuote.author; 
+})
+    
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -17,9 +26,11 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
+// function pickFromArray(choices) {
+//   return choices[Math.floor(Math.random() * choices.length)];
+// }
+
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
