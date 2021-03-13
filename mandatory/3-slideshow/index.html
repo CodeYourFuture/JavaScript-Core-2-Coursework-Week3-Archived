@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +11,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <h1>Image Slider</h1>
+    <div class="image-div">
+      <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="" id="img">
+    </div>
+    <button id="auto-back" class="btn btn-primary">Auto Back</button>
+    <button id="back" class="btn btn-primary">Back</button>
+    <button id="stop" class="btn btn-danger">Stop</button>
+    <button id="forward" class="btn btn-primary">Forward</button>
+    <button id="auto-forward" class="btn btn-primary">Auto Forward</button>
+    <!-- Javascript -->
+    <script src="slideshow.js"></script>
   </body>
 </html>

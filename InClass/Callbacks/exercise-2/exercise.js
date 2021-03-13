@@ -61,10 +61,38 @@ const movies = [
   },
 ];
 
-// create showMovies function
+const movieDiv = document.getElementById('all-movies');
+const moviesNum = document.getElementById('movies-number');
 
+// create showMovies function
+let count = 0;
+
+movies.forEach( (item) => {
+  setTimeout( () => {
+    console.log(item);
+    let p = document.createElement('p');
+    p.innerHTML = `${item.title} by ${item.director}`;
+    movieDiv.appendChild(p);
+    count++;
+    moviesNum.innerText = `${count}`;
+  }, 1000)
+})
 
 // create a new movie object for your favorite movie
-
+const movie = {
+  title: "Jurassic Park",
+  director: "Steven Spielberg",
+  type: "Science Fiction",
+  haveWatched: true
+}
 
 // create addMovies function
+function addMovies(movie) {
+  let p = document.createElement('p');
+  p.innerHTML = `${movie.title} by ${movie.director}`;
+  movieDiv.appendChild(p);
+  count++;
+  moviesNum.innerText = `${count}`
+}
+
+setTimeout(addMovies(movie), 2000);
