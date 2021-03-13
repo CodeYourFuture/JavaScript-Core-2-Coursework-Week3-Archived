@@ -1,3 +1,4 @@
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -490,3 +491,26 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+const hexArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+const btn = document.querySelector('.btn');
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const bgColor = document.querySelectorAll('.bg-color');
+const color = document.querySelectorAll('.color');
+
+console.log(bgColor);
+
+btn.addEventListener('click', () => {
+  let randomQuote = pickFromArray(quotes);
+  quote.innerHTML = randomQuote.quote;
+  author.innerHTML = randomQuote.author;
+
+  let hex = '#';
+  for (let i=0; i<6; i++) {
+    hex+= pickFromArray(hexArr);
+  }
+
+  bgColor.forEach( item => item.style.backgroundColor = hex);
+  color.forEach( item => item.style.color = hex);
+}) 

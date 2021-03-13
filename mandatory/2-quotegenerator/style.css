@@ -1,1 +1,69 @@
 /** Write your CSS in here **/
+html {height: 100%;}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rebeccapurple;
+}
+
+.quote-container {
+    display: block;
+    width: 80%;
+    background-color: #ffffff;
+    height: 60%;
+    border-radius: 50px;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.text-container {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.quote-div {
+    margin: 0;
+    padding: 0;
+    height: 70%;
+}
+
+.author-div {
+    margin: 0;
+    padding: 0;
+    height: 30%;
+}
+
+.quote {
+    font-size: 2rem;
+    color: rebeccapurple;
+}
+
+.author {
+    font-size: 1.4rem;
+    color: rebeccapurple;
+}
+
+.new-quote {
+    width: 20%;
+    height: 20%;
+    background-color: rebeccapurple;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+}
