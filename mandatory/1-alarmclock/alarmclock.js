@@ -1,20 +1,26 @@
-let pageBody = getElementById("body")
-
 function setAlarm() {
-  let setAlarm = document.getElementById("alarmSet")
-  let setAlarmTime = document.getElementById("alarmSet").value
-  let remainTime = document.getElementById("timeRemaining")
-  let alarmTimeSet = document.getElementById("set")
-  let alarmTimeResume = document.getElementById("resume")
-  let alarmTimeStop = document.getElementById("stop")
 
-  let alarmSeconds = setAlarmTime % 60
-  let alarmMinutes = Math.floor(setAlarmTime % 60)
+  let remainingTime = document.getElementById("timeRemaining");
+  let setAlarmTime = document.getElementById("alarmSet").value;
 
-  remainTime.textContent = `Time Remaining : ${alarmMinutes} : ${alarmSeconds}`
+  let alarmTimer = setInterval(countDown, 1000);
 
-  let 
+    function countDown() {
+      if (setAlarmTime < 0) {
+          playAlarm();
+          document.body.style.backgroundColor = "Turquoise";
+          clearInterval(alarmTimer);
+
+        } else {
+          let alarmMinutes = Math.floor(setAlarmTime / 60);
+          let alarmSeconds = setAlarmTime % 60;
+          remainingTime.textContent = `Time Remaining: ${alarmMinutes}: ${alarmSeconds}`;
+          setAlarmTime -= 1;
+        }
+      }
 }
+
+
 
 // DO NOT EDIT BELOW HERE
 
