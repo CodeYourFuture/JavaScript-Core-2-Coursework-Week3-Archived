@@ -1,1 +1,8 @@
 /** Write your CSS in here **/
+#mainImageContainer{
+    padding:2rem;
+}
+#mainImageContainer img{
+    width: 32%;
+    height: 19rem;
+}
