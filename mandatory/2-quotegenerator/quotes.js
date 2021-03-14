@@ -490,3 +490,58 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function createPage() {
+  let divEl = document.createElement("div");
+  let h5El = document.createElement("h5");
+  let h6El = document.createElement("h6");
+  let btnEl = document.createElement("button");
+  h5El.style.minHeight = "100px";
+
+  //extra
+  let autoLabel = document.createElement("label");
+  let autoCheck = document.createElement("input");
+  autoLabel.innerText = "  Auto Generate Qoute  ";
+  autoCheck.type = "checkbox";
+  let autoTimer;
+  autoCheck.addEventListener("click", () => {
+    if (autoCheck.checked == true) {
+      alert("checked");
+      autoTimer = setInterval(() => {
+        newObj = pickFromArray(quotes);
+        h5El.innerHTML = newObj.quote;
+        h6El.innerHTML = newObj.author;
+      }, 60000);
+    } else {
+      clearInterval(autoTimer);
+      alert("unchecked");
+    }
+  });
+  //extra end
+
+  btnEl.innerHTML = "New Quote";
+  let newObj = pickFromArray(quotes);
+  h5El.innerHTML = newObj.quote;
+  h6El.innerHTML = newObj.author;
+  h6El.className = ".col-4 .offset-4";
+  btnEl.className = ".col-4 .offset-4";
+
+  // divEl.appendChild(h5El);
+  // divEl.appendChild(h6El);
+  // divEl.appendChild(btnEl);
+  divEl.append(h5El, h6El, btnEl, autoLabel, autoCheck);
+  divEl.className = "col-6 align-item-end align-items-center";
+  document.body.appendChild(divEl);
+  document.body.className = "row justify-content-md-center align-items-center";
+
+  btnEl.addEventListener("click", (e) => {
+    e.preventDefault();
+    newObj = pickFromArray(quotes);
+    h5El.innerHTML = newObj.quote;
+    h6El.innerHTML = newObj.author;
+  });
+}
+
+//createPage();
+
+window.onload = createPage;
