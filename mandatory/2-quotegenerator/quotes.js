@@ -489,4 +489,136 @@ const quotes = [
     quote: "If you can dream it, you can achieve it.",
     author: "Zig Ziglar",
   },
+  {
+    quote: "Stand amongst the ashes of a trillion dead souls and ask the ghosts if honor matters. The silence is your answer.",
+    author: "Javik, Mass Effect 3",
+  },
+  {
+    quote: "I used to be an adventurer like you until I took an arrow to the knee.",
+    author: "The Elder Scrolls V: Skyrim",
+  },
+  {
+    quote: "Even in dark times, we cannot relinquish the things that make us human.",
+    author: "Khan, Metro 2033",
+  },
+  {
+    quote: "You can’t break a man the way you break a dog or a horse. The harder you beat a man, the taller he stands.",
+    author: "Far Cry 2",
+  },
+  {
+    quote: "The world fears the inevitable plummet into the abyss. Watch for that moment and when it comes, do not hesitate to leap. It is only when you fall that you learn whether you can fly.",
+    author: "Dragon Age: Origins",
+  },
+  {
+    quote: "What is bravery, without a dash of recklessness?",
+    author: "Dark Souls",
+  },
+  {
+    quote: "A man chooses, a slave obeys",
+    author: "Andrew Ryan, Bioshock",
+  },
+  {
+    quote: "We work in the dark to serve the light Nothing is true. Everything is permitted.",
+    author: "Assassin’s Creed",
+  },
+  {
+    quote: "Don't be sorry, be better",
+    author: "Kratos, God of War",
+  },
+  {
+    quote: "Overconfidence is a slow and insidious killer.",
+    author: "Darkest Dungeon",
+  },
+  {
+    quote: "They asked me how well I understood theoretical physics. I said I had a theoretical degree in physics. They said welcome aboard.",
+    author: "Fallout: New Vegas",
+  },
+  {
+    quote: "My past is not a memory. It’s a force at my back. It pushes and steers. I may not always like where it leads me, but like any story, the past needs resolution. What’s past is prologue.",
+    author: "Metroid: The Other M",
+  },
+  {
+    quote: "If the laws of physics no longer apply in the future … God help you.",
+    author: "Portal 2",
+  },
+  {
+    quote: "A famous explorer once said that the extraordinary is in what we do, not who we are.",
+    author: "Tomb Raider",
+  },
+  {
+    quote: "The right man in the wrong place can make all the difference in the world",
+    author: "G-Man, Half-Life 2",
+  },
+  {
+    quote: "Everyone thinks they’re the hero of their own story.",
+    author: "Handsome Jack, Tales from the Borderlands, Episode 5",
+  },
+  {
+    quote: "Science isn’t about why – it’s about why not.",
+    author: "Cave Johnson, Portal 2",
+  },
+  {
+    quote: "What good is an intellect if you can't use it?",
+    author: "Raiden, Metal Gear Rising: Revengeance",
+  },
+  {
+    quote: "Technologies are invented to make our lives easier -- not our choices.",
+    author: "Adam Jensen, Deus Ex: Human Revolution",
+  },
+  {
+    quote: "Dream, not of what you are, but of what you want to be.",
+    author: "Margulis, Warframe",
+  },
+  {
+    quote: "Hatred and prejudice will never be eradicated. And the witch hunts will never be about witches. To have a scapegoat, that's the key.",
+    author: "Geralt of Rivia, The Witcher 3: Wild Hunt",
+  },
+  {
+    quote: "War is where the young and stupid are tricked by the old and bitter into killing each other.",
+    author: "Niko Bellic, Grand Theft Auto IV",
+  },
+  {
+    quote: "It’s a funny thing, ambition. It can take one to sublime heights or harrowing depths. And sometimes they are one and the same.",
+    author: "Emily Kaldwin, Dishonored 2",
+  },
+  {
+    quote: "The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth. But I think that's a luxury, not a curse. To know you're close to the end is a kind of freedom.",
+    author: "Captain Price, Call of Duty: Modern Warfare",
+  },
+  {
+    quote: "After all we've been through. Everything that I've done. It can't be for nothing.",
+    author: "Ellie, Last of Us",
+  },
+  {
+    quote: "Closing your eyes forces you to look at the darkness inside.",
+    author: "Max Payne, Max Payne 2: The Fall of Max Payne",
+  },
+  {
+    quote: "We all make choices, but in the end our choices make us.",
+    author: "Andrew Ryan, Bioshock",
+  },
+  {
+    quote: "Right and wrong are not what separate us and our enemies. It's our different standpoints, our perspectives that separate us. Both sides blame one another. There's no good or bad side. Just two sides holding different views.",
+    author: "Squall Leonhart, Final Fantasy VIII",
+  },
+  {
+    quote: "Don’t ever stop. Always keep going, no matter what happens and is taken from you. Even when life is so unfair, don’t give up.",
+    author: "Ezio, Assassin's Creed II"
+  },
+  {
+    quote: "All men dream - but not equally. Those who dream by night, in the dusty recesses of their minds, wake in the day to find that it was vanity... But the dreamers of the day are dangerous men, for they may act their dream with open eyes, to make it possible. This I did.",
+    author: "Nathan Drake, Uncharted 3"
+  },
+  {
+    quote: "We don't get to choose how we start in this life. Real 'greatness' is what you do with the hand you're dealt.",
+    author: "Victor Sullivan, Uncharted 3: Drake's Deception"
+  },
+  {
+    quote: "Corporations have more power than the government.",
+    author: "Adam Jensen, Deus Ex: Human Revolution"
+  },
+  {
+    quote: "Only a mind free of impediments is capable of grasping the chaotic beauty of the world",
+    author: "Altair, Assassin's Creed"
+  },
 ];
