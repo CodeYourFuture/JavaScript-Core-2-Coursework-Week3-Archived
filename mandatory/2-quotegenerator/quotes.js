@@ -22,7 +22,7 @@ function pickFromArray(choices) {
 }
 
 // A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
+// Feel free to edit them, and to add your own favorites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -622,3 +622,17 @@ const quotes = [
     author: "Altair, Assassin's Creed"
   },
 ];
+
+function btn1(){
+  let chooseQuote = pickFromArray(quotes);
+
+  let quoteEl = document.querySelector(".quote");
+  let authorEl = document.querySelector(".author");
+  let nextBtn = document.querySelector(".btn");
+
+  quoteEl.innerHTML = chooseQuote.quote;
+  authorEl.innerHTML = chooseQuote.author;
+  nextBtn.addEventListener('click', btn1);
+}
+
+btn1();
