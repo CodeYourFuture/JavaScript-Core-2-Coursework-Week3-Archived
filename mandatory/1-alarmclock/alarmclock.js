@@ -1,10 +1,26 @@
 function setAlarm() {
   let alarmInput = document.getElementById("alarmSet");
-  if (alarmInput.value > 0 ){
+  let remainingTime = document.getElementById("timeRemaining");
+  let timer = setInterval(() => {
+    if (alarmInput.value >= 100 < 1000){
+    remainingTime.innerHTML = "Time Remaining: 0" + alarmInput.value + ":00";
     alarmInput.value -= 1;
-  }
-  setTimeout(playAlarm, alarmInput.value)
+    }else if (alarmInput.value >=10 <100){
+      remainingTime.innerHTML = "Time Remaining: 00:" + alarmInput.value;
+      // alarmInput.value -= 1;
+    }else if(alarmInput.value >0 < 10){
+      remainingTime.innerHTML = "Time Remaining: 00:0" + alarmInput.value;
+      // alarmInput.value -= 1;
+    }else if (alarmInput.value <= 0){
+      remainingTime.innerHTML = "Time Remaining: 00:00";
+      alarmInput.value = "";
+      playAlarm();
+    }
+    
+  }, 1000);
+  document.getElementById("stop").addEventListener("click", () => clearInterval(timer));
 }
+
 
 // DO NOT EDIT BELOW HERE
 
