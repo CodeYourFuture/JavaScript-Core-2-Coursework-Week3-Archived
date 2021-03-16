@@ -63,8 +63,42 @@ const movies = [
 
 // create showMovies function
 
+function showMovies() {
+   let div = document.getElementById('all-movies');
+
+   movies.forEach(function(movie) {
+       let listItem = document.createElement('li');
+       listItem.innerText = `${movie.title} directed by ${movie.director}`;
+       div.appendChild(listItem);
+   })
+
+}
+console.log('what is happening?')
+showMovies();
+
 
 // create a new movie object for your favorite movie
 
+const myFavMovie = {
+
+    title: "A Million Ways to Die in the West",
+    director: "Seth MacFarlane",
+    type: "Comedy",
+    haveWatched: true
+}
+console.log(myFavMovie)
 
 // create addMovies function
+
+function addMovie(movie, callback) {
+
+
+    let div = document.getElementById('all-movies');
+  setTimeout(function () {
+  let listItem = document.createElement('li');
+       listItem.innerText = `${myFavMovie.title} directed by ${myFavMovie.director}`;
+       div.appendChild(listItem);
+}, 2000);
+}
+
+addMovie(myFavMovie)
