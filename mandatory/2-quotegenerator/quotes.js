@@ -490,3 +490,28 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function getRandomQuote() {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+}
+
+function generator(quote) {
+  let quoteEl = document.querySelector(".quote");
+  let authorEl = document.querySelector(".author");
+  let buttonEl = document.querySelector("button");
+
+    let currentQuote = getRandomQuote();
+    quoteEl.innerHTML = `${currentQuote.quote}`;
+    authorEl.innerHTML = `__ ${currentQuote.author}`;
+
+    buttonEl.addEventListener("click", buttonClicked)
+    function buttonClicked() {
+      if (buttonEl) {
+        let currentQuote = getRandomQuote();
+        quoteEl.innerHTML = `${currentQuote.quote}`;
+        authorEl.innerHTML = `__ ${currentQuote.author}`;
+      }
+    }
+  };
+
+  generator(quotes);
