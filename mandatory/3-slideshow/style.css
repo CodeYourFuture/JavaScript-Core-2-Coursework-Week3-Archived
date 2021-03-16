@@ -1,1 +1,104 @@
 /** Write your CSS in here **/
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  background-color: rgb(255, 156, 27);
+  color: white;
+  height: 60px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+  height: 500px;
+  animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+}
+
+#prev, #next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -70px;
+  background-color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+#prev:hover, #next:hover {
+  background-color: orange;
+  opacity: 0.6;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+#btns {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: white;
+height: 80px;
+}
+
+button {
+margin: 0px 20px 0px 20px;
+border-radius: 20px;
+padding: 6px 35px 8px 35px;
+color: orange;
+border-color: orange;
+box-shadow: 0em 0.2em 2em orange;
+}
+
+button:hover {
+background-color: orange;
+color: white;
+transition: 0.4s;
+margin-top: -8px;
+box-shadow: 0em 0.3em 1em orange;
+border-color: white;
+}
