@@ -1,35 +1,41 @@
-function setAlarm() {
-  let tRemainEl = document.
-    getElementById("timeRemaining");
-  let inputEl = document.
-    getElementById("alarmSet");
-  // console.log(tRemainEl.TEXT_NODE);
-  // console.log(tRemainEl.textContent);
-  let displayedTime = inputEl.value;
-  let timer;
-  // find out how to run just one timer
-  if (!timer) {
-   timer = setInterval(() => {
-    // console.log(`displayed time is ${displayedTime} on line 10`);
-    displayedTime--;
-    tRemainEl.textContent = `Time Remaining:${displayedTime}`;
-    // console.log(`displayed time is ${displayedTime} on line 12`);
-    if (displayedTime === 0) {
-      var audio = new Audio("alarmsound.mp3");
-      audio.play();
-      clearInterval(timer);
-    }
-    // inputEl.value="";
-   }, 1000);
-  }
-  
-  
-  let stopEl = document.getElementById("stop");
-  stopEl.addEventListener("click", () => {
-    clearInterval(timer);
-    tRemainEl.textContent = "Time Remaining:00:00";
-  })
 
+
+function setAlarm() {
+  let inputEl = document.getElementById("alarmSet");
+  display(inputEl.value);
+  
+  }
+
+
+
+function display(timeInput) {
+  let testTimer = -999;
+  let tRemainEl = document.getElementById("timeRemaining");
+  let stopEl = document.getElementById("stop");
+  let time = timeInput * 60;
+
+    document.getElementById("set").textContent = "Pause Alarm";
+    
+    testTimer = setInterval(() => {
+  
+    let tseconds = time % 60 < 10 ? '0' + time % 60 : time % 60;
+    let tminutes = Math.floor(time / 60) < 10 ? '0' + Math.floor(time / 60) :
+      Math.floor(time / 60);
+      
+    tRemainEl.textContent = `Time Remaining : ${tminutes}:${tseconds}`;
+ 
+    if (time === 0) {
+      playAlarm();
+      clearInterval(testTimer);
+    }
+    time--;
+
+    }, 1000);
+    
+  
+ 
+  
+  
 }
 
 
