@@ -1,1 +1,55 @@
 /** Write your CSS in here **/
+body,
+html {
+  width: 100%;
+  padding: 0px 4vw 0px 4vw;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  height: 340px;
+  background-color: #f3a83b;
+  color: orangered;
+  padding: 5px 120px 0px 120px;
+}
+
+.quoteStructure {
+  width: 80vw;
+  height: 90%;
+  background: white;
+}
+
+blockquote {
+  font-size: 2vw;
+  font-weight: 600;
+  padding: 5px;
+  margin: 40px 60px 60px 50px;
+  height: 100px;
+}
+
+.author {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+.buttonClicked {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+
+button {
+  background-color: #f3a83b;
+  color: white;
+  border: 5px solid #f3a83b;
+}
+
+button:hover {
+  border: 5px solid #ffcd83;
+  background-color: white;
+  color: #f3a83b;
+  transition: 0.3s;
+}

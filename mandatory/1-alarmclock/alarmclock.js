@@ -1,4 +1,34 @@
-function setAlarm() {}
+function setAlarm() {
+  let alarmInput = document.getElementById("alarmSet").value;
+  let setAlarm = document.getElementById("timeRemaining");
+  let stopAlarm = document.getElementById("stop");
+  let clock = setInterval(timesUp, 1000);
+  function timesUp() {
+    if (alarmInput < 0) {
+      playAlarm();
+      clearInterval(clock);
+      let i = 0;
+      function changeColor() {
+        let background = document.getElementsByTagName("div")[0];
+        let color = ["black", "white", "red"];
+        background.style.backgroundColor = color[i];
+        i = (i + 1) % color.length;
+      }
+      setInterval(changeColor, 150);
+    } else {
+      let minutes = Math.floor(alarmInput / 60);
+      let seconds = alarmInput % 60;
+      setAlarm.innerHTML = `Time Remaining: ${minutes}: ${seconds}`;
+      alarmInput -= 1;
+    }
+  }
+  stopAlarm.addEventListener("click", stopButton);
+    function stopButton(){
+      if(alarmInput){
+        clearInterval(clock);
+      }
+    }
+}
 
 // DO NOT EDIT BELOW HERE
 
