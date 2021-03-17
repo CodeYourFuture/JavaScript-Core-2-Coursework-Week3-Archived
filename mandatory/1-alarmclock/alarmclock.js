@@ -10,6 +10,7 @@ function convertSeconds(sec) {
 };
 
 function changeColor() {
+
   let arrayOfColors = ['red', 'orange', 'white', 'brown', 'green', 'blue', 'purple', 'gray'];
   let i = 0;
   let bodyEl = document.querySelector('body');
@@ -19,12 +20,13 @@ function changeColor() {
 
 let changeCol;
 
-function countDown() {
-  let backGroundEl = document.querySelector('body').style.backgroundColor;
-  let timerEl = document.querySelector('#timeRemaining');
-  inputEl--;
-  timeLeftAfterPausing = inputEl;
-  if (timeLeftAfterPausing === 0) {
+  function countDown() {
+
+    let backGroundEl = document.querySelector('body').style.backgroundColor = 'red';
+    let timerEl = document.querySelector('#timeRemaining');
+    inputEl--;
+    timeLeftAfterPausing = inputEl;
+    if (timeLeftAfterPausing === 0) {
     changeCol = setInterval(changeColor, 50);
     playAlarm('alarmsound.mp3');
     clearInterval(refreshTimer);
@@ -33,8 +35,8 @@ function countDown() {
   timerEl.innerText = `Time Remaining: ${convertSeconds(timeLeftAfterPausing)}`;
 };
 
-let refreshTimer;
-let isPaused = false;
+  let refreshTimer;
+  let isPaused = false;
 
 function pauseTimer() {
   if (!isPaused) {
