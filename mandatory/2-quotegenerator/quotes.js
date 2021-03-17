@@ -18,7 +18,7 @@
 //
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
+  return (choices[Math.floor(Math.random() * choices.length)])
 }
 
 // A list of quotes you can use in your app.
@@ -490,3 +490,17 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+let erick = pickFromArray(quotes)
+let pElement = document.getElementById("quote")
+let author = document.getElementById("author")
+pElement.textContent = `"${erick.quote}"`;
+author.textContent = `- ${erick.author}`;
+
+document.getElementById("button").addEventListener("click", function(){
+let erick = pickFromArray(quotes)
+let pElement = document.getElementById("quote")
+let author = document.getElementById("author")
+pElement.textContent = `"${erick.quote}"`;
+author.textContent = `- ${erick.author}`;
+})

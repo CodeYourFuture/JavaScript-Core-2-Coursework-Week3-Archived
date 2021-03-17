@@ -62,9 +62,70 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(movies) {
+  let counter = 0;
+  let content = document.getElementById("all-movies")
+  for (let i = 0; i < movies.length; i++) {
+    setTimeout(function(){
+      let pTag = document.createElement("p")
+    pTag.innerHTML  =   `${movies[i].title} - ${movies[i].director}`
+    content.appendChild(pTag)
+    counter = counter + 1;
+    document.getElementById("movies-number").innerHTML = counter;
+    }, 1000 * (i+1))
+  }
+}
+showMovies(movies)
 
 
 // create a new movie object for your favorite movie
-
+const newMovies = [
+  {
+    title: "Prison break",
+    director: "Richard Stanley",
+    type: "sci-fi",
+    haveWatched: true,
+  },
+  {
+    title: "The 100",
+    director: "Álvaro Brechner",
+    type: "horror",
+    haveWatched: false,
+  },
+  {
+    title: "Wonder woman",
+    director: "Corneliu Porumboiu",
+    type: "comedy",
+    haveWatched: true,
+  },
+  {
+    title: "Iron man",
+    director: "Leigh Whannell",
+    type: "horror",
+    haveWatched: false,
+  },
+];
 
 // create addMovies function
+
+function addMovies(newMovies) {
+  let content = document.getElementById("all-movies")
+  let pNew = document.createElement("p");
+  let counter = 0
+  pNew.style.cssText = "background-color: green; color: white; padding: 1rem; margin: 0rem 0rem 1rem 0rem"
+  content.appendChild(pNew)
+
+  for (let i = 0; i < newMovies.length; i++) {
+
+    setTimeout(function(){
+
+      let pTag = document.createElement("p")
+      pTag.innerHTML  =   `${newMovies[i].title} - ${newMovies[i].director}`
+      content.appendChild(pTag)
+      counter = counter+1;
+      pNew.innerHTML = `Number of new movies: ${counter}`
+    }, 2000 * (i+1))
+
+  }
+}
+addMovies(newMovies)
