@@ -2,6 +2,7 @@
 //---------------------//
 
 //---------------------//
+
 function setAlarm() {
   
   const setBtn = document.getElementById('set');
@@ -23,7 +24,7 @@ function setAlarm() {
   }
   //---------stop interval------------//
   function stop() {
-    clearInterval(myTimer);
+    clearInterval(alarm);
   }
 }
 setAlarm();
