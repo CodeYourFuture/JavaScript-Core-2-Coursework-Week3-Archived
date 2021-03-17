@@ -1,1 +1,41 @@
 /** Write your CSS in here **/
+*{
+    background-color: #BBB23E
+}
+.quote-box{
+    background-color:#3E95BB;
+    width:50%;
+    height:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    margin:0;
+
+}
+.quote-box{
+    display:flex; 
+    align-items:center;
+    justify-content: center;
+    /* position:relative; */
+}
+.quote-text{
+    position:absolute;
+    background-color:white;
+    width:80%;
+    height:auto;
+    padding:20px;
+}
+.author{
+    position:absolute;
+    right:3px; 
+    bottom:3px; 
+    margin:auto;
+    border:2px red solid;
+}
+.bottom-right{
+    position:absolute;
+   right:0.5rem;
+   bottom:0.5rem; 
+}
+

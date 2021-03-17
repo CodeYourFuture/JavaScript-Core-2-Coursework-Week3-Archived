@@ -9,7 +9,7 @@ function setAlarm() {
 
 
 function display(timeInput) {
-  let testTimer = -999;
+ 
   let tRemainEl = document.getElementById("timeRemaining");
   let stopEl = document.getElementById("stop");
   let time = timeInput * 60;
