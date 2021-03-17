@@ -9,28 +9,25 @@ function convertSeconds(sec) {
   return `${String(hours).padStart(2, 0)}:${String(minutes).padStart(2, 0)}:${String(seconds).padStart(2, 0)}`;
 };
 
-function changeColor() {
-  let arrayOfColors = ['red', 'orange', 'white', 'brown', 'green', 'blue', 'purple', 'gray'];
-  let i = 0;
-  let bodyEl = document.querySelector('body');
-  bodyEl.style.backgroundColor = arrayOfColors[i];
-  i = (i + 1) % arrayOfColors.length;
-}
-
 let changeCol;
 
+function changeColor() {
+  let bodyEl = document.querySelector('body');
+  let arrayOfColors = ['red', 'orange', 'white', 'brown', 'green', 'blue', 'purple', 'gray'];
+  let color = Math.floor(Math.random() * arrayOfColors.length);
+  bodyEl.style.backgroundColor = arrayOfColors[color];
+}
+
 function countDown() {
-  let backGroundEl = document.querySelector('body').style.backgroundColor;
   let timerEl = document.querySelector('#timeRemaining');
   inputEl--;
   timeLeftAfterPausing = inputEl;
+  timerEl.innerText = `Time Remaining: ${convertSeconds(timeLeftAfterPausing)}`;
   if (timeLeftAfterPausing === 0) {
-    changeCol = setInterval(changeColor, 50);
     playAlarm('alarmsound.mp3');
     clearInterval(refreshTimer);
-
+    changeCol = setInterval(changeColor, 1000);
   };
-  timerEl.innerText = `Time Remaining: ${convertSeconds(timeLeftAfterPausing)}`;
 };
 
 let refreshTimer;
@@ -44,7 +41,7 @@ function pauseTimer() {
   }
   else {
     isPaused = false;
-    refreshTimer = setInterval(countDown, 1000);
+    refreshTimer = setInterval(countDown(countDown), 1000);
   }
 };
 
@@ -66,6 +63,7 @@ function setup() {
 
   document.getElementById("stop").addEventListener("click", () => {
     pauseAlarm();
+    clearInterval(changeCol);
   });
 }
 

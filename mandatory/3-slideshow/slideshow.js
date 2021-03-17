@@ -14,23 +14,24 @@ let autoForwEl = document.querySelector('#autoForw');
 let autoBackEL = document.querySelector('#autoBack');
 let stopEl = document.querySelector('#stop');
 
-imgEl.src = arrayOfPictures[0];
 let num = 0;
+imgEl.src = arrayOfPictures[num];
+
 
 function nextPic() {
-    if (num === arrayOfPictures.length - 1) {
-        num = -1;
-    }
-    imgEl.src = arrayOfPictures[num + 1];
     num++;
+    if (num === arrayOfPictures.length) {
+        num = 0;
+    }
+    imgEl.src = arrayOfPictures[num];
 };
 
 function prevPic() {
-    if (num === 0) {
-        num = arrayOfPictures.length;
-    }
-    imgEl.src = arrayOfPictures[num - 1];
     num--;
+    if (num === -1) {
+        num = arrayOfPictures.length - 1;
+    }
+    imgEl.src = arrayOfPictures[num];
 };
 
 nextEl.addEventListener('click', nextPic);
@@ -45,9 +46,13 @@ stopEl.addEventListener('click', function () {
 });
 
 autoForwEl.addEventListener('click', function () {
+    clearInterval(autoF);
+    clearInterval(autoB);
     autoF = setInterval(nextPic, 2000);
 });
 
 autoBackEL.addEventListener('click', function () {
+    clearInterval(autoB);
+    clearInterval(autoF);
     autoB = setInterval(prevPic, 2000);
 });
