@@ -10,34 +10,38 @@ function setAlarm() {
   
   const stopBtn = document.getElementById('stop');
   console.log('this is the stop button', stopBtn);
-
-    // .addEventListener
+  
+  // .addEventListener
+  setBtn.addEventListener('click', getInputValue)
+    
+    //---------------------//
+    function getInputValue(){
+      // Selecting the input element and get its value 
+      const inputVal = setBtn('input').value;
+      
+      // Displaying the value
+      alert(inputVal);
+    }
+    // getInputValue();
+  
+  
   //---------set interval------------//
-  const alarm = setInterval(myTimer, 1000);
+  // const alarm = setInterval(myTimer, 1000);
 
 
-  function myTimer() {
-    const date = new Date();
-    const time = date.toLocaleTimeString();    
-    document.getElementsByTagName('input').innerHTML = time;
-    console.log('This is the current time', time);
-  }
-  //---------stop interval------------//
-  function stop() {
-    clearInterval(alarm);
-  }
+  // function myTimer() {
+  //   const date = new Date();
+  //   const time = date.toLocaleTimeString();    
+  //   document.getElementsByTagName('input').innerHTML = time;
+  //   console.log('This is the current time', time);
+  // }
+  // //---------stop interval------------//
+  // function stop() {
+  //   clearInterval(alarm);
+  // }
 }
 setAlarm();
 
-//---------------------//
-function getInputValue(){
-  // Selecting the input element and get its value 
-  const inputVal = document.getElementsByTagName('input').value;
-  
-  // Displaying the value
-  alert(inputVal);
-}
-// getInputValue();
 //---------------------//
 
 // DO NOT EDIT BELOW HERE
