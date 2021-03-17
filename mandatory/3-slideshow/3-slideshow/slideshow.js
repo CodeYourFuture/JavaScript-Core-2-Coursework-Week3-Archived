@@ -1,4 +1,7 @@
 // Write your code here
+function pickFromArray(choices) {
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
 
 let imageArr = [
   {
@@ -117,7 +120,7 @@ autoNextElem.addEventListener("click", () => autoNextBtnClick())
 
 let imageIndex = 0;
 const image = () =>{
-    imgElem.src = imageArr[imageIndex].src;
+    imgElem.src = imageArr[imageIndex];
 }
 
 const nextBtnClick = () => {
