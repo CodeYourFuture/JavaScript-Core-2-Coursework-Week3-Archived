@@ -1,9 +1,10 @@
 // Write your code here
 let imgEl = document.querySelectorAll("img");
-let btnEl = document.querySelectorAll("button");
+let backBtnEl = document.querySelector(".back-btn");
+let forwardBtnEl = document.querySelector(".forward-btn");
 let currentIndex = 0;
 let lengthImagesEl=imgEl.length;
-function showSlide() {
+function showSlide(currentIndex) {
     return imgEl[currentIndex].classList.add("showing");
 }
 
@@ -20,9 +21,9 @@ function previousSlide() {
     return showSlide(currentIndex);
  }
 
-btnEl[0].addEventListener("click", previousSlide);
-
-btnEl[1].addEventListener("click", nextSlide);
+backBtnEl.addEventListener("click", previousSlide);
+ 
+forwardBtnEl.addEventListener("click", nextSlide);
     
 
 
