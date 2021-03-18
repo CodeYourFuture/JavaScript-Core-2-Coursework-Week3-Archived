@@ -5,18 +5,22 @@ let forwardBtnEl = document.querySelector(".forward-btn");
 let currentIndex = 0;
 let lengthImagesEl=imgEl.length;
 function showSlide(currentIndex) {
-    return imgEl[currentIndex].classList.add("showing");
+    let temp = currentIndex;
+    console.log(currentIndex);
+    return imgEl[temp].classList.add("showing");
 }
 
 function nextSlide() {
-    imgEl[currentIndex].style.display="none";
+    imgEl[currentIndex].classList.toggle("showing");
     currentIndex = (currentIndex + 1) % lengthImagesEl;
     return showSlide(currentIndex);
 
 }
 
 function previousSlide() {
-    imgEl[currentIndex].style.display = "none";
+    imgEl[currentIndex].classList.toggle("showing");
+
+    // imgEl[currentIndex].style.display = "none";
     currentIndex = (currentIndex + lengthImagesEl - 1) % lengthImagesEl;
     return showSlide(currentIndex);
  }
