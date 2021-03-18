@@ -1,1 +1,67 @@
 /** Write your CSS in here **/
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: coral;
+}
+
+.images {
+    flex: 0 0 80%;
+    min-height: 70vh;
+    background: url('/mandatory/3-slideshow/img/bg-0.jpg')center /cover no-repeat;
+    border-radius: 15px;
+    box-sizing: 5px 10px black;
+    position: relative;
+}
+
+.btn {
+    display: inline-block;
+    background: #fff;
+    border: 3px solid green;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 20%;
+    box-shadow: 2px 5px black;
+    outline: none;
+}
+
+.auto-backBtn {
+    position: absolute;
+    bottom: 0;    
+}
+
+.backBtn {
+    position: absolute;
+    bottom: 0;
+    left: 131px;
+}
+
+.stopBtn {
+    position: absolute;
+    bottom: 0;
+    left: 204px;
+}
+
+.forwardBtn {
+    position: absolute;
+    bottom: 0;
+    left: 276px;
+}
+
+.auto-forwardBtn {
+    position: absolute;
+    bottom: 0;
+    left: 385px;
+}
+
+.btn:active {
+    background: grey;
+    box-shadow: 1px 1px grey;
+}
+
+.btn:hover {
+    background: chartreuse;
+    color: rgb(197, 52, 8);
+}
