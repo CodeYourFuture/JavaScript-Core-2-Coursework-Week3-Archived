@@ -62,9 +62,22 @@ const movies = [
 ];
 
 // create showMovies function
-
+let showMovies = function (movies) {
+  var span = document.getElementById("movies-number");
+  var content = document.getElementById("all-movies");
+  movies.forEac((movie, index) => {
+    delete movies[index];
+    //creating paragraph and append it
+    let paragraph = document.createElement("p");
+    setTimeout(() => {
+      createParagraph.innerHTML = `<strong>Movie Title</strong>${movie.title} <strong>Director</strong> ${movie.director}`;
+      content.appendChild(createParagraph);
+    }, 1000);
+    getSpan.textContent = movies.length;
+  });
+};
+showMovies(movies);
 
 // create a new movie object for your favorite movie
-
 
 // create addMovies function
