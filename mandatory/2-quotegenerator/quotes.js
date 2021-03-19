@@ -490,3 +490,15 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function getQuote(arr) {
+  let quoteEl = document.querySelector("#text p");
+  let authorEl = document.querySelector("#author p");
+  let randomEl = Math.floor(Math.random() * quotes.length);
+  quoteEl.innerHTML = arr[randomEl].quote;
+  authorEl.innerHTML = "-" + arr[randomEl].author;
+}
+let btnEl = document.getElementById("newQuote");
+btnEl.addEventListener("click", function () {
+  getQuote(quotes);
+});
