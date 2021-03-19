@@ -61,10 +61,34 @@ const movies = [
   },
 ];
 
+function showMovies(arrayOfMovies) {
+  let movieList = document.querySelector('#all-movies');
+  let movieNum = document.querySelector('#movies-number');
+  movieNum.innerText = movies.length;
+  for (let film of arrayOfMovies) {
+    let pEl = document.createElement('p');
+    pEl.innerText = `Movie title: ${film.title}, Director: ${film.director}, Type: ${film.type}, Watched: ${film.haveWatched ? '✅' : '❌'
+      } `;
+    movieList.appendChild(pEl);
+  }
+}
+
+showMovies(movies);
 // create showMovies function
 
+let favMovie = {
+  title: 'Pulp Fiction',
+  director: 'Quentin Tarantino',
+  type: 'Crime, Drama',
+  haveWatched: true
+};
 
 // create a new movie object for your favorite movie
 
+function addMovies(film, callMe) {
+  movies.push(film);
+  callMe([film]);
+}
 
+addMovies(favMovie, showMovies);
 // create addMovies function

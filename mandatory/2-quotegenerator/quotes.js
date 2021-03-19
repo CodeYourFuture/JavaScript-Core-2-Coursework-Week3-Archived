@@ -490,3 +490,38 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+let quoteEL = document.querySelector('#quote');
+let authorEL = document.querySelector('#author');
+let newQuoteEl = document.querySelector('#newQuoteBtn');
+
+function displayQuote() {
+  let singleQuote = pickFromArray(quotes);
+  quoteEL.innerText = singleQuote.quote;
+  authorEL.innerText = singleQuote.author;
+  newQuoteEl.addEventListener('click', displayQuote);
+}
+
+displayQuote();
+
+
+let quoteGenEl = document.querySelector('#toggle');
+
+let checked = true;
+
+let changeQuote;
+
+let labelEl = document.querySelector('#quoteLabel');
+
+quoteGenEl.addEventListener('click', function () {
+  if (checked) {
+    changeQuote = setInterval(displayQuote, 30000);
+    checked = false;
+    labelEl.innerHTML = 'Auto-play: ON';
+  } else {
+    clearInterval(changeQuote);
+    checked = true;
+    labelEl.innerHTML = 'Tick the box to get random quote every 30 seconds';
+  }
+})
