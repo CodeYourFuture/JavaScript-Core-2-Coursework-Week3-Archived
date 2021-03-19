@@ -1,1 +1,71 @@
 /** Write your CSS in here **/
+/*Page  Layout*/
+#content {
+  background-color: palevioletred;
+  height: 520px;
+}
+
+/*Heading*/
+h1 {
+  text-align: center;
+  color: green;
+  background-color: aliceblue;
+}
+/*Card*/
+.card {
+  background-color: aliceblue;
+  color:yellowgreen;
+  font-weight: bolder;
+}
+
+#quote {
+  margin: 40px 20px auto;
+  text-align: center;
+}
+/*Button*/
+.button {
+  width: 250px;
+  height: 50px;
+  background-color: blanchedalmond;
+  margin-top: 20px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+  color: deeppink;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+/*Footer*/
+#foot {
+  background-color: aliceblue;
+  height: 60px;
+  color: green;
+  text-align: center;
+}
+/*Media Querries*/
+@media screen and (min-width: 500px) {
+  #content {
+    height: 570px;
+  }
+  #quote {
+    margin: 80px 40px auto;
+  }
+}
+@media screen and (min-width: 700px) {
+  #content {
+    height: 570px;
+  }
+  #quote {
+    margin: 100px 80px auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #content {
+    height: 820px;
+  }
+  #quote {
+    margin: 120px 480px auto;
+  }
+  #foot {
+    font-size: xx-large;
+  }
+}

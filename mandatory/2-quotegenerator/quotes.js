@@ -1,3 +1,25 @@
+let nextQuote = document.createElement("button");
+let quoteSection = document.getElementById("quote");
+quoteSection.appendChild(nextQuote);
+nextQuote.className = "button";
+nextQuote.innerHTML = "Next Quote";
+let cardBody = document.getElementsByClassName("card-body");
+let quoteText = document.querySelector("p");
+let quoteAuthor = document.querySelector(".blockquote-footer");
+/*Load Events*/
+function loading() {
+  const randomQuote = pickFromArray(quotes);
+  quoteText.innerHTML = randomQuote.quote;
+  quoteAuthor.innerHTML = randomQuote.author;
+  
+}
+/*Click  Events*/
+nextQuote.addEventListener("click", function () {
+  const randomQuote = pickFromArray(quotes);
+  quoteText.innerHTML = randomQuote.quote;
+  quoteAuthor.innerHTML = randomQuote.author;
+});
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
