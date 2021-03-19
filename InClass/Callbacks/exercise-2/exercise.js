@@ -66,7 +66,7 @@ const moviesNumber = document.getElementById("movies-number");
 // create showMovies function
 function showMovies() {
   // - iterates through the "movies" array
-  for (movie of movies) {
+  for (let movie of movies) {
     // - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
     const pElement = document.createElement("p");
     pElement.innerText = `Title: ${movie.title} \n Director: ${movie.director}`;
