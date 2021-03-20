@@ -1,1 +1,39 @@
 /** Write your CSS in here **/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 150px 100px 100px 100px;
+    background-color: white;
+}
+
+h2{ 
+    color: orange;
+    margin-right:750px;
+    font-size: 40px;
+   
+
+}
+
+p{
+
+    color: orange;
+    margin-left: 600px;
+}
+
+button{
+    color: white;
+    background-color: orange;
+    border:transparent;
+    margin-left: 650px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 120px;
+}
