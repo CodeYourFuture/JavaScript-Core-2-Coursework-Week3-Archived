@@ -1,29 +1,23 @@
-//---------------------//
-//---------------------//
-
-//---------------------//
-
 function setAlarm() {
   
   const setBtn = document.getElementById('set');
-  console.log('this is the set button', setBtn);
+  // console.log('this is the set button', setBtn);
   
   const stopBtn = document.getElementById('stop');
-  console.log('this is the stop button', stopBtn);
+  // console.log('this is the stop button', stopBtn);
   
-  // .addEventListener
   setBtn.addEventListener('click', getInputValue)
-    
-    //---------------------//
-    function getInputValue(){
-      // Selecting the input element and get its value 
-      const inputVal = setBtn('input').value;
+      function getInputValue(){
+        const inputVal = document.getElementById('alarmSet').value;
+        // Select the input element and get its value 
+        // console.log('This is my input value',inputVal);
       
-      // Displaying the value
-      alert(inputVal);
+        
+        const titleVal = document.getElementById('timeRemaining');
+        titleVal.placeholder = '0:00';  //.toFixed(2) two decimal places.
+        titleVal.textContent = `Time remaining: ${inputVal}`;
+        // console.log('This is my titleVal', titleVal);
     }
-    // getInputValue();
-  
   
   //---------set interval------------//
   // const alarm = setInterval(myTimer, 1000);
