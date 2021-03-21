@@ -1,3 +1,18 @@
+let quoteEl = document.getElementById('quote');
+let authorEl = document.getElementById('author');
+let buttonEl = document.getElementById('newQuote');
+
+buttonEl.addEventListener('click', pickQuote);
+
+function pickQuote() {
+ 
+  quoteEl.innerText = pickFromArray(quotes).quote;
+  authorEl.innerText = pickFromArray(quotes).author;
+    
+}
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
