@@ -22,7 +22,7 @@ function pickFromArray(choices) {
 }
 
 // A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
+// Feel free to edit them, and to add your own favorites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -490,3 +490,17 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+let quoteEL = document.querySelector('#quote');
+let authorEL = document.querySelector('#author');
+let newQuoteEl = document.querySelector('#newQuoteBtn');
+
+function displayQuote() {
+  let singleQuote = pickFromArray(quotes);
+  quoteEL.innerText = singleQuote.quote;
+  authorEL.innerText = singleQuote.author;
+  newQuoteEl.addEventListener('click', displayQuote);
+}
+
+displayQuote(); 

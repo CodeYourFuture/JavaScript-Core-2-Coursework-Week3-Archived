@@ -12,15 +12,75 @@
     body {
       padding: 30px;
     }
+    #add-movies{
+      background-color:cadetblue;
+      border-radius: 10px;
+    }
+    #main{
+      padding: 5px;
+      background-color:darkgrey;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
 <body>
   <div id="main">
     <div class="jumbotron">
-      <h1>My movies</h1>
+      <h1>My Movies.  </h1>
       <div id="all-movies">
-        <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
+        <p class="alert alert-info">Number of Movies: <span id="movies-number"></span></p>
+        <!-- added Movie form -->
+      </div>
+    </div>
+    <form id="add-movies">
+      <fieldset>
+        <legend>Add New movie info:</legend>
+        <label class="form-group" for="title">
+          Title
+          <input
+            placeholder="Movie title"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </label>
+        <label class="form-group" for="director">
+          Directors
+          <input
+            placeholder="Movie director"
+            class="form-control"
+            id="director"
+            name="director"
+            required
+          />
+        </label>
+        <label class="form-group" for="type">
+          Type
+          <input
+            placeholder="Movie type"
+            class="form-control"
+            id="type"
+            name="type"
+            required
+          />
+        </label>
+        <label class="form-group" for="haveWatched">
+          Already Watched
+          <input
+            class="form-control"
+            id="haveWatched"
+            name="haveWatched"
+            type="checkbox"
+        /></label>
+      </fieldset>
+      <button type="submit" id="movie-submit" class="btn btn-primary">
+        Add New Movie
+      </button>
+      </form>
+    <script src="exercise.js"></script>
+</body>
       </div>
     </div>
     <script src="exercise.js"></script>

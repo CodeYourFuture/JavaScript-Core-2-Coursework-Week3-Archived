@@ -1,1 +1,48 @@
 /** Write your CSS in here **/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img {
+    border: solid black;
+    border-radius: 5px;
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+  .button-container{
+      margin-top: 5;
+      padding: 10px;
+      background-color: rgb(61, 70, 52);
+  }
+#next{
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#autoBack{
+    padding: 2px;
+    border-radius: 5px;
+}
+#stop{
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#autoForw{
+    padding: 2px;
+    border-radius: 5px;
+}
+#prev{
+    padding: 2px;
+    border-radius: 5px;
+}

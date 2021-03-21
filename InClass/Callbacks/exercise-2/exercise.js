@@ -63,8 +63,59 @@ const movies = [
 
 // create showMovies function
 
+const divElement = document.querySelector("#all-movies");
+const movieNumbers = document.querySelector("#movies-number");
+
+function showMovies (){
+
+  divElement.innerHTML = "";
+  movies.forEach(movie => {
+    const para = document.createElement("p");
+    para.innerText += `${movie.title} by ${movie.director}`;
+    movieNumbers.innerText = movies.length;
+    divElement.appendChild(para);
+  })
+}
+
+
 
 // create a new movie object for your favorite movie
 
+const myFavMovie = {};
+
+function addMovie(movie, callback) {
+  setTimeout(() => {
+    movies.push(movie);
+    callback();
+  }, 2000)
+}
 
 // create addMovies function
+
+const title = document.querySelector("#title");
+const director = document.querySelector("#director");
+const type = document.querySelector("#type");
+const haveWatched = document.querySelector("#haveWatched");
+const movieSubmit = document.querySelector("#movie-submit");
+
+
+movieSubmit.addEventListener("click", (event) => {
+  event.preventDefault();
+  myFavMovie.title = title.value;
+  myFavMovie.director = director.value;
+  myFavMovie.type = type.value;
+  myFavMovie.haveWatched = haveWatched.checked ? true : false;
+  addMovie(myFavMovie, showMovies);
+  clearInputFields();
+})
+
+function clearInputFields() {
+  title.value = "";
+  director.value = "";
+  type.value = "";
+  haveWatched.checked = "";
+}
+
+window.onload = showMovies; 
+
+// ##################################################################################################################################################################
