@@ -1,3 +1,14 @@
+let content = document.getElementById("content");
+let quote = document.getElementById("quote");
+let author = document.getElementById("author");
+let button = document.getElementById("btn");
+
+const quoteGenerator = function (){
+  for (let entry of quotes){
+    console.log(entry.author);
+  }
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -490,3 +501,5 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+quoteGenerator();

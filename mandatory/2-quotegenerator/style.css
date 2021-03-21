@@ -12,10 +12,21 @@
     top: 15%;
 }
 #quote{
+    color: slateblue;
     background-color: orangered;
     position: absolute;
     width: 80%;
     height: 40%;
     left: 10%;
     top: 30%;
+}
+#btn{
+    color: chartreuse;
+    background-color: slateblue;
+    border-radius: 45%;
+    border: none;
+    box-shadow: -3px 3px steelblue;
+    position: absolute;
+    left: 70%;
+    top: 60%;
 }
