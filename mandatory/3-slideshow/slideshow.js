@@ -31,26 +31,23 @@ nextBtn.addEventListener("click", changeToImageNext);
 let previousBtn = document.querySelector(".button-prev");
 previousBtn.addEventListener("click", changeToImagePrev);
 
-var i = 0;
+var photoIndex = 0;
 
 function changeToImageNext() {
-    if (i >= images.length - 1) i = -1;
-    i++;
-    return getImg();
+    if (photoIndex >= images.length - 1) photoIndex = -1;
+    photoIndex++;
+    getImg();
 }
 
 function changeToImagePrev() {
-    if (i <= 0) i = images.length;
-    i--;
-    return getImg();
+    if (photoIndex <= 0) photoIndex = images.length;
+    photoIndex--;
+    getImg();
 }
 
 function getImg() {
-    function makeImg() {
-        ourImage.setAttribute('src', `${images[i].src}`);
-        ourImage.setAttribute('alt', `${images[i].alt}`);
-    };
-    return makeImg();
+    ourImage.setAttribute('src', `${images[photoIndex].src}`);
+    ourImage.setAttribute('alt', `${images[photoIndex].alt}`);
 }
 
 let autoPreviousBtn = document.querySelector(".button-auto-prev");             //Adding an event to the "Auto Previous" button
