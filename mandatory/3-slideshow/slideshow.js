@@ -86,7 +86,7 @@ function slideBack() {
     if (statusDogCounter < 0) {
         statusDogCounter = objectValuesLength-1;
     }
-    dogImage.src= `${selectStatusDog(statusDogs)}`;
+    dogImage.src= selectStatusDog(statusDogs);
 }
 
 // When the forward slide button is clicked, call the function slideForward
@@ -98,5 +98,5 @@ function slideForward() {
     if (statusDogCounter > objectValuesLength-1) {
         statusDogCounter = 0;
     }
-    dogImage.src= `${selectStatusDog(statusDogs)}`;
+    dogImage.src= selectStatusDog(statusDogs);
 }
