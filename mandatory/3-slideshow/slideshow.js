@@ -64,7 +64,6 @@ const statusDogs = {
 // Create selectors
 const body = document.querySelector("body");
 const dogImage = document.getElementById("statusDogImg");
-console.log(dogImage);
 const backSlideBtn = document.getElementById("backSlideBtn");
 const forwardSlideBtn = document.getElementById("forwardSlideBtn");
 
