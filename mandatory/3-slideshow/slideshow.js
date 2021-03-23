@@ -1,7 +1,7 @@
 // Write your code here
 const statusDogs = {
-    100: `"images/100.jpg"`,
-    200: `"images/200.jpg"`,
+    100: "images/100.jpg",
+    200: "images/200.jpg",
     201: "images/201.jpg",
     202: "images/202.jpg",
     203: "images/203.jpg",
