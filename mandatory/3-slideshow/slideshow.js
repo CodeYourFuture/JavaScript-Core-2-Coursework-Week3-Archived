@@ -85,7 +85,7 @@ backSlideBtn.addEventListener("click", slideBack);
 function slideBack() {
     statusDogCounter --;
     if (statusDogCounter < 0) {
-        statusDogCounter === (objectValuesLength-1);
+        statusDogCounter = objectValuesLength-1;
     }
     dogImage.src= `${selectStatusDog(statusDogs)}`;
 }
@@ -96,8 +96,8 @@ forwardSlideBtn.addEventListener("click", slideForward);
 // Moves to next image
 function slideForward() {
     statusDogCounter ++;
-    if (statusDogCounter > (objectValuesLength-1)) {
-        statusDogCounter === 0;
+    if (statusDogCounter > objectValuesLength-1) {
+        statusDogCounter = 0;
     }
     dogImage.src= `${selectStatusDog(statusDogs)}`;
 }
