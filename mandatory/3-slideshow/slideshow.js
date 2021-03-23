@@ -73,7 +73,7 @@ let statusDogCounter = 0;
 let objectValuesLength = Object.values(statusDogs).length;
 
 // Returns the image for the status Dog we are currently up to
-function trackStatusNumber(statusDogs) {
+function selectStatusDog(statusDogs) {
   return Object.values(statusDogs)[statusDogCounter];
 };
 
@@ -86,7 +86,7 @@ function slideBack() {
     if (statusDogCounter < 0) {
         statusDogCounter === (objectValuesLength-1);
     }
-    dogImage.src= `${trackStatusNumber(statusDogs)}`;
+    dogImage.src= `${selectStatusDog(statusDogs)}`;
 }
 
 // When the forward slide button is clicked, call the function slideForward
@@ -98,5 +98,5 @@ function slideForward() {
     if (statusDogCounter > (objectValuesLength-1)) {
         statusDogCounter === 0;
     }
-    dogImage.src= `${trackStatusNumber(statusDogs)}`;
+    dogImage.src= `${selectStatusDog(statusDogs)}`;
 }
