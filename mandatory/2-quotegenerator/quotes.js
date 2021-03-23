@@ -1,5 +1,4 @@
 // DO NOT EDIT BELOW HERE
-
 // A function which will return one item, at
 // random, from the given array.
 //
@@ -19,7 +18,7 @@
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
-}
+};
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +489,20 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// Create selectors
+const body = document.querySelector("body");
+const quoteDisplay = document.getElementById("quoteDisplay");
+const newQuoteBtn = document.getElementById("newQuoteBtn");
+let quote = document.getElementById("quote");
+let author = document.getElementById("author");
+
+// When the new quote button is clicked, call the function newQuote
+newQuoteBtn.addEventListener("click", newQuote);
+
+// Select a random quote
+function newQuote() {
+  let selectQuote = pickFromArray(quotes);
+  quote.innerHTML = `"${selectQuote.quote}`;
+  author.innerHTML = `- ${selectQuote.author}`;
+};
