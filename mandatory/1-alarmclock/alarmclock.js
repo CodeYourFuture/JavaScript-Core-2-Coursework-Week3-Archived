@@ -1,36 +1,21 @@
-let timeLimit = 10;
-let timePassed = 0;
-let timeLeft = timeLimit;
 let timerInterval = null;
-let input = document.getElementById('alarmSet');
-
-const timesUp = () => {
-  clearInterval(timerInterval);
-  playAlarm();
-}
-
+const inputTime = document.getElementById("alarmSet");
+const timeRemain = document.getElementById("timeRemaining");
 
 const setAlarm = () => {
-  timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = timeLimit - timePassed;
-    document.getElementById('timeRemaining').innerHTML = `Time Remaining: ${formatTime(timeLeft)}`;
-    if (timeLeft === 0) {
-      timesUp();
+  let timeCountDown = inputTime.value;
+  timeRemain.innerHTML = `Time Remaining: 00:${inputTime.value}`;
+  let timerInterval = setInterval(() => {
+    timeRemain.innerHTML = `Time Remaining: 00:${timeCountDown}`;
+    if (timeCountDown > 0) {
+      timeCountDown -= 1;
+    }
+    if (timeCountDown === 0) {
+      clearInterval(timerInterval);
+      playAlarm();
     }
   }, 1000);
-}
-
-const formatTime = (time) => {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-
-  if(seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-
-  return `${minutes}:${seconds}`;
-}
+};
 
 // DO NOT EDIT BELOW HERE
 
