@@ -1,1 +1,46 @@
 /** Write your CSS in here **/
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    color: #333;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    flex: 0 0 80%;
+}
+
+#quoteBtn {
+    border: none;
+    color: #fff;
+    background: #753b08;
+    padding: 0.25rem 0.5rem;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+#quoteBtn:hover {
+    color: #ffd000;
+}
+
+blockquote {
+    border-left: 10px solid #753b08;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+}
+
+#quoteAuthor {
+    color: #ffd000;
+}
