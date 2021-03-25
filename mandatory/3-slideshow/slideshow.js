@@ -33,3 +33,18 @@ function slideShowFwd (){
 }
 
 fwdBtn.addEventListener("click", slideShowFwd);
+
+function slideShowBck (){
+    console.log(counter);
+     if (counter > 0){
+    imgArray[counter].style.display = "none";
+    counter --;
+    imgArray[counter].style.display = "block";
+    }else {
+        counter = imgArray.length -1;
+        imgArray[0].style.display = "none";
+        imgArray[counter].style.display = "block";
+    }
+}
+
+backBtn.addEventListener("click", slideShowBck);
