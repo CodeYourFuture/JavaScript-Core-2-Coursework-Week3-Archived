@@ -17,8 +17,19 @@ window.addEventListener("load", ()=>{
     imgArray[0].style.display = "block";
 });
 
-function slideShow (imageArr){
-    if(indexOf(imageArr) >= 0){
+let counter = 0;
 
+function slideShowFwd (){
+    console.log(counter);
+    if (counter < (imgArray.length -1)){
+    imgArray[counter].style.display = "none";
+    counter ++;
+    imgArray[counter].style.display = "block";
+    }else {
+        counter = 0;
+        imgArray[imgArray.length -1].style.display = "none";
+        imgArray[counter].style.display = "block";
     }
 }
+
+fwdBtn.addEventListener("click", slideShowFwd);
