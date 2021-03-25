@@ -1,4 +1,19 @@
 /** Write your CSS in here **/
-img{
-    display: block;
+h1 {
+  color: chartreuse;
+  font-family: fantasy;
+}
+/* #img-container{
+
+} */
+img {
+  display: none;
+  width: 70vh;
+  height: 60vh;
+}
+/* caption {
+  
+} */
+#buttons {
+  display: block;
 }
