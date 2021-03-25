@@ -10,6 +10,9 @@ let image8 = document.getElementById("img8");
 
 let backBtn = document.getElementById("back");
 let fwdBtn = document.getElementById("fwd");
+let autoFwd = document.getElementById("autoFwd");
+let autoBck = document.getElementById("autoBack");
+let stopBtn = document.getElementById("stop");
 
 let imgArray = [image1, image2, image3, image4, image5, image6, image7, image8];
 
@@ -20,7 +23,7 @@ window.addEventListener("load", ()=>{
 let counter = 0;
 
 function slideShowFwd (){
-    console.log(counter);
+    // console.log(counter);
     if (counter < (imgArray.length -1)){
     imgArray[counter].style.display = "none";
     counter ++;
@@ -35,7 +38,7 @@ function slideShowFwd (){
 fwdBtn.addEventListener("click", slideShowFwd);
 
 function slideShowBck (){
-    console.log(counter);
+    // console.log(counter);
      if (counter > 0){
     imgArray[counter].style.display = "none";
     counter --;
@@ -48,3 +51,23 @@ function slideShowBck (){
 }
 
 backBtn.addEventListener("click", slideShowBck);
+
+function autoForward(){
+    setInterval(slideShowFwd ,1000);
+}
+
+autoFwd.addEventListener("click", autoForward);
+
+function autoBack(){
+    setInterval(slideShowBck ,1000);
+}
+
+function stopAuto (){
+    console.log(counter);
+    clearInterval(autoForward);
+    clearInterval(autoBack);
+}
+
+autoBck.addEventListener("click", autoBack);
+
+stopBtn.addEventListener("click", stopAuto);

@@ -16,4 +16,8 @@ img {
 } */
 #buttons {
   display: block;
+  width: 70vh;
+}
+button{
+  width: 19%;
 }
