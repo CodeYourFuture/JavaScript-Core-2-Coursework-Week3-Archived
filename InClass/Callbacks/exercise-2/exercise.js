@@ -61,10 +61,60 @@ const movies = [
   },
 ];
 
+const allMovies = document.getElementById("all-movies");
+const moviesNumber = document.getElementById("movies-number");
 // create showMovies function
+function showMovies() {
+  // - iterates through the "movies" array
+  for (let movie of movies) {
+    // - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+    const pElement = document.createElement("p");
+    pElement.innerText = `Title: ${movie.title} \n Director: ${movie.director}`;
+    // Amend your function above to only show movies after 1 second.
+    setTimeout(function() {
+      allMovies.appendChild(pElement);
+    }, 1000);
+    // - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
+    moviesNumber.innerText = movies.length;
+  }
+};
 
+// Create a new object for your favorite movie following using the "myMovies" objects as a guide 
+const newMovie = {
+    title: "Blended",
+    director: "Frank Coraci",
+    type: "Romantic Comedy",
+    haveWatched: true,
+};
 
-// create a new movie object for your favorite movie
+// Create a new function called "addMovie"
+function addMovie(newMovie, callback) {
+  // - it adds the new movie to the list of movies after 2 seconds.
+  setTimeout(function() {
+    movies.push(newMovie);
+    callback();
+   }, 2000);
+};
+  // Call addMovie to add the new movie to the list and then showMovies to see the movies added on the screen.
+addMovie(newMovie, showMovies);
 
+// Create a form anywhere on your page.
+// - 4 input text fields, one for each property of your movie object
+const formElement = document.getElementById("add-movies");
+const titleElement = document.getElementById("title");
+const directorElement = document.getElementById("director");
+const typeElement = document.getElementById("type");
+const haveWatchedElement = document.getElementById("haveWatched");
 
-// create addMovies function
+// - The field values should be used to create a new movie object literal
+  formElement.addEventListener("submit", (element) => {
+    element.preventDefault();
+    const addNewMovie = {
+      title: titleElement.value,
+      director: directorElement.value,
+      type: typeElement.value,
+      haveWatched: haveWatchedElement.checked,
+    };
+    // - The new movie is then added to the list of movies and gets displayed on your page
+    addMovie(addNewMovie, showMovies);
+});

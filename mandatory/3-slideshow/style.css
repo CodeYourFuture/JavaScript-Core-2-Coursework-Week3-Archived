@@ -1,1 +1,43 @@
 /** Write your CSS in here **/
+body {
+    background-color: #43fcbe;
+    width:100%;
+    height: 100%;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+}
+
+a {
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+
+img {
+    width: 40%;
+    margin: 2%;
+}
+
+button {
+    background-color: #0d34e4;
+    border-color: #0d34e4;
+    color: #43fcbe;
+    align-self: center;
+}
+
+.buttons {
+    display: inline-block;
+    text-align: center;
+    margin: 2%;
+} 
