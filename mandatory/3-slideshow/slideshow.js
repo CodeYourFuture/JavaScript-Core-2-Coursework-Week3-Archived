@@ -52,22 +52,27 @@ function slideShowBck (){
 
 backBtn.addEventListener("click", slideShowBck);
 
-function autoForward(){
-    setInterval(slideShowFwd ,1000);
+let autoFwdButton;
+
+let autoFwdBtn =  function (){
+    autoFwdButton = setInterval(slideShowFwd ,1000);
+};
+autoFwd.addEventListener("click", autoFwdBtn);
+
+let autoBckButton;
+let autoBckBtn =  function (){
+   autoBckButton =  setInterval(slideShowBck ,1000);
+
+};
+autoBck.addEventListener("click", autoBckBtn); 
+
+let stopAuto = function (){
+    // console.log(counter); 
+    clearInterval(autoFwdButton);
+    clearInterval(autoBckButton);
 }
 
-autoFwd.addEventListener("click", autoForward);
+stopBtn.addEventListener("click", stopAuto); 
 
-function autoBack(){
-    setInterval(slideShowBck ,1000);
-}
-
-function stopAuto (){
-    console.log(counter);
-    clearInterval(autoForward);
-    clearInterval(autoBack);
-}
-
-autoBck.addEventListener("click", autoBack);
-
-stopBtn.addEventListener("click", stopAuto);
+//AUto buttons work, stop button works except if you accidentally
+//click twice on one of the auto buttons.
