@@ -1,3 +1,15 @@
+function quoteGenerator() {
+  const quoteParagraph = document.getElementById("quote");
+  const authorParagraph = document.getElementById("author");
+  let randomQuoteElement = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteParagraph.innerText = '"' + randomQuoteElement.quote + '"';
+  authorParagraph.innerText = '"' + randomQuoteElement.author + '"';
+  document.getElementById("button").addEventListener("click", quoteGenerator);
+}
+
+window.onload = quoteGenerator;
+
+
 
 // DO NOT EDIT BELOW HERE
 

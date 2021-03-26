@@ -1,1 +1,51 @@
 /** Write your CSS in here **/
+body {
+  background-image: linear-gradient(to right, rgba(21, 191, 117), rgba(61, 134, 224));
+  font-family: Times;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 90%;
+  background-color: rgb(225, 240, 239);
+  padding: 1em;
+  margin: 5em;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 1);
+}
+
+h1 {
+  margin-top: 1em;
+  font-weight: 900;
+}
+
+section {
+  background-color: rgb(225, 240, 239);
+  padding: 1em;
+}
+.row {
+  background-color: rgb(225, 240, 239);
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#quote {
+  font-size: 2em;
+  height: 4em;
+  margin-bottom: 2em;
+}
+#author {
+  font-weight: 800;
+}
+#button {
+  background-color: rgb(228, 206, 178);
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  outline: 0;
+}
+#button:hover {
+  background-color: rgb(245, 219, 186);
+  box-shadow: 0px 15px 20px rgba(8, 46, 31, 0.4);
+}
+
