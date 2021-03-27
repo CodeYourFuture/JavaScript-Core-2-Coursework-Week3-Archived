@@ -55,12 +55,18 @@ backBtn.addEventListener("click", slideShowBck);
 let autoFwdButton;
 
 let autoFwdBtn =  function (){
+    if(autoFwdButton){
+        clearInterval(autoFwdButton);
+    }
     autoFwdButton = setInterval(slideShowFwd ,1000);
 };
 autoFwd.addEventListener("click", autoFwdBtn);
 
 let autoBckButton;
 let autoBckBtn =  function (){
+    if(autoBckButton){
+        clearInterval(autoBckButton);
+    }
    autoBckButton =  setInterval(slideShowBck ,1000);
 
 };
