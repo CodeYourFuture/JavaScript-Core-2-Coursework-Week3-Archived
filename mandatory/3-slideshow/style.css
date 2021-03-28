@@ -1,1 +1,14 @@
 /** Write your CSS in here **/
+.photo-properties{
+    width:90%;
+    height: auto;
+    margin: auto 30px auto 20px;
+}
+button{
+    margin-top: 20px;
+    
+}
+button:first-of-type{
+    margin-left: 30%;
+
+}
