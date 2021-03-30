@@ -1,1 +1,31 @@
 /** Write your CSS in here **/
+h1 {
+  color: chartreuse;
+  font-family: fantasy;
+  position: absolute;
+  left: 33%;
+  top: 2%;
+}
+#img-container{
+position: absolute;
+left: 25%;
+top: 10%;
+}
+img {
+  display: none;
+  width: 50vw;
+  height: 70vh;
+}
+/* caption {
+  
+} */
+#buttons {
+  display: block;
+  width: 51vw;
+  position: absolute;
+  left: 25%;
+  top: 80%;  
+}
+button{
+  width: 19%;
+}

@@ -1,3 +1,21 @@
+let content = document.getElementById("content");
+let quote = document.getElementById("quote");
+let author = document.getElementById("author");
+let button = document.getElementById("btn");
+
+const quoteGenerator = function (objArr){  
+  let randomInteger = Math.floor(Math.random() * objArr.length);
+    author.textContent = objArr[randomInteger].author;
+    quote.innerText = objArr[randomInteger].quote;
+  button.addEventListener("click", () => {
+    let randomInt = Math.floor(Math.random() * objArr.length); 
+    author.textContent = objArr[randomInt].author;
+    quote.textContent = objArr[randomInt].quote;
+  });
+}
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -490,3 +508,6 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+window.addEventListener("load", quoteGenerator(quotes));
+
