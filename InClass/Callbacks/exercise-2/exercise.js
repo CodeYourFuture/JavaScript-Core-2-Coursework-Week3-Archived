@@ -63,8 +63,6 @@ const movies = [
 
 // create showMovies function
 
-
 // create a new movie object for your favorite movie
-
 
 // create addMovies function
