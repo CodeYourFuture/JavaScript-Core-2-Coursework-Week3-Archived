@@ -11,6 +11,7 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+//<<<<<<< main
 
 let colorBackground = document.getElementById("main")[0];
 
@@ -31,3 +32,5 @@ function changeBackground2 () {
 }
 
 changeBackground2();
+//=======
+//>>>>>>> main

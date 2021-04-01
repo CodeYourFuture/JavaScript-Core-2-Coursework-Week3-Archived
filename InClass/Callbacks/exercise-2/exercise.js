@@ -71,6 +71,7 @@ function showMovies() {
   })
 }
 
+//<<<<<<< main
 
 // Task 2: create a new movie object for\ your favorite movie
 const myFavMovie = {
@@ -94,3 +95,8 @@ function addMovieToList(movies, movie) {
 addMovie(movies, () => addMovieToList(movies, myFavMovie));
 
 // Task 4 - **Extra**
+//=======//
+// create a new movie object for your favorite movie
+
+// create addMovies function
+//>>>>>>> main
