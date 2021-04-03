@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Slideshow</title>
-    <script src="slideshow.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="platform">
-      <section id="slideshow">
-        <h1>Slideshow of food</h1>
-        <div id="images">
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="example-screenshots/junior-reis-pZhl3nFJ52I-unsplash.jpeg" style="width:100%">
-            <div class="text">Caption Three</div>
-          </div>
-          <div id="images">
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
-              <img src="example-screenshots/sara-julie-9Gz5bMWdGYE-unsplash.jpeg" style="width:100%">
-              <div class="text">Caption Three</div>
-            </div>
-            <div id="images">
-              <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="example-screenshots/sara-julie-_2exuhGPPW4-unsplash.jpeg" style="width:100%">
-                <div class="text">Caption Three</div>
-              </div>
-            
-          <button id="fwdbutton">forward</button>
-          <button id="bkwdbutton">backward</button>
-        </div>
-      </section>
-    </div>
-  </body>
+
+<head>
+  <title>Slideshow</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="platform">
+    <h1>Image Slideshow</h1>
+    <img class="img" name="slide" width="400" height="250" margin="50">
+    <br>
+    <button onclick="slideshowBack()" id="bckbtn">Back</button>
+    <button onclick="slideshow()" id="fwdbtn" value="type">Forward</button>
+  </div>
+  <script src="slideshow.js"></script>
+</body>
+
 </html>

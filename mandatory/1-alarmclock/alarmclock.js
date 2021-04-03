@@ -1,5 +1,22 @@
-function setAlarm() {}
 
+
+
+
+function setAlarm() {
+var countdown = document.getElementById("stopwatch");
+let inputField = document.getElementById('alarmSet').value;
+let alarmSetButton = document.getElementById('set');
+
+alarmSetButton.addEventListener('click', () =>
+{
+  countdown.textContent = inputField;
+  countdown.inputField = parseFloat(countdown.inputField) - 1;
+});
+window.setInterval(alarmSetButton, 1000);
+};
+
+
+//   
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");

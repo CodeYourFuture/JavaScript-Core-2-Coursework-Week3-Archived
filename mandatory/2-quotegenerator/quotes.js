@@ -17,8 +17,14 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
+
+function pickFromArray() {
+  var chosen = quotes[Math.floor(Math.random() * quotes.length)].quote;
+
+  var output = document.getElementById('output');
+  output.innerHTML = chosen
+
+
 }
 
 // A list of quotes you can use in your app.

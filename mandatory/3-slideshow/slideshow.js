@@ -1,25 +1,46 @@
 // Write your code here
 
-var next = document.getElementById('fwdbutton');
- next.addEventListener('click', );
-var back = document.getElementById('bkwdbutton');
-back.addEventListener('click', () =>
-{
-    var images = document.getElementsByTagName('img');
-   
-});
+var next = document.getElementById('fwdbtn');
+//  next.addEventListener('click', );
+var back = document.getElementById('bckbtn');
 
-function slideshow(n) {
-    var i;
-    var slide = document.getElementsByClassName('mySlides');
+var i = 0; //starting point
+var images = []; //empty array to add to
+var time = 2000;
 
-    if (n > slide.length) {slideIndex = 1;}
-    if (n < 1) {slideIndex = slide.length};
-    
+images[0] = 'image1.jpeg';
+images[1] = 'image2.jpeg';
+images[2] = 'image3.jpeg';
+images[3] = 'image4.jpeg';
+images[4] = 'image5.jpeg';
 
+//next.addEventListener('click', nextbtn())
 
-  for (i = 0; i < n.length; i++) {
-      
+// function clicked(){
+//   //alert('hannin')
+//   console.log('hannin'); //trying to see if my button works, it does
+//how to connect the buttons to the next img?
+
+function slideshow() {
+  document.slide.src = images[i];
+
+  if (i < images.length - 1) {
+    i++;
+  } else {
+    i = 0;
   }
-
+  //setTimeout('slideshow()', time);
 }
+//struggling with the reversal of the slide show
+// function slideshowBack() {
+//   document.slide.src = images[i];
+
+//   if (i <= images.length + 1) {
+//     i--;
+//   } else {
+//     i = 0;
+//   }
+//   //setTimeout('slideshow()', time);
+// }
+// window.onload = slideshow;
+
