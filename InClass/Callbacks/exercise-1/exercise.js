@@ -6,8 +6,10 @@ Task 1
 Using setTimeout, change the background colour of the page after 5 seconds (5000 milliseconds).
 */
 const targetDiv = document.getElementById('main');
+console.log(targetDiv);
 
 function changeColor() {
+  
   setTimeout(() => {
     targetDiv.style.backgroundColor = 'red';
   }, 5000);

@@ -10,52 +10,31 @@ function getStringTime(secondsInput) {
 
 function myTimer() {
   alarmTimer--;
-// console.log(alarmTimer);
-if (alarmTimer === 0) {
-  playAlarm();
-  clearInterval(alarmInterval);
+  // console.log(alarmTimer);
+  if (alarmTimer === 0) {
+    playAlarm();
+    clearInterval(alarmInterval);
   }
-const titleVal = document.getElementById('timeRemaining');
-// titleVal.placeholder = '0:00';  //.toFixed(2) two decimal places.
-titleVal.textContent = `Time remaining: ${getStringTime(alarmTimer)}`;
-// const date = new Date();
-// inputVal.innerHTML.getTime();
-// console.log('This is the current time', time);
+  const titleVal = document.getElementById('timeRemaining');
+  console.log(`titleVal = ${titleVal}`);
+  titleVal.textContent = `Time remaining: ${getStringTime(alarmTimer)}`;
 }
 
-function setAlarm() {
-  
-  // const setBtn = document.getElementById('set');
-  // // console.log('this is the set button', setBtn);
-  
-  // const stopBtn = document.getElementById('stop');
-  // // console.log('this is the stop button', stopBtn);
- 
-  
+function setAlarm() {  
     const inputVal = document.getElementById('alarmSet').value;
     // Select the input element and get its value 
     // console.log('This is my input value',inputVal);
-    alarmTimer = parseInt(inputVal * 60);
-    const titleVal = document.getElementById('timeRemaining');
-    // titleVal.placeholder = '0:00';  //.toFixed(2) two decimal places.
-    titleVal.textContent = `Time remaining: ${getStringTime(alarmTimer)}`;
-        
-    // console.log('This is my titleVal', titleVal);
-    //---------set interval------------//
+  
+  alarmTimer = parseInt(inputVal * 60);
+  const titleVal = document.getElementById('timeRemaining');
+  // titleVal.placeholder = '0:00';  //.toFixed(2) two decimal places.
+    
+  titleVal.textContent = `Time remaining: ${getStringTime(alarmTimer)}`;
+    
+  //---------set interval------------//
   alarmInterval = setInterval(myTimer, 1000);
   console.log(alarmInterval);                
 }
-
-//---------stop interval------------//
-// function pauseAlarm() {
-//   clearInterval(alarmInterval);
-//   console.log('stopping alarm');
-// }
-
-
-
-
-//---------------------//
 
 // DO NOT EDIT BELOW HERE
 
