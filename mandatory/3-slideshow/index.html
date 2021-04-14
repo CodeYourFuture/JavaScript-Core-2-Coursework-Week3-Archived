@@ -12,18 +12,26 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
-      <img id="slideImge" src="" alt="">
-      <p id="counter">nothing</p>
-      <button id="back">back</button>
-      <button id="forward">forward</button>
-      <button id="stop">stop</button>
-      <button id="auto-back">auto-back</button>
-      <button id="auto-forward">auto-forward</button>
+    <img id="slideImge" src="" alt="" />
+    <p id="counter"></p>
+    <p id="wait-time">Wait time for auto play : 1000 microseconds</p>
+    <button id="back">back</button>
+    <button id="forward">forward</button>
+    <button id="stop">stop</button>
+    <button id="auto-back">auto-back</button>
+    <button id="auto-forward">auto-forward</button>
+    <form action="">
+      <label for="input"></label>
+      <input
+        type="text"
+        name="time"
+        id="time"
+        placeholder="Wait time in microseconds"
+        required
+      />
+      <button id="submit-time-value">update auto play time</button>
+    </form>
 
-
-
-
-
-      <script src="slideshow.js"></script>
+    <script src="slideshow.js"></script>
   </body>
 </html>

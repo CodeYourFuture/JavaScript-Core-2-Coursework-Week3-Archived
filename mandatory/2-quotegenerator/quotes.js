@@ -18,7 +18,7 @@
 //
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
-  return (choices[Math.floor(Math.random() * choices.length)])
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
 // A list of quotes you can use in your app.
@@ -491,16 +491,35 @@ const quotes = [
   },
 ];
 
-let erick = pickFromArray(quotes)
-let pElement = document.getElementById("quote")
-let author = document.getElementById("author")
-pElement.textContent = `"${erick.quote}"`;
-author.textContent = `- ${erick.author}`;
+let getRandomQuote = pickFromArray(quotes);
+document.getElementById("quote").textContent = `"${getRandomQuote.quote}"`;
+document.getElementById("author").textContent = `- ${getRandomQuote.author}`;
 
-document.getElementById("button").addEventListener("click", function(){
-let erick = pickFromArray(quotes)
-let pElement = document.getElementById("quote")
-let author = document.getElementById("author")
-pElement.textContent = `"${erick.quote}"`;
-author.textContent = `- ${erick.author}`;
-})
+document.getElementById("button").addEventListener("click", function () {
+  let getRandomQuote = pickFromArray(quotes);
+  document.getElementById("quote").textContent = `"${getRandomQuote.quote}"`;
+  document.getElementById("author").textContent = `- ${getRandomQuote.author}`;
+});
+
+// enable auto play
+let valueCheck = document.getElementById("checkbox-value");
+valueCheck.addEventListener("click", function () {
+  if (valueCheck.checked === true) {
+    document.getElementById("switch-title").textContent = "auto-play: ON";
+    document.getElementById("button").setAttribute("disabled", "yes");
+
+    quoteInterval = setInterval(function () {
+      let getRandomQuote = pickFromArray(quotes);
+      document.getElementById(
+        "quote"
+      ).textContent = `"${getRandomQuote.quote}"`;
+      document.getElementById(
+        "author"
+      ).textContent = `- ${getRandomQuote.author}`;
+    }, 6000);
+  } else {
+    clearInterval(quoteInterval);
+    document.getElementById("switch-title").textContent = "auto-play: OFF";
+    document.getElementById("button").removeAttribute("disabled", "yes");
+  }
+});
