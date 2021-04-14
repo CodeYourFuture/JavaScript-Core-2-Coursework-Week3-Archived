@@ -490,3 +490,30 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+// document.getElementById('quoteBtn');
+// document.getElementById('#quote');
+// document.getElementById('#author');
+
+
+ function generateQuote() {
+   let chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+   document.getElementById("quote").innerHTML = chosenQuote.quote;
+   document.getElementById("author").innerHTML = chosenQuote.author;
+   
+ }
+
+//generateQuote(); called function to check is working.
+
+
+
+// get button element and add event listener then call the generate quote method.
+ let btn = document.getElementById('quoteBtn');
+ btn.addEventListener('click', () => {
+   generateQuote();
+ });
+
+ function pickFromArray(choices) {
+   return choices[Math.floor(math.random() * choices.length)];
+ }
