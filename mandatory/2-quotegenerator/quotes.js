@@ -491,19 +491,40 @@ const quotes = [
   },
 ];
 
-let result = pickFromArray(quotes);
-console.log(`Result = ${result}`);  //  Returns objects in the array.
 
 const quoteParagraph = document.getElementById("quote");
 const authorParagraph = document.getElementById("author");
 const buttonElement = document.getElementById("button");
 
+textDisplay(pickFromArray(quotes));
+// console.log(` = ${result}`);  //  Returns objects in the array.
+// buttonElement.addEventListener("onclick", textDisplay);
 
-function textDisplay() {
-  quoteParagraph.innerText = `${result.quote}`;
+function textDisplay(randomQuote) {
+  console.log("randomQuote =", randomQuote);
+  quoteParagraph.innerText = `${randomQuote.quote}`;
   console.log("quoteParagraph =", quoteParagraph);
-  authorParagraph.innerText = `by ${result.author}`;
+  authorParagraph.innerText = `by ${randomQuote.author}`;
   console.log("authorParagraph =", authorParagraph);
-
-  // buttonElement.addEventListener("click", textDisplay);
+  
 };
+
+buttonElement.addEventListener("click", testClick);  //() => textDisplay(pickFromArray(quotes)));
+
+function  testClick() {
+textDisplay(pickFromArray(quotes));
+}
+
+/*
+function changeQuote() {
+  let indexValue = 0;
+    if (indexValue === result.length);
+    quoteParagraph.innerText = result.quote[indexValue];
+    authorParagraph.innerText = result.author[indexValue];
+    indexValue++;
+    console.log("indexValue =",indexValue);
+  });
+}
+changeQuote();
+
+*/
