@@ -491,29 +491,19 @@ const quotes = [
   },
 ];
 
-let result = pickFromArray([quotes]);
-// console.log(`Result = ${result}`);  //  Returns objects in the array.
+let result = pickFromArray(quotes);
+console.log(`Result = ${result}`);  //  Returns objects in the array.
 
 const quoteParagraph = document.getElementById("quote");
 const authorParagraph = document.getElementById("author");
 const buttonElement = document.getElementById("button");
 
-buttonElement.addEventListener("click", textDisplay);
 
-function textDisplay() {  
-  for (randomQuote in quotes) {
-    // console.log(`randomQuote = ${randomQuote}`);  //  Returns the index of the object in the array.
-    // console.log(`randomQuote = ${result[randomQuote]}`);  //  Returns the object of that index.
-    // console.log(`randomQuote quote = ${result[randomQuote].quote}`);  //  Returns the value of the quote key.
-    // console.log(`randomQuote author = ${result[randomQuote].author}`);  //  Returns the value of the author key.
-    quoteParagraph.innerText = `${result[randomQuote].quote} by ${result[randomQuote].author}`
-    authorParagraph.innerText = `${result[randomQuote].quote} by ${result[randomQuote].author}`
-    // appending the values to my elements with specific id's
-  }
-}
+function textDisplay() {
+  quoteParagraph.innerText = `${result.quote}`;
+  console.log("quoteParagraph =", quoteParagraph);
+  authorParagraph.innerText = `by ${result.author}`;
+  console.log("authorParagraph =", authorParagraph);
 
-  
-
-
-
-
+  // buttonElement.addEventListener("click", textDisplay);
+};
