@@ -509,22 +509,8 @@ function textDisplay(randomQuote) {
   
 };
 
-buttonElement.addEventListener("click", testClick);  //() => textDisplay(pickFromArray(quotes)));
+buttonElement.addEventListener("click", testClick);  //() => textDisplay(pickFromArray(quotes))); Calling the function in the click event.
 
 function  testClick() {
 textDisplay(pickFromArray(quotes));
 }
-
-/*
-function changeQuote() {
-  let indexValue = 0;
-    if (indexValue === result.length);
-    quoteParagraph.innerText = result.quote[indexValue];
-    authorParagraph.innerText = result.author[indexValue];
-    indexValue++;
-    console.log("indexValue =",indexValue);
-  });
-}
-changeQuote();
-
-*/
