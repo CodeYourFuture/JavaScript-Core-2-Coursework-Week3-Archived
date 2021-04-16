@@ -1,66 +1,58 @@
 // Write your code here
 
-let allImages = [
-        {
-            link: "https://images.unsplash.com/photo-1570110471642-dba8ae2241d6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg0fHx0ZW5uaXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-            title: "dog lying beside ball toy",
-        },
-        {
-            link: "https://unsplash.com/photos/kd476WxAsCw",
-            title: "green tennis ball on brown soil during daytime",
-        },
-        {
-            link: "https://images.unsplash.com/photo-1600300405814-76762ab164d5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-            title: "tennis ball on chain link fence",
-        },
-        {
-            link: "https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-            title: "View the photo by Todd Trapani",
-        },
-        {
-            link: "https://images.unsplash.com/photo-1599586120566-886c39306895?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-            title: "person holding yellow tennis ball on red and white net",
-        },
-    ];
+let images = [
+    "https://images.unsplash.com/photo-1570110471642-dba8ae2241d6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg0fHx0ZW5uaXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1595057602304-8b54f16dc1b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
+    "https://images.unsplash.com/photo-1600300405814-76762ab164d5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1599586120566-886c39306895?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHRlbm5pc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+];
+    
 
 let headingElement = document.getElementById("heading")
 console.log("headingElement =", headingElement);
 
 let imageElement = document.getElementById("image");
 console.log("imageElement =", imageElement);
-imageElement.src = "https://images.unsplash.com/photo-1570110471642-dba8ae2241d6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg0fHx0ZW5uaXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
     
-let autoBack = document.getElementById("auto-back");
-console.log("autoBack =", autoBack);
+let autoBackBtn = document.getElementById("auto-back");
+console.log("autoBackBtn =", autoBackBtn);
 
-let back = document.getElementById("back");
-console.log("back =", back);
+let backBtn = document.getElementById("back");
+console.log("backBtn =", backBtn);
 
-let stop = document.getElementById("stop");
-console.log("stop =", stop);
+let stopBtn = document.getElementById("stop");
+console.log("stopBtn =", stopBtn);
 
-let autoForward = document.getElementById("auto-forward");
-console.log("autoForward =", autoForward);
+let autoForwardBtn = document.getElementById("auto-forward");
+console.log("autoForwardBtn =", autoForwardBtn);
 
-let forward = document.getElementById("forward");
-console.log("forward =", forward);
+let forwardBtn = document.getElementById("forward");
+console.log("forwardBtn =", forwardBtn);
 
-function selectImage(element) {
-    console.log("element =", element);
-    imageElement.src = images();
-}
+//  Where images will start.
+let imageCounter = 0;
 
-const images = allImages;
-console.log("images =", images);
-console.log("images1 =", images[0].title);
-
-function getImage() {
-    for (img of images) {
-        // console.log(`img = ${img}`);
-        console.log(`img link = ${img.link}`);
-        if (imageElement.src = img.link){};
-        headingElement.innerText = img.title;
+//  Callback function for click event.
+function forward() {
+    console.log("images.length-1 =",images.length);
+    if (imageCounter === images.length - 1) {
+        imageElement.src = images[imageCounter];
+    } else {
+        imageCounter++; //  Incrementing the index by 1 on every iteration.
+        imageElement.src = images[imageCounter];
     }
 }
 
-addEventListener("click", getImage)
+//  Callback function for click event.
+function back() {
+    if (imageCounter === images.length - 1) {    //  -1 Becasue Index starts at 0.
+        imageElement.src = images[imageCounter];
+    } else {
+        imageCounter--; //  Decrementing the index by 1 on every iteration.
+        imageElement.src = images[imageCounter];
+    }
+}
+
+forwardBtn.addEventListener("click", forward);
+backBtn.addEventListener("click", back);
