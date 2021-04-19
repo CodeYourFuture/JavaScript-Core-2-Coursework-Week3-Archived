@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     let temperatureSection = document.querySelector(".temperature-section");
     let temperatureDescription = document.querySelector(".temperature-description");
     let temperatureDegree = document.querySelector(".temperature-degree");
-    let temperatureSpan = document.querySelector("temperature-span");
+    let temperatureSpan = document.querySelector(".temperature-span");
     let location = document.querySelector(".location-timezone");
     let displayIcon = document.querySelector(".icon");
     
@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
                     const { description, icon } = data.weather[0];
                     //  Formula for Celcius
                     let celcius = (temp - 273.15).toFixed();    //  can also use: Math.floor(temp - 273.15);
-                    let fahrenheit = (temp - 459.67).toFixed();    //  can also use: Math.floor(temp - 459.67);
+                    let fahrenheit = (temp *(9/5) - 459.67).toFixed();    //  can also use: Math.floor(temp - 459.67);
 
                     //  Set DOM Elements from the API
                     temperatureDegree.textContent = celcius;
@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
                     //  Change temperature to Celcius/Farenheit.
                     temperatureSection.addEventListener("click", () => {
                         if (temperatureSpan.textContent === "C") {
-                            temperatureSpan.textContent = F;
+                            temperatureSpan.textContent = "F";
                             temperatureDegree.textContent = fahrenheit;
                         } else {
                             temperatureSpan.textContent = "C";
