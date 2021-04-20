@@ -9,6 +9,20 @@ function displayTime (timeRemain) {
   let seconds = pad(timeRemain % 60, 2);
   timeTitle.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
 }
+function setAlarm() {
+  let timeRemain = document.getElementById('alarmSet').value;
+  displayTime(timeRemain);
+  window.setInterval(function (){
+    if (timeRemain > 0) {
+      timeRemain -= 1;
+      displayTime(timeRemain);
+    } else {
+      playAlarm();
+      document.body.style.background = 'blue';
+     }
+    }, 1000);
+    console.log(timeRemain);
+};
 
 
 // DO NOT EDIT BELOW HERE
