@@ -3,6 +3,12 @@ function pad(num, size) {
   while (num.length < size) num = "0" + num;
   return num;
 }
+function displayTime (timeRemain) {
+  let timeTitle = document.getElementById('timeRemaining');
+  let minutes = pad(Math.floor(timeRemain/60), 2);
+  let seconds = pad(timeRemain % 60, 2);
+  timeTitle.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
+}
 
 
 // DO NOT EDIT BELOW HERE
