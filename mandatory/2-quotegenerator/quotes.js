@@ -1,3 +1,16 @@
+document.addEventListener('DomContentLoaded', function () {
+  let auto = false;
+  let timer;
+
+  // choose function and display quote
+  function chooseQuote() {
+    let chosenQuote = quote[Math.floor(Math.random() * quotes.length)];
+    document.querySelector("h1").innerHTML = chosenQuote.quote;
+    document.querySelector("p").innerHTML = chosenQuote.author;
+  }
+
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
