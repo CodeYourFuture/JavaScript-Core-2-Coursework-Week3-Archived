@@ -9,7 +9,12 @@ document.addEventListener('DomContentLoaded', function () {
     document.querySelector("p").innerHTML = chosenQuote.author;
   }
 
-}
+  // new quote button added 
+  let button = document.querySelector("input");
+  button.addEventListener("click", () => {
+    chooseQuote();
+  });
+
 
 // DO NOT EDIT BELOW HERE
 
