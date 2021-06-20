@@ -8,7 +8,9 @@ You can change any of the files in this project
 
 When the page loads it should show a random quote from the `quotes` array on the screen. It should also show who said the quote.
 
-When you click a button on the screen it should change the quote on the screen.
+The quote should be in an element with id `quote`, and the name of the person who said it should appear in an element with id `author`.
+
+When you click a button (which must have id `new-quote`) on the screen it should change the quote on the screen.
 
 It can look however you like but there is an example in this folder at `quote_generator_example.png`
 
