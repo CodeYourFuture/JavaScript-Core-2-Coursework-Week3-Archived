@@ -46,16 +46,15 @@ test("should load a quote on first load", () => {
 test("pressing button should change quote", () => {
   // Random chance means we may some times get repeats.
   // Make sure we never show the same quote consecutively twice.
-  // We didn't make this explicitly clear in the task description, but it's an important requirement!
   let lastQuote = page.window.document.querySelector("#quote").textContent;
 
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 100; i++) {
     page.window.document.querySelector("#new-quote").click();
     const quote = page.window.document.querySelector("#quote");
     const author = page.window.document.querySelector("#author");
     assertAuthorCorrect(quote, author);
     if (lastQuote === quote.textContent) {
-      throw Error(`Clicking the button should always change the quote, but after pressing it ${pluralize("time", i + 1, true)}, the same quote was show twice in a row.`);
+      throw new Error(`Clicking the button should always change the quote, but after pressing it ${pluralize("time", i + 1, true)}, the same quote was show twice in a row.`);
     }
     lastQuote = quote.textContent;
   }
@@ -66,7 +65,7 @@ function assertAuthorCorrect(quoteElement, authorElement) {
 
   let foundQuoteObject = quotes.find(q => q.quote === quoteText);
   if (foundQuoteObject === undefined) {
-    throw Error(`Quote in the page was not found in the array of quotes we supplied you with. Quote in the page was: ${quoteText}`);
+    throw new Error(`Quote in the page was not found in the array of quotes we supplied you with. Quote in the page was: ${quoteText}`);
   }
   expect(authorElement).toHaveTextContent(foundQuoteObject.author);
 }
