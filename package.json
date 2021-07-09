@@ -2,6 +2,7 @@
   "name": "JavaScript-Core-2-Coursework-Week3",
   "version": "1.0.0",
   "description": "",
+  "license": "CC-BY-SA-4.0",
   "main": "index.js",
   "scripts": {
     "test": "jest"
