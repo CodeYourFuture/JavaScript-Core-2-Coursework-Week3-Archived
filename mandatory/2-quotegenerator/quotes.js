@@ -338,7 +338,7 @@ const quotes = [
   },
   {
     quote: "A person who never made a mistake never tried anything new.",
-    author: " Albert Einstein",
+    author: "Albert Einstein",
   },
   {
     quote:
@@ -479,7 +479,7 @@ const quotes = [
   },
   {
     quote: "Nothing is impossible, the word itself says, “I’m possible!”",
-    author: "–Audrey Hepburn",
+    author: "Audrey Hepburn",
   },
   {
     quote: "The only way to do great work is to love what you do.",
@@ -490,3 +490,7 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+if (typeof module !== "undefined") {
+  module.exports = quotes;
+}
