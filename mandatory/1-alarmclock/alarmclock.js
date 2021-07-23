@@ -1,4 +1,26 @@
-function setAlarm() {}
+//Acesssing Elements In The DOM
+let timeRemaining = document.getElementById('timeRemaining');
+let alarmSet = document.getElementById('alarmSet');
+let setButton = document.getElementById('set');
+let stopButton = document.getElementById('stop');
+
+function setAlarm() {
+  setButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    let timeValue = alarmSet.value;
+    timeRemaining.innerText = `Time Remaining: 00:${timeValue}`;
+
+    if (timeValue > 0) {
+      let timeFuntion = () => {
+        nIntervId = setInterval(() => {
+          console.log("Minus One")
+        }, 1000);
+      }
+
+      timeFuntion();
+    }
+  });
+}
 
 // DO NOT EDIT BELOW HERE
 
