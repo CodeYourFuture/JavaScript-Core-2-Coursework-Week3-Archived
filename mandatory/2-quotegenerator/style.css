@@ -1,1 +1,16 @@
 /** Write your CSS in here **/
+body {
+    background-color: orange;
+}
+
+.qouteBox {
+    background-color: white;
+    font-family: serif;
+    color: orange;
+}
+
+#qouteButton {
+    border: none;
+    background-color: orange;
+    color: white;
+}
