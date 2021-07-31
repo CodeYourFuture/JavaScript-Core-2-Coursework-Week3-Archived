@@ -15,13 +15,26 @@
     <main>
       <div id="message-div">
         <img id="quotes-image" src="open-quotes.png" alt="Opening quotes" />
-        <p id="quote-message">This is a sample text</p>
+        <p id="quote-message" class="text-color">This is a sample text</p>
       </div>
       <div id="bottom-div">
-        <p id="quote-author">- Simba Pfaira</p>
+        <p id="quote-author" class="text-color">- Simba Pfaira</p>
         <button id="next-button" type="button" class="btn btn-primary">
           New quote
         </button>
+      </div>
+      <div id="auto-div">
+        <div class="custom-control custom-switch text-color">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="auto-switch"
+          />
+          <label class="custom-control-label" for="auto-switch"
+            >Auto-generation:
+          </label>
+        </div>
+        <p id="switch-status" class="text-color">OFF</p>
       </div>
     </main>
     <script src="quotes.js"></script>

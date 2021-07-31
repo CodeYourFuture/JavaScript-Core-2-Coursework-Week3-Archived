@@ -19,6 +19,7 @@ main {
   flex-direction: row;
   max-height: fit-content;
   align-items: baseline;
+  justify-content: flex-end;
 }
 
 #quote-message {
@@ -26,7 +27,6 @@ main {
   margin-left: 1em;
   margin-right: 2em;
   font-weight: bold;
-  color: rgba(247, 121, 17, 255);
 }
 #bottom-div {
   display: flex;
@@ -36,7 +36,6 @@ main {
 #quote-author {
   margin-left: 2em;
   margin-right: 2em;
-  color: rgba(247, 121, 17, 255);
   font-size: 18px;
   font-weight: bold;
 }
@@ -46,4 +45,18 @@ main {
   margin-right: 2em;
   background-color: rgba(247, 121, 17, 255);
   color: white;
+}
+
+#auto-div {
+  display: flex;
+  flex-direction: row;
+  max-height: fit-content;
+  justify-content: center;
+}
+
+#switch-status {
+  margin-left: 1em;
+}
+.text-color {
+  color: rgba(247, 121, 17, 255);
 }
