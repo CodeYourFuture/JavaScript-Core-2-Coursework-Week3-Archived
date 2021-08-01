@@ -1,1 +1,32 @@
 /** Write your CSS in here **/
+h1 {
+  text-align: center;
+}
+img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 1rem;
+  width: 80vw;
+  background-color: #CAF7E3;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top:2px solid #5089C6
+}
+.buttonContainer button {
+  border: none;
+  border-radius: 28px;
+  background-color: #5089C6;
+  color: #fff;
+  padding: 10px 16px;
+  outline: none;
+ 
+}
