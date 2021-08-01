@@ -22,6 +22,25 @@
       <div id="all-movies">
         <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
       </div>
+
+<form>
+  <fieldset>
+    <legend>Add New Movie</legend>
+    <label for="title">Title of the Film :</label><br>
+    <input type="text" id="title" name="title" placeholder="The Lord of The Ring"><br>
+    <label for="director">Director :</label><br>
+    <input type="text" id="director" name="director"  placeholder="Peter Jackson"><br>
+    <label for="type">Type :</label><br>
+    <input type="text" id="type" name="type"  placeholder="Adventure"><br>
+    <label for="type">Did you watch ?</label><br>
+    <select id="haveWatched" >
+      <option value="true">I watched</option>
+      <option value="false">I didn't watch</option>
+    </select>
+  </fieldset>
+</form>
+<br>
+<input type="submit" id="submit" value="Submit">
     </div>
     <script src="exercise.js"></script>
 </body>
