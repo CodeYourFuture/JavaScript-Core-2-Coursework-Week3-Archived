@@ -160,4 +160,10 @@ submitButton.addEventListener("click", (e) => {
   };
 
   addMovie(newObj);
+
+   showMovies(movies, function () {
+     const moviesNumber = document.querySelector("#movies-number");
+     const totalMovie = movies.length;
+     moviesNumber.innerText = totalMovie;
+   });
 });
