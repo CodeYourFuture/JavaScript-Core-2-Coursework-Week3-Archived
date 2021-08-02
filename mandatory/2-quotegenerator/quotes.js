@@ -490,3 +490,44 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+//<---------------------------------exercise 1------------------------------------------------>
+const printMessage = document.querySelector("#quotes-message");
+const printName = document.querySelector("#author-name");
+const changeMessage = document.querySelector("button");
+
+const generateMessage = function (data) {
+  let mess = data.quote;
+  let name = data.author;
+  const printMessage = document.querySelector("#quotes-message");
+  const printName = document.querySelector("#author-name");
+  printMessage.innerText = `${mess}`;
+  printName.innerText = `${name}`;
+};
+
+changeMessage.addEventListener("click", () => {
+  generateMessage(pickFromArray(quotes));
+});
+
+//<-----------------------------------extra----------------------------------------------->
+
+const wholePage = document.body;
+const switchButton = document.querySelector("#checkBox");
+const onAir = document.querySelector("#on-Air");
+
+switchButton.addEventListener("change", () => {
+  let myInterval = setInterval(() => {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    wholePage.style.backgroundColor = `#${randomColor}`;
+    generateMessage(pickFromArray(quotes));
+
+    if (switchButton.checked === false) {
+      clearInterval(myInterval);
+      onAir.innerText = "auto-play:OFF";
+    }
+  }, 6000);
+
+  onAir.innerText = "auto-play:ON";
+});
+
+//<-----------------------------------------end--------------------------------------------->
