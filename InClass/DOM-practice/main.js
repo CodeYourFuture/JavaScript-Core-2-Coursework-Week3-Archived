@@ -23,21 +23,20 @@ imagesList.forEach((image) => image.classList.add("content-title"));
 // Task 3
 
 // Google the date of birth and death of each of the people on the page. Without changing any of the HTML or CSS, add this in a paragraph to the end of their <section>.
-const pElement = document.createElement('p')
-pElement.innerText = 'Born: 9 December 1906, New York, New York, United States Died: 1 January 1992, Arlington County, Virginia, United States'
-const graceH = document.getElementById('grace-hopper')
-graceH.appendChild(pElement)
+const array = [
+  "Born: 9 December 1906, New York, New York, United States Died: 1 January 1992, Arlington County, Virginia, United States",
+
+  "Born: 26 August 1918, White Sulphur Springs, West Virginia, United States Died: 24 February 2020, Newport News, Virginia, United States",
+
+  "Born: 10 December 1815, London Died: 27 November 1852, Marylebone, London"
+]
 
 
+sectionList.forEach((section, index) => {
+    const pElement = document.createElement("p")
+    pElement.innerText = array[index]
+    section.appendChild(pElement)
+})
 
-const pElement2 = document.createElement("p")
-pElement2.innerText ='Born: 26 August 1918, White Sulphur Springs, West Virginia, United States Died: 24 February 2020, Newport News, Virginia, United States'
-const kJ = document.getElementById("katherine-johnson")
-kJ.appendChild(pElement2)
 
-
-const pElement3 = document.createElement("p")
-pElement3.innerText ='Born: 10 December 1815, London Died: 27 November 1852, Marylebone, London'
-const aL = document.getElementById("ada-lovelace")
-aL.appendChild(pElement3)
 
