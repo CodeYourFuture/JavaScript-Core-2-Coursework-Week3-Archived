@@ -75,75 +75,79 @@ TIP: Use the functions you created on tasks 1-3
 */
 
 const movies = [
-  {
-    title: "Color Out of Space",
-    director: "Richard Stanley",
-    type: "sci-fi",
-    haveWatched: true,
-  },
-  {
-    title: "A Twelve-Year Night",
-    director: "Álvaro Brechner",
-    type: "horror",
-    haveWatched: false,
-  },
-  {
-    title: "The Whistlers",
-    director: "Corneliu Porumboiu",
-    type: "comedy",
-    haveWatched: true,
-  },
-  {
-    title: "The Invisible Man",
-    director: "Leigh Whannell",
-    type: "horror",
-    haveWatched: false,
-  },
+    {
+        title: "Color Out of Space",
+        director: "Richard Stanley",
+        type: "sci-fi",
+        haveWatched: true
+    }, {
+        title: "A Twelve-Year Night",
+        director: "Álvaro Brechner",
+        type: "horror",
+        haveWatched: false
+    }, {
+        title: "The Whistlers",
+        director: "Corneliu Porumboiu",
+        type: "comedy",
+        haveWatched: true
+    }, {
+        title: "The Invisible Man",
+        director: "Leigh Whannell",
+        type: "horror",
+        haveWatched: false
+    },
 ];
 
 // Task 1: create showMovies function
-function showMovies() {
-  // add code here
-  const divEl = document.querySelector("#all-movies");
-  const numberMovies = document.querySelector("#movies-number");
-  numberMovies.innerText = `${movies.length}`;
-  movies.forEach((movie) => {
-    const movieInfo = document.createElement("p");
-    movieInfo.innerText = `${movie.title} By ${movie.director}`;
-    divEl.appendChild(movieInfo);
-  });
+function showMovies() { // add code here
+    const divEl = document.querySelector("#all-movies");
+    const numberMovies = document.querySelector("#movies-number");
+    numberMovies.innerText = `${
+        movies.length
+    }`;
+    movies.forEach((movie) => {
+        const movieInfo = document.createElement("p");
+        movieInfo.innerText = `${
+            movie.title
+        } By ${
+            movie.director
+        }`;
+        divEl.appendChild(movieInfo);
+    });
 }
 const myFavMovie = {
-  title: "Matilda",
-  director: "Danny DeVito",
-  type: "fantasy comedy",
-  haveWatched: true,
+    title: "Matilda",
+    director: "Danny DeVito",
+    type: "fantasy comedy",
+    haveWatched: true
 };
 
 // Task 2: create a new movie object for your favorite movie
 
 // Task 2-3: create addMovies function
 function addMovie(movie, callback) {
-  setTimeout(movies.push(movie), 2000);
-  callback();
+    setTimeout(function () {
+        movies.push(movie);
+        callback();
+    }, 2000);
 }
 
-//showMovies();
+// showMovies();
 addMovie(myFavMovie, showMovies);
 
 // // Task 4 - **Extra**
 const submit = document.querySelector("#movie-submit");
 submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  const director = document.querySelector("#director");
-  const title = document.querySelector("#title");
-  const type = document.querySelector("#type");
-  const havewatched = document.querySelector("#haveWatched");
-  const obj = {
-    title: title.value,
-    director: director.value,
-    type: type.value,
-    haveWatched: havewatched.value,
-  };
-  addMovie(obj, showMovies);
+    e.preventDefault();
+    const director = document.querySelector("#director");
+    const title = document.querySelector("#title");
+    const type = document.querySelector("#type");
+    const havewatched = document.querySelector("#haveWatched");
+    const obj = {
+        title: title.value,
+        director: director.value,
+        type: type.value,
+        haveWatched: havewatched.value
+    };
+    addMovie(obj, showMovies);
 });
