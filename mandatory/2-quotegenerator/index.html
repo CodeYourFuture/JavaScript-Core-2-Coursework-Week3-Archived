@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Quote to be Displayed Here -->
+      <h1 class="quote" id="quote"></h1>
+      <!-- Author to be Displayed Here -->
+      <p class="author" id="author"></p>
+      <label class="switch">
+        <input type="checkbox" id="togBtn" />
+        <div class="slider round">
+          <span class="on">ON</span>
+          <span class="off">OFF</span>
+        </div>
+      </label>
 
-<head>
-  <title>Quote Generator</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<div class="container">
-  <!-- Quote to be Displayed Here -->
-  <h1 class="quote" id="quote">
-
-  </h1>
-  <!-- Author to be Displayed Here -->
-  <p class="author" id="author"></p>
-  <label class="switch">
-    <input type="checkbox" id="togBtn">
-    <div class="slider round">
-
-      <span class="on">ON</span>
-      <span class="off">OFF</span>
-      <!--END-->
-
+      <div class="buttons">
+        <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+        <button class="next">Next Quote</button>
+      </div>
     </div>
-  </label>
 
-  <div class="buttons">
-    <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
-    <button class="next"> Next Quote</button>
-  </div>
-</div>
-
-
-<!-- Write your HTML in here -->
-<script src="quotes.js"></script>
-</body>
-
+    <script src="quotes.js"></script>
+  </body>
 </html>

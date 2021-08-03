@@ -47,9 +47,7 @@ function setup() {
 
     if (checkboxValue) {
       interval = setInterval(generateQuote, 60000);
-
       pEl.innerText = "auto-play:ON";
-
       swLabel.appendChild(pEl);
     } else {
       pEl.innerText = "auto-play:OFF";
