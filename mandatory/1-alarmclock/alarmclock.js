@@ -1,25 +1,61 @@
 function setAlarm() {
+  // //stores input elem
+  // let inputField = document.getElementById("alarmSet");
+
+  // //stores h1 elem, adds span elem in h1 using .innerHTML
+  // let timeDisplay = document.querySelector("#timeRemaining");
+  // timeDisplay.innerHTML = "Time Remaining: 00:<span id = 'timeSpan'></span>";
+
+  // //store span elem
+  // let spanEl = document.querySelector("#timeSpan");
+  // spanEl.innerHTML = inputField.value;  //span renders input field value
+
+  // //setInterval reduces span's innerHTML value by 1 each second
+  // setInterval(function() {
+  //   spanEl.innerHTML--;
+  //   //when span's innerHTML renders as '0', call playAlarm function
+  //   if (spanEl.innerHTML === '0') {
+  //     playAlarm();
+  //   }
+  // }, 1000);
+
+  //--------------------------
+
   //stores input elem
   let inputField = document.getElementById("alarmSet");
 
   //stores h1 elem, adds span elem in h1 using .innerHTML
   let timeDisplay = document.querySelector("#timeRemaining");
-  timeDisplay.innerHTML = "Time Remaining: 00:<span id = 'timeSpan'></span>";
+  timeDisplay.innerHTML =
+    "Time Remaining: <span id = 'min'>00</span>:<span id = 'sec'></span>";
 
   //store span elem
-  let spanEl = document.querySelector("#timeSpan");  
-  spanEl.innerHTML = inputField.value;  //span renders input field value
+  let minSpan = document.querySelector("#min");
+  let secSpan = document.querySelector("#sec");
+
+  if (inputField.value >= 60) {
+    minSpan.innerHTML = `0${Math.floor(inputField.value / 60)}`; //span renders input field value over 60
+    secSpan.innerHTML = inputField.value % 60;
+  }
+   else {secSpan.innerHTML = inputField.value} //span renders input field value}
   
+
   //setInterval reduces span's innerHTML value by 1 each second
-  setInterval(function() {
-    spanEl.innerHTML--; 
+  setInterval(function () {
+    if (inputField.value >= 60) {
+      secSpan.innerHTML = inputField.value % 60;
+  
+    }
+ secSpan.innerHTML--;
     //when span's innerHTML renders as '0', call playAlarm function
-    if (spanEl.innerHTML === '0') {
+    if (secSpan.innerHTML === "0") {
       playAlarm();
     }
   }, 1000);
 
-  //Tried adding 0 before numbers less than 10, but would render NAN as spanEl's innerHTML after timer goes into negative numbers: 
+  // Turn values over 60 into mins
+
+  //Tried adding 0 before numbers less than 10, but would render NAN as spanEl's innerHTML after timer goes into negative numbers:
   // let startTimer = setInterval(function () {
   //   // spanEl.innerHTML--;
   //   if (spanEl.innerHTML < 11) {
