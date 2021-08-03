@@ -36,6 +36,7 @@ body{
     text-align: center;
     font-size: 40px;
     font-weight: bold;
+    margin-top: auto;
 }
 .author 
 {
@@ -46,12 +47,7 @@ body{
     font-style: italic;
     font-family: cursive;
 }
-hr {
-    margin: 10px 0;
-    width: 100%;
-    border: 1px solid black;
-    background-color: black;
-}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -69,9 +65,90 @@ hr {
     margin-top: 5px;
     font-weight: bold;
     color: white;
-    background-image: linear-gradient(to right bottom, rgb(0, 127, 230), #ffedbca8);
+    background-image: linear-gradient(to right bottom, rgb(35, 0, 230), #ffedbca8);
 }
 .container:hover
 {
     box-shadow: 0 10px 10px rgb(230, 0, 0);
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5eb92a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}

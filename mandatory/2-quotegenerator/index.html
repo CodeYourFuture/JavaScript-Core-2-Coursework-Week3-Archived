@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Quote Generator</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
- <div class="container">
-             <!-- Quote to be Displayed Here -->
-            <h1 id ="quote">
-          
-            </h1>
-            <!-- Author to be Displayed Here -->
-            <p class="author" id="author"></p>
+<html lang="en">
 
-           
-            <div class="buttons">
-             
-                <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
-                <button class="next" onclick="getNewQuote()">Next quote</button>
-            </div>
-        </div>
+<head>
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<div class="container">
+  <!-- Quote to be Displayed Here -->
+  <h1 class="quote" id="quote">
 
-     
-    <!-- Write your HTML in here -->
-    <script src="quotes.js"></script>
-  </body>
+  </h1>
+  <!-- Author to be Displayed Here -->
+  <p class="author" id="author"></p>
+  <label class="switch">
+    <input type="checkbox" id="togBtn">
+    <div class="slider round">
+
+      <span class="on">ON</span>
+      <span class="off">OFF</span>
+      <!--END-->
+
+    </div>
+  </label>
+
+  <div class="buttons">
+    <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+    <button class="next"> Next Quote</button>
+  </div>
+</div>
+
+
+<!-- Write your HTML in here -->
+<script src="quotes.js"></script>
+</body>
+
 </html>
