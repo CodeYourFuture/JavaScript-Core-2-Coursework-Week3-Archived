@@ -10,7 +10,23 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+ <div class="container">
+             <!-- Quote to be Displayed Here -->
+            <h1 id ="quote">
+          
+            </h1>
+            <!-- Author to be Displayed Here -->
+            <p class="author" id="author"></p>
+
+           
+            <div class="buttons">
+             
+                <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+                <button class="next" onclick="getNewQuote()">Next quote</button>
+            </div>
+        </div>
+
+     
     <!-- Write your HTML in here -->
     <script src="quotes.js"></script>
   </body>
