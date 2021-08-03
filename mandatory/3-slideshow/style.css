@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+/** Write your CSS in here **/
+.slider {
+    margin: 50px auto;
+    width: 50%;
+}
+
+.img-box img {
+    width: 50%;
+}
+
+.btn {
+    background:skyblue;
+    padding: 10px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px auto;
+    
+}
+
+.btn :hover {
+    background: thistle;
+}
+
+
