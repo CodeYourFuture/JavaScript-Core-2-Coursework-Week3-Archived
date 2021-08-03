@@ -5,17 +5,15 @@ function setAlarm() {
   let convert = convertTime(time.value);
   const head = document.getElementById("timeRemaining");
   head.innerText = `Time Remaining: ${convert}`;
-  interval = setInterval(evaluate, 1000)
-
+  interval = setInterval(evaluate, 1000);
 }
 function evaluate() {
   const time = document.getElementById("alarmSet");
   const head = document.getElementById("timeRemaining");
-  if (time.value <1) {
-    clearInterval(interval)
-    playAlarm()
-  }
-  else {
+  if (time.value < 1) {
+    clearInterval(interval);
+    playAlarm();
+  } else {
     --time.value;
     convert = convertTime(time.value);
     head.innerText = `Time Remaining: ${convert}`;
@@ -26,10 +24,10 @@ function evaluate() {
 // }
 
 function convertTime(timer) {
-  var timestamp = timer;
-  var minutes = Math.floor(timestamp / 60);
-  var seconds = timestamp % 60;
-  var formatted =
+  let timestamp = timer;
+  let minutes = Math.floor(timestamp / 60);
+  let seconds = timestamp % 60;
+  let formatted =
     minutes.toString().padStart(2, "0") +
     ":" +
     seconds.toString().padStart(2, "0");
@@ -54,8 +52,7 @@ function playAlarm() {
 }
 
 function pauseAlarm() {
-
-  audio.pause()
+  audio.pause();
 }
 
 window.onload = setup;
