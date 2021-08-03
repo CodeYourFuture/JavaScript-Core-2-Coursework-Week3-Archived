@@ -45,13 +45,13 @@ function setAlarm() {
      secSpan.innerHTML--;
 
     //for min reverting to secs 
-    if (secSpan.innerHTML === '0') {
+    if (secSpan.innerHTML === '0' && minSpan.innerHTML !== '00') {
       minSpan.innerHTML --;
-      secSpan.innerHTML = '59'; //NAN
+      secSpan.innerHTML = '59'; 
   }
 
     //when span's innerHTML renders as '0', call playAlarm function
-    if (secSpan.innerHTML === "0") {
+   else if (minSpan.innerHTML === "00" && secSpan.innerHTML === "0") {
       playAlarm();
     }
   }, 1000);
