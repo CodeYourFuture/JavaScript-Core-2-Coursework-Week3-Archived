@@ -45,13 +45,16 @@ function setAlarm() {
      secSpan.innerHTML--;
 
     //for min reverting to secs 
-    if (secSpan.innerHTML === '0' && minSpan.innerHTML !== '00') {
+    if (minSpan.innerHTML !== '00' && secSpan.innerHTML === '0' ) {
       minSpan.innerHTML --;
       secSpan.innerHTML = '59'; 
   }
+    // else if(minSpan.innerHTML === '0' && secSpan.innerHTML === '1' ) {
+
+    // }
 
     //when span's innerHTML renders as '0', call playAlarm function
-   else if (minSpan.innerHTML === "00" && secSpan.innerHTML === "0") {
+   else if ((minSpan.innerHTML === "00" && secSpan.innerHTML === "0") || (minSpan.innerHTML === "0" && secSpan.innerHTML === '1')) {
       playAlarm();
     }
   }, 1000);
