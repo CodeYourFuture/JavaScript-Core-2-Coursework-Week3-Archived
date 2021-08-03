@@ -1,5 +1,40 @@
-function setAlarm() {}
+let interval;
 
+function setAlarm() {
+  const time = document.getElementById("alarmSet");
+  let convert = convertTime(time.value);
+  const head = document.getElementById("timeRemaining");
+  head.innerText = `Time Remaining: ${convert}`;
+  interval = setInterval(evaluate, 1000)
+
+}
+function evaluate() {
+  const time = document.getElementById("alarmSet");
+  const head = document.getElementById("timeRemaining");
+  if (time.value <1) {
+    clearInterval(interval)
+    playAlarm()
+  }
+  else {
+    --time.value;
+    convert = convertTime(time.value);
+    head.innerText = `Time Remaining: ${convert}`;
+  }
+}
+// function pauseAlarm() {
+//   clearInterval(interval)
+// }
+
+function convertTime(timer) {
+  var timestamp = timer;
+  var minutes = Math.floor(timestamp / 60);
+  var seconds = timestamp % 60;
+  var formatted =
+    minutes.toString().padStart(2, "0") +
+    ":" +
+    seconds.toString().padStart(2, "0");
+  return formatted;
+}
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
@@ -19,7 +54,8 @@ function playAlarm() {
 }
 
 function pauseAlarm() {
-  audio.pause();
+
+  audio.pause()
 }
 
 window.onload = setup;
