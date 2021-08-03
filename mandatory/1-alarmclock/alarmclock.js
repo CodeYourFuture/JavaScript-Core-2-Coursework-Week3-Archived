@@ -37,16 +37,19 @@ function setAlarm() {
     minSpan.innerHTML = `0${Math.floor(inputField.value / 60)}`; //span renders input field value over 60
     secSpan.innerHTML = inputField.value % 60;
   }
-   else {secSpan.innerHTML = inputField.value} //span renders input field value}
+  else {secSpan.innerHTML = inputField.value} //span renders input field value}
   
 
   //setInterval reduces span's innerHTML value by 1 each second
   setInterval(function () {
-    if (inputField.value >= 60) {
-      secSpan.innerHTML = inputField.value % 60;
-  
-    }
- secSpan.innerHTML--;
+     secSpan.innerHTML--;
+
+    //for min reverting to secs 
+    if (secSpan.innerHTML === '0') {
+      minSpan.innerHTML --;
+      secSpan.innerHTML = '59'; //NAN
+  }
+
     //when span's innerHTML renders as '0', call playAlarm function
     if (secSpan.innerHTML === "0") {
       playAlarm();
