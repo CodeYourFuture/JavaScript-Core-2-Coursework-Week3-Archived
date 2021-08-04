@@ -11,7 +11,7 @@ div {
   max-width: 715px;
   top: 110px;
   padding: 20px;
-  margin: 30px 30px;
+  margin: auto;
   background-color: rgb(245, 245, 245);
   color: rgb(255, 184, 54);
 }
@@ -40,7 +40,7 @@ button {
 }
 
 button:hover{
-    background-color: rgb(145, 104, 28);
+    background-color: rgb(180, 129, 34);
 }
 
 button:focus{
