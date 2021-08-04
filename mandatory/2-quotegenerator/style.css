@@ -1,1 +1,62 @@
 /** Write your CSS in here **/
+
+.container {
+    max-width: 50%;
+    background-color: #f8fffe;
+    margin: 10px auto;
+    padding: 25px;
+    border: 1px solid #b0d2cb;
+    border-left-width: 10px;
+    color: #0b4237;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote, .author {
+    font-family: 'Gelasio', serif;
+    font-style: italic;
+    font-size: 1.15em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.author {
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+    margin: 10px 5px;
+}
+
+.quote::before {
+    content: "\201c";
+    font-size: 50px;   
+    display: block;
+    margin-bottom: -30px;
+    
+}
+
+.author::before {
+    content: "\2014\0020";
+}
+
+.btnContainer {
+    align-self: flex-end;
+}
+
+#newQuoteBtn {
+    font-family: 'Gelasio', serif;
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #07a585;
+    border: 3px solid #025343;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+#newQuoteBtn:hover {
+    color: #ffffff;
+    background-color: #06c9a2;
+}

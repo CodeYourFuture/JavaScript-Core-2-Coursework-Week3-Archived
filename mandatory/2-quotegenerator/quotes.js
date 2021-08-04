@@ -490,3 +490,28 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// Follow these steps: 
+// 1) structure the HTML
+      // a) create a container div, set its id to #container, and its class to .container
+      // b) create a blockquote el, set its id and class to blockquote
+      // c) inside blockquote create p for quote, set its id and class to quote
+      // d) after quote, create another p for author, set its id and class to author (still inside blockquote)
+      // e) create button, set its id and class to newQuoteBtn, set its value to New quote
+// 2) make the page dynamic with js
+      // a) create a function that adds content to the blockquote; function should store p#quote and p#author in a variable, set their innerText 
+      // b) call pickFromArray function inside the created function and store the returned value in a variable, this function will return random object in quotes array each time it is called, set the p#quote to the returned object's quote property, and p#author to the returned object's author property
+      // c) add click event listener to the newQuoteBtn 
+// 3) style the page
+
+function getQuote () {
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("author");
+  const randomQuoteObject = pickFromArray(quotes);
+  quote.innerText = randomQuoteObject.quote;
+  author.innerText = randomQuoteObject.author;
+}
+
+document.getElementById("newQuoteBtn").addEventListener("click", getQuote);
+
+getQuote();
