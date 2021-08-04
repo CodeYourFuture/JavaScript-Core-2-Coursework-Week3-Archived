@@ -60,9 +60,37 @@ const movies = [
     haveWatched: false,
   },
 ];
-
+//Task1 
 // create showMovies function
 
+const showMovies = function (movies) {
+  const allMovies = document.getElementById("all-movies");
+  for (let i = 0; i < movies.length; i++) {
+    const pEl = document.createElement("p");
+    pEl.innerHTML = `${movies[i].title}, ${movies[i].director}`;
+    allMovies.appendChild(pEl);
+  }
+  const totalMovies = document.getElementById('movies-number').innerHTML = movies.length;
+}
+showMovies(movies);
+  
 // create a new movie object for your favorite movie
+const favoriteMovie = {
+  title: "Fist of legend",
+  director: "Gordon Chan",
+  type: "Action",
+  haveWatched: true,
+};
+//  create addMovies function
+const addMovie = function (movie) {
+  setTimeout(function () {
+    movies.push(movie);
+    showMovies(movies);
+  }, 2000);
+};
+addMovie(favoriteMovie);
+//btn
+// const btn
 
-// create addMovies function
+
+   
