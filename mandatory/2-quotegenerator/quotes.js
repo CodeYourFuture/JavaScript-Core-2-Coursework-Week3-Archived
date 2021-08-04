@@ -474,29 +474,33 @@
     },
   ];
 
-//MAYBE TRY MAKING TWO ARRAYS FROM QUOTES. 1 FOR QUOTES, 1 FOR AUTHORS. THEN USE PICKFROMaRRAY(ARRAYNAME)
-// forEach?
 quotesArr.forEach((elem,index) => {
- // let choices = 
+  // let choices =
   //store quote h1 and author h2
-let quoteEl = document.querySelector('h1');
-quoteEl.style.color = 'teal';
-let authorEl = document.querySelector('h2');
-// console.log(quoteEl, authorEl); //logs h1, h2
-  // console.log(choices)
-// console.log(quoteEl);//logs h1 for each quoteArr
+  let quoteEl = document.querySelector("h1");
+  quoteEl.style.color = "teal";
+  let authorEl = document.querySelector("h2");
+  // console.log(quoteEl, authorEl); //logs h1, h2
+  let divEl = document.querySelector("div");
+  console.log(divEl);
 
-let button = document.querySelector("button");
-// console.log(button);
-button.addEventListener("click", function () {
-  quoteEl.innerHTML = pickFromArray(elem.quote); //renders random letter
-  authorEl.innerHTML = pickFromArray(elem.author); // same
-}); 
+  let button = document.querySelector("button");
+  // console.log(button);
+  button.addEventListener("click", function () {
+    
+    
+     let quoteObj = elem; //stores indivdual objects for all elements
+    console.log(quoteObj); //logs Robert Frost object
+    let randomObj = pickFromArray(quotesArr);
+    console.log(randomObj); //logs random object from quotesArr!
+    
+    quoteEl.innerHTML = randomObj.quote; //renders random quote!
+    authorEl.innerHTML = randomObj.author; // renders random author!!
 
+  });
 } )
 
-   console.log(quotesArr[0].author); //logs Kevin Kruse
-
+   
 
 // DO NOT EDIT BELOW HERE
 
