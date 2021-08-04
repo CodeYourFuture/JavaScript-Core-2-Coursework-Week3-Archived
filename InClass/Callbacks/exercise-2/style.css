@@ -1,0 +1,14 @@
+body {
+  padding: 30px;
+}
+
+#add-movies {
+  padding-top: 30px;
+}
+
+form {
+  padding: 20px;
+}
+.form-field {
+  margin-right: 20px;
+}

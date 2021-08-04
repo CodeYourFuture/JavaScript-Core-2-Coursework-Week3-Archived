@@ -11,3 +11,12 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+const content = document.body;
+let randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+function changeColor(){
+ content.style.backgroundColor = `#${randomColor}`
+}
+
+setInterval (changeColor, 5000)

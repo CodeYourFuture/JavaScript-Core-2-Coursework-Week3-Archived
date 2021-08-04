@@ -1,4 +1,9 @@
-function setAlarm() {}
+function setAlarm() {
+  const timer = document.getElementById("time-remaining");
+  const alarmSet = document.getElementById("alarmSet");
+
+  let counter = setInterval()
+}
 
 // DO NOT EDIT BELOW HERE
 
