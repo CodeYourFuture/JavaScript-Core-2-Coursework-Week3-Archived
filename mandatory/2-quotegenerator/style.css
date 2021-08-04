@@ -6,6 +6,7 @@ blockquote {
   flex-direction: column;
   margin: 20% auto 0;
   padding: 1rem;
+  position: relative; /*for checkbox*/
   width: 80vw;
 }
 .blockquote-footer {
@@ -15,4 +16,19 @@ button {
   border:none;
   padding: 5px 20px;
   margin-left: auto;
+}
+.checkBox {
+  border-radius: 50rem;
+  position: absolute;
+  right: 1%;
+
+  /* padding: 1rem; */
+  /* background-color: #0ff; */
+  /* border: 1px solid red; */
+}
+.checkBox label {
+padding: 1rem;
+border-radius: 50rem;
+cursor: pointer;
+background-color: green;
 }

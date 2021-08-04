@@ -1,5 +1,5 @@
 # Extra Task for Slideshow
-
+**ADDED INSIDE SLIDE SHOW**
 ## Optional: Add UI for delay time
 
 Add UI so that the user can specify how long to wait between images.

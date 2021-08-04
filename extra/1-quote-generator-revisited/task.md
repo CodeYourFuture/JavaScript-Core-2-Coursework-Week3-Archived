@@ -1,4 +1,5 @@
 # Add auto-play to your quote generator
+**ADDED INSIDE QUOTE GENERATOR**
 
 For this task you will return to your quote generator and improve it with "auto-generate" functionality:
 

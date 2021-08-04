@@ -61,15 +61,17 @@ let globalInterval;// for stop button, i declare global scope because i will use
 
 //AUTO FORWARD
 document.getElementById('autoForward').addEventListener('click',()=>{
+  let autoSlideInterval =document.getElementById('interval').value;//EXTRA
   stop();//if there is another auto forward or autoback, stop it
-  globalInterval= setInterval(forward, 500);//i call the forward() funcktion
+  globalInterval= setInterval(forward, autoSlideInterval);//i call the forward() funcktion
 });
 
 
 //AUTO BACK
 document.getElementById('autoBack').addEventListener('click',()=>{
+  let autoSlideInterval =document.getElementById('interval').value;//EXTRA
   stop();//if there is another auto forward or autoback,stop it
-  globalInterval= setInterval(back, 500);//i call the back() funcktion
+  globalInterval= setInterval(back, autoSlideInterval);//i call the back() funcktion
  });
 
 
