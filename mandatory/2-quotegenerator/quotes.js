@@ -479,15 +479,18 @@
   let authorEl = document.querySelector("h2");
   let button = document.querySelector("button");
  
-  //EventListener Callback fnction. Generates random quote with respective author
+  //Callback for evenListnr. Generates random quote with respective author
   let generateQuote = function () {
+    
+    //generate & store random obj from quotesArr using pickFromArray function
     let randomObj = pickFromArray(quotesArr);
 
     //in h1, render quote value of randomObj; author value in h2 el
     quoteEl.innerHTML = randomObj.quote;
     authorEl.innerHTML = randomObj.author;
   }
-  //when clicked, btn generates and renders random quote with respective author
+
+  //on click btn renders random quote with author
   button.addEventListener("click", generateQuote);
 
 
