@@ -1,6 +1,6 @@
-// function quoteGenerator(quotes){
 
-  let quotesArr= [
+  //copied quotes arr from end of doc(got initialisation error when trying to access/use original array)
+  const quotesArr= [
     {
       quote:
         "Life isn’t about getting and having, it’s about giving and being.",
@@ -474,33 +474,22 @@
     },
   ];
 
-quotesArr.forEach((elem,index) => {
-  // let choices =
-  //store quote h1 and author h2
+ //store h1-->(quoteEl), h2 -->(authorEl), & button 
   let quoteEl = document.querySelector("h1");
-  quoteEl.style.color = "teal";
   let authorEl = document.querySelector("h2");
-  // console.log(quoteEl, authorEl); //logs h1, h2
-  let divEl = document.querySelector("div");
-  console.log(divEl);
-
   let button = document.querySelector("button");
-  // console.log(button);
-  button.addEventListener("click", function () {
-    
-    
-     let quoteObj = elem; //stores indivdual objects for all elements
-    console.log(quoteObj); //logs Robert Frost object
+ 
+  //EventListener Callback fnction. Generates random quote with respective author
+  let generateQuote = function () {
     let randomObj = pickFromArray(quotesArr);
-    console.log(randomObj); //logs random object from quotesArr!
-    
-    quoteEl.innerHTML = randomObj.quote; //renders random quote!
-    authorEl.innerHTML = randomObj.author; // renders random author!!
 
-  });
-} )
+    //in h1, render quote value of randomObj; author value in h2 el
+    quoteEl.innerHTML = randomObj.quote;
+    authorEl.innerHTML = randomObj.author;
+  }
+  //when clicked, btn generates and renders random quote with respective author
+  button.addEventListener("click", generateQuote);
 
-   
 
 // DO NOT EDIT BELOW HERE
 
@@ -993,7 +982,4 @@ function pickFromArray(choices) {
 //     author: "Zig Ziglar",
 //   },
 // ];
-
-// //logs random object from array
-// console.log(pickFromArray(quotes));
 
