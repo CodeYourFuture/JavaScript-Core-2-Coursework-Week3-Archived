@@ -61,8 +61,63 @@ const movies = [
   },
 ];
 
-// create showMovies function
+// task-1 & 2  create showMovies function
+const showMovies = function (movies) {
+  let spanEl = document.getElementById("movies-number");
+  let movieContainer = document.getElementById("all-movies");
+  movies.forEach((movie, index) => {
+    delete movies[index];
+    let newParagraph = document.createElement("p");
 
-// create a new movie object for your favorite movie
+    setTimeout(() => {
+      newParagraph.innerHTML = `<strong>Movie Title : </strong>${movie.title}</br> <strong>Director : </strong> ${movie.director}`;
+      movieContainer.appendChild(newParagraph);
+    }, 1000);
+    spanEl.innerText = movies.length;
+  });
+};
+showMovies(movies);
+// task 2 create a new movie object for your favorite movie
 
-// create addMovies function
+const newMovie = {
+  title: "Star Trek: Nemesis",
+  director: "Stuart Baird",
+  type: "sci-fi",
+  haveWatched: true,
+};
+
+function addMovies(movie, callback) {
+  //movie is the new object
+  setTimeout(() => {
+    movies.push(movie); //add movie object in the existing movies array
+    callback(movies); //call back showMovies
+  }, 2000);
+}
+
+addMovies(newMovie, showMovies);
+
+// task 4
+const title = document.getElementById("title");
+const director = document.getElementById("director");
+const type = document.getElementById("type");
+const haveWatched = document.getElementById("haveWatched");
+let submitBtn = document.getElementById("submit");
+
+submitBtn.addEventListener("click", (event) => {
+  //field values are being passed to create  a new movie object literal
+  event.preventDefault();
+  newMovie.title = title.value;
+  newMovie.director = director.value;
+  newMovie.type = type.value;
+  newMovie.haveWatched = haveWatched.checked ? true : false;
+  addMovies(newMovie, showMovies);
+  updateInputFields();
+});
+
+function updateInputFields() {
+  //clearing the input field
+  title.value = "";
+  director.value = "";
+  type.value = "";
+  haveWatched.checked = "";
+}

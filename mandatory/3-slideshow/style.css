@@ -1,1 +1,26 @@
 /** Write your CSS in here **/
+#img-slider{
+    width: 100%;
+    margin: 0 auto;
+}
+/**image styling**/
+.image-styles{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#slider-ctrl_buttons{
+    background-color: blanchedalmond;
+    height: 90px;
+    
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+margin: 20px auto;
+
+}
+button:first-of-type{
+    margin-left: 35%;
+}

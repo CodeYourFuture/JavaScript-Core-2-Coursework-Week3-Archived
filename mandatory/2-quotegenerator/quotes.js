@@ -1,3 +1,29 @@
+window.onload = () => {
+  let bodyElm = document.querySelector("body");
+  bodyElm.style.backgroundColor = "#a7c1eb";
+
+  let container = document.createElement("div"); //creating container
+  bodyElm.appendChild(container);
+
+  let displayAnyQuote = document.createElement("h6"); // container
+  let authorName = document.createElement("h4");
+  let btnForQuotes = document.createElement("button");
+  btnForQuotes.style.color = "yellow";
+  btnForQuotes.style.backgroundColor = "#074d0c";
+  btnForQuotes.innerHTML = "New Quote";
+
+  container.appendChild(btnForQuotes);
+  container.appendChild(authorName);
+  container.appendChild(displayAnyQuote);
+
+  btnForQuotes.addEventListener("click", generateRandomQuote);
+  function generateRandomQuote() {
+    let randomQuote = pickFromArray(quotes);
+    displayAnyQuote.innerHTML = randomQuote.quote;
+    authorName.innerHTML = randomQuote.author;
+  }
+};
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

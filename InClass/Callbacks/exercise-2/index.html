@@ -22,6 +22,16 @@
       <div id="all-movies">
         <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
       </div>
+      <form action="" id="submit_fav_movie">
+        <fieldset>
+          <legend>Please Add your Favorite Movie of all Time</legend>
+          <label for="title">Movie Title : <input type="text" id="title" name="title" placeholder="Your movie"></label></br>
+          <label for="director">Director's Name : <input type="text" id="director" name="director" placeholder="Director"></label></br>
+          <label for="type">Movie Type : <input type="text" id="type" name="type" placeholder="?"></label></br>
+          <label for="haveWatched">Have You Watched it? : <input type="checkbox" id="haveWatched" name="haveWatched" placeholder="Your Response"></label>
+        </fieldset>
+        <button type="submit" id="submit" value="submit">Add Movie</button>
+      </form>
     </div>
     <script src="exercise.js"></script>
 </body>
