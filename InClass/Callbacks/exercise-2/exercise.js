@@ -34,6 +34,8 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
+
+
 const movies = [
   {
     title: "Color Out of Space",
@@ -61,8 +63,66 @@ const movies = [
   },
 ];
 
-// create showMovies function
+let allMovies = document.getElementById("all-movies");
+let movieNumbers = document.getElementById("movies-number");
 
-// create a new movie object for your favorite movie
+//Answer to Task 1
+function showMovies(array){
 
-// create addMovies function
+  //Iterating through the given array to create a p tag and it's content for each object in the array:
+  array.forEach(movie => {
+    let details = document.createElement("p");
+    details.innerHTML = `<h2>${movie.title}</h2>\n<h3>${movie.director}</h3>\n&nbsp`;
+    allMovies.append(details);
+  })
+
+  //Displaying the number of the movies
+  movieNumbers.innerText = array.length;
+}
+
+//Answer to Task 2
+function addMovie(object){
+  setTimeout(movies.push(object), 2000);
+}
+
+//Answer to Task 3
+// let newMovie = {
+//   title: "Beautiful Day in the Neighborhood",
+//   director: "Marielle Heller",
+//   type: "drama",
+//   haveWatched : true
+// }
+// addMovie(newMovie);
+
+
+//Answer to Task 4
+function createObject(){
+
+  //Creating and asigning variables to form values:
+  let newTitle, movieDirector, movieType, watchedOrNot, watchedOrNotArray, checked;
+  newTitle = document.getElementById("title").value;
+  movieDirector = document.getElementById("director").value;
+  movieType = document.getElementById("type").value;
+  watchedOrNot = document.getElementsByName("hasWatched");
+  watchedOrNotArray = Array.from(watchedOrNot);
+  checked = watchedOrNotArray.find(option =>  option.checked);
+  
+  //Creating the new movie object
+  let newMovie = {
+    title: newTitle,
+    director: movieDirector,
+    type: movieType,
+    hasWatched: Boolean(checked.value)
+  }
+
+  //Adding the new movie object to the list of arrays called "movies" using the addMovie helper function:
+  addMovie(newMovie)
+}
+
+//form add movie button
+let addBtn = document.getElementById("addBtn");
+
+//Listening for when the button is clicked
+addBtn.addEventListener("click", createObject);
+
+setTimeout(showMovies(movies), 5000);

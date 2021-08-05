@@ -1,3 +1,11 @@
+let quoteP = document.getElementById("quote");
+let newQuoteBtn = document.getElementById("newQuoteBtn");
+function showQuote(quoteFromArray){
+  quoteP.innerHTML = `${quoteFromArray.quote}<br><i><b>-${quoteFromArray.author}</b></i>`;
+}
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,6 +28,7 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +499,7 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+newQuoteBtn.addEventListener("click", function(){
+  showQuote(pickFromArray(quotes));
+})

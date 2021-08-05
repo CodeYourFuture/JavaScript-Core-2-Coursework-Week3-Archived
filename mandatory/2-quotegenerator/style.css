@@ -1,1 +1,51 @@
-/** Write your CSS in here **/
+body{
+    background-color: #40e0d0;
+    display:flex;
+    justify-content: center;
+}
+.quote-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background-color:#ffffff;
+    width:70vw;
+    height:70vh;
+}
+
+.quote-container p{
+    font-size:2rem;
+    padding:6rem;
+}
+
+.newQuoteBtn{
+    width:200px;
+    height:100px;
+    padding:1rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    box-shadow:5px 10px;
+
+    border:10px solid #21CCBB;
+    font-weight:bold;
+    background-color:#ffffff;
+}
+
+.newQuoteBtn:hover{
+    background-color: #21CCBB;
+    border-color:#ffffff;
+    transition: all .5s linear;
+}
+
+/* Design */
+.circle1{
+    width:1000px;
+    height:1000px;
+    border-radius:50%;
+    background-color:#21CCBB;
+    position:fixed;
+    top:400px;
+    left:-200px;
+    z-index:-100;
+}
+
