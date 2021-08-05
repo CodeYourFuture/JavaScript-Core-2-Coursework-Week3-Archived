@@ -63,6 +63,33 @@ const movies = [
 
 // create showMovies function
 
+function showMovies(movies) {
+  setTimeout(() => {
+    const contentEl = document.getElementById("all-movies");
+    movies.forEach((item) => {
+      let paragraphEl = document.createElement("p");
+      contentEl.appendChild(paragraphEl);
+      paragraphEl.innerHTML = `${item.title} - ${item.director}`;
+    });
+    const spanEl = document.getElementById("movies-number");
+    spanEl.innerHTML = `${movies.length}`;
+  }, 1000);
+}
+// showMovies(movies);
+
 // create a new movie object for your favorite movie
+const newMovie = {
+  title: "John Wick",
+  director: "Chad Stahelski",
+  type: "action",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovie(obj, callBack) {
+  setTimeout(() => {
+    movies.push(obj);
+    callBack(movies);
+  }, 2000);
+}
+addMovie(newMovie, showMovies);
