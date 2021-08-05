@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Quote Generator</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quotes</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <label class="switch">
+      <input type="checkbox" id="checkBox" />
+      <span class="slider round"></span>
+    </label>
+    <p id="on-Air">Click Here For Play The Quotes</p>
+
+    <div id="whole-page">
+      <figure class="quote">
+        <blockquote>
+          <q><p id="quotes-message"></p></q>
+        </blockquote>
+        <figcaption>&mdash; <span id="author-name"></span></figcaption>
+        <button>New Quote</button>
+      </figure>
+    </div>
+
     <script src="quotes.js"></script>
   </body>
 </html>
+
