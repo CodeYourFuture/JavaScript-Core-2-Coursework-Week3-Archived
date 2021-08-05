@@ -1,10 +1,10 @@
 // Write your code here
 //1st challenge
 const image = [
-  "images/1.jpeg",
-  "images/2.jpeg",
-  "images/3.jpeg",
-  "images/4.jpeg",
+  "https://images.unsplash.com/photo-1616324862271-14431f1ca180?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8SnBnNktpZGwtSGt8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1627991020697-9af24d1acff1?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExfEpwZzZLaWRsLUhrfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1627779297585-0ba2b85b0ba5?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fEpwZzZLaWRsLUhrfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+ "https://images.unsplash.com/photo-1627893796692-800ae814be0a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfEpwZzZLaWRsLUhrfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
 ];
 
 const img = document.querySelector(".image");
@@ -20,11 +20,11 @@ img.src = image[0];
 forward.addEventListener("click", forwardSlide);
 back.addEventListener("click", backwardSlide);
 autoforward.addEventListener("click", function () {
-  (f = setInterval(forwardSlide, 2000)), clearInterval(b);
+  (f = setInterval(forwardSlide, 4000)), clearInterval(b);
 });
 
 autobackward.addEventListener("click", function () {
-  (b = setInterval(backwardSlide, 2000)), clearInterval(f);
+  (b = setInterval(backwardSlide, 4000)), clearInterval(f);
 });
 
 stop.addEventListener("click", function () {
@@ -32,22 +32,32 @@ stop.addEventListener("click", function () {
   clearInterval(b);
 });
 function forwardSlide() {
-  for (let i = 0; i < image.length - 1; i++) {
-    if ("http://127.0.0.1:5500/mandatory/3-slideshow/" + image[i] === img.src) {
-      img.src = image[++i];
+  let number = 0;
+  for (let i = 0; i < image.length; i++) {
+      if (image[i] === img.src) {
+      number = i;
     }
   }
-}
+if(number===image.length-1)
+      {number=-1 }
+ (img.src = image[++number])
+  }
+
+
+
 
 function backwardSlide() {
+
+  let number = 0;
   for (let i = 0; i < image.length; i++) {
-    if (i > 0) {
-      if (
-        "http://127.0.0.1:5500/mandatory/3-slideshow/" + image[i] ===
-        img.src
-      ) {
-        img.src = image[--i];
-      }
-    }
+    if (image[i] === img.src)
+      number = i;
   }
+  if (number === 0) {
+    number=image.length
+
+  }          img.src = image[--number];
+   
+   
+ 
 }
