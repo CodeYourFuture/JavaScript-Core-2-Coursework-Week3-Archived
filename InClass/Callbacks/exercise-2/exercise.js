@@ -35,6 +35,6 @@ Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
 
-////////////// */ I DID THIS IN CODEPEN AFTER CLASS:
+//////////// */ I DID THIS IN CODEPEN AFTER CLASS:
 
-https://codepen.io/Texx45/pen/ZEKRpVB
+// https://codepen.io/Texx45/pen/ZEKRpVB
