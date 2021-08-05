@@ -15,9 +15,9 @@ for (let key of sectionElms) {
 // Hint: look at the CSS to see if there are any classes already written which you can use.
 let imgElms = document.querySelectorAll("img");
 
-// for (img in imgElms) {
-//   imgElms[img].classList.add('content-title');
-// }
+imgElms.forEach((element) => {
+  element.className += "content-title";
+});
 
 // Task 3
 
@@ -44,6 +44,6 @@ let i = 0; //index number
 for (eachSect of sectionElms) {
   const newPara = document.createElement("p");
   eachSect.appendChild(newPara);
-  newPara.innerHTML = `<strong> Great Lady : </strong>${personInfo[i].name},  <strong> Born : </strong>${personInfo[i].birthDate} & <strong> Died : </strong> ${personInfo[i].deathDate} `;
+  newPara.innerHTML = `<strong> Great Lady : </strong>${personInfo[i].name},  <strong> Born : </strong>${personInfo[i].birthDate} & <strong> Died : </strong> ${personInfo[i].deathDate}. `;
   i++;
 }
