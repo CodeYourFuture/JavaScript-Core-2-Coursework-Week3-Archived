@@ -20,7 +20,7 @@ autoF.addEventListener("click", () => {
   let fastForward = setInterval(() => {
     if (i >= 0 && i < images.length - 1) {
       i++;
-      slider.setAttribute("src", images[i]);
+      slider.src = images[i];
     }
     if (i === images.length - 1) {
       clearInterval(fastForward);
@@ -31,9 +31,9 @@ autoF.addEventListener("click", () => {
 //Back button
 autoB.addEventListener("click", () => {
   let backForward = setInterval(() => {
-    if (i >= 0 && i < images.length && i > 0) {
+    if (i > 0 && i < images.length) {
       i--;
-      slider.setAttribute("src", images[i]);
+      slider.src = images[i];
     }
     if (i === 0) {
       clearInterval(backForward);
@@ -45,14 +45,14 @@ autoB.addEventListener("click", () => {
 fBtn.addEventListener("click", () => {
   if (i >= 0 && i < images.length - 1) {
     i += 1;
-    slider.setAttribute("src", images[i]);
+    slider.src = images[i];
   }
 });
 
 //back button
 bBtn.addEventListener("click", () => {
-  if (i >= 0 && i < images.length && i > 0) {
+  if (i > 0 && i < images.length) {
     i -= 1;
-    slider.setAttribute("src", images[i]);
+    slider.src = images[i];
   }
 });
