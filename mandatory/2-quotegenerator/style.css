@@ -1,1 +1,55 @@
 /** Write your CSS in here **/
+body {
+  min-height: 100vh;
+  background-color: rgba(255, 166, 0, 0.856);
+  color: rgb(27, 27, 27);
+  font-family: "Calibri", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 3%;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: white;
+  padding: 1%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  text-align: center;
+  background-color: white;
+  margin: 7% 10% 10% 10%;
+  border-radius: 10px;
+}
+
+#nextquoteBtn {
+  color: rgb(27, 27, 27);
+  font-weight: 700;
+  background-color: rgb(221, 146, 7);
+  padding: 1%;
+  border-radius: 7px;
+  border: none;
+  font-size: 20px;
+  margin-top: 2%;
+  margin-left: 80%;
+  outline: none;
+  box-shadow: 0px 0px 30px orange;
+}
+
+#nextquoteBtn:hover {
+  box-shadow: 0px 0px 25px red;
+}
+
+blockquote {
+  border-bottom: 5px solid black;
+  margin: 1.5rem;
+}
+
+#author {
+  color: rgb(221, 146, 7);
+}

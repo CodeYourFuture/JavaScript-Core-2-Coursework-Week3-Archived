@@ -1,3 +1,15 @@
+// RandomQuote
+
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const nextQuoteBtn = document.getElementById("nextquoteBtn");
+
+nextQuoteBtn.addEventListener("click", () => {
+  const randomQuote = pickFromArray(quotes);
+  quote.innerHTML = `"${randomQuote.quote}"`;
+  author.innerText = randomQuote.author;
+});
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
