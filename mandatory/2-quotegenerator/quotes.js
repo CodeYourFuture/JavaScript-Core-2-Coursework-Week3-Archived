@@ -1,3 +1,48 @@
+const colorTemplate = ['#00ADB5','#F08A5D','#B83B5E','#346751','#125D98','#6A2C70','#E23E57','#716F81','#FF7600'];
+
+const button = document.getElementById('newQuote');
+
+button.addEventListener('click',findQuote);//i didn't use arrow func because i will use the same func for autoGenerate 
+ function findQuote(){
+
+  const quote = pickFromArray(quotes);//random qoute
+  const color = pickFromArray(colorTemplate);//random color
+
+  const p = document.getElementById('quoteTitle');
+  p.innerText = quote.quote;
+  p.style.color = color;
+
+
+  const author = document.getElementById('author');
+  author.innerText = quote.author;
+  author.style.color =color;
+
+  document.getElementById('comma').style.color = color;
+
+  button.style.backgroundColor = color;
+  button.style.color = 'white';
+  
+  document.body.style.backgroundColor = color;
+ }
+
+///EXTRA 
+const checkBox =document.getElementById('autoQuote')
+const backGround = document.getElementById('label');
+var intervalID;
+
+checkBox.addEventListener('click',()=>{
+  clearInterval(intervalID);
+  if(checkBox.checked){
+    intervalID = setInterval(findQuote, 500);
+    label.style.backgroundColor = 'red';
+    label.innerText = 'Stop Auto';
+  } else {//reset interval
+    clearInterval(intervalID);
+    label.style.backgroundColor = 'green';
+    label.innerText = 'Start Auto'
+  }
+})
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,7 +65,7 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
-
+ 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
 const quotes = [
