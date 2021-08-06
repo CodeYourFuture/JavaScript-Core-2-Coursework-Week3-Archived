@@ -490,3 +490,30 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+const newQuoteButton = document.getElementById("quoteBtn");
+
+newQuoteButton.addEventListener("click", () => chooseQuote(quotes));
+const quoteContainer = document.getElementById("quote-container");
+const authorContainer = document.getElementById("author-container");
+
+function chooseQuote(choicesArray) {
+  const randomNumber = Math.floor(Math.random() * choicesArray.length);
+  const choice = choicesArray[randomNumber];
+  quoteContainer.innerText = choice.quote;
+  authorContainer.innerText = choice.author;
+  console.log(quoteParagraph);
+  // console.log(choicesArray[randomNumber].quote);
+  // console.log(choicesArray[randomNumber].author);
+  // const randomChoice = choicesArray.map((item) => {
+  // const randomNumber =
+  //   choicesArray[Math.floor(Math.random() * choicesArray.length)];
+  // console.log(item.quote);
+  // });
+
+  //console.log(randomChoice);
+
+  quoteContainer.appendChild(quoteParagraph);
+
+  //console.log(quoteParagraph);
+}
+chooseQuote(quotes);
