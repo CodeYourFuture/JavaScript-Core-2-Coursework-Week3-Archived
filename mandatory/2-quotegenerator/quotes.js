@@ -1,3 +1,19 @@
+const container = document.getElementById('container');
+const quoteH1 = document.getElementById('quote');
+const pHolder = document.getElementById('holder');
+const button = document.getElementById('btn');
+container.style.backgroundColor = 'white';
+
+button.addEventListener('click', ()=>{
+  const randomQuote = pickFromArray(quotes); // when I apply the function directly inside {} below, it picks quote and author separately
+  quoteH1.innerText = `"${randomQuote.quote}`;
+  pHolder.innerText =`-${randomQuote.author}`;
+  pHolder.style.fontStyle ='italic';
+});
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -22,7 +38,7 @@ function pickFromArray(choices) {
 }
 
 // A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
+// Feel free to edit them, and to add your own favorites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
