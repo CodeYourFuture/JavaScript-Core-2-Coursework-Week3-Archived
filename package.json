@@ -2,7 +2,7 @@
   "name": "JavaScript-Core-2-Coursework-Week3",
   "version": "1.0.0",
   "description": "",
-  "license": "CC-BY-SA-4.0",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -13,7 +13,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week3/issues"
   },

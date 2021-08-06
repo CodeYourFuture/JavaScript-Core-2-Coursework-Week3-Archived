@@ -62,7 +62,59 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(moviesArray) {
+  const allMovieDetails = moviesArray.map((movie) => {
+    const newParagraph = document.createElement("p");
+    newParagraph.innerText = `${movie.title}, directed by ${movie.director}`;
+    const allMovies = document.getElementById("all-movies");
+    allMovies.appendChild(newParagraph);
+  });
+  const totalMovies = document.getElementById("movies-number");
+  totalMovies.innerText = moviesArray.length;
+}
+setTimeout(() => {
+  showMovies(movies);
+}, 1000);
 
 // create a new movie object for your favorite movie
+const theMatrix = {
+  title: "The Matrix",
+  director: "The Wachowskis",
+  type: "action",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovie(newMovie) {
+  movies.push(newMovie);
+  const newParagraph = document.createElement("p");
+  newParagraph.innerText = `${newMovie.title}, directed by ${newMovie.director}`;
+  const allMovies = document.getElementById("all-movies");
+  allMovies.appendChild(newParagraph);
+  const totalMovies = document.getElementById("movies-number");
+  totalMovies.innerText = movies.length;
+}
+
+setTimeout(() => {
+  addMovie(theMatrix);
+}, 2000);
+
+const form = document.getElementById("form");
+const formSubmission = document.getElementById("submitBtn");
+const titleField = document.getElementById("title");
+const directorField = document.getElementById("director");
+const typeField = document.getElementById("genre");
+const haveWatchedCheckbox = document.getElementById("haveWatched");
+
+formSubmission.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const newMovieToAdd = {
+    title: titleField.value,
+    director: directorField.value,
+    type: typeField.value,
+    haveWatched: haveWatchedCheckbox.checked,
+  };
+  addMovie(newMovieToAdd);
+  form.reset();
+});
