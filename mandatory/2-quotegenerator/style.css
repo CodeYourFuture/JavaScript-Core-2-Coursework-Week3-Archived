@@ -1,1 +1,87 @@
 /** Write your CSS in here **/
+body {
+    height: 100%;
+    padding-top: 200px;
+    background-color: #f8eee7;
+    display: grid;
+    align-content: center;
+ 
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    
+    
+}
+
+#innerBox {
+    display: flex;
+    flex-direction: column;
+    background-color: #94618e;
+    border: 5px solid #49274a;
+    align-content: center;
+    justify-content: center;
+    
+    width: 70vw;
+    
+}
+
+.innerQuoteContainer{
+    display: flex;
+    height: 30vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#innerQuote {
+    display: flex;
+    color: white;
+    font-style: italic;
+    font-size: 2.7rem;
+    letter-spacing: 0.2rem;
+    padding: 3vh;
+    line-height: 5rem;
+
+}
+
+#innerBoxLowerHalf {
+    display: flex;
+    flex-direction: row;
+    padding:3vh;
+    border-top: 5px solid #49274a;
+    justify-content: space-between;
+    
+}
+
+#innerAuthor {
+    /* padding-top: 20px;
+    padding-right: 200px; */
+    font-weight:900;
+    font-size: 2.4rem;
+}
+
+.buttons {
+    display: inline-flex;
+    background-color: #49274a;
+    color: white;
+    height: 5.5vh;
+    transform: scale(1.1);
+    border:5px solid #49274a;
+    border-radius: 0.3rem;
+    /* align-content: center;
+    justify-content: center; */
+    /* height: 5vh;
+    width: 13vw;
+    */
+}
+
+.buttons:hover {
+    background-color: black;
+    border:5px solid #19101a;
+    color: white;
+    transform: scale(1.2);
+    transition-duration: 500ms;
+    
+    #innerQuote {
+
+    }
+}
