@@ -35,6 +35,9 @@ const displayCurrentImageIndex = document.getElementById("h2CurrentIndex");
 
 // This boolean is very important as it is used to stop autoForward and 
 //autoBack from running at the same time...
+
+//SEE ATTACHED FILE 'alternativeSolution.js' FOR A MUCH EASIER AND 
+//CLEANER SOLUTION THAN MY ONE !!!!!
 let autoRunBoolean = false;
 
 // These are the functions for the 'forward' and 'back' button on the 
@@ -56,6 +59,8 @@ forwardButton.addEventListener("click", function(){
 //and then passing their logic to the autoRunFunction. It then changes
 //the autoRunBoolean to true so that the autoRunFunction will know if 
 //an autoRun is already going. 
+//SEE ATTACHED FILE 'alternativeSolution.js' FOR A MUCH EASIER AND 
+//CLEANER SOLUTION THAN MY ONE !!!!!
 autoBackButton.addEventListener("click", function(){
     cl("autoBackButton")
     cl("autoBackButton Boolean Start value :" + autoRunBoolean)
