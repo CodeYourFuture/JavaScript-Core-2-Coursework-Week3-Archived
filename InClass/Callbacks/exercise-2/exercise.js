@@ -61,8 +61,39 @@ const movies = [
   },
 ];
 
+// Task 1
 // create showMovies function
-
+function showMovies (movies){
+  const divEl = document.getElementById('all-movies');
+  const NumberOfMovies = document.getElementById('movies-number');
+  NumberOfMovies.innerText = movies.length;
+  movies.forEach(element => {
+    const paragraph = document.createElement('p');
+    divEl.appendChild(paragraph);
+    paragraph.innerText =`${element.title} by ${element.director}`;
+    paragraph.style.color = '#0c5460';
+    paragraph.style.backgroundColor = '#d1ecf1';
+    paragraph.style.borderColor = '#bee5eb';
+    paragraph.style.padding = '.75rem 1.25rem';
+  });
+}
+// Task 2
 // create a new movie object for your favorite movie
 
+const myMovies = 
+  {
+    title: "Inside Out",
+    director: "Pete Docter",
+    type: "animation",
+    haveWatched: true,
+  };
+
+function addMovie (movie, callback){
+  setTimeout(() =>{
+    (movies.push(movie));
+    callback(movies);
+  }, 1000);
+}
+
+addMovie(myMovies, showMovies);
 // create addMovies function

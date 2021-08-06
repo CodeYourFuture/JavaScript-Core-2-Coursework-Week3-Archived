@@ -1,1 +1,37 @@
 /** Write your CSS in here **/
+html, body {
+    background-color:#FFA400 ;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 100px 100px;
+    
+}
+
+#quote {
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: #FFA400;
+    font-family:'Franklin Gothic Medium';
+    font-size: 30px;
+
+}
+
+#holder {
+    padding: 10px 10px;
+    text-align: right;
+    margin-right: 20px;
+    color: #FFA400;
+}
+
+#btn {
+    align-self: flex-end;
+    margin: 20px;
+    border: none;
+    background-color: #FFA400;
+    color: white;
+    padding: 8px;
+}
