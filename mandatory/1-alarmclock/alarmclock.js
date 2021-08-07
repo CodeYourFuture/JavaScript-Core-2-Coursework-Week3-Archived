@@ -62,8 +62,7 @@ pauseAlarmBtn.addEventListener("click", function(){
   }, 1000);
   
 });
-let test = "50px";
-console.log(parseFloat(test))
+
 
 // DO NOT EDIT BELOW HERE
 
