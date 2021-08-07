@@ -1,3 +1,9 @@
+let pauseButton = document.createElement("button"); //pause button created
+pauseButton.innerText = "Pause Alarm"; // the text of the pause button
+pauseButton.style.marginLeft = "5px";
+let lastButton = document.getElementById("stop"); //targetting the last button in the div
+lastButton.parentNode.insertBefore(pauseButton, lastButton.nextSibling); //appended the pause button
+
 function setAlarm() {
   let alarmSetInputValue = document.getElementById("alarmSet").value;
 
