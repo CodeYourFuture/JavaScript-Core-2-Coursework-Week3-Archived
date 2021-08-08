@@ -61,8 +61,39 @@ const movies = [
   },
 ];
 
-// create showMovies function
+// Task 1: create showMovies function / Task 2: Add 1 second delay until movies display
+function showMovies(movies) {
+  let moviesList = document.querySelector("#all-movies");
 
-// create a new movie object for your favorite movie
+  //replaceChildren();
+  movies.forEach((movie) => {
+    let totalMovies = document.querySelector("#movies-number");
+    totalMovies.innerText = movies.length;
 
-// create addMovies function
+    setTimeout(() => {
+      let movieDetails = document.createElement("p");
+      moviesList.appendChild(movieDetails);
+      movieDetails.innerText = `${movie.title}, directed by ${movie.director}.`;
+    }, 1000);
+  });
+}
+
+//showMovies(movies);
+
+// Task 2: create a new movie object for your favourite movie
+const myFavMovie = {
+  title: "The Matrix",
+  director: "Wachowskis",
+  type: "Science Fiction",
+  haveWatched: true,
+};
+
+// Task 2-3: create addMovies function
+function addMovie(movie, callback) {
+  setTimeout(() => {
+    movies.push(movie);
+    callback(movies);
+  }, 2000);
+}
+
+addMovie(myFavMovie, showMovies);
