@@ -1,3 +1,17 @@
+const quoteContainer = document.getElementById("quote-container");
+const authorContainer = document.getElementById("author-container");
+
+const generateQuote = () => {
+  const randomQuote = pickFromArray(quotes);
+  console.log(randomQuote);
+  quoteContainer.innerText = randomQuote.quote;
+  authorContainer.innerText = `- ${randomQuote.author}`;
+};
+
+document
+  .getElementById("new-quote-button")
+  .addEventListener("click", generateQuote);
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -490,3 +504,5 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+generateQuote();

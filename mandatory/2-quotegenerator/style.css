@@ -1,1 +1,51 @@
 /** Write your CSS in here **/
+body {
+  background-color: #f4cdee;
+  box-sizing: border-box;
+}
+
+#quote-generator-container {
+  width: 60%;
+  height: 30%;
+  border: 2px solid #f4cdee;
+  margin: 2rem auto;
+  border-radius: 10px;
+  font-family: monospace;
+  background-color: #e899dc;
+}
+
+#inner-container {
+  border: 2px solid #f4cdee;
+  margin: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fec9f1;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: monospace;
+}
+
+blockquote {
+  font-size: 2rem;
+}
+
+p {
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-left: 60%;
+}
+
+button {
+  background-color: #e899dc;
+  color: white;
+  border-color: #871d7a;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 35%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline-style: none;
+}

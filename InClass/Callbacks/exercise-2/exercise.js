@@ -34,35 +34,7 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
-const movies = [
-  {
-    title: "Color Out of Space",
-    director: "Richard Stanley",
-    type: "sci-fi",
-    haveWatched: true,
-  },
-  {
-    title: "A Twelve-Year Night",
-    director: "Álvaro Brechner",
-    type: "horror",
-    haveWatched: false,
-  },
-  {
-    title: "The Whistlers",
-    director: "Corneliu Porumboiu",
-    type: "comedy",
-    haveWatched: true,
-  },
-  {
-    title: "The Invisible Man",
-    director: "Leigh Whannell",
-    type: "horror",
-    haveWatched: false,
-  },
-];
 
-// create showMovies function
+//////////// */ I DID THIS IN CODEPEN AFTER CLASS:
 
-// create a new movie object for your favorite movie
-
-// create addMovies function
+// https://codepen.io/Texx45/pen/ZEKRpVB
