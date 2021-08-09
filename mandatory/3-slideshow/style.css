@@ -1,1 +1,53 @@
-/** Write your CSS in here **/
+.slider{
+    position:fixed;
+    display:flex;
+    z-index:0;
+}
+
+
+.image-container {
+    padding:150px 0px 150px 650px;
+    width:77vw;
+    height:97vh;
+    background-color:white;
+}
+
+
+.image-container img{
+    width:auto;
+    height:800px;
+}
+
+.lastImage{
+    padding-right:670px;
+}
+
+/*Left and right Controls*/
+.fowardBtnContainer i{
+    font-size:3em;
+    position:fixed;
+    right:100px;
+    top:500px;
+}
+.backwardBtnContainer i {
+    font-size: 3em;
+    position: fixed;
+    left: 100px;
+    top: 500px;
+}
+
+/* auto controls*/
+.buttons{
+    position:fixed;
+    top:1000px;
+    left:900px;
+}
+
+.btn{
+    padding:1rem 2rem;
+    margin-left:1rem;
+    font-size:2.5rem;
+    border-radius:30px;
+    background-color:pink;
+}
+
