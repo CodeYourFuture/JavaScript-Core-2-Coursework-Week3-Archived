@@ -1,1 +1,41 @@
-/** Write your CSS in here **/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  width: 50%;
+  margin: 2rem auto;
+  overflow: hidden;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: auto;
+  height: 500px;
+}
+
+#button-section {
+  width: 50%;
+  border-radius: 15px;
+  background-color: lightgray;
+  margin: auto;
+  border: 5px solid black;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 0.3rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  margin: 0 auto;
+}
