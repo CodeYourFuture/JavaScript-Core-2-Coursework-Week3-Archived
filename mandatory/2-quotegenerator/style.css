@@ -1,1 +1,49 @@
-/** Write your CSS in here **/
+body {
+  background-color: #ff8533;
+  box-sizing: border-box;
+  color: #ff751a;
+}
+
+#jumbotron {
+  width: 70%;
+  height: 40%;
+  border: 2px solid #b34700;
+  margin: 2em auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: cornsilk;
+}
+
+#quote-container {
+  margin: 4rem;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: #662900;
+  font-size: 3em;
+  padding: 1.5rem;
+  font-weight: 700;
+}
+
+#quotes {
+  font-size: 1.3rem;
+}
+
+#authors {
+  margin-left: 65%;
+}
+
+#newQuote {
+  background-color: #b34700;
+  padding: 0.5em;
+  float: right;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+#quoteMarks {
+  width: 18px;
+  height: 16px;
+  margin-left: -3%;
+}

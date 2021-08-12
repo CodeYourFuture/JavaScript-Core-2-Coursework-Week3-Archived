@@ -1,3 +1,16 @@
+const quoteContainer = document.getElementById("quotes");
+const authorContainer = document.getElementById("authors");
+const newQuote = document.getElementById("newQuote");
+
+const generateQuote = () => {
+  const randomQuote = pickFromArray(quotes);
+  quoteContainer.innerText = randomQuote.quote;
+  authorContainer.innerText = randomQuote.author;
+}
+
+newQuote.addEventListener("click", generateQuote);
+
+
 
 // DO NOT EDIT BELOW HERE
 

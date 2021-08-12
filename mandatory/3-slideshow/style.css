@@ -1,1 +1,27 @@
-/** Write your CSS in here **/
+body {
+  background-color: #53c68c;
+  text-align: center;
+}
+
+h1 {
+  padding: 2%;
+  font-size: 4rem;
+  color: #1f1f2e;
+}
+
+.carousel-ctn {
+  padding: 3%;
+}
+
+.buttons {
+  padding: 8px;
+  background-color: #c2c2d6;
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+
+footer {
+  padding: 3%;
+  font-size: 0.75;
+  line-height: 0.75;
+}
