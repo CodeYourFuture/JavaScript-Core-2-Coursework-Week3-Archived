@@ -66,7 +66,7 @@ function showMovies(movies) {
   let moviesList = document.querySelector("#all-movies");
 
   //replaceChildren();
-  movies.forEach((movie) => {
+  movies.forEach((movie, index) => {
     let totalMovies = document.querySelector("#movies-number");
     totalMovies.innerText = movies.length;
 
@@ -74,7 +74,7 @@ function showMovies(movies) {
       let movieDetails = document.createElement("p");
       moviesList.appendChild(movieDetails);
       movieDetails.innerText = `${movie.title}, directed by ${movie.director}.`;
-    }, 1000);
+    }, 1000 * index + 1);
   });
 }
 
