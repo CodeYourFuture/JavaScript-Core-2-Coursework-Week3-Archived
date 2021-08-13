@@ -17,7 +17,36 @@ Create a new function called "addMovie"
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
+*/
 
+function addMovie(obj,callBack){
+  console.log('waiting 2 secs FOR ADDING movies<<<<<')
+  setTimeout(()=>{
+    movies.push(obj);// add new film object >> to movie array 
+    callBack(movies);// show new array
+  },1000);
+}
+
+
+function showMovies(movies) {
+  console.log('waiting 1 sec FOR SHOWING movies<<<<<')
+  setTimeout(() =>{
+    document.querySelectorAll("#all-movies p:not(.alert)").forEach(e => e.parentNode.removeChild(e));//choose all movie in the page and delete them  ****!!!! NOTE for MATT>>>> please look at END OF THE PAGE
+    const allMovies = document.querySelector('#all-movies');
+    movies.forEach(movie => {
+      const p = document.createElement('p');
+      let film = `${movie.title}  by ${movie.director}`;
+      p.innerText = film;
+      allMovies.appendChild(p);
+    });
+
+    const movieNumber = document.querySelector('#movies-number');
+    movieNumber.innerText = movies.length;
+  },500);
+}
+
+
+/*
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks
@@ -34,6 +63,20 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
+
+const submit = document.getElementById('submit');
+submit.addEventListener('click', () => {
+  const newFilm = {
+    title: document.getElementById('title').value,
+    director: document.getElementById('director').value,
+    type: document.getElementById('type').value,
+    haveWatched: document.getElementById('haveWatched').value
+  };
+  addMovie(newFilm, showMovies);
+})
+
+
+
 const movies = [
   {
     title: "Color Out of Space",
@@ -62,7 +105,37 @@ const movies = [
 ];
 
 // create showMovies function
+showMovies(movie);
+
+function showMovies(movies) {
+  setTimeout(() => {
+    const contentEl = document.getElementById("all-movies");
+    movies.forEach((item) => {
+      let paragraphEl = document.createElement("p");
+      contentEl.appendChild(paragraphEl);
+      paragraphEl.innerHTML = `${item.title} - ${item.director}`;
+    });
+    const spanEl = document.getElementById("movies-number");
+    spanEl.innerHTML = `${movies.length}`;
+  }, 1000);
+}
 
 // create a new movie object for your favorite movie
 
+const favoriteMovies = {
+  title: "Time",
+  director: "JO Man",
+  type: "Action",
+  haveWatched: true,
+};
+
+
 // create addMovies function
+
+function addMovie(movies) {
+  movies.push(movies);
+  setTimeout(() => {
+    movies.push(obj);
+    callBack(movies);
+  }, 2000);
+}

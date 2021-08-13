@@ -1,3 +1,23 @@
+
+const body = document.getElementById('body');
+const quote_div = document.getElementById('quote_div');
+const button = document.getElementById('button');
+let quote = document.getElementById("quote_h1");
+let author = document.getElementById("author");
+
+// Select a random quote
+function newQuote() {
+  let selectQuote = pickFromArray(quotes);
+  quote.innerHTML = `"${selectQuote.quote}`;
+  author.innerHTML = `- ${selectQuote.author}`;
+};
+
+// When the new quote button is clicked, call the function newQuote
+newQuoteBtn.addEventListener("click", newQuote);
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
