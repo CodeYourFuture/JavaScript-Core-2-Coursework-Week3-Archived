@@ -1,1 +1,29 @@
 /** Write your CSS in here **/
+.container {
+ background-color: rgb(247, 175, 41);
+display: flex;
+align-items: center;
+justify-content: center;
+width: auto;
+height: 100vh;
+
+}
+
+.quotes-container{
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ align-items :flex-end;
+ justify-content: center;
+ padding: 20px;
+ text-align: center;
+}
+
+.quotes-container h3{
+ font-size: medium;
+}
+.quotes-container h3, .quotes-container p {
+ font-family: 'Times New Roman', Times, serif;
+ color: rgb(247, 175, 41);
+}
+

@@ -490,3 +490,15 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function generate (){
+  let choice = pickFromArray(quotes);
+  let quote = document.getElementById("quote");
+  let mark = '“ ';
+  quote.innerHTML = mark + choice.quote;
+  let author = document.getElementById("author");
+  mark = "- ";
+  author.innerHTML = mark + choice.author;
+  console.log(choice)
+  
+}
