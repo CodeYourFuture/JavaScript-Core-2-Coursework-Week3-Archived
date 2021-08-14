@@ -1,1 +1,8 @@
-/** Write your CSS in here **/
+body {
+	padding: 20px;
+}
+img {
+	width: 500px;
+	margin-bottom: 20px;
+}
+

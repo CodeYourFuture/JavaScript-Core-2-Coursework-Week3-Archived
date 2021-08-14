@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Slideshow</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Write your HTML in here -->
-    <script src="slideshow.js"></script>
-  </body>
+
+<head>
+	<title>Slideshow</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<h1>Slideshow 2 sec autoslide</h1>
+	<img src="https://images.unsplash.com/photo-1628763228607-ead5a5881057?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="restaurant" id="img-slide">
+
+	<div class="btn-wrap">
+		<button id='btn-auto-backward'> &lt;&lt; Autoslide</button>
+		<button id="btn-back">&lt;</button>
+		<button id="btn-stop">Stop autoslide</button>
+		<button id='btn-forward'>&gt;</button>
+		<button id='btn-auto-forward'>Autoslide &gt;&gt;</button>
+	</div>
+	<script src="slideshow.js"></script>
+</body>
+
 </html>
