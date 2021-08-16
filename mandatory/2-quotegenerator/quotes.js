@@ -657,13 +657,20 @@ displayQuote = (quote) => {
   let quoteButton = document.createElement("button");
   buttonContainer.appendChild(quoteButton);
   quoteButton.innerText = "New Quote";
+  quoteButton.setAttribute("id", "new-quote");
   quoteButton.classList.add("button");
 
-  quoteButton.addEventListener("click", () => {
-    quote = pickFromArray(quotes);
-    colour = pickRandomColour();
-    displayQuote(quote);
-  });
+  // When autoPlay is active this prevents the `New Quote` button from overriding the auto setting.
+  if (autoPlay) {
+    quoteButton.disabled;
+    quoteButton.style.opacity = 0.2;
+  } else {
+    quoteButton.addEventListener("click", () => {
+      quote = pickFromArray(quotes);
+      colour = pickRandomColour();
+      displayQuote(quote);
+    });
+  }
 
   let form = document.createElement("form");
   quoteContainer.appendChild(form);
@@ -698,6 +705,7 @@ toggleAutoPlay = () => {
 
     autoQuotes = setInterval(() => {
       quote = pickFromArray(quotes);
+      colour = pickRandomColour();
       displayQuote(quote);
       document.querySelector("#auto-play").checked = autoPlay;
     }, 5000);
