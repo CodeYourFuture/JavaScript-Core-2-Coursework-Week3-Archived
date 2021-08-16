@@ -7,10 +7,11 @@ function setAlarm() {
 
 
   let count;
+  let intervalId;
   setAlarmBtn.addEventListener("click", function(){
     count = alarmSet.value;
 
-    const intervalId = setInterval(function(){
+    intervalId = setInterval(function(){
       let minutes = Math.floor(count / 60);
       let seconds = count % 60;
       
@@ -22,11 +23,12 @@ function setAlarm() {
       }
 
       count --;
+      alarmSet.value = "";
     }, 1000);
   });
 
   pauseAlarmBtn.addEventListener("click", function(){
-    setAlarmBtn.pause();
+    clearInterval(intervalId);
   });
 }
 

@@ -1,1 +1,11 @@
 /** Write your CSS in here **/
+#container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+img {
+ display: flex;
+ width: 300px;
+ height: 300px;
+}
