@@ -20,11 +20,13 @@ img.src = image[0];
 forward.addEventListener("click", forwardSlide);
 back.addEventListener("click", backwardSlide);
 autoforward.addEventListener("click", function () {
-  (f = setInterval(forwardSlide, 4000)), clearInterval(b);
+  let secs=document.getElementById('sec').value;
+  f = setInterval(forwardSlide, secs), clearInterval(b);
 });
 
 autobackward.addEventListener("click", function () {
-  (b = setInterval(backwardSlide, 4000)), clearInterval(f);
+  let secs=document.getElementById('sec').value
+  b = setInterval(backwardSlide, secs), clearInterval(f);
 });
 
 stop.addEventListener("click", function () {
