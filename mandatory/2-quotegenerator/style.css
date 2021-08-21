@@ -1,1 +1,154 @@
 /** Write your CSS in here **/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height:100vh;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+    background-image: linear-gradient(to left bottom, rgb(16, 31, 2), #14120ca8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    width: 80%;
+    height:400px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 10px;
+
+}
+
+.quote
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: auto;
+}
+.author 
+{
+
+    margin:10px;
+    text-align: right;
+    font-size: 25px;
+    font-style: italic;
+    font-family: cursive;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    margin-top: auto;
+}
+
+.next
+{
+    font-size:18px;
+    border-radius: 5px;
+    cursor:pointer;
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgb(35, 0, 230), #ffedbca8);
+}
+.container:hover
+{
+    box-shadow: 0 10px 10px rgb(230, 0, 0);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5eb92a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}
