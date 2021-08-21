@@ -107,12 +107,12 @@ function showMovies() { // add code here
     }`;
     movies.forEach((movie) => {
         const movieInfo = document.createElement("p");
-        movieInfo.innerText = `${
-            movie.title
-        } By ${
-            movie.director
-        }`;
-        divEl.appendChild(movieInfo);
+     setTimeout(() => {
+ movieInfo.innerText = `${movie.title} By ${movie.director}`
+divEl.appendChild(movieInfo)
+
+}, 1000)
+  
     });
 }
 const myFavMovie = {
