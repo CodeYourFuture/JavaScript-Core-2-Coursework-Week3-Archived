@@ -1,5 +1,5 @@
 let interval;
-
+const backgroundC=document.querySelector('.centre')
 function setAlarm() {
   const time = document.getElementById("alarmSet");
   let convert = convertTime(time.value);
@@ -11,6 +11,13 @@ function evaluate() {
   const time = document.getElementById("alarmSet");
   const head = document.getElementById("timeRemaining");
   if (time.value < 1) {
+
+    setInterval(() => {
+      const rndCol =
+        "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
+     
+      backgroundC.style.backgroundColor = rndCol;
+   },1000)
     clearInterval(interval);
     playAlarm();
   } else {
@@ -19,9 +26,7 @@ function evaluate() {
     head.innerText = `Time Remaining: ${convert}`;
   }
 }
-// function pauseAlarm() {
-//   clearInterval(interval)
-// }
+
 
 function convertTime(timer) {
   let timestamp = timer;
@@ -52,6 +57,8 @@ function playAlarm() {
 }
 
 function pauseAlarm() {
+  clearInterval(interval)
+
   audio.pause();
 }
 
