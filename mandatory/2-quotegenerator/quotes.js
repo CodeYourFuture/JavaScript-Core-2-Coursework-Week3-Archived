@@ -986,3 +986,4 @@ function pickFromArray(choices) {
 //   },
 // ];
 
+console.log('hi');
