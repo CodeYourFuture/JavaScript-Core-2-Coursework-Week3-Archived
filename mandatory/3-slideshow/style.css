@@ -1,4 +1,32 @@
 /** Write your CSS in here **/
-img{
-  height: 300px
+/* body{
+    margin: auto auto;
+} */
+
+img {
+  width: 600px;
+  padding: 40px;
+}
+
+.buttons {
+  /* padding-left: 20px; */
+  width: 600px;
+  /* padding-left: 80px; */
+  position: relative;
+  top: -20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  border-radius: 3px;
+  border-color: transparent;
+  background-color: rgb(18, 139, 139);
+  color: rgb(255, 255, 255);
+  width: 120px;
+}
+
+button:hover {
+  background-color: rgb(212, 212, 240);
+  color: teal;
 }

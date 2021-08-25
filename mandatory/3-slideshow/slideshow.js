@@ -21,10 +21,11 @@ kittenImg.src = kittens[i]; //1st image from array rendered on load
 
 //eventListener increments index of kittens array by 1 on each click
 fwdBtn.addEventListener("click", function () {
-  if (i === kittens.length - 1) {
-    return (kittenImg.src = kittens[kittens.length - 1]);
-  }
-  kittenImg.src = kittens[i++];
+  //checks if index i is not equal to last kittens elem  
+  if (i !== kittens.length - 1) {
+    return (kittenImg.src = kittens[i++])}  //changes img src url by incrementing array index by 1 at each click 
+    else {kittenImg.src = kittens[kittens.length - 1]};
+  
 });
 
 //eventListener decrements index of kittens array by 1 on each click
@@ -34,3 +35,67 @@ backBtn.addEventListener("click", function () {
   }
   kittenImg.src = kittens[i--];
 });
+
+
+//autofwd pseudo
+//on click butn, loop through all imgs
+//change img in array after each sec
+
+// autoFwdBtn.addEventListener('click', setInterval() {
+    
+// })
+
+//Loops thru each img 1sec delay, starts from 1st img
+// autoFwdBtn.addEventListener('click', function() {
+//   var j = 0;
+//   var interval = setInterval(function () {
+//     if (j <= 3) {
+//       return (kittenImg.src = kittens[j++]);
+//     } else {
+//       clearInterval(interval);
+//     }
+//   }, 1000);
+// })
+
+//take current index of kittensImg.src (indexOf??)
+//loop from current index till index reaches 3
+//Not working still
+autoFwdBtn.addEventListener("click", function () {
+ //var j;
+  const fwdInterval = setInterval(function () {
+    if (i < (kittens.length - 1) + 1) {
+      return (kittenImg.src = kittens[i++]);
+    } else {
+      kittenImg.src = kittens[kittens.length - 1];
+      clearInterval(fwdInterval);
+
+    }
+  }, 1000);
+});
+
+autoBackBtn.addEventListener("click", function () {
+  const backInterval = setInterval(function () {
+    if (i > 0) {
+      return (kittenImg.src = kittens[i--]);
+    } else {
+      clearInterval(backInterval);
+      kittenImg.src = kittens[0];
+    }
+  }, 1000);
+});;
+
+//  if (i !== kittens.length - 1) {
+//     return (kittenImg.src = kittens[i++])}  //changes img src url by incrementing array index by 1 at each click 
+//     else {kittenImg.src = kittens[kittens.length - 1]};
+
+// var time = 1;
+
+// var interval = setInterval(function() { 
+//    if (time <= 3) { 
+//       alert(time);
+//       time++;
+//    }
+//    else { 
+//       clearInterval(interval);
+//    }
+// }, 5000);
