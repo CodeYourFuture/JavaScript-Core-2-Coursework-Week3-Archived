@@ -1,4 +1,6 @@
 // Write your code here
+
+// I worked this with Ahmed Jalal
 let images = [
  {
   src: "./images/clement-fusil-Fpqx6GGXfXs-unsplash.jpg",
