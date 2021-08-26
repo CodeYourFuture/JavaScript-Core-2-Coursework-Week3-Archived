@@ -1,31 +1,88 @@
 // Write your code here
-let images = {
- image1: {
-  src: "clement-fusil-Fpqx6GGXfXs-unsplash.jpg",
-  url: "1"
+let images = [
+ {
+  src: "./images/clement-fusil-Fpqx6GGXfXs-unsplash.jpg",
+  alt: "image1"
  },
- image2: {
-  src: "johann-siemens-EPy0gBJzzZU-unsplash.jpg",
-  url: "2"
+ {
+  src: "./images/johann-siemens-EPy0gBJzzZU-unsplash.jpg",
+  alt: "image2"
  },
- image3: {
-  src: "joshua-earle-wFWQmOyfkkM-unsplash.jpg",
-  url: "3"
+ {
+  src: "./images/joshua-earle-wFWQmOyfkkM-unsplash.jpg",
+  alt: "image3"
  },
- image4: {
-  src: "laurel-balyeat-ExarETx4xNA-unsplash.jpg",
-  url: "4"
+ {
+  src: "./images/laurel-balyeat-ExarETx4xNA-unsplash.jpg",
+  alt: "image4"
  },
- image5: {
-  src: "paul-gilmore-ysA6qL8j-OI-unsplash.jpg",
-  url: "5"
+ {
+  src: "./images/paul-gilmore-ysA6qL8j-OI-unsplash.jpg",
+  alt: "image5"
  },
- image6: {
-  src: "simon-berger-aZjw7xI3QAA-unsplash.jpg",
-  url: "6"
+ {
+  src: "./images/simon-berger-aZjw7xI3QAA-unsplash.jpg",
+  alt: "image6"
  },
-};
+];
 
 //
 
-const imageId
+const imageEl = document.querySelector("#images img");
+imageEl.src = images[0].src;
+imageEl.alt = images[0].alt;
+let count =0;
+let intervalId;
+//function pickFromArray (image)
+function forwardGenerator(){
+ if (count < images.length - 1){
+  count = count + 1;
+  imageEl.src = images[count].src;
+  imageEl.alt = images[count].alt;
+  console.log(count)
+ }else{
+  alert("The end ;)")
+ }
+}
+function autoForwardGenerator(){
+ intervalId = setInterval(function(){
+  if (count < images.length - 1){
+  count = count + 1;
+  imageEl.src = images[count].src;
+  imageEl.alt = images[count].alt;
+  console.log(count)
+ }else{
+  alert("The end ;)")
+  clearInterval(intervalId);
+ }
+ },1000)
+}
+
+function stopSlide(){
+ clearInterval(intervalId);
+}
+
+function backGenerator(){
+ if (count > 0){
+  count = count - 1;
+  imageEl.src = images[count].src;
+  imageEl.alt = images[count].alt;
+  //console.log(count)
+ }else{
+  alert("The start ;)")
+ }
+}
+
+function autoBackGenerator(){
+ intervalId = setInterval(function(){
+  if (count > 0){
+  count = count - 1;
+  imageEl.src = images[count].src;
+  imageEl.alt = images[count].alt;
+  //console.log(count)
+ }else{
+  alert("The start ;)")
+  clearInterval(intervalId);
+ }
+ },1000)
+}
