@@ -1,6 +1,6 @@
 function setAlarm() {
   const timeRemaining = document.getElementById("timeRemaining");
-  const alarmSet = document.getElementById("alarmSet");
+  const alarmSetInput = document.getElementById("alarmSet");
   const setAlarmBtn = document.getElementById("set");
   const stopAlarmBtn = document.getElementById("stop");
   const pauseAlarmBtn = document.getElementById("pause");
@@ -8,10 +8,12 @@ function setAlarm() {
 
   let count;
   let intervalId;
-  setAlarmBtn.addEventListener("click", function(){
-    count = alarmSet.value;
 
+  setAlarmBtn.addEventListener("click", function(){
+    count = alarmSetInput.value;
+    if (count >0){
     intervalId = setInterval(function(){
+      console.log(intervalId)
       let minutes = Math.floor(count / 60);
       let seconds = count % 60;
       
@@ -23,8 +25,12 @@ function setAlarm() {
       }
 
       count --;
-      alarmSet.value = "";
-    }, 1000);
+      alarmSetInput.value = "";
+    }, 2000);
+    }else{
+      alert("Please")
+    }
+
   });
 
   pauseAlarmBtn.addEventListener("click", function(){
