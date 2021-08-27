@@ -1,1 +1,58 @@
-/** Write your CSS in here **/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+  padding: 3rem;
+  background-color: #e7dfd9;
+  font-family: Raleway;
+  font-size: 1.3rem;
+  color: #7c3220;
+  box-shadow: inset 0.0596rem 0.0596rem 0.8966rem #7c3220a8;
+}
+
+.button {
+  padding: 0.5rem;
+  margin-top: 2rem;
+  width: 6rem;
+  height: 3rem;
+  background-color: #dfb037bb;
+  border: 0;
+  color: #7c3220;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #dfb037;
+  cursor: pointer;
+  box-shadow: inset 0.0996rem 0.0996rem 0.8966rem rgba(133, 129, 129, 0.24);
+}
+
+.quote {
+  padding-bottom: 1rem;
+}
+
+.author {
+  width: 4rem;
+  font-style: italic;
+  font-size: 1rem;
+  color: #bd8c10;
+  text-decoration: none;
+}
+
+.body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.html {
+  height: 100%;
+}
+
+.form {
+  margin-top: 0.5rem;
+}
