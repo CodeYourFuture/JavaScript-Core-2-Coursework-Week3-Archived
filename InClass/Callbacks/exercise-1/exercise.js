@@ -26,4 +26,4 @@ setInterval(() => {
   }
 
   document.querySelector("body").style.backgroundColor = colour;
-}, 3000);
+}, 5000);
