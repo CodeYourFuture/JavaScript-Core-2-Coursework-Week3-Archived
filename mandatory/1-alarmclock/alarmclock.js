@@ -17,7 +17,12 @@ function setAlarm() {
       let minutes = Math.floor(count / 60);
       let seconds = count % 60;
       
+      if (minutes < 10) {minutes = "0" + minutes};
+      if (seconds < 10) {seconds = "0" + seconds};
+
       timeRemaining.innerHTML = `Time Remaining: ${minutes}:${seconds}`;
+      
+
       if (count == 0){
         playAlarm();
         clearInterval(intervalId);
@@ -34,20 +39,14 @@ function setAlarm() {
   
 
   pauseAlarmBtn.addEventListener("click", function(){
-    if(intervalId >= 0){
-      clearInterval(intervalId);
-    }else{
-      intervalId;
-    }
-    
-    
+    clearInterval(intervalId);
   });
 };
 
-let stopAlarmBtn = document.getElementById("stop");
-stopAlarmBtn.addEventListener("click", function(){
-  clearInterval(intervalId);
-})
+//let stopAlarmBtn = document.getElementById("stop");
+//stopAlarmBtn.addEventListener("click", function(){
+//  clearInterval(intervalId);
+//})
 
 // DO NOT EDIT BELOW HERE
 

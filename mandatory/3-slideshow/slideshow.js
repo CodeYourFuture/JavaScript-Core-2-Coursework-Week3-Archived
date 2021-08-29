@@ -41,7 +41,7 @@ function forwardGenerator(){
   count = count + 1;
   imageEl.src = images[count].src;
   imageEl.alt = images[count].alt;
-  console.log(count)
+  //console.log(count)
  }else{
   alert("The end ;)")
  }
@@ -52,7 +52,6 @@ function autoForwardGenerator(){
   count = count + 1;
   imageEl.src = images[count].src;
   imageEl.alt = images[count].alt;
-  console.log(count)
  }else{
   alert("The end ;)")
   clearInterval(intervalId);
