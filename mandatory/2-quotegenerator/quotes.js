@@ -498,8 +498,29 @@ let nextQuoteBtn = document.getElementById("new-quote");
 quoteH1.textContent = quotes[0].quote;
 authorP.textContent = quotes[0].author;
 
-nextQuoteBtn.addEventListener("click", function () {
+nextQuoteBtn.addEventListener("click", quoteGenerator);
+
+function quoteGenerator() {
   let arrElement = pickFromArray(quotes);
   quoteH1.textContent = arrElement.quote;
   authorP.textContent = arrElement.author;
-});
+}
+
+let autoGenerate = document.getElementById("switch");
+autoGenerate.addEventListener("input", autoQuoteGenerator);
+
+function autoQuoteGenerator() {
+  // console.log("You selected: ", this.checked);
+
+  let isChecked = document.getElementById("switch").checked;
+  if (isChecked === true) {
+    time = setInterval(function () {
+      quoteGenerator();
+    }, 3000);
+  } else if (isChecked === false) {
+    clearInterval(time);
+    // console.log(autoGenerate.checked);
+  }
+}
+// }
+// autoQuoteGenerator();
