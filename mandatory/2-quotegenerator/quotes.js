@@ -1,6 +1,8 @@
 const quoteContainer = document.getElementById("quotes");
 const authorContainer = document.getElementById("authors");
 const newQuote = document.getElementById("newQuote");
+const checkBox = document.getElementById("checkbox");
+let intervalInput;
 
 const generateQuote = () => {
   const randomQuote = pickFromArray(quotes);
@@ -9,6 +11,17 @@ const generateQuote = () => {
 }
 
 newQuote.addEventListener("click", generateQuote);
+
+/*Extra*/
+checkBox.addEventListener("click", () => {
+  clearInterval(intervalInput);
+  if(checkBox.checked) {
+    intervalInput = setInterval(generateQuote, 60000);
+  } else {
+    clearInterval(intervalInput);
+  }
+})
+
 
 
 
