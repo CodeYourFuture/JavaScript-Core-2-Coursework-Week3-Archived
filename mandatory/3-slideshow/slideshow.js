@@ -35,33 +35,39 @@ let images = [
 //
 
 const imageEl = document.querySelector("#images img");
+const delayEl = document.getElementById("delay");
 imageEl.src = images[0].src;
 imageEl.alt = images[0].alt;
-let count = 0;
+let index = 0;
 let intervalId;
+let intervalDelay = 1000;
+// console.log(delayEl.value);
 //function pickFromArray (image)
 function forwardGenerator() {
-  if (count < images.length - 1) {
-    count = count + 1;
-    imageEl.src = images[count].src;
-    imageEl.alt = images[count].alt;
-    console.log(count);
+  if (index < images.length - 1) {
+    index = index + 1;
+    imageEl.src = images[index].src;
+    imageEl.alt = images[index].alt;
+    console.log(index);
   } else {
-    alert("The end ;)");
+    // alert("The end ;)");
+    index = 0;
   }
 }
 function autoForwardGenerator() {
+  delayCalac();
   intervalId = setInterval(function () {
-    if (count < images.length - 1) {
-      count = count + 1;
-      imageEl.src = images[count].src;
-      imageEl.alt = images[count].alt;
-      console.log(count);
+    if (index < images.length - 1) {
+      index = index + 1;
+      imageEl.src = images[index].src;
+      imageEl.alt = images[index].alt;
+      // console.log(index);
     } else {
-      alert("The end ;)");
-      clearInterval(intervalId);
+      // alert("The end ;)");
+      index = 0;
+      // clearInterval(intervalId);
     }
-  }, 1000);
+  }, intervalDelay);
 }
 
 function stopSlide() {
@@ -69,26 +75,41 @@ function stopSlide() {
 }
 
 function backGenerator() {
-  if (count > 0) {
-    count = count - 1;
-    imageEl.src = images[count].src;
-    imageEl.alt = images[count].alt;
-    //console.log(count)
+  if (index > 0) {
+    index = index - 1;
+    imageEl.src = images[index].src;
+    imageEl.alt = images[index].alt;
+    //console.log(index)
   } else {
-    alert("The start ;)");
+    // alert("The start ;)");
+    index = 0;
   }
 }
 
 function autoBackGenerator() {
+  delayCalac();
   intervalId = setInterval(function () {
-    if (count > 0) {
-      count = count - 1;
-      imageEl.src = images[count].src;
-      imageEl.alt = images[count].alt;
-      //console.log(count)
+    if (index > 0) {
+      index = index - 1;
+      imageEl.src = images[index].src;
+      imageEl.alt = images[index].alt;
+      //console.log(index)
     } else {
-      alert("The start ;)");
+      // alert("The start ;)");
+      index = 0;
       clearInterval(intervalId);
     }
-  }, 1000);
+  }, intervalDelay);
+}
+
+// helper
+
+function delayCalac() {
+  if (delayEl.value) {
+    intervalDelay = 0;
+    intervalDelay = delayEl.value;
+  } else {
+    intervalDelay = 0;
+    intervalDelay = 1000;
+  }
 }
