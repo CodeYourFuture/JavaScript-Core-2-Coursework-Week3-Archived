@@ -7,12 +7,9 @@
   <title>CodeYourFuture - Callbacks</title>
   <meta name="description" content="Callbacks">
   <meta name="author" content="CodeYourFuture">
+  <link href="style.css" rel="stylesheet" type="text/css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      padding: 30px;
-    }
-  </style>
+ 
 </head>
 
 <body>
@@ -22,6 +19,59 @@
       <div id="all-movies">
         <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
       </div>
+      <form id="add-movies">
+        <fieldset>
+          <legend>Add New Movie:</legend>
+
+          <label class="form" for="title">
+            Title
+            <br/>
+            <input
+            placeholder="Movie Title"
+            class="form-field"
+            id="title"
+            name="title"
+            required
+            />
+          </label>
+
+          <label class="form" for="director">
+            Director
+            <br/>
+            <input
+            placeholder="Directed By"
+            class="form-field"
+            id="director"
+            name="director"
+            required
+            />
+          </label>
+
+          <label class="form" for="type">
+            Genre
+            <br/>
+            <input
+            placeholder="Genre"
+            class="form-field"
+            id="type"
+            name="type"
+            required
+            />
+          </label>
+
+          <label class="form" for="seen">
+            Watched
+            <br/>
+            <input
+            class="form-field"
+            id="seen"
+            name="seen"
+            type="checkbox"
+            />
+          </label>
+        </fieldset>
+        <button type="submit" id="submit" class="btn">Save</button>
+      </form>
     </div>
     <script src="exercise.js"></script>
 </body>

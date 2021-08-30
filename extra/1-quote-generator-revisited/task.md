@@ -14,3 +14,4 @@ For this task you will return to your quote generator and improve it with "auto-
 Use https://rot13.com/ to decipher this hint:
 
 `Pubbfr bar bs frgGvzrbhg be frgVagreiny.`
+Choose one of seTimeout or setInterval

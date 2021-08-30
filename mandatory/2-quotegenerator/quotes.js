@@ -1,3 +1,30 @@
+const quoteContainer = document.getElementById("quotes");
+const authorContainer = document.getElementById("authors");
+const newQuote = document.getElementById("newQuote");
+const checkBox = document.getElementById("checkbox");
+let intervalInput;
+
+const generateQuote = () => {
+  const randomQuote = pickFromArray(quotes);
+  quoteContainer.innerText = randomQuote.quote;
+  authorContainer.innerText = randomQuote.author;
+}
+
+newQuote.addEventListener("click", generateQuote);
+
+/*Extra*/
+checkBox.addEventListener("click", () => {
+  clearInterval(intervalInput);
+  if(checkBox.checked) {
+    intervalInput = setInterval(generateQuote, 60000);
+  } else {
+    clearInterval(intervalInput);
+  }
+})
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
