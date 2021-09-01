@@ -9,6 +9,7 @@ function setAlarm() {
     isTimeRemaining.innerText = `Time Remaining: ${minutes}:${seconds}`
     if(isAlarmSet === 0){
       clearInterval(isInterval)
+      playAlarm();
     } else {
       isAlarmSet -- 
       console.log(isAlarmSet)
@@ -21,8 +22,6 @@ function setAlarm() {
     }
 
   })
-
-    
 
   },1000)
 

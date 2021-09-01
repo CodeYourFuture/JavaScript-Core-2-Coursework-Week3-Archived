@@ -1,1 +1,17 @@
 /** Write your CSS in here **/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    background-color: orange;
+    margin: 2rem;
+    padding: 4rem;
+}
+
+div{
+    background-color: white;
+    padding: 2rem;
+}
