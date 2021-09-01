@@ -1,1 +1,69 @@
 /** Write your CSS in here **/
+body {
+  background-color: lightgreen;
+}
+.container {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeece3;
+  margin: 20px, auto;
+  padding: 30px;
+  border: none;
+  color: rgb(9, 27, 129);
+  box-sizing: border-box;
+}
+
+.quote,
+.author {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.author {
+  text-align: right;
+  margin: 15px 5px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+.author::before {
+  content: "\2014\0020";
+}
+
+.quote::before {
+  content: "\201c";
+  font-size: 40px;
+  /* display: initial; */
+  margin-bottom: -30px;
+}
+
+.quote::after {
+  content: "\201d";
+  font-size: 40px;
+  font-style: normal;
+}
+
+.btn-container {
+  align-self: flex-end;
+}
+
+.new-quote-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 2px solid #368a1c;
+  background-color: #99e283;
+  color: #0c0505;
+  padding: 8px;
+}
+
+.new-quote-btn:hover {
+  color: #ffffff;
+  background-color: #050808;
+}
