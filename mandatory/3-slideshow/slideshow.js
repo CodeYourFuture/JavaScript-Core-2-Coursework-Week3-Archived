@@ -71,6 +71,6 @@ function backGenerator(){
 
 function autoBackGenerator(){
  intervalId = setInterval(function(){
-  backGenerator()
+  backGenerator();
  },1000)
 }
