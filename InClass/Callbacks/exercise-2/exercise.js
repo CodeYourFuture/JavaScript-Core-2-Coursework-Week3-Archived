@@ -19,7 +19,7 @@ Call addMovies to add the new movie to the list and then showMovies to see the m
 How many movies can you see on your page?
 
 Task 3
-Can you make sure the new movie you just added is showing on the screen? 
+Can you make sure the new movie you just added is showing on t he screen? 
 TIP: use callbacks
 
 Task 4 - **Extra**
@@ -62,6 +62,53 @@ const movies = [
 ];
 
 // create showMovies function
+
+const cl = console.log;
+var allMovies = document.getElementById("all-movies");
+var numberMovies = document.getElementById("movies-number");
+
+function showMovies() {
+  setTimeout(function(){
+    numberMovies.innerText = `${movies.length + favoriteMovie.length}`
+
+    for (let index = 0; index < movies.length; index++) {
+    const currentMovie = movies[index];
+      cl(currentMovie);
+      //cl(flexOuterContainer.innerHTML)
+      allMovies.innerHTML += `
+      <p class="episodeTitle">${currentMovie.title} by ${currentMovie.director}</p>
+      `;
+  }
+  }, 1000);
+};  
+
+const favoriteMovie = [
+    {
+      title: "A Place Beyond the Pines",
+      director: "Someone",
+      type: "Amazing",
+      haveWatched: true,
+    }
+  ];
+
+function addMovie(movie) {
+  showMovies();
+  setTimeout(function(){
+
+    for (let index = 0; index < movie.length; index++) {
+      const currentMovie = movie[index];
+        //cl(flexOuterContainer.innerHTML)
+        allMovies.innerHTML += `
+        <p class="episodeTitle">${currentMovie.title} by ${currentMovie.director}</p>
+        `;
+      }
+
+  }, 2000); 
+}
+
+addMovie(favoriteMovie);
+
+
 
 // create a new movie object for your favorite movie
 

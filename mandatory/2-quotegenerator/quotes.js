@@ -490,3 +490,117 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+const cl = console.log;
+
+const innerQuote = document.getElementById("innerQuote");
+const innerAuthor = document.getElementById("innerAuthor");
+const innerButton = document.getElementById("innerButton");
+
+function setQuote () {
+  const currentQuote = pickFromArray(quotes);
+  innerQuote.innerText = `"${currentQuote.quote}"`;
+  innerAuthor.innerText = `By ${currentQuote.author}`;
+}
+
+setQuote();
+
+innerButton.addEventListener("click", function() {
+  setQuote();
+})
+
+
+const autoButton = document.getElementById("autoButton");
+const currentImage = document.getElementById("innerQuote");
+cl(currentImage.innerText)
+var autoRunBoolean = true
+
+autoButton.addEventListener("click", function(){
+    cl("AutoForwardButton")
+    autoRunFunction(1,quotes);
+    autoRunBoolean = true;
+
+})
+
+var currentImageIndex = 0;
+
+function basicLogic (changeToIndex,array) {
+   
+    cl(currentImage.innerText)
+    
+
+    for (let index = 0; index < array.length; index++) {
+        const currentArrayObject = array[index];
+        //cl(array[index])
+        if (currentImage.innerText === `"${currentArrayObject.quote}"`){
+            cl(currentArrayObject + " " + index);
+            currentImageIndex = index;
+        }
+    }
+    cl("current index : " + currentImageIndex);
+    currentImageIndex += changeToIndex;
+    if (currentImageIndex < 0){
+        currentImageIndex = array.length-1;
+    } else if (currentImageIndex === array.length){
+        currentImageIndex = 0;
+    }
+    cl("final index : " + currentImageIndex);
+    //cl("AutoRunBoolean : " + autoRunBoolean)
+
+    currentImage.innerText = array[currentImageIndex].quote;
+
+}
+
+function autoRunFunction(basicLogicInput,array) {
+   
+ 
+    var setIntervalVar = setInterval(function(){ 
+      basicLogic(basicLogicInput,array); }, 5000)
+    
+    cl("afterSetIntervalBoolean : " + autoRunBoolean)
+
+    autoButton.addEventListener("click", function(){
+        cl("autoForwardRunBoolean : " + autoRunBoolean)
+        if (autoRunBoolean === true){
+        clearInterval(setIntervalVar);
+        autoRunBoolean = true;
+        }
+    });
+
+    // Below is the stop button which will stop an autoRun and change 
+    //the autoRunBoolean accordingly
+    stopButton.addEventListener("click", function(){
+        cl("stopPressed ")
+        clearInterval(setIntervalVar);
+        autoRunBoolean = false;
+    })
+};
+
+const newQuote = document.getElementById("innerButton");
+const stopButton = document.getElementById("stopButton");
+
+const buttonArray = [newQuote,autoButton,stopButton];
+
+newQuote.addEventListener("mouseover",function(){
+    cl("hover")
+    innerQuote.style.color = "black";
+    innerQuote.style.transitionDuration = "500ms";
+    innerAuthor.style.transform = "scale(1.07)";
+    innerAuthor.style.transitionDuration = "500ms";
+    innerAuthor.style.color = "white";
+    
+});
+
+newQuote.addEventListener("mouseout",function(){
+    cl("hover")
+    innerQuote.style.color = "";
+    innerAuthor.style.transform = "scale(1)"
+    innerAuthor.style.color = "";
+});
+autoButton.addEventListener("mouseover",function(){
+    cl("hover")
+});
+stopButton.addEventListener("mouseover",function(){
+    cl("hover")
+});
+
