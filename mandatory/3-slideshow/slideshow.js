@@ -44,18 +44,12 @@ function forwardGenerator(){
   //console.log(count)
  }else{
   alert("The end ;)")
+  clearInterval(intervalId);
  }
 }
 function autoForwardGenerator(){
  intervalId = setInterval(function(){
-  if (count < images.length - 1){
-  count = count + 1;
-  imageEl.src = images[count].src;
-  imageEl.alt = images[count].alt;
- }else{
-  alert("The end ;)")
-  clearInterval(intervalId);
- }
+  forwardGenerator();
  },1000)
 }
 
@@ -70,20 +64,13 @@ function backGenerator(){
   imageEl.alt = images[count].alt;
   //console.log(count)
  }else{
-  alert("The start ;)")
+  alert("The start ;)");
+  clearInterval(intervalId);
  }
 }
 
 function autoBackGenerator(){
  intervalId = setInterval(function(){
-  if (count > 0){
-  count = count - 1;
-  imageEl.src = images[count].src;
-  imageEl.alt = images[count].alt;
-  //console.log(count)
- }else{
-  alert("The start ;)")
-  clearInterval(intervalId);
- }
+  backGenerator()
  },1000)
 }
