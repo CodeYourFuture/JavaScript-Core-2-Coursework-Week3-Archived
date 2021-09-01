@@ -499,6 +499,45 @@ function generate (){
   let author = document.getElementById("author");
   mark = "- ";
   author.innerHTML = mark + choice.author;
-  console.log(choice)
+  //console.log(choice)
   
 }
+
+// Extra // 
+let containerEl = document.querySelector(".container")
+let divEl = document.createElement("div");
+divEl.setAttribute("id", "checkbox-container")
+let formEl = document.createElement("form")
+let inputEl = document.createElement("input")
+inputEl.setAttribute("type","checkbox");
+inputEl.setAttribute("id", "auto");
+inputEl.setAttribute("class", "mycheck")
+//console.log(inputEl.value)
+let labelEl = document.createElement("label");
+labelEl.setAttribute("for", "auto");
+labelEl.innerText = "Auto Play";
+
+formEl.appendChild(inputEl);
+formEl.appendChild(labelEl)
+divEl.appendChild(formEl);
+containerEl.appendChild(divEl);
+
+let intervalId;
+inputEl.addEventListener("click", function(){
+  if (inputEl.checked == true){
+    let quotesContainer = document.querySelector(".quotes-container")
+    let pEl = document.createElement("p");
+    pEl.setAttribute("id","auto-play")
+    pEl.innerText = "auto-play: ON"
+    quotesContainer.appendChild(pEl)
+
+  intervalId = setInterval(function(){
+  generate ();
+  }, 1000)
+  }else{
+  document.getElementById("auto-play").remove();
+  clearInterval(intervalId)
+  }
+})
+  
+
