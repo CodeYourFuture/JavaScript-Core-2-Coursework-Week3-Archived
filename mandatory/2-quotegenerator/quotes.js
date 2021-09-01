@@ -533,7 +533,7 @@ inputEl.addEventListener("click", function(){
 
   intervalId = setInterval(function(){
   generate ();
-  }, 1000)
+  }, 60000);
   }else{
   document.getElementById("auto-play").remove();
   clearInterval(intervalId)
