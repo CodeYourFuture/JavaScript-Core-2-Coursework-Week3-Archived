@@ -507,19 +507,25 @@ function generate (){
 let containerEl = document.querySelector(".container")
 let divEl = document.createElement("div");
 divEl.setAttribute("id", "checkbox-container")
-let formEl = document.createElement("form")
+let labelEl = document.createElement("label");
+labelEl.setAttribute("for", "auto");
+labelEl.setAttribute("class", "switch");
+
+
 let inputEl = document.createElement("input")
 inputEl.setAttribute("type","checkbox");
 inputEl.setAttribute("id", "auto");
 inputEl.setAttribute("class", "mycheck")
 //console.log(inputEl.value)
-let labelEl = document.createElement("label");
-labelEl.setAttribute("for", "auto");
-labelEl.innerText = "Auto Play";
+let spanEl = document.createElement("span");
+spanEl.setAttribute("class", "slider");
+let pEl = document.createElement("p");
+pEl.innerText = "Auto Play ";
 
-formEl.appendChild(inputEl);
-formEl.appendChild(labelEl)
-divEl.appendChild(formEl);
+labelEl.appendChild(inputEl);
+labelEl.appendChild(spanEl);
+divEl.appendChild(pEl);
+divEl.appendChild(labelEl);
 containerEl.appendChild(divEl);
 
 let intervalId;
@@ -533,7 +539,7 @@ inputEl.addEventListener("click", function(){
 
   intervalId = setInterval(function(){
   generate ();
-  }, 60000);
+  }, 1000);
   }else{
   document.getElementById("auto-play").remove();
   clearInterval(intervalId)
