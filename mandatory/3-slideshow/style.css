@@ -8,6 +8,12 @@ img {
   padding: 40px;
 }
 
+.img-index {
+  position: relative;
+  top: -30px;
+  left: 20px;
+}
+
 .buttons {
   /* padding-left: 20px; */
   width: 600px;

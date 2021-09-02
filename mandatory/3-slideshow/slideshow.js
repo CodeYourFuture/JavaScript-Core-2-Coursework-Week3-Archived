@@ -21,45 +21,48 @@ let i = 0;
 kittenImg.src = kittens[i]; //1st image from array rendered on load
 imgIndex.innerHTML = i; //renders 0 onload
 
+
+//FWD & BACK BTNS GLITCHY(pressing fwd at times moves slideshow back once & vice versa)
+
 //increments current index value of kittens array by 1 on each click
 fwdBtn.addEventListener("click", function () {
   //checks if current index value is equal to last kittens elem's index value
   if (i !== kittens.length - 1) {
-    imgIndex.innerHTML = i;
+    imgIndex.innerHTML = i; //renders corresponding index value
     return (kittenImg.src = kittens[i++]);
   } //changes img src url by incrementing array index at each click
   else {
     kittenImg.src = kittens[kittens.length - 1];
+    imgIndex.innerHTML = i;
   }
-  imgIndex.innerHTML = i;
 });
 
-//eventListener decrements index of kittens array by 1 on each click
+//decrements current index value of kittens array by 1 on each click
 backBtn.addEventListener("click", function () {
-  if (i === 0) {
-    imgIndex.innerHTML = i; //keeps counting back without changing img
-    return (kittenImg.src = kittens[0]);
+  if (i > 0) {
+    imgIndex.innerHTML = i; //renders corresponding index value
+    return (kittenImg.src = kittens[i--]);
+  } else {
+    imgIndex.innerHTML = i;
+    kittenImg.src = kittens[0];
   }
-  kittenImg.src = kittens[i--];
-  imgIndex.innerHTML = i; //keeps counting back without changing img
 });
 
-//gives extra index value in imgIndex, goes upto 4
+//once clicked cycles from current img till last img
 autoFwdBtn.addEventListener("click", function () {
-  //var j;
   const fwdInterval = setInterval(function () {
-    if (i < kittens.length - 1 ) {
+    if (i < kittens.length - 1) {
       imgIndex.innerHTML = i;
       return (kittenImg.src = kittens[i++]);
     } else {
+      imgIndex.innerHTML = i;
       clearInterval(fwdInterval);
       kittenImg.src = kittens[kittens.length - 1];
     }
-      imgIndex.innerHTML = i;
-
   }, 1000);
 });
 
+//once clicked cycles backwards from current img till 1st img
 autoBackBtn.addEventListener("click", function () {
   const backInterval = setInterval(function () {
     if (i > 0) {
