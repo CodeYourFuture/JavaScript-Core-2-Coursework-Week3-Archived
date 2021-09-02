@@ -63,6 +63,36 @@ const movies = [
 
 // create showMovies function
 
+function showMovies(movies) {
+  const moviesDiv = document.getElementById("all-movies");
+  movies.map((movie) => {
+    const movieParagraph = document.createElement("p");
+    moviesDiv.appendChild(movieParagraph);
+    const movieNumber = document.getElementById("movies-number");
+    movieNumber.innerText = movies.length;
+    movieParagraph.innerText = `${movie.title} directed by ${movie.director}`;
+    movieParagraph.style.backgroundColor = "#ffe6ff";
+  });
+}
+
 // create a new movie object for your favorite movie
 
+const myMovie = {
+  title: "Roma",
+  director: "Alfonso Cuaron",
+  type: "Historical",
+  haveWatched: true,
+};
+
 // create addMovies function
+
+// function addMovies(movie, callback) {
+//   setTimeout(function () {
+//     movies.push(movie);
+//     callback();
+//   }, 2000);
+// }
+
+// addMovies(showMovies, myMovie);
+// console.log(movies);
+showMovies(movies);
