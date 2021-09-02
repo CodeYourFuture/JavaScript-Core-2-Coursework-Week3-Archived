@@ -28,6 +28,8 @@ let images = [
  },
 ];
 
+
+
 //
 
 const imageEl = document.querySelector("#images img");
@@ -50,7 +52,7 @@ function forwardGenerator(){
 function autoForwardGenerator(){
  intervalId = setInterval(function(){
   forwardGenerator();
- },1000)
+ },inputEl.value*1000)
 }
 
 function stopSlide(){
@@ -72,5 +74,20 @@ function backGenerator(){
 function autoBackGenerator(){
  intervalId = setInterval(function(){
   backGenerator();
- },1000)
+ },inputEl.value*1000)
 }
+
+// Extra UI
+let newDiv = document.createElement("div");
+newDiv.setAttribute("id","ui-container");
+let containerEl = document.getElementById("container");
+let beforeDiv = document.getElementById("buttons");
+containerEl.insertBefore(newDiv, beforeDiv);
+
+let pEl = document.createElement("p");
+pEl.innerText = "Set how long to wait between images in second then press auto buttons"
+let inputEl = document.createElement("input");
+inputEl.setAttribute("id","ui");
+inputEl.setAttribute("type", "number");
+newDiv.appendChild(pEl);
+newDiv.appendChild(inputEl);
