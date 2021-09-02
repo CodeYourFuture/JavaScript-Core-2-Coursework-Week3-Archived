@@ -59,10 +59,37 @@ const movies = [
     type: "horror",
     haveWatched: false,
   },
+  
 ];
 
 // create showMovies function
 
+const showMovies = function(){
+
+  movies.forEach((movie) => {
+    let allMoviesDiv = document.getElementById('all-movies');
+    let paraEl = document.createElement('p');
+    allMoviesDiv.appendChild(paraEl);
+    paraEl.innerHTML = `${movie.title} - ${movie.director}`;
+    
+    let numOfMovies = document.getElementById('movies-number');
+    numOfMovies.innerText = movies.length;
+  });
+}
+setTimeout(showMovies, 2000); 
+
 // create a new movie object for your favorite movie
+const myMovies = {
+  title: 'Home Alone',
+  director: 'Chris Columbus',
+  type: 'family-comedy',
+  haveWatched: true
+};
 
 // create addMovies function
+
+const addMovie = function(movie) {
+  movies.push(movie);
+};
+
+addMovie(myMovies);
