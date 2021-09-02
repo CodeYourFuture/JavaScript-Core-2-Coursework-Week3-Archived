@@ -1,1 +1,48 @@
 /** Write your CSS in here **/
+body {
+  background-color: rgb(255, 184, 54);
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  max-width: 715px;
+  top: 110px;
+  padding: 20px;
+  margin: auto;
+  background-color: rgb(245, 245, 245);
+  color: rgb(255, 184, 54);
+}
+
+h1 {
+  font-size: 28px;
+  height: 240px;
+  padding-left: 30px;
+  padding-top: 30px;
+  align-self: baseline;
+}
+
+h2 {
+  font-size: 20px;
+  padding: 10px 20px 20px 20px;
+      position: relative;
+    bottom: 30px;
+}
+
+button {
+  background-color: rgb(255, 184, 54);
+  padding: 5px 10px 10px 10px;
+  margin: 0px 20px 5px 0px;
+  border: none;
+  color: white;
+}
+
+button:hover{
+    background-color: rgb(180, 129, 34);
+}
+
+button:focus{
+    outline: none;
+}
