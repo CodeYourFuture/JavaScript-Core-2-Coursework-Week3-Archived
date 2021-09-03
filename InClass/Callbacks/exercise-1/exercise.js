@@ -11,3 +11,16 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+// task 1 - change background colour
+
+setTimeout(function () {
+  document.body.style.backgroundColor = "#111";
+}, 5000);
+
+// task 2
+
+setInterval(() => {
+  let differentColours = Math.floor(Math.random() * 10000).toString(16);
+  document.body.style.backgroundColor = `#${differentColours}`;
+}, 5000);
