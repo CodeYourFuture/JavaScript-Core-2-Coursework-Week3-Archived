@@ -1,3 +1,7 @@
+var quote = document.querySelector(".quote");
+var author = document.querySelector(".author");
+let nextQuote = document.querySelector("button");
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -490,3 +494,12 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function updateQuote(){
+  var selectedQuote = pickFromArray(quotes);
+  quote.innerText = selectedQuote.quote;
+  author.innerText = selectedQuote.author;
+  nextQuote.innerText = "Next Quote";
+}
+nextQuote.addEventListener("click", updateQuote);
+

@@ -62,7 +62,35 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(){
+
+  let numberOfMovies = document.getElementById("movies-number");
+  numberOfMovies.innerText = movies.length.toString();
+  let  allMoviesDiv = document.getElementById("all-movies");
+  movies.forEach(element=>{
+    newP = document.createElement("p");
+    newP.innerText = `${element.title} - ${element.director}`;
+    allMoviesDiv.appendChild(newP);
+  })
+
+}
+
+
+
 
 // create a new movie object for your favorite movie
+let myMovie = {
+    title: "Justice League",
+    director: "Zack Schnider",
+    type: "Drama, fiction",
+    haveWatched: true,
+  }
+
 
 // create addMovies function
+
+function addMovies(){
+  movies.push(myMovie);
+  showMovies();
+}
+setTimeout(addMovies, 2000);
