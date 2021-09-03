@@ -1,4 +1,5 @@
 let pauseButton = document.createElement("button"); //pause button created
+pauseButton.id = "pauseBtn";
 pauseButton.innerText = "Pause Alarm"; // the text of the pause button
 pauseButton.style.marginLeft = "5px";
 let lastButton = document.getElementById("stop"); //targetting the last button in the div

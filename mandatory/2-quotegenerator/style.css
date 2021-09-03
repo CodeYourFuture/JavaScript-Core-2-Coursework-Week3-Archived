@@ -1,1 +1,38 @@
 /** Write your CSS in here **/
+
+html,
+body {
+  background-color: #ee9e09;
+}
+
+#quote-container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 100px 100px;
+}
+
+#quote {
+  color: #ee9e09;
+  padding: 30px;
+  text-align: center;
+  margin-top: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 32px;
+}
+
+#author {
+  color: #ee9e09;
+  padding: 10px 10px;
+  text-align: right;
+  margin-right: 22px;
+}
+
+#button {
+  background-color: #ee9e09;
+  color: #fffaf0;
+  align-self: flex-end;
+  margin: 25px;
+  border: none;
+  border-radius: 5%;
+  padding: 5px;
+}

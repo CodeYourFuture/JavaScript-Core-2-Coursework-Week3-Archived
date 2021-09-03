@@ -1,5 +1,7 @@
 // DO NOT EDIT BELOW HERE
-
+// let randomIndex = Math.floor(Math.random() * quotes.length); // my code
+// let quote = quotes[randomIndex].quote;
+// let author = quotes[randomIndex].author;
 // A function which will return one item, at
 // random, from the given array.
 //
@@ -10,7 +12,22 @@
 // Returns
 // -------
 // One item of the given array.
-//
+
+const container = document.getElementById("quote-container");
+const randomQuote = document.getElementById("quote");
+const p = document.getElementById("author");
+const button = document.getElementById("button");
+container.style.backgroundColor = "#fffaf0";
+
+button.addEventListener("click", () => {
+  let randomIndex = Math.floor(Math.random() * quotes.length); // my code
+  let quote = quotes[randomIndex].quote;
+  let author = quotes[randomIndex].author;
+  randomQuote.innerText = `"${quote}`;
+  p.innerText = `-${author}`;
+  p.style.fontStyle = "sans-serif";
+});
+
 // Examples of use
 // ---------------
 // pickFromArray([1,2,3,4])     //maybe returns 2
