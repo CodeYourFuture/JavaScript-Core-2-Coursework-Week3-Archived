@@ -62,7 +62,32 @@ const movies = [
 ];
 
 // create showMovies function
+const allMovies = document.getElementById("all-movies");
+const moviesNumber = document.getElementById("movies-number");
+function showMovies() {
+  for (let movie of movies) {
+    const pElement = document.createElement("p");
+    pElement.innerText = `Title: ${movie.title} \n Director: ${movie.director}`;
+    setTimeout(function () {
+      allMovies.appendChild(pElement);
+    }, 1000);
+    moviesNumber.innerText = movies.length;
+  }
+}
 
 // create a new movie object for your favorite movie
-
+const newMovie = {
+    title: "The Matrix",
+    director: "Wachowski Sisters",
+    type: "Sci-fi Action",
+    haveWatched: true,
+};
 // create addMovies function
+function addMovie(newMovie, callback) {
+  setTimeout(function() {
+    movies.push(newMovie);
+    callback();
+   }, 2000);
+};
+addMovie(newMovie, showMovies);
+
