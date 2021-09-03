@@ -61,8 +61,53 @@ const movies = [
   },
 ];
 
+let allMoviesEle = document.getElementById("all-movies");
 // create showMovies function
 
+function showMovies() {
+  let movieCount = movies.length;
+  let moviesNumberEl = document.getElementById("movies-number");
+  moviesNumberEl.innerText = movieCount;
+  setTimeout(function () {
+    movies.forEach((movie) => {
+      let newPar = document.createElement("p");
+      newPar.textContent = `${movie.title} directed by ${movie.director}`;
+      allMoviesEle.appendChild(newPar);
+    });
+  }, 1000);
+  console.log(moviesNumberEl);
+}
+// showMovies();
+
 // create a new movie object for your favorite movie
+const favoriteMovies = [
+  {
+    title: "The Godfather",
+    director: "Francis Ford Coppola",
+    type: "Crime/Drama",
+    haveWatched: true,
+  },
+  {
+    title: "The Dark Knight",
+    director: "Christopher Nolan",
+    type: "Action/Adventure ",
+    haveWatched: true,
+  },
+];
 
 // create addMovies function
+function addMovie(moviesArray) {
+  // setTimeout(function () {
+  //   moviesArray.forEach((ele) => {
+  //     movies.push(ele);
+  //   });
+  // }, 2000);
+  moviesArray.forEach((ele) => {
+    movies.push(ele);
+  });
+}
+
+addMovie(favoriteMovies);
+setTimeout(function () {
+  showMovies();
+}, 2000);
