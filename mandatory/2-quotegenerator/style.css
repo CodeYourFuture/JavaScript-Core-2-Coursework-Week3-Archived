@@ -1,1 +1,78 @@
 /** Write your CSS in here **/
+.container {
+ background-color: rgb(247, 175, 41);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: auto;
+height: 100vh;
+
+}
+
+.quotes-container{
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ align-items :flex-end;
+ justify-content: center;
+ padding: 20px;
+ text-align: center;
+ width: 600px;
+ height: 200px;
+}
+
+.quotes-container h3{
+ font-size: medium;
+}
+.quotes-container h3, .quotes-container p {
+ font-family: 'Times New Roman', Times, serif;
+ color: rgb(247, 175, 41);
+}
+
+#checkbox-container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.switch{
+ position: relative;
+ display: inline-block;
+ width: 100px;
+ height: 60px;
+ margin: 10px;
+}
+.slider{
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background-color: red;
+ transition: 0.3s;
+ border-radius: 34px;
+}
+
+.switch input{display: none}
+
+.slider::before{
+ background-color: white;
+ position: absolute;
+ content: "";
+ width: 50px;
+ height: 50px;
+ left: 5px;
+ bottom: 5px;
+ border-radius: 50%;
+ transition: 0.3s;
+}
+
+input:checked + .slider{
+ background-color: #ccc;
+}
+
+input:checked + .slider::before{
+ transform: translateX(40px);
+}

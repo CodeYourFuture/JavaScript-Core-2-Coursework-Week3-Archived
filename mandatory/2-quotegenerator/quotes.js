@@ -490,3 +490,60 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function generate (){
+  let choice = pickFromArray(quotes);
+  let quote = document.getElementById("quote");
+  let mark = '“ ';
+  quote.innerHTML = mark + choice.quote;
+  let author = document.getElementById("author");
+  mark = "- ";
+  author.innerHTML = mark + choice.author;
+  //console.log(choice)
+  
+}
+
+// Extra // 
+let containerEl = document.querySelector(".container")
+let divEl = document.createElement("div");
+divEl.setAttribute("id", "checkbox-container")
+let labelEl = document.createElement("label");
+labelEl.setAttribute("for", "auto");
+labelEl.setAttribute("class", "switch");
+
+
+let inputEl = document.createElement("input")
+inputEl.setAttribute("type","checkbox");
+inputEl.setAttribute("id", "auto");
+inputEl.setAttribute("class", "mycheck")
+//console.log(inputEl.value)
+let spanEl = document.createElement("span");
+spanEl.setAttribute("class", "slider");
+let pEl = document.createElement("p");
+pEl.innerText = "Auto Play ";
+
+labelEl.appendChild(inputEl);
+labelEl.appendChild(spanEl);
+divEl.appendChild(pEl);
+divEl.appendChild(labelEl);
+containerEl.appendChild(divEl);
+
+let intervalId;
+inputEl.addEventListener("click", function(){
+  if (inputEl.checked){
+    let quotesContainer = document.querySelector(".quotes-container")
+    let pEl = document.createElement("p");
+    pEl.setAttribute("id","auto-play")
+    pEl.innerText = "auto-play: ON"
+    quotesContainer.appendChild(pEl)
+
+  intervalId = setInterval(function(){
+  generate ();
+  }, 1000);
+  }else{
+  document.getElementById("auto-play").remove();
+  clearInterval(intervalId)
+  }
+})
+  
+
