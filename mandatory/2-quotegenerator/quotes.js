@@ -530,7 +530,7 @@ containerEl.appendChild(divEl);
 
 let intervalId;
 inputEl.addEventListener("click", function(){
-  if (inputEl.checked == true){
+  if (inputEl.checked){
     let quotesContainer = document.querySelector(".quotes-container")
     let pEl = document.createElement("p");
     pEl.setAttribute("id","auto-play")
