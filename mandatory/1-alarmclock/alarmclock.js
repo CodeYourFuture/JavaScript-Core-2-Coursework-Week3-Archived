@@ -1,5 +1,6 @@
 let intervalId;
 function setAlarm() {
+  
   const timeRemaining = document.getElementById("timeRemaining");
   const alarmSetInput = document.getElementById("alarmSet");
   const setAlarmBtn = document.getElementById("set");
@@ -41,6 +42,7 @@ function setAlarm() {
   pauseAlarmBtn.addEventListener("click", function(){
     clearInterval(intervalId);
   });
+  
 };
 
 //let stopAlarmBtn = document.getElementById("stop");
