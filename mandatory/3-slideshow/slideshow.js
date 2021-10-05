@@ -32,12 +32,19 @@ const imageStorage = [
   },
 ];
 
-// assume we start at image 0
+// assume we start at index 0
 let index = 0;
+let shouldStop = false;
 
 // user clicking the forward or backwards button
 function manualControl(direction) {
   const image = document.querySelector("#image");
+
+  let timeToWait = document.querySelector("#howLongToWait").value;
+
+  // sanity checking the users input
+  if (timeToWait > 60) timeToWait = 60;
+  if (timeToWait < 0) timeToWait = 30;
 
   if (direction === "forwards") {
     index++;
@@ -52,18 +59,47 @@ function manualControl(direction) {
 
   image.src = `${imageStorage[index].imageSource}`;
   image.alt = `${imageStorage[index].altText}`;
+
+  function automaticControl() {
+    const autoTimer = setTimeout(manualControl, timeToWait * 1000, direction);
+    if (shouldStop) clearInterval(autoTimer); // clear the timer if shouldStop == true
+  }
+
+  automaticControl();
+}
+
+function changeTimeBetweenText(value) {
+  const getAppendedText = document.querySelector("#appendedText");
+  getAppendedText.innerText = `${value}s`;
 }
 
 function setup() {
-  // forwards button
-  document
-    .querySelector("#forwardButton")
-    .addEventListener("click", () => manualControl("forwards"));
+  // auto backwards button
+  document.querySelector("#autoBackButton").addEventListener("click", () => {
+    shouldStop = false;
+    manualControl("backwards");
+  });
 
   // backwards button
   document
     .querySelector("#BackwardsButton")
     .addEventListener("click", () => manualControl("backwards"));
+
+  // stop button
+  document
+    .querySelector("#stopButton")
+    .addEventListener("click", () => (shouldStop = true));
+
+  // auto forward button
+  document.querySelector("#autoForwardButton").addEventListener("click", () => {
+    shouldStop = false;
+    manualControl("forwards");
+  });
+
+  // forwards button
+  document
+    .querySelector("#forwardButton")
+    .addEventListener("click", () => manualControl("forwards"));
 }
 
 setup();

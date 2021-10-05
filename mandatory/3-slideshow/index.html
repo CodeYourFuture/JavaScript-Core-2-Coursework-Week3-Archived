@@ -26,8 +26,23 @@
         <button id="BackwardsButton" class="card">Backwards</button>
         <button id="stopButton" class="card">Stop</button>
         <button id="forwardButton" class="card">Forward</button>
-        <button id="autoDorwardButton" class="card">Auto Forward</button>
+        <button id="autoForwardButton" class="card">Auto Forward</button>
       </div>
+
+      <input
+        type="range"
+        id="howLongToWait"
+        min="1"
+        max="60"
+        class="card rangeInput"
+        value="30"
+        oninput="changeTimeBetweenText(this.value)"
+        onchange="changeTimeBetweenText(this.value)"
+      />
+      <label for="howLongToWait" class="inputLabel"
+        >Time Between Pictures <br />
+        <span class="italics" id="appendedText">30s</span></label
+      >
     </div>
     <script src="slideshow.js"></script>
   </body>
