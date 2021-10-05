@@ -17,14 +17,7 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
 
-function drawQuoteOnScreen() {}
-
-// A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -492,3 +485,32 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function pickFromArray(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function drawQuoteOnScreen() {
+  // grabbing the elements we need
+  const getQuoteHeader = document.querySelector("#quote");
+  const getAuthorHeader = document.querySelector("#quoteAuthor");
+
+  // setting the innerText to both our elements to be the quote
+  const chosenQuote = pickFromArray(quotes);
+  getQuoteHeader.innerText = `"${chosenQuote.quote}"`;
+  getAuthorHeader.innerText = `- ${chosenQuote.author}`;
+
+  showHelpText();
+}
+
+// makes the hidden text show after 30 seconds, this tells the user how to generate a new quote
+function showHelpText() {
+  const getHiddenText = document.querySelector("#hiddenHelpText");
+  getHiddenText.style.opacity = "0";
+  setTimeout(() => (getHiddenText.style.opacity = "0.75"), 30000);
+}
+
+drawQuoteOnScreen();
+
+// A list of quotes you can use in your app.
+// Feel free to edit them, and to add your own favorites.

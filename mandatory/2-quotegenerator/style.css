@@ -22,12 +22,12 @@ body {
 
 /* appears after a few seconds of inactivity */
 .hiddenHelpText {
-  opacity: 0.75;
-  margin-bottom: 2em;
+  opacity: 0;
+  padding-bottom: 1em;
   cursor: initial;
   font: 1.5rem;
   font-family: var(--normal-font);
-  display: none;
+  transition: all 3000ms;
 }
 
 .quoteContainer {
