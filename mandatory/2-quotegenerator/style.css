@@ -1,1 +1,57 @@
 /** Write your CSS in here **/
+:root {
+  --highlight-font: "Bebas Neue", Arial;
+  --normal-font: "Roboto", Arial;
+}
+
+body {
+  margin: 0;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+
+.alignCenter {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* makes it align in the true center */
+  cursor: pointer; /* hovering over the card makes the pointer a cursor */
+}
+
+/* appears after a few seconds of inactivity */
+.hiddenHelpText {
+  opacity: 0.75;
+  margin-bottom: 2em;
+  cursor: initial;
+  font: 1.5rem;
+  font-family: var(--normal-font);
+  display: none;
+}
+
+.quoteContainer {
+  display: flex;
+  aspect-ratio: 1/0.5; /* makes a rectangle */
+  width: 50em;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.quoteText {
+  padding: 1em; /* adds some white space around the element */
+  font-size: 2.5rem;
+  text-align: left;
+  font-family: var(--highlight-font);
+}
+
+.authorText {
+  padding: 1em; /* adds some white space around the element */
+  font-size: 1.5rem;
+  margin-top: 4em; /* moves the element down */
+  text-align: right;
+  font-family: var(--normal-font);
+}
