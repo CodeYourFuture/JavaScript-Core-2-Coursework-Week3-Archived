@@ -55,3 +55,21 @@ body {
   text-align: right;
   font-family: var(--normal-font);
 }
+
+@media only screen and (min-width: 200px) and (max-width: 499px) {
+  .quoteContainer {
+    width: 15em;
+  }
+  .quoteText {
+    font-size: 1.5rem;
+  }
+  .authorText {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .quoteContainer {
+    width: 30em;
+  }
+}
