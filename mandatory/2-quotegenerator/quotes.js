@@ -516,7 +516,6 @@ function autoGenerate() {
     drawQuoteOnScreen();
     autoGenerate();
   }, 60000);
-  console.log(timer);
 }
 
 function setup() {
@@ -526,6 +525,7 @@ function setup() {
     if (typeof timer === "undefined" || timer === false) {
       autoGenerateButton.style = "background: green; color: white;";
       autoGenerateButton.innerText = "Auto-Play: ON";
+      drawQuoteOnScreen();
       autoGenerate();
     } else if (typeof timer === "number") {
       clearInterval(timer);

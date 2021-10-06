@@ -34,17 +34,10 @@ const imageStorage = [
 
 // assume we start at index 0
 let index = 0;
-let shouldStop = false;
 
 // user clicking the forward or backwards button
 function manualControl(direction) {
   const image = document.querySelector("#image");
-
-  let timeToWait = document.querySelector("#howLongToWait").value;
-
-  // sanity checking the users input
-  if (timeToWait > 60) timeToWait = 60;
-  if (timeToWait < 0) timeToWait = 30;
 
   if (direction === "forwards") {
     index++;
@@ -59,13 +52,6 @@ function manualControl(direction) {
 
   image.src = `${imageStorage[index].imageSource}`;
   image.alt = `${imageStorage[index].altText}`;
-
-  function automaticControl() {
-    const autoTimer = setTimeout(manualControl, timeToWait * 1000, direction);
-    if (shouldStop) clearInterval(autoTimer); // clear the timer if shouldStop == true
-  }
-
-  automaticControl();
 }
 
 function changeTimeBetweenText(value) {
@@ -73,11 +59,29 @@ function changeTimeBetweenText(value) {
   getAppendedText.innerText = `${value}s`;
 }
 
+let autoTimer;
+function automaticControl(direction) {
+  let timeToWait = document.querySelector("#howLongToWait").value;
+  autoTimer = setTimeout(() => {
+    manualControl(direction);
+    automaticControl(direction);
+  }, timeToWait * 1000);
+}
+
+function timerLogic(direction) {
+  if (typeof autoTimer === "undefined" || autoTimer === false) {
+    automaticControl(direction);
+  } else if (typeof autoTimer === "number") {
+    clearInterval(autoTimer);
+    console.log("timer stopped");
+    autoTimer = false;
+  }
+}
+
 function setup() {
   // auto backwards button
   document.querySelector("#autoBackButton").addEventListener("click", () => {
-    shouldStop = false;
-    manualControl("backwards");
+    timerLogic("backwards");
   });
 
   // backwards button
@@ -88,12 +92,11 @@ function setup() {
   // stop button
   document
     .querySelector("#stopButton")
-    .addEventListener("click", () => (shouldStop = true));
+    .addEventListener("click", () => timerLogic());
 
   // auto forward button
   document.querySelector("#autoForwardButton").addEventListener("click", () => {
-    shouldStop = false;
-    manualControl("forwards");
+    timerLogic("forwards");
   });
 
   // forwards button
