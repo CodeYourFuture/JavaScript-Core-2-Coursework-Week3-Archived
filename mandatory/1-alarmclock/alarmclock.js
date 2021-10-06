@@ -1,4 +1,38 @@
-function setAlarm() {}
+function setAlarm() {
+  // event.preventDefault();
+  let setAlarm = document.querySelector("#alarmSet");
+  const startingMinutes = setAlarm.value;
+  let time = startingMinutes * 60;
+
+  let timeRemaining = document.querySelector("#timeRemaining");
+
+  setInterval(updateCountdown, 1000);
+
+  function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? `0` + seconds : seconds;
+    timeRemaining.textContent = `Time Remaining: ${minutes}: ${seconds}`;
+    if (time == 0) {
+      timeRemaining.textContent = `Time Remaining: 00:00`;
+      playAlarm();
+      let colors = ["red", "green", "yellow", "purple", "pink"];
+      let index = 0;
+      function changeColor() {
+        document.querySelector(".centre").style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+        setTimeout(changeColor, 100);
+      }
+      changeColor();
+    } else if (time > 0) {
+      time--;
+    }
+  }
+}
+
+// let index = 0;
+
+// changeColor();
 
 // DO NOT EDIT BELOW HERE
 
