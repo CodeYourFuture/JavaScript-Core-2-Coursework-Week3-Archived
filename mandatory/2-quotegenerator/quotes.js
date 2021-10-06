@@ -496,9 +496,9 @@ function drawQuoteOnScreen() {
   const getAuthorHeader = document.querySelector("#quoteAuthor");
 
   // setting the innerText to both our elements to be the quote
-  const chosenQuote = pickFromArray(quotes);
-  getQuoteHeader.innerText = `"${chosenQuote.quote}"`;
-  getAuthorHeader.innerText = `- ${chosenQuote.author}`;
+  const generatedQuote = pickFromArray(quotes);
+  getQuoteHeader.innerText = `"${generatedQuote.quote}"`;
+  getAuthorHeader.innerText = `- ${generatedQuote.author}`;
 
   showHelpText();
 }
@@ -507,9 +507,36 @@ function drawQuoteOnScreen() {
 function showHelpText() {
   const getHiddenText = document.querySelector("#hiddenHelpText");
   getHiddenText.style.opacity = "0";
-  setTimeout(() => (getHiddenText.style.opacity = "0.75"), 30000);
+  setTimeout(() => (getHiddenText.style.opacity = "0.75"), 65000);
 }
 
+let timer;
+function autoGenerate() {
+  timer = setTimeout(() => {
+    drawQuoteOnScreen();
+    autoGenerate();
+  }, 60000);
+  console.log(timer);
+}
+
+function setup() {
+  const autoGenerateButton = document.querySelector("#autoGenerate");
+
+  autoGenerateButton.addEventListener("click", () => {
+    if (typeof timer === "undefined" || timer === false) {
+      autoGenerateButton.style = "background: green; color: white;";
+      autoGenerateButton.innerText = "Auto-Play: ON";
+      autoGenerate();
+    } else if (typeof timer === "number") {
+      clearInterval(timer);
+      autoGenerateButton.style = "initial;";
+      autoGenerateButton.innerText = "Auto-Play: OFF";
+      timer = false;
+    }
+  });
+}
+
+setup();
 drawQuoteOnScreen();
 
 // A list of quotes you can use in your app.

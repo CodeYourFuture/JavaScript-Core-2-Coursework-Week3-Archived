@@ -22,7 +22,7 @@ body {
 
 /* appears after a few seconds of inactivity */
 .hiddenHelpText {
-  opacity: 0;
+  /* opacity: 0; */
   padding-bottom: 1em;
   cursor: initial;
   font: 1.5rem;
@@ -54,6 +54,11 @@ body {
   margin-top: 4em; /* moves the element down */
   text-align: right;
   font-family: var(--normal-font);
+}
+
+.autoGenerateButton {
+  padding: 1em; /* white space around the text */
+  margin-top: 1em; /* moves the button away form the quote block */
 }
 
 @media only screen and (min-width: 200px) and (max-width: 499px) {
