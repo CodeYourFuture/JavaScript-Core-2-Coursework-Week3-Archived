@@ -1,3 +1,64 @@
+let body = document.querySelector("body");
+let quoteGeneratorDiv = document.createElement("div");
+let header = document.createElement("h2");
+
+body.appendChild(quoteGeneratorDiv);
+quoteGeneratorDiv.appendChild(header);
+body.style.display = "flex";
+body.style.justifyContent = "center";
+
+quoteGeneratorDiv.style.width = "50%";
+quoteGeneratorDiv.style.display = "flex";
+quoteGeneratorDiv.style.flexFlow = "row wrap";
+quoteGeneratorDiv.style.justifyContent = "center";
+quoteGeneratorDiv.style.backgroundColor = "rgba(100, 10, 100, 0.4)";
+quoteGeneratorDiv.style.margin = "100px 0 0 0";
+quoteGeneratorDiv.style.height = "700px";
+quoteGeneratorDiv.style.borderRadius = "50%";
+
+header.textContent = "Quote Generator";
+header.style.backgroundColor = "rgba(100, 10, 100, 0.1)";
+header.style.color = "white";
+header.style.fontWeight = "bolder";
+header.style.fontSize = "60px";
+header.style.margin = "30px 0 0 0";
+header.style.height = "auto";
+header.style.width = "75%";
+header.style.textAlign = "center";
+
+//creating a class for header so that I can apply style directly on my quotes:
+header.className = "header";
+console.log(header.className);
+
+let quote = document.createElement("p");
+header.appendChild(quote);
+header.style.flexFlow = "row wrap";
+quote.style.margin = "20% 0 0 0";
+quote.style.fontSize = "40px";
+
+quote.style.width = "80%";
+
+let button = document.createElement("button");
+header.appendChild(button);
+
+button.style.width = "100px";
+button.style.height = "50px";
+button.textContent = "Quote!";
+button.style.fontSize = "25px";
+button.style.color = "white";
+button.style.backgroundColor = "rgba(100, 10, 100, 0.1)";
+button.style.border = "none";
+button.style.borderRadius = "50%";
+
+button.addEventListener("click", setup);
+
+function setup() {
+  randomPick = quotes[Math.floor(Math.random() * quotes.length)];
+
+  quote.innerHTML = `"${randomPick.quote} ${randomPick.author}`;
+}
+
+window.onload = setup;
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
