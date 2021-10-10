@@ -98,19 +98,63 @@ function setup() {
 function forward() {
   let currSource = document.getElementById("slideShow");
   let currentIndex = imgSources.indexOf(currSource.src);
-  currSource.src = imgSources[currentIndex + 1];
+  console.log(currSource.src);
+  console.log(currentIndex);
+  if (currentIndex == 4) {
+    currSource.src = imgSources[0];
+  } else {
+    currSource.src = imgSources[currentIndex + 1];
+  }
 }
 
-function autoForward() {
+function back() {
   let currSource = document.getElementById("slideShow");
   let currentIndex = imgSources.indexOf(currSource.src);
 
-  for (var i = currentIndex; i < imgSources.length; i++) {
-    currSource.src = imgSources[i + 1];
+  if (currentIndex == 0) {
+    currSource.src = imgSources[imgSources.length - 1];
+  } else {
+    currSource.src = imgSources[currentIndex - 1];
   }
+}
+let timeOut;
+
+function autoForward() {
+  let currSource = document.getElementById("slideShow");
+  var slideIndex = imgSources.indexOf(currSource.src);
+  showSlides();
+  function showSlides() {
+    slideIndex++;
+    if (slideIndex > imgSources.length - 1) {
+      slideIndex = 0;
+    }
+    currSource.src = imgSources[slideIndex];
+    timeOut = setTimeout(showSlides, 2000);
+  }
+}
+
+function autoBack() {
+  let currSource = document.getElementById("slideShow");
+  var slideIndex = imgSources.indexOf(currSource.src);
+  showSlides();
+  function showSlides() {
+    slideIndex--;
+    if (slideIndex < 0) {
+      slideIndex = imgSources.length - 1;
+    }
+    currSource.src = imgSources[slideIndex];
+    timeOut = setTimeout(showSlides, 2000);
+  }
+}
+
+function stop() {
+  clearTimeout(timeOut);
 }
 
 forwardButton.addEventListener("click", forward);
 autoForwardButton.addEventListener("click", autoForward);
+autoBackButton.addEventListener("click", autoBack);
+backButton.addEventListener("click", back);
+stopButton.addEventListener("click", stop);
 
 window.onload = setup;
