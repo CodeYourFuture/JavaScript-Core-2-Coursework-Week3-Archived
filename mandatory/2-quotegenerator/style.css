@@ -1,1 +1,38 @@
 /** Write your CSS in here **/
+body{
+    background-image: linear-gradient(to right, rgb(123,74,136), rgb(152,103,197));
+}
+
+.main-container{
+    width: 80%;
+    margin: 100px auto;
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px black;
+}
+#content{
+    height:200px;
+}
+
+#quote{
+    font-size: 35px;
+    color:rgb(152,103,197);
+    text-align: justify;
+    font-family: 'Ephesis', cursive;
+}
+
+#author{
+    text-align: end;
+    font-size: 20px;
+    color:rgb(152,103,197);
+}
+
+#button{
+    margin: 3px auto;
+    background-color: rgb(152,103,197);
+    color: white;
+    padding: 10px 10px;
+    box-shadow: 1px 1px 10px black;
+}
