@@ -36,3 +36,9 @@ body{
     padding: 10px 10px;
     box-shadow: 1px 1px 10px black;
 }
+
+#label-checkbox{
+    margin: 10px auto; 
+    text-align: center;
+    color: rgb(152,103,197);
+}

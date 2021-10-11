@@ -1,1 +1,44 @@
 /** Write your CSS in here **/
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: rgb(0, 81, 97);
+}
+
+#image{
+    width: 80%;
+    height: 400px;
+    box-shadow: 1px 1px 10px black;
+    margin-bottom: 20px;
+}
+
+#btns-manually,
+#btns-auto, 
+#form {
+    padding-bottom: 20px;
+}
+
+.btn{
+    background-image: linear-gradient(to right, rgb(0,162,195), rgb(2,220,245));
+    padding:5px 20px;
+    margin: 0 10px;
+    color: rgb(0, 81, 97);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+}
+
+.btn:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#interval-time{
+    border: 2px solid rgb(0, 81, 97);;
+    border-radius: 5px;
+}
+

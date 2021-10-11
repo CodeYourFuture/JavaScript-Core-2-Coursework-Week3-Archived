@@ -43,7 +43,17 @@ const autoForwardBtn = document.getElementById("auto-forward");
 const autoBackBtn = document.getElementById("auto-back");
 const stopBtn = document.getElementById("stop");
 
+const intervalTime = document.getElementById("interval-time");
+const submit = document.getElementById("submit");
+
+
+let duration = 2000;
+submit.addEventListener("click", (event) => {
+  duration = intervalTime.value * 1000;
+});
+
 autoForwardBtn.addEventListener("click", ()=>{
+    clearInterval(interval);
     interval = setInterval(() => {
     image.setAttribute("src", images[index]);
     if (index == images.length - 1) {
@@ -51,20 +61,23 @@ autoForwardBtn.addEventListener("click", ()=>{
     } else {
         index++;
     }
-    }, 2000);
+    }, duration);
 });
 
 autoBackBtn.addEventListener("click", () => {
-  interval = setInterval(() => {
+    clearInterval(interval);
+    interval = setInterval(() => {
     image.setAttribute("src", images[index]);
     index--;
     if (index < 0) {
       index = images.length - 1;
     }
-  }, 2000);
+  }, duration);
 });
  
 stopBtn.addEventListener("click", ()=> {
     clearInterval(interval);
 })
+
+
 

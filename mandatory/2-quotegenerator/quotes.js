@@ -2,12 +2,40 @@
 let quote = document.getElementById("quote");
 let author = document.getElementById("author");
 let button = document.getElementById("button");
+let autoGenerate = document.getElementById("auto-generate");
+let p = document.createElement("p");
 
-button.addEventListener("click", ()=> {
+const labelCheckbox = document.getElementById("label-checkbox");
+let autoGenerateValue = false;
+let interval;
+
+autoGenerate.addEventListener("click", (event)=>{
+  autoGenerateValue = autoGenerate.checked;
+  if (autoGenerateValue) {
+    p.innerHTML = "auto-play:ON";
+    labelCheckbox.appendChild(p);
+    interval = setInterval(() => {
+      let randomQuote = pickFromArray(quotes);
+      quote.innerHTML = `"${randomQuote.quote}"`;
+      author.innerHTML = `- ${randomQuote.author}`;
+    }, 60000);
+  } else {
+    p.remove();
+    clearInterval(interval);
+    let randomQuote = pickFromArray(quotes);
+    quote.innerHTML = `"${randomQuote.quote}"`;
+    author.innerHTML = `- ${randomQuote.author}`;
+  }
+})
+
+
+button.addEventListener("click", () => {
+  clearInterval(interval);
   let randomQuote = pickFromArray(quotes);
   quote.innerHTML = `"${randomQuote.quote}"`;
   author.innerHTML = `- ${randomQuote.author}`;
-})
+});
+
 
 // DO NOT EDIT BELOW HERE
 
