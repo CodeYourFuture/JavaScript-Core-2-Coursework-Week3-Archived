@@ -1,6 +1,8 @@
 let intervalId = null;
 let backgroundChangingId = null;
 let isPaused= false ;
+let color = "plum";
+
 
 function setAlarm() {
   let inputValue = document.getElementById("alarmSet").value;
@@ -10,28 +12,23 @@ function setAlarm() {
       updateAlarm(inputValue);
       inputValue--;
       if (inputValue < 0) {
+        // if time is less than zero then kill the interval 
         clearInterval(intervalId);
         playAlarm();
-        // setTimeout(pauseAlarm,2000)
-        backgroundChangingId = setInterval(changeColor, 500);
       }
     }
   }, 1000);
 }
 
-let color = "plum";
+// this function set the backgroundcolor for body also 
+// will toggle the color 
 function changeColor() {
   document.body.style.backgroundColor = color;
   color = color === "plum" ? "white" : "plum";
-  // if(color=== "plum"){
-  //   color="white"
-  // }else  {
-  //   color="plum"
-  // }
 }
 
+// calculates time and binds it to DOM
 function updateAlarm(value) {
-  console.log(value);
   const title = document.getElementById("timeRemaining");
   let seconds = value % 60;
   let minutes = Math.floor(value / 60);
@@ -65,10 +62,15 @@ function setup() {
   });
 }
 
+// runs when timer is reached zero
 function playAlarm() {
   audio.play();
+  backgroundChangingId = setInterval(changeColor, 500);
 }
 
+// is a callback for stop button. and 
+// stops the alarm , stops the backgroundChanging ,
+// sets the backgroundColor to the default color
 function stopAlarm() {
   audio.pause();
   clearInterval(backgroundChangingId);
