@@ -25,8 +25,15 @@ Only read this section if you really need to! It's good to work this out for you
 ### Steps to complete
 
 1. When the `Set Alarm` button is clicked, get the value of the input field
+
+??? How do I get the value??? 
+
 2. When you have the input field value, set the title to the correct value
+
+?? Chnage title to value??? 
+
 3. Work out how to update the `Time Remaining` title every second
+
 4. When the remaining time left is 0, play the alarm sound
 
 ## Extra Tasks
