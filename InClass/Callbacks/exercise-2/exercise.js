@@ -42,9 +42,9 @@ Task 2
 - Remember to use setTimeout to achieve that DONE */
 
 function displayMovies() {
-  const movieArea = document.querySelector("#all-movies");
-  const moviesNum = document.querySelector("#movies-number");
-  moviesNum.textContent = movies.length;
+  const movieArea = document.querySelector("#all-movies"); //div
+  const moviesNum = document.querySelector("#movies-number"); //div
+  moviesNum.textContent = movies.length; //how many movies 
 
   movies.forEach((movie, index) => {
     setTimeout(() => {
@@ -86,8 +86,12 @@ const myFavMovie = {
 function addMovie(movie) {
   displayMovies();
   setTimeout(() => {
-    movies.push(myFavMovie);
-  }, 2000); //Callback not working correctly, how to get the extra 2 
+    //movies.push(myFavMovie);
+    const movieArea = document.querySelector("#all-movies"); //div
+    let paraEls = document.createElement("p");
+      movieArea.appendChild(paraEls);
+      paraEls.innerText = `${movie.title} - ${movie.director}.`;
+  }, 5000); //Callback not working correctly, how to get the extra 2 
   // sec delay for the last item pushed to the array? 
 }
 
