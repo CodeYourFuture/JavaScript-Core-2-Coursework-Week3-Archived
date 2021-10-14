@@ -1,1 +1,66 @@
 /** Write your CSS in here **/
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0;
+}
+
+.jumbo {
+    margin: 3rem;
+    background-color: #A8D0DB;
+    padding: 0.8em;
+    width: 40%;
+    min-width: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.header {
+    text-align: center;
+    padding: 0.2em;
+    background-color: white;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-radius: 5px;
+}
+
+.img-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+.counter-wrap {
+    margin-top: 0.5rem;
+    height: 1.5em;
+    background-color: white;
+    margin: 0.5em auto;
+}
+
+.para {
+    text-align: center;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    background-color: #A8D0DB;
+}
+
+.btn {
+    background-color: lightgrey;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid slategray;
+    margin-left: 0em;
+}
+
+.btn:hover {
+    box-shadow: 4px 3px royalblue;
+}
