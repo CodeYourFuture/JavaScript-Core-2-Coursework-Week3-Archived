@@ -1,3 +1,15 @@
+let quote = document.querySelector("#quote");
+const author = document.querySelector("#author");
+const button = document.querySelector("#set");
+
+button.addEventListener("click", () => {
+  // let randomQuote =quotes[Math.floor(Math.random()* quotes.length)] 
+  let randomQuote = pickFromArray(quotes);
+  console.log(quote);
+  console.log(randomQuote);
+  quote.innerText = randomQuote.quote;
+  author.innerText = randomQuote.author;
+});
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
