@@ -1,1 +1,26 @@
 /** Write your CSS in here **/
+body {
+  background-color: cadetblue;
+}
+h2 {
+  background-color: lightskyblue;
+  text-align: center;
+}
+#images {
+  display: flex;
+  justify-content: center;
+}
+#images img {
+  border: 3px dashed red;
+  border-radius: 15px;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+#buttons button {
+  background-color: purple;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+}

@@ -1,4 +1,12 @@
-// DO NOT EDIT BELOW HERE
+let button = document.getElementById("Btn");
+let output = document.getElementById("output");
+
+button.addEventListener("click", () => {
+  let randomQuote = pickFromArray(quotes);
+  output.innerHTML = `${randomQuote.quote} <br> Author: <em>${randomQuote.author}</em>`;
+});
+
+/////====== DO NOT EDIT BELOW HERE ======//////
 
 // A function which will return one item, at
 // random, from the given array.
