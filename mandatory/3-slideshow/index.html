@@ -2,16 +2,29 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <h1> Best Holiday Destinations</h1>
+    <img id="image" src='https://images.unsplash.com/photo-1499678329028-101435549a4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80'>
+    <div id="btns-manually">
+      <button class="btn" id="forward">Forward</button>
+      <button class="btn" id="back">Back</button>
+    </div>
+
+    <div id="btns-auto">
+      <button class="btn" id="auto-forward">Auto-forward</button>
+      <button class="btn" id="stop">Stop</button>
+      <button class="btn" id="auto-back">Auto-back</button>
+     </div>
+
+    <form id ="form" action="#">
+      <input type="text" id="interval-time" >
+      <input type="submit" value="Change Time Interval" id="submit" class="btn">
+    </form>
+   
     <script src="slideshow.js"></script>
   </body>
 </html>
