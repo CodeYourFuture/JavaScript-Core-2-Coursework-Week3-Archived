@@ -70,7 +70,8 @@ const imgs = [
 
 
 /* FORWARD FUNCTION */
-function forward() {
+function forward(event) {
+  event.preventDefault();
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
   img.src = imgs[currIndex + 1]; //add 1 to image index position
   para.textContent = currIndex; // set paragraph index value 
@@ -78,6 +79,8 @@ function forward() {
 
 /* AUTO-FORWARD FUNCTION */
 function autoForward() {
+  event.preventDefault()
+  let currIndex = imgs.indexOf(img.src); //find arr index of current img
   setInterval(forward, 4000);
   para.textContent = currIndex;
 }
@@ -91,6 +94,7 @@ function back() {
 
 /* AUTO-BACK FUNCTION*/
 function autoBack() {
+  let currIndex = imgs.indexOf(img.src); //find arr index of current img
   setInterval(back, 4000); //call back function every 4sec
   para.textContent = currIndex; // set paragraph index value
 }
@@ -117,9 +121,9 @@ stopBtn.addEventListener("click", stop);
 
 /* INITIAL IMAGE ON PAGE LOAD*/
 function setup() {
-    img.src = imgs[Math.floor(Math.random() * imgs.length)];
-    para.textContent = currIndex;
-  }
+  img.src = imgs[Math.floor(Math.random() * imgs.length)];
+  para.textContent = currIndex;
+}
 
 /* LOAD INITIAL IMAGE */
 window.onload = setup; //load first image on window load
