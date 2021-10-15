@@ -62,7 +62,46 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies() {
+  let allMovies = document.querySelector("#all-movies");
+  while (allMovies.children[1]) allMovies.removeChild(allMovies.children[1]);
+  movies.forEach((movie, i) => {
+    let timeout = 1000;
+    let newP = document.createElement('p');
+    newP.innerText = `${movie.title} - ${movie.director}`;
+   setTimeout(() => {
+     document.querySelector("#all-movies").append(newP)
+   }, timeout * (i+1)); 
+  });
+  document.querySelector('#movies-number').innerText = movies.length;
+}
 
 // create a new movie object for your favorite movie
+const favMovie = {
+  title: "The Matrix",
+  director: "Wachoski Sisters",
+  type: "sci-fi",
+  haveWatched: true,
+}
 
 // create addMovies function
+function addMovie(movie, callback) {
+  setTimeout(() => {
+    movies.push(movie);
+    callback();
+  }, 2000);
+}
+
+addMovie(favMovie, showMovies);
+
+document.querySelector('button').addEventListener("click", saveForm);
+
+function saveForm() {
+  let movie = {
+    title: document.getElementById("title").value,
+    director: document.getElementById("director").value,
+    type: document.getElementById("type").value,
+    haveWatched: document.getElementById("haveWatched").value,
+  };
+  addMovie(movie, showMovies);
+}
