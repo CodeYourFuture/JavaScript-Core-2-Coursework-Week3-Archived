@@ -17,7 +17,9 @@ Create a new function called "addMovie"
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
-
+*/
+// function addMovie(movieObj)
+/*
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks
@@ -60,6 +62,24 @@ const movies = [
     haveWatched: false,
   },
 ];
+
+
+
+function showMovies (){
+  movies.forEach((movie)=>{
+    let para = document.createElement("p");
+    para.textContent = `${movies.title}, ${movies.director}`;
+    let allMovies = document.getElementById("all-movies");
+    allMovies.appendChild(para);
+
+  });
+  let alert = document.querySelector(".alert");
+  alert.textContent = movies.length; 
+
+
+}
+setTimeout(showMovies, 2000)
+
 
 // create showMovies function
 

@@ -1,1 +1,60 @@
 /** Write your CSS in here **/
+body {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+
+  background-color: #cecece;
+  font-family: sans-serif;
+}
+h1 {
+  font-style: oblique;
+  color: peru;
+}
+
+#slide {
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+  width: 633px;
+  height: 384px;
+  margin-left: 8;
+}
+.items {
+  position: absolute;
+  display: flex;
+  width: 633px;
+  height: 384px;
+  background-color: bisque;
+  overflow: hidden;
+}
+.item {
+  transition: all 1s;
+}
+.item:first-child {
+  margin-left: -100%;
+}
+.item img {
+  width: 633px;
+  height: 384px;
+}
+.button {
+  font: bold 30px sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  color: #00000000;
+  user-select: none;
+  z-index: 1;
+
+  transition: all 1s;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: #00000055;
+  cursor: pointer;
+}

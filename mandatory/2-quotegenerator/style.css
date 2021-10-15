@@ -1,1 +1,102 @@
-/** Write your CSS in here **/
+/* Write your CSS in here*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+}
+p {
+  font-size: 16px;
+}
+
+body {
+  background: #490a3d;
+}
+.quotemark {
+  position: relative;
+  top: -12px;
+  padding-right: 10px;
+}
+
+blockquote {
+  border-left: 10px solid #490a3d;
+  margin: 30px 30px;
+  padding: 10px 30px;
+}
+blockquote:before {
+  color: #ccc;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote h1,
+h2,
+h3,
+p {
+  display: inline;
+}
+blockquote footer {
+  font-size: 18px;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  max-height: 800px;
+  margin: 10% auto auto auto;
+}
+.quotebox {
+  background: #fff;
+  max-width: 500px;
+  min-height: 100px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.quotebutton {
+  display: inline-block;
+  padding: 6px 12px;
+}
+#quotesource {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  width: 140px;
+  height: 40px;
+  border: none;
+  background: #490a3d;
+}
+
+@media only screen and (max-width: 768px) {
+  #quotetext {
+    font-size: 25px;
+  }
+  .container {
+    margin-right: 20px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #quotetext {
+    font-size: 18px;
+  }
+}
