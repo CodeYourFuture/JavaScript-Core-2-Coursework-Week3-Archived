@@ -60,10 +60,10 @@ btnArray.forEach((element) => {
 
 /* IMGS ARRAY */
 const imgs = [
-  "https://images.freeimages.com/images/large-previews/70c/blue-heron-on-rock-1382247.jpg",
+  "https://cdn.pixabay.com/photo/2021/08/12/10/38/mountains-6540497_960_720.jpg",
   "https://images.freeimages.com/images/large-previews/adf/sun-burst-1478549.jpg",
   "https://images.freeimages.com/images/large-previews/5c6/sunset-jungle-1383333.jpg",
-  "https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg",
+  "https://images.pexels.com/photos/416920/pexels-photo-416920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "https://images.freeimages.com/images/large-previews/4a1/on-the-road-5-1384802.jpg",
 ];
 
@@ -73,7 +73,7 @@ const imgs = [
 function forward() {
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
   img.src = imgs[currIndex + 1]; //add 1 to image index position
-  para.textContent = currIndex;
+  para.textContent = currIndex; // set paragraph index value 
 }
 
 /* AUTO-FORWARD FUNCTION */
@@ -86,13 +86,13 @@ function autoForward() {
 function back() {
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
   img.src = imgs[currIndex - 1]; //add 1 to image index position
-  para.textContent = currIndex;
+  para.textContent = currIndex; // set paragraph index value
 }
 
 /* AUTO-BACK FUNCTION*/
 function autoBack() {
-  setInterval(back, 4000);
-  para.textContent = currIndex;
+  setInterval(back, 4000); //call back function every 4sec
+  para.textContent = currIndex; // set paragraph index value
 }
 
 /* FORWARD EVENT*/
