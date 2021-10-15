@@ -1,3 +1,22 @@
+
+const quote = document.getElementById("quotetext");
+const author = document.getElementById("quotesource");
+const quotebutton = document.getElementById("newquote");
+
+quotebutton.addEventListener("click", () => {
+  const randomQuote = pickFromArray(quotes);
+   quote.innerHTML = `"${randomQuote.quote}"`;
+   author.innerText = randomQuote.author;
+  console.log("click",randomQuote.author)
+});
+
+
+function firstRun() {
+  randomQuote();
+  setInterval(randomQuote, 60);
+}
+
+setTimeout(firstRun, 20);
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -15,7 +34,8 @@
 // ---------------
 // pickFromArray([1,2,3,4])     //maybe returns 2
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
-//
+
+
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
