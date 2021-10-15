@@ -20,6 +20,40 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+// created a function that gets a quote from the quotes array and changes innerHTML to that quote     
+function quoteGen() {
+  let quote = document.getElementById("quote-text").innerHTML;
+  let wisePerson = document.getElementById("quoter").innerHTML;
+  let quoteObject = pickFromArray(quotes);
+  quote = quoteObject.quote;
+  wisePerson = quoteObject.author;
+  document.getElementById("quote-text").innerHTML = `"${quote}"`;
+  document.getElementById("quoter").innerHTML = `- ${wisePerson}`;
+}
+// this function calls the quoteGen function when the window loads
+window.onload = function () {
+  quoteGen();
+};
+// added a click event to the button
+const clicker = document.getElementById("change-button");
+clicker.addEventListener("click", quoteGen);
+
+// created a function that calls the quoteGen function at timed intervals when the slider is "on"
+// and stops it when the slider(checkbox) is "off"
+let isOn =null;
+function autoQuote() {
+  let isChecked = document.getElementById("switch").checked;
+  if (isChecked) {
+    isOn=setInterval(quoteGen, 3000);
+  } 
+  if(!isChecked)
+    clearInterval(isOn)
+}
+
+let auto = document.getElementById("switch");
+auto.addEventListener("click", autoQuote);
+
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
