@@ -61,8 +61,67 @@ const movies = [
   },
 ];
 
+
+///Task 1
+
+
 // create showMovies function
 
-// create a new movie object for your favorite movie
+// ----------------------------------This is the solution for the first task.. See improvements on task2----------------
 
-// create addMovies function
+
+// function display(movie) {
+//   let mainContainer = document.getElementById("all-movies");
+//   var nrMovies = document.querySelector(".alert-info");
+//   nrMovies.innerHTML = `Number of movies: ${Object.keys(movies).length}`;
+
+//   movies.forEach(movie => {
+//   var paragraph = document.createElement("p");
+//   paragraph.innerHTML = `<strong>${movie.title}</strong> by ${movie.director} `
+//   mainContainer.appendChild(paragraph);
+// });
+// }
+
+// display(movies);
+
+
+
+/////Task 2 & 3
+// create showMovies function
+ var nrMovies = document.querySelector(".alert-info");
+ nrMovies.innerHTML = `Number of movies: ${Object.keys(movies).length}`;
+
+function display(movie) {
+  let mainContainer = document.getElementById("all-movies");
+  var paragraph = document.createElement("p");
+  paragraph.innerHTML = `<strong>${movie.title}</strong> by ${movie.director} `;
+  mainContainer.appendChild(paragraph);
+}
+
+function showMovies() {
+  movies.forEach((movie) => {
+    setTimeout(display, 1000, movie);
+  });
+}
+
+showMovies();
+
+// create a new movie object for your favorite movie
+const myFavoriteMovie = {
+  title: "The Green Mile",
+  director: " Frank Darabont",
+  type: "fantasy-drama",
+  haveWatched: true
+};
+
+
+// create addMovie function
+
+const addMovie = (movie, callback) =>{
+  setTimeout(()=>{
+      callback(movie)
+  }, 2000)
+
+};
+addMovie(myFavoriteMovie, display);
+// function addMovie();
