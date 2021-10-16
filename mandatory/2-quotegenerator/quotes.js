@@ -1,3 +1,6 @@
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -16,10 +19,13 @@
 // pickFromArray([1,2,3,4])     //maybe returns 2
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
-// You DO NOT need to understand how this function works.
+//You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -490,3 +496,14 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+let button = document.getElementById("btn-quote");
+
+button.addEventListener("click", () =>{
+  document.getElementById("quoteDisplay").innerHTML = `
+    <q>${pickFromArray(quotes).quote}</q> <br> ${pickFromArray(quotes).author}`;
+   
+});
+
+

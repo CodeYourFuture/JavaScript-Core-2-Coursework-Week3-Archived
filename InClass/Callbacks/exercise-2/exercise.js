@@ -63,6 +63,41 @@ const movies = [
 
 // create showMovies function
 
+function showMovies(){
+
+  let content = document.getElementById("all-movies");
+  let span = document.getElementById("movies-number");
+  
+  movies.forEach(movie => {
+    
+    let p = document.createElement("p"); 
+    p.textContent = `Title: ${movie.title}, Director: ${movie.director}`;   
+    content.appendChild(p);    
+    
+  })
+  
+  span.innerText = movies.length;
+}
+
+setTimeout(showMovies, 1000);
+
+
 // create a new movie object for your favorite movie
 
-// create addMovies function
+
+let myMovies = {
+  title: "Taken",
+  director: "Pierre Morel",
+  type: "Action",
+  haveWatched: true,
+};
+
+
+
+//create addMovie function
+
+function addMovie(movie) {
+  return movie.push(myMovies);  
+}
+
+setTimeout(addMovie, 2000);
