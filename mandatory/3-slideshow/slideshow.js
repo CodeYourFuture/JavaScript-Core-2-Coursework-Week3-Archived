@@ -1,82 +1,54 @@
 // Write your code here
- let imgSlider = document.getElementById("imgSlider");
+  let slider = document.getElementById("slider");
+  let mySlides = document.querySelectorAll(".mySlides");
+  let btnForward = document.querySelector("#forward");
+  let btnBackward = document.querySelector("#backward");
+  
+  slideIndex = 0;
 
- var i = 0;
-
-function backward() {
-  for(let i = slides.length; i > 0; i--) {
-    return 
+  function reset() {    
+        mySlides.forEach(slide => {
+          slide.style.display = "none";
+        })
   }
-}
+// initialize slider
 
-
-function forward() {
-  for (let i = 0; i < slides.length ; i++) {
-    return setImg();
-  }
-}
-
-
-
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
+function initialSlide(){
+    reset();
+    mySlides[0].style.display = "block";
+ }
  
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+ //show forward
 
-let slides = [
-  "https://images.unsplash.com/photo-1459682687441-7761439a709d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fGFuaW1hbHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1507666405895-422eee7d517f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fGFuaW1hbHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1506126944674-00c6c192e0a3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGFuaW1hbHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzV8fGFuaW1hbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1559157693-c34156e0f8c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGFuaW1hbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1470107355970-2ace9f20ab15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTB8fGFuaW1hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1597776941486-054bf5529210?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTd8fGFuaW1hbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1516749744210-1981409bd921?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAzfHxhbmltYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-];
+ function forward() {
+   reset();
+   mySlides[slideIndex + 1].style.display = "block";
+   slideIndex++;
+ }
 
+ //show backward
 
-
-// var slideIndex = 0;
-// showSlides();
-
-// function showSlides() {
-//   var i;
+ function backward() {
+    reset();
+    mySlides[slideIndex - 1].style.display = "block";
+    slideIndex --;
+ }
+ // forward click
  
-  
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   slideIndex++;
-  
+ btnForward.addEventListener("click", function () {
+   if (slideIndex === mySlides.length -1) {
+     slideIndex = -1;
+   }
+   forward();
+ });
 
-  
-//   slides[slideIndex - 1].style.display = "block";
-  
-//   }
+ // backward click
+ 
+btnBackward.addEventListener("click", function() {
+    if(slideIndex === 0) {
+      slideIndex = mySlides.length;
+    }
+    backward();
+ })
 
-// document.getElementById("next").addEventListener("click", function(){
-//     slideIndex++;
-//      for (i = 0; i < slides.length; i++) {
-//        slides[i].style.display = "none";
-//      }
-      
-  
-//   if (slideIndex > slides.length){
-//       slideIndex = 0;
-//   }
-//   slides[slideIndex].style.display = "block";
-// })
-
+ initialSlide();
