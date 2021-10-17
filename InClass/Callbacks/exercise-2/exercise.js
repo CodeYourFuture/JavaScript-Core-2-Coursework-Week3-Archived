@@ -63,6 +63,65 @@ const movies = [
 
 // create showMovies function
 
+//Task 1 version
+// function showMovies(movieArray){
+//   const allMoviesDiv = document.getElementById("all-movies");
+//   const moviesNumberEl = document.getElementById("movies-number");
+//   for(let movie in movieArray){
+//     //create the <p>
+//     const pEl = document.createElement("p");
+//     //add the text
+//     pEl.innerHTML = `Title: ${movieArray[movie].title}<br />Director: ${movieArray[movie].director}`;
+//     //append the <p> to the <div>
+//     allMoviesDiv.appendChild(pEl);
+//     //update the number
+//     moviesNumberEl.innerHTML = `${movieArray.length}`
+//   }
+// }
+// showMovies(movies);
+
+//Task 2 version
+function showMovies(movieArray){
+  const allMoviesDiv = document.getElementById("all-movies");
+  const moviesNumberEl = document.getElementById("movies-number");
+  let count = 0;
+  //clear movies from DOM
+  for(let i = 0; i < allMoviesDiv.childNodes.length - 1; i++){
+    //start at the end
+    allMoviesDiv.lastChild.remove()
+  }
+  function writeMoviePerSecond(){
+    if(count < movieArray.length){
+      //create the <p>
+      const pEl = document.createElement("p");
+      //add the text
+      pEl.innerHTML = `Title: ${movieArray[count].title}<br />Director: ${movieArray[count].director}`;
+      //append the <p> to the <div>
+      allMoviesDiv.appendChild(pEl);
+      //update the number
+      moviesNumberEl.innerHTML = `${movieArray.length}`;
+      count++;
+      setTimeout(writeMoviePerSecond, 1000);
+    }
+  }
+  writeMoviePerSecond();
+}
+showMovies(movies);
+
 // create a new movie object for your favorite movie
+const newMovie = {
+  title: "Snatch",
+  director: "Guy Ritchie",
+  type: "comedy",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovies(movie){
+  //add new movie after 2 seconds
+  setTimeout(movies.push(movie), 2000)
+}
+addMovies(newMovie);
+
+//I may come back and finish the form extra task but for now
+//I'm going to leave it at that
