@@ -67,28 +67,30 @@ const imgs = [
   "https://images.freeimages.com/images/large-previews/4a1/on-the-road-5-1384802.jpg",
 ];
 
-
-
 /* FORWARD FUNCTION */
 function forward(event) {
-  event.preventDefault();
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  img.src = imgs[currIndex + 1]; //add 1 to image index position
-  para.textContent = currIndex; // set paragraph index value 
+  img.src = imgs[currIndex + 1]; //increase position by one on click
+  if (currIndex === imgs.length - 1) { //if last item
+    img.src = imgs[0]; //start at zero
+  }
+  para.textContent = currIndex; // set paragraph index value
 }
 
 /* AUTO-FORWARD FUNCTION */
 function autoForward() {
-  event.preventDefault()
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  setInterval(forward, 4000);
-  para.textContent = currIndex;
+  setInterval(forward, 4000); //calls forward function every 3 seconds
+  para.textContent = currIndex; //prints index value to para
 }
 
-/* BACK FUNCTION */
+/* BACK FUNCTION */ // --- NOT WORKING 
 function back() {
   let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  img.src = imgs[currIndex - 1]; //add 1 to image index position
+  img.src = imgs[currIndex - 1]; //minus 1 to image index position
+  if (currIndex < 0) {
+    img.src = imgs.length-1;
+  }
   para.textContent = currIndex; // set paragraph index value
 }
 
@@ -121,8 +123,8 @@ stopBtn.addEventListener("click", stop);
 
 /* INITIAL IMAGE ON PAGE LOAD*/
 function setup() {
-  img.src = imgs[Math.floor(Math.random() * imgs.length)];
-  para.textContent = currIndex;
+  img.src = imgs[Math.floor(Math.random() * imgs.length)]; //random src
+  para.textContent = imgs.indexOf(img.src); //This loads the same index twice on load
 }
 
 /* LOAD INITIAL IMAGE */
