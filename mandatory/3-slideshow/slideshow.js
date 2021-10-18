@@ -67,38 +67,48 @@ const imgs = [
   "https://images.freeimages.com/images/large-previews/4a1/on-the-road-5-1384802.jpg",
 ];
 
+let intervalId; 
+let intervalId2;
+
 /* FORWARD FUNCTION */
 function forward(event) {
-  let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  img.src = imgs[currIndex + 1]; //increase position by one on click
-  if (currIndex === imgs.length - 1) { //if last item
-    img.src = imgs[0]; //start at zero
+  let currIndex = imgs.indexOf(img.src); //find arr index of current img (random assign)
+  currIndex = currIndex + 1; //increment index on click
+  if (currIndex === imgs.length) {
+    //if last item
+
+    currIndex = 0; //set back to first index
   }
+  img.src = imgs[currIndex]; //incremented index value
   para.textContent = currIndex; // set paragraph index value
 }
 
 /* AUTO-FORWARD FUNCTION */
 function autoForward() {
-  let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  setInterval(forward, 4000); //calls forward function every 3 seconds
-  para.textContent = currIndex; //prints index value to para
+  intervalId = setInterval(forward, 1000); //calls forward function every 3 seconds
 }
 
-/* BACK FUNCTION */ // --- NOT WORKING 
+function stop() {
+  clearInterval(intervalId);
+  clearInterval(intervalId2);
+}
+
+/* BACK FUNCTION */ 
 function back() {
-  let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  img.src = imgs[currIndex - 1]; //minus 1 to image index position
-  if (currIndex < 0) {
-    img.src = imgs.length-1;
+  let currIndex = imgs.indexOf(img.src); //find arr index of current img (random assign)
+  currIndex = currIndex - 1; //increment index on click
+  if (currIndex === -1) {
+    //if last item
+
+    currIndex = imgs.length - 1; //set back to first index
   }
+  img.src = imgs[currIndex]; //incremented index value
   para.textContent = currIndex; // set paragraph index value
 }
 
 /* AUTO-BACK FUNCTION*/
 function autoBack() {
-  let currIndex = imgs.indexOf(img.src); //find arr index of current img
-  setInterval(back, 4000); //call back function every 4sec
-  para.textContent = currIndex; // set paragraph index value
+  intervalId2 = setInterval(back, 1000); //call back function every 4sec
 }
 
 /* FORWARD EVENT*/
@@ -124,7 +134,7 @@ stopBtn.addEventListener("click", stop);
 /* INITIAL IMAGE ON PAGE LOAD*/
 function setup() {
   img.src = imgs[Math.floor(Math.random() * imgs.length)]; //random src
-  para.textContent = imgs.indexOf(img.src); //This loads the same index twice on load
+  para.textContent = imgs.indexOf(img.src); 
 }
 
 /* LOAD INITIAL IMAGE */
