@@ -1,1 +1,23 @@
 /** Write your CSS in here **/
+body {
+    background-color: orange;
+    height: 100vh;
+}
+
+main div {
+    background-color: white;
+    color: orange;
+}
+
+#newQuote {
+    background-color: orange;
+    color: white;
+    display: inline;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 599px) {
+    #quoteText {
+        margin-top: -5% !important;
+    }
+}

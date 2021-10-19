@@ -1,3 +1,28 @@
+const vw = () => Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const vh = () => Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+function getNewQuote() {
+  let newQuote = pickFromArray(quotes);
+  let fontSize = 150;
+  let divHeight = () => document.querySelector("h1").parentElement.getBoundingClientRect().height;
+  let divWidth = () => document.querySelector("h1").parentElement.getBoundingClientRect().width;
+  document.querySelector("h1").innerText = newQuote.quote;
+  document.querySelector("h5").innerText = "-" + newQuote.author;
+  document.querySelector("h1").style.fontSize = "";
+
+  console.log(divHeight());
+  console.log("vh= ", vh());
+
+  if (divHeight() > vh() || divWidth() > vw()) {
+    while ((divHeight() > vh() || divWidth() > vw()) && fontSize > 0) {
+      document.querySelector("h1").style.fontSize = `${fontSize}%`;
+      fontSize -= 10;
+    }
+  }
+}
+
+window.onload = getNewQuote;
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
