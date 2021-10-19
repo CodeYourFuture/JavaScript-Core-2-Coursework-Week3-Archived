@@ -67,6 +67,7 @@ const imgs = [
   "https://images.freeimages.com/images/large-previews/4a1/on-the-road-5-1384802.jpg",
 ];
 
+/*Grab each interval event ID */
 let intervalId; 
 let intervalId2;
 
@@ -83,16 +84,6 @@ function forward(event) {
   para.textContent = currIndex; // set paragraph index value
 }
 
-/* AUTO-FORWARD FUNCTION */
-function autoForward() {
-  intervalId = setInterval(forward, 1000); //calls forward function every 3 seconds
-}
-
-function stop() {
-  clearInterval(intervalId);
-  clearInterval(intervalId2);
-}
-
 /* BACK FUNCTION */ 
 function back() {
   let currIndex = imgs.indexOf(img.src); //find arr index of current img (random assign)
@@ -106,9 +97,20 @@ function back() {
   para.textContent = currIndex; // set paragraph index value
 }
 
+/* AUTO-FORWARD FUNCTION */
+function autoForward() {
+  /*GRAB ID*/ intervalId = setInterval(forward, 1000); //calls forward function every 3 seconds
+}
+
 /* AUTO-BACK FUNCTION*/
 function autoBack() {
-  intervalId2 = setInterval(back, 1000); //call back function every 4sec
+  /*GRAB ID */intervalId2 = setInterval(back, 1000); //call back function every 4sec
+}
+
+/* STOP-FUNCTION */
+function stop() {
+  clearInterval(intervalId);
+  clearInterval(intervalId2);
 }
 
 /* FORWARD EVENT*/
