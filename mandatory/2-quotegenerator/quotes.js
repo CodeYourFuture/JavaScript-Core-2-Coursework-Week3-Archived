@@ -1,5 +1,13 @@
-// DO NOT EDIT BELOW HERE
 
+function newQuote() {
+let randomNumber =Math.floor(Math.random()* (quotes.length));
+let quoteObject = quotes[randomNumber];
+document.getElementById('quoteDisplay').innerHTML=`
+<p>${quoteObject.quote} (${quoteObject.author})</p>
+`
+}
+
+// DO NOT EDIT BELOW HERE
 // A function which will return one item, at
 // random, from the given array.
 //
