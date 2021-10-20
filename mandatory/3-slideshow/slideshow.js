@@ -36,6 +36,7 @@ function previousImg(){
     initializeImg(imageURLs);
 }
 let autoEnabled = false;
+
 function toggleAuto(){
     if(autoEnabled === true){
         autoEnabled = false;
@@ -45,11 +46,20 @@ function toggleAuto(){
     }
 }
 function autoCycle(){
-    setInterval(function() {
-        if(autoEnabled === true){
+    if(autoTimeInput.value !== null){
+        setInterval(function () {
+          if (autoEnabled === true) {
             nextImg();
-        }
-    }, 2000);
+          }
+        }, 2000);
+    }else{
+        let autoTimeInput = document.getElementById("autoInput");
+        setInterval(function () {
+          if (autoEnabled === true) {       //unsure if this is working properly seems a little dodgy
+            nextImg();
+          }
+        }, autoTimeInput.value * 1000);
+    }
 }
 nextButton.addEventListener("click", nextImg);
 previousButton.addEventListener("click", previousImg);
