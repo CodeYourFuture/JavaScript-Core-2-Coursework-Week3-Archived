@@ -1,1 +1,19 @@
 /** Write your CSS in here **/
+body{
+    background-color:silver;
+}
+#imageContainer{
+    margin-top: 4vw;
+    height: 60%;
+}
+img{
+    display: block;
+    width: 50vw;
+    height: 40vw;
+    border: burlywood;
+    border-radius: 2em;
+    margin: 0 auto;
+}
+#buttonsContainer{
+    text-align: center;
+}
