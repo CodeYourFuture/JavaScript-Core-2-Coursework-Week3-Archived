@@ -1,1 +1,17 @@
 /** Write your CSS in here **/
+.newImg{
+ width : 500px;
+ height: 500px;
+ display: block ;
+ margin-bottom: 2%;
+}
+.newDiv{
+ display:flex;
+ flex-direction: column-reverse;
+ align-items: center;
+ 
+}
+h5{
+ text-align: center;
+ 
+}
