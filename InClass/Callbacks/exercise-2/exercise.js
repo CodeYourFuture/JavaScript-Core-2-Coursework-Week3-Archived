@@ -60,9 +60,79 @@ const movies = [
     haveWatched: false,
   },
 ];
-
+// Task one
 // create showMovies function
 
-// create a new movie object for your favorite movie
+function showMovies(){
+  let newDiv = document.querySelector("#all-movies");
+  movies.forEach(movie => {
+    const para = document.createElement("p");
 
-// create addMovies function
+    para.innerText = `Name of the Movie: ${movie.title} Name of the director${movie.director}`
+    newDiv.appendChild(para);
+  });
+  let numberOfMovies = document.getElementById("movies-number");
+  numberOfMovies.innerText = movies.length
+
+}
+showMovies()
+//----------------------------------------------
+//Task 2
+
+// Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
+//setTimeout(showMovies,1000)
+
+// Create a new function called "addMovie"
+// - it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide
+// - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
+// Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
+// How many movies can you see on your page?
+
+
+const myMovies = [
+  {
+    title: "Rat Race",
+    director: "Jerry Zucker",
+    type: "comedy",
+    haveWatched: true,
+  },
+  {
+    title: "The Bucket List",
+    director: "Rob Reiner",
+    type: "comedy-drama",
+    haveWatched: false,
+  },
+  {
+    title: "Beaches",
+    director: "Garry Marshall",
+    type: "comedy-drama",
+    haveWatched: true,
+  },
+  {
+    title: "Riding in Cars with Boys",
+    director: "Penny Marshall",
+    type: "biographical film ",
+    haveWatched: false,
+  },
+];
+
+
+
+function addMovies() {
+  function display(movie) {
+    let newDiv = document.querySelector("#all-movies");
+    const para = document.createElement("p");
+    para.innerText = `Name of the Movie: ${movie.title} Name of the director${movie.director}`;
+    newDiv.appendChild(para);
+    let numberOfMovies = document.getElementById("movies-number");
+    numberOfMovies.innerText = movies.length + myMovies.length;
+
+     
+  }
+  myMovies.forEach((movie, index) => {
+    setTimeout(display, index * 5000, movie);
+    
+     
+  });
+}
+addMovies();
