@@ -1,17 +1,19 @@
-/** Write your CSS in here **/
+
 body{
     box-sizing: border-box;
 }
 img{
 width: 100%;
-padding: 2rem 0;
+padding: 1rem 0;
     
 }
 h1{
     text-align: center;
+    
 }
 p{
     font-size: 2rem;
+    text-align: center;
 }
 .btn{
     display: flex;
@@ -28,10 +30,17 @@ button {
 }
 
 @media (min-width: 1000px) {
-    .jumbotron{
+    .container{
         display: flex;
         flex-direction: column;
+        background-color: rgb(211, 228, 236);
        
+    }
+    h1{
+        width: 50%;
+    }
+    p{
+        width: 50%;
     }
     img{
     width: 50%;
