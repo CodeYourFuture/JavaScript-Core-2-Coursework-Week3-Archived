@@ -10,6 +10,9 @@ padding: 2rem 0;
 h1{
     text-align: center;
 }
+p{
+    font-size: 2rem;
+}
 .btn{
     display: flex;
     justify-content: space-around;

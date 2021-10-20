@@ -39,7 +39,7 @@ function backSlide(){
     playSlide(photoNum -= 1);
 }
 
-let interval;
+let interval; //variable name for setInterval
 let stopBtn = document.getElementById("stop");
 stopBtn.addEventListener("click", cancelAuto);
 
@@ -49,13 +49,17 @@ function cancelAuto(){
 //function for auto forward
 function autoForward(){
     let photos = document.getElementsByClassName("slide");
-    let count = photoNum;
+    let count = photoNum; //this allows the autoplay continue from the current slide
     
    interval = setInterval(function (){     
-   
-    if (count < 0){count= photos.length -1};
-     if (count > photos.length - 1){count = 0};
-        photos[count-1].style.display ="none";  
+   let prevCount; //this var helps previous slide vanish
+     if (count > photos.length - 1){ //after the last slide, the 1st slide appears
+        count = 0; 
+        prevCount = photos.length - 1;
+    } else {
+        prevCount = count - 1;
+    }
+        photos[prevCount].style.display ="none";  
                  
         photos[count].style.display = "block";
         count++;
@@ -66,17 +70,14 @@ function autoForward(){
 //function for auto forward
 function autoBack(){
     let photos = document.getElementsByClassName("slide");
-    let count = photoNum;
-   interval = setInterval(function (){     
-    let prevCount;
-    if (count < 0){
+    let count = photoNum; 
+   
+    interval = setInterval(function (){     
+    let prevCount; 
+    if (count < 0){ //after 1st slide, it goes to the last slide
         count = photos.length - 1; 
-        prevCount = 0;
+        prevCount = 0; 
     } else {prevCount = count + 1};
-    if (count > photos.length -1){
-        count = 0; 
-        prevCount = photos.length -1;
-    };
         photos[prevCount].style.display ="none";  
         photos[count].style.display = "block";
         count--;
