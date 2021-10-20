@@ -506,8 +506,10 @@ displayQuote();
 let btn = document.querySelector("button");
 btn.addEventListener("click", changeQuote);
 
+//generating random index
 let count = Math.floor(Math.random()*quotes.length);
 function changeQuote(){
+  //getting each quote for each click
    if (count < quotes.length - 1){
      quoteEl.innerText = `"${quotes[count].quote}"`;
      authorEl.innerText = `-${quotes[count].author}`;

@@ -1,1 +1,49 @@
 /** Write your CSS in here **/
+body{
+    box-sizing: border-box;
+}
+img{
+width: 100%;
+padding: 2rem 0;
+    
+}
+h1{
+    text-align: center;
+}
+#btn{
+    display: flex;
+    justify-content: space-around;
+}
+button {
+    background-color: rgb(233, 213, 103);
+    width: 8rem;
+    height: 3rem;
+
+}
+.slide{
+    display: block;
+}
+
+@media (min-width: 1000px) {
+    .jumbotron{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    img{
+    width: 50%;
+    max-height: 500px;
+    padding: 1rem;
+    }
+     #btn {
+           width: 80%;
+           display: flex; 
+           flex-direction: row;
+           justify-content: space-around;
+           width: 50%;
+        }
+        button{
+            height: 4rem;
+            width: 6rem;
+        }
+}
