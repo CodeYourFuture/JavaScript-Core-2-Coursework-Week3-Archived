@@ -23,7 +23,7 @@ body{
     color: grey;
     margin-top: 1em;
 }
-#newQuoteButton{
+button{
     padding: 1em;
     margin-left: 80%;
     border: none;

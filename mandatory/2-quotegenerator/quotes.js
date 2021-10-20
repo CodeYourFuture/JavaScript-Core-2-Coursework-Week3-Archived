@@ -509,7 +509,7 @@ function autoCycle() {
     if (autoEnabled === true) {
       quoteGenerator(quotes);
     }
-  }, 1000);
+  }, 5000);
 }
 
 const buttonEl = document.getElementById("newQuoteButton");
