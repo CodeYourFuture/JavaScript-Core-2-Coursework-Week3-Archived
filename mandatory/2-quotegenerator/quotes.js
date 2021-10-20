@@ -495,9 +495,27 @@ function quoteGenerator() {
   quoteBoxDiv.appendChild(newQuoteAuthorPEl)
 }
 quoteGenerator();
+let autoEnabled = false;
+function toggleAuto() {
+  if (autoEnabled === true) {
+    autoEnabled = false;
+  } else {
+    autoEnabled = true;
+    autoCycle();
+  }
+}
+function autoCycle() {
+  setInterval(function () {
+    if (autoEnabled === true) {
+      quoteGenerator(quotes);
+    }
+  }, 1000);
+}
 
 const buttonEl = document.getElementById("newQuoteButton");
 buttonEl.addEventListener("click", quoteGenerator);
+const autoButtonEl = document.getElementById("autoButton");
+autoButtonEl.addEventListener("click", toggleAuto)
 
 
 // DO NOT EDIT BELOW HERE
