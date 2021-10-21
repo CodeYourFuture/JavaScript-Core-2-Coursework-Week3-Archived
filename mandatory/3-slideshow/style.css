@@ -1,1 +1,24 @@
 /** Write your CSS in here **/
+
+body {
+  background-color: rgb(65, 62, 62);
+}
+h2 {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+#buttons button {
+  background-color: black;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+}
+#images {
+  display: flex;
+  justify-content: center;
+}
