@@ -1,1 +1,54 @@
 /** Write your CSS in here **/
+body {
+  /* background-color: ; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-container {
+  border: 1px solid cornsilk;
+  max-width: 50%;
+  max-height: 50%;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-height: 80%;
+  max-width: 80%;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem 2rem#888888;
+}
+
+#button-container {
+  margin-top: 4rem;
+  width: 60%;
+  max-width: 60%;
+  display: flex; 
+  justify-content: space-between;
+}
+
+button {
+  height: 3rem;
+  width: 7rem; 
+  background-color:  #C8102E;
+  color: snow;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  text-shadow: 3px 2px 1px gray;
+  box-shadow: .2rem .2rem 1rem #888888;
+}
+
+p {
+  
+  top:62rem;
+  text-align: center;
+}

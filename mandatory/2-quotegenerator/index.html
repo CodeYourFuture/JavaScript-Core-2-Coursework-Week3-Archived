@@ -10,8 +10,21 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Write your HTML in here -->
+    <div id="quote-box">
+      <p id="quote-text">This is a quote!</p>
+      <p id="quoter">Says I</p>
+      <div class="button-container">
+        <button id="change-button">New Quote</button>
+      </div>
+    </div>
+    <div class="toggle-container">
+    <h6>Autoquote</h6>
+    <label for="switch" class="toggle">
+      <input type="checkbox" name="autoplay" id="switch" class="checkbox" />
+        <div class="toggle-content"></div>
+    </label>
+    <h6>Off On</h6>
+    </div>
     <script src="quotes.js"></script>
   </body>
 </html>
