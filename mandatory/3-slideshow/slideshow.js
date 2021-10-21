@@ -61,7 +61,7 @@ function stopAuto() {
 let forwardBtn = document.getElementById("forward");
 let backwardBtn = document.getElementById("back");
 let autoForwardBtn = document.getElementById("auto-forward");
-let autoBackwardBtn = document.getElementById("auto-backward");
+let autoBackwardBtn = document.getElementById("auto-back");
 let stopBtn = document.getElementById("stop");
 
 //eventlisteners
