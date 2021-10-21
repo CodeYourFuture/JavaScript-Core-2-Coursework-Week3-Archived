@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Slideshow</title>
+    <title>A Wonderful Slideshow</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +12,20 @@
   </head>
   <body>
     <!-- Write your HTML in here -->
+    <div id="image-container">
+      <img
+        id="image"
+        src="https://images.unsplash.com/photo-1463852247062-1bbca38f7805?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+        alt="A gallery of animals"
+      />
+    </div>
+    <div id="button-container">
+      <button id="auto-back">Auto 👈</button>
+      <button id="back">Previous</button>
+      <button id="stop">Stop</button>
+      <button id="forward">Next</button>
+      <button id="auto-forward">Auto 👉</button>
+    </div>
     <script src="slideshow.js"></script>
   </body>
 </html>
