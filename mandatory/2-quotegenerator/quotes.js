@@ -1,14 +1,24 @@
+// Selecting the body element
 let body = document.querySelector("body");
+
+//creating a new div so I can put the quote generator in
 let quoteGeneratorDiv = document.createElement("div");
+
+//this will be the header of my quote generator
 let header = document.createElement("h2");
 
+// The generator div will be part of the body, so we need to append it as a child, same for header in relation to the generator div
 body.appendChild(quoteGeneratorDiv);
 quoteGeneratorDiv.appendChild(header);
+
+//Styling how the body should display the elements, kept it noWrap (by default) and made sure its contents are centered
 body.style.display = "flex";
 body.style.justifyContent = "center";
 
+//Styling the quote generator
 quoteGeneratorDiv.style.width = "50%";
 quoteGeneratorDiv.style.display = "flex";
+//set flex to wrap in order to be able to control the design of its contents, also centered here, more presentable
 quoteGeneratorDiv.style.flexFlow = "row wrap";
 quoteGeneratorDiv.style.justifyContent = "center";
 quoteGeneratorDiv.style.backgroundColor = "rgba(100, 10, 100, 0.4)";
@@ -16,6 +26,7 @@ quoteGeneratorDiv.style.margin = "100px 0 0 0";
 quoteGeneratorDiv.style.height = "700px";
 quoteGeneratorDiv.style.borderRadius = "50%";
 
+//header styling and adding textContent to display on load
 header.textContent = "Quote Generator";
 header.style.backgroundColor = "rgba(100, 10, 100, 0.1)";
 header.style.color = "white";
@@ -30,6 +41,7 @@ header.style.textAlign = "center";
 header.className = "header";
 console.log(header.className);
 
+//creating a p element, that the quote will go in, appending it as a child for the header cerated earlier, containing the title of the quote generator
 let quote = document.createElement("p");
 header.appendChild(quote);
 header.style.flexFlow = "row wrap";
@@ -38,9 +50,11 @@ quote.style.fontSize = "40px";
 
 quote.style.width = "80%";
 
+//Creating a button for user interaction, appending it to the header as well
 let button = document.createElement("button");
 header.appendChild(button);
 
+//CSS styling for the button
 button.style.width = "100px";
 button.style.height = "50px";
 button.textContent = "Quote!";
@@ -52,6 +66,7 @@ button.style.borderRadius = "50%";
 
 button.addEventListener("click", setup);
 
+//onload function that will pick a random number using the Math library combined with the length of the quotes array we want to display from
 function setup() {
   randomPick = quotes[Math.floor(Math.random() * quotes.length)];
 
