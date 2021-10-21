@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+body {
+  background-color: grey;
+}
+
+#newQuote {
+  color: white;
+  font-size: 20px;
+  margin: 6px auto;
+}
+
+#container {
+  background-color: indigo;
+  text-align: center;
+  height: 325px;
+  width: 850px;
+  margin: 150px auto;
+}
+#button {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  /*height: 35px;
+
+  margin: 5px auto;
+  /*border-radius: 5px;*/
+}
