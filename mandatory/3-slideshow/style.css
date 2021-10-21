@@ -1,1 +1,6 @@
 /** Write your CSS in here **/
+#image {
+  height: 600px;
+  width: auto;
+  margin-bottom: 1em;
+}
