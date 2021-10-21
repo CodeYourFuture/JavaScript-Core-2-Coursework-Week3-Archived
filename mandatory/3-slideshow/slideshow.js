@@ -1,5 +1,5 @@
 // Write your code here
-
+let userDefinedPace = 2;
 //selecting the body element of the html doc
 let body = document.querySelector("body");
 
@@ -16,8 +16,9 @@ imageSlideshowDiv.appendChild(header);
 
 // Design Frenzy!
 //Styling the body of the document:
-//flex left to default nowrap option, centered elements
+//flex
 body.style.display = "flex";
+body.style.flexFlow = "row wrap";
 body.style.justifyContent = "center";
 
 //Styling the actual div where the slideshow will appear, all used and trusty CSS styling :D
@@ -101,12 +102,23 @@ buttonsDiv.appendChild(autoForwardButton);
 autoForwardButton.textContent = "Auto forward";
 autoForwardButton.style.fontSize = "15px";
 
-// with forEach, elements are easier to reach (I will copyright that)
-//basically I am applying CSS on the class .button that I have created and linked to my created buttons, using forEach()
+let userPaceDiv = document.createElement("div");
+let userPace = document.createElement("input");
+userPace.type = "number";
+let setPaceBtn = document.createElement("button");
+setPaceBtn.type = "button";
+setPaceBtn.classList.add("button");
+setPaceBtn.textContent = "Set Pace";
+
+body.appendChild(userPaceDiv);
+userPaceDiv.appendChild(userPace);
+userPaceDiv.appendChild(setPaceBtn);
 
 //selecting all the queries with class button, saving in buttonClasses variable
 let buttonClasses = document.querySelectorAll(".button");
 
+// with forEach, elements are easier to reach (I will copyright that)
+//basically I am applying CSS on the class .button that I have created and linked to my created buttons, using forEach()
 //for each button in buttonClasses, I defined styling agents to be applied on it
 buttonClasses.forEach((button) => {
   button.style.width = "100px";
@@ -117,6 +129,10 @@ buttonClasses.forEach((button) => {
   button.style.borderRadius = "50%";
   button.style.margin = "0 0 0 10px";
 });
+
+//Styling:
+
+//////////////////////FUNCTIONS////////////////
 
 //super cute images of dogs from unsplash to inhabit the slideshow
 let imgSources = [
@@ -181,7 +197,7 @@ function autoForward() {
     //this will not stop it as the showSlides() carries on, until the user chooses stop button
     currSource.src = imgSources[slideIndex];
     //setting the timeout for the image to change every 2 seconds
-    timeOut = setTimeout(showSlides, 2000);
+    timeOut = setTimeout(showSlides, userDefinedPace * 1000);
   }
 }
 
@@ -196,13 +212,21 @@ function autoBack() {
       slideIndex = imgSources.length - 1;
     }
     currSource.src = imgSources[slideIndex];
-    timeOut = setTimeout(showSlides, 2000);
+    timeOut = setTimeout(showSlides, userDefinedPace * 1000);
   }
 }
 
 //stop will clear timeout, which will inturn stop the iteration (forward/backward iteration)
 function stop() {
   clearTimeout(timeOut);
+}
+
+function setSlideshowPace() {
+  console.log(userPace.value);
+  if (userPace.value > 0) {
+    userDefinedPace = Number(userPace.value);
+    console.log(userDefinedPace);
+  }
 }
 
 // event listeners and linking them to the appropriate functions
@@ -212,6 +236,7 @@ autoForwardButton.addEventListener("click", autoForward);
 autoBackButton.addEventListener("click", autoBack);
 backButton.addEventListener("click", back);
 stopButton.addEventListener("click", stop);
+setPaceBtn.addEventListener("click", setSlideshowPace);
 
 //this is for the onload
 window.onload = setup;

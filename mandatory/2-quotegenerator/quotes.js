@@ -66,6 +66,36 @@ button.style.borderRadius = "50%";
 
 button.addEventListener("click", setup);
 
+// adding extra features, toggle switch:
+
+let interval;
+
+function autoQuotes() {
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true) {
+    interval = setInterval(setup, 2000);
+    text.style.display = "block";
+    text.style.position = "relative";
+    text.style.margin = "40px 0 0 0";
+    text.style.width = "70px";
+    text.style.height = "70px";
+    text.style.backgroundColor = "#2196f3";
+    text.style.borderRadius = "50%";
+    text.style.padding = "10px 0 0 30%";
+    text.style.color = "white";
+    text.style.fontWeight = "bolder";
+  } else {
+    text.style.display = "none";
+    clearInterval(interval);
+  }
+}
+
+// document.querySelector(".slider").addEventListener("click", autoQuotes);
+
 //onload function that will pick a random number using the Math library combined with the length of the quotes array we want to display from
 function setup() {
   randomPick = quotes[Math.floor(Math.random() * quotes.length)];
