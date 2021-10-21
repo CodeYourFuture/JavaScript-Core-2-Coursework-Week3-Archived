@@ -1,3 +1,17 @@
+let quoteEl = document.getElementById("quote");
+let authorEl = document.getElementById("author");
+let buttonEl = document.getElementById("button");
+
+function generateQuote() {
+  let newQuote = pickFromArray(quotes);
+  quote.innerHTML = `"${newQuote.quote}`;
+  author.innerHTML = `words by ${newQuote.author}`;
+}
+
+buttonEl.addEventListener("click", generateQuote);
+
+window.onload = generateQuote;
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

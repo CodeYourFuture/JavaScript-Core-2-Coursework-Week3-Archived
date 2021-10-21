@@ -7,19 +7,19 @@ function setAlarm() {
 
   function timer() {
     timeLeft--;
-    if (timeLeft > 10) {
+    if (timeLeft >= 10) {
       timeRemainingEl.innerHTML = `Time Remaining: 00:${timeLeft}`;
     } else if (timeLeft < 10) {
       timeRemainingEl.innerHTML = `Time Remaining: 00:0${timeLeft}`;
     }
   }
-  setInterval(() => {
+  let setIntervalVar = setInterval(() => {
     if (timeLeft > 0) {
       timer();
     } else if (timerSet === true && timeLeft === 0) {
       playAlarm();
+      clearInterval(setIntervalVar);
       timerSet = false;
-      userInput.value = "";
     }
   }, 1000);
 }
