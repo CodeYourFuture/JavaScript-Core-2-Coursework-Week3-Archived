@@ -6,6 +6,12 @@ function setAlarm() {
   function twoDigs(num) {
     return (num < 10 ? "0" : "") + num;
   }
+  let colours = ["red", "orange", "green", "blue", "purple"];
+  function colourChanger() {
+    let colour = colours[Math.floor(Math.random() * 5)];
+    document.body.style.background = colour;
+  }
+
   // this function sets and decreases the 'time remaining' value
   function countDown() {
     let remaining = document.getElementById("timeRemaining");
@@ -17,14 +23,25 @@ function setAlarm() {
       )}`;
     }
     if (timeValue === 0) {
-      document.body.style.background="red";
+      setInterval(colourChanger, 1000)
       playAlarm();
-
     }
     timeValue -= 1;
   }
-
-  setInterval(countDown, 1000);
+  let intervalId;
+  function stopStart() {
+    if (!intervalId) {
+      intervalId = setInterval(countDown, 1000);
+      document.getElementById("pause").addEventListener("click", () => {
+        clearInterval(intervalId);
+        intervalId = null;
+      });
+      document.getElementById("continue").addEventListener("click", () => {
+        intervalId = setInterval(countDown, 1000);
+      });
+    }
+  }
+  stopStart();
 }
 
 // DO NOT EDIT BELOW HERE
