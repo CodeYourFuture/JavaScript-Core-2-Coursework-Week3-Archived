@@ -3,7 +3,9 @@
   let mySlides = document.querySelectorAll(".mySlides");
   let btnForward = document.querySelector("#forward");
   let btnBackward = document.querySelector("#backward");
-  
+  let btnAutoForward = document.querySelector("#autoForward");
+  let btnAutoBackward = document.querySelector("#autoBackward");
+  let btnStop = document.querySelector("#stop");
   slideIndex = 0;
 
   function reset() {    
@@ -22,33 +24,60 @@ function initialSlide(){
 
  function forward() {
    reset();
-   mySlides[slideIndex + 1].style.display = "block";
+    if (slideIndex === mySlides.length - 1) {
+      slideIndex = -1;
+    }
    slideIndex++;
+   mySlides[slideIndex].style.display = "block";
+   
  }
 
  //show backward
 
  function backward() {
     reset();
-    mySlides[slideIndex - 1].style.display = "block";
-    slideIndex --;
+    if (slideIndex === 0) {
+      slideIndex = mySlides.length;
+    }
+    slideIndex--;
+    mySlides[slideIndex].style.display = "block";
+    
  }
  // forward click
  
  btnForward.addEventListener("click", function () {
-   if (slideIndex === mySlides.length -1) {
-     slideIndex = -1;
-   }
+  
    forward();
  });
 
  // backward click
  
 btnBackward.addEventListener("click", function() {
-    if(slideIndex === 0) {
-      slideIndex = mySlides.length;
-    }
+    
     backward();
  })
 
- initialSlide();
+
+initialSlide();
+ //auto forward click
+
+ let intervalID;
+ let intervalID2;
+
+btnAutoForward.addEventListener("click", function() {  
+  intervalID = setInterval(forward, 1000);
+})
+
+//auto backward click
+
+btnAutoBackward.addEventListener("click", function() { 
+ intervalID2 = setInterval(backward, 1000); 
+})
+
+
+// button stop
+
+btnStop.addEventListener("click", function() {
+  clearInterval(intervalID);
+  clearInterval(intervalID2);
+})

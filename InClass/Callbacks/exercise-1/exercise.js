@@ -43,7 +43,7 @@ function changeColor(){
 
 setInterval(changeColor, 5000);
 
-let colors = ["pink", "blue", "red", "green", "purple", "orange"];
+
 
 
 

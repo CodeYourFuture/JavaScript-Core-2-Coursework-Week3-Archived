@@ -22,6 +22,8 @@ Task 3
 Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks
 
+
+
 Task 4 - **Extra**
 Create a form anywhere on your page. The form should have
 - 4 input text fields, one for each property of your movie object
@@ -67,11 +69,11 @@ function showMovies(){
 
   let content = document.getElementById("all-movies");
   let span = document.getElementById("movies-number");
-  
+  content.innerHTML = "";
   movies.forEach(movie => {
     
     let p = document.createElement("p"); 
-    p.textContent = `Title: ${movie.title}, Director: ${movie.director}`;   
+    p.innerText = `Title: ${movie.title}, Director: ${movie.director}`;   
     content.appendChild(p);    
     
   })
@@ -85,7 +87,7 @@ setTimeout(showMovies, 1000);
 // create a new movie object for your favorite movie
 
 
-let myMovies = {
+let myMovie = {
   title: "Taken",
   director: "Pierre Morel",
   type: "Action",
@@ -97,7 +99,88 @@ let myMovies = {
 //create addMovie function
 
 function addMovie(movie) {
-  return movie.push(myMovies);  
+  movies.push(movie);  
+  showMovies();
 }
 
-setTimeout(addMovie, 2000);
+
+
+setTimeout(addMovie, 2000, myMovie);
+
+
+//Task3 call addMovie to show myMovies on the screen
+
+
+//Task4
+
+//Create a form
+
+let form = document.createElement("form");
+form.setAttribute('id', 'myForm');
+document.body.appendChild(form);
+
+
+let inputTitle = document.createElement("input");
+inputTitle.setAttribute("type", "text");
+inputTitle.setAttribute("placeholder", "Title");
+
+
+let inputDirector = document.createElement("input");
+inputDirector.setAttribute("type", "text");
+inputDirector.setAttribute("placeholder", "Director");
+
+
+let inputType = document.createElement("input");
+inputType.setAttribute("type", "text");
+inputType.setAttribute("placeholder", "Type");
+
+
+let inputWatched = document.createElement("input");
+inputWatched.setAttribute("type", "checkbox");
+inputWatched.style.margin = "10px";
+const label = document.createElement("label");
+label.innerText = "Watched ?";
+label.style.marginLeft = "6px";
+
+
+form.appendChild(inputTitle);
+form.appendChild(inputDirector);
+form.appendChild(inputType);
+form.appendChild(label);
+form.appendChild(inputWatched);
+
+
+//create a save button
+
+let btnSave = document.createElement("input");
+btnSave.setAttribute("type", "submit");
+btnSave.setAttribute("value", "Save");
+btnSave.style.padding = "6px";
+
+form.appendChild(btnSave);
+
+// add event
+
+
+btnSave.addEventListener("click", (event) => {
+  event.preventDefault();
+ 
+  if (
+    inputTitle.value.length !== 0 &&
+    inputDirector.value.length !== 0 &&
+    inputType.value.length !== 0 
+  ) {
+    const newMovie = {
+      title: inputTitle.value,
+      director: inputDirector.value,
+      type: inputType.value,
+      haveWatched: inputWatched.checked
+    };
+    addMovie(newMovie);
+  }
+
+inputTitle.value = "";
+ inputDirector.value = "";
+ inputType.value = "";
+ inputWatched.checked = "";
+});

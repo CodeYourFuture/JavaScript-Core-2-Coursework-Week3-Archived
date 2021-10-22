@@ -35,20 +35,30 @@ Slideshow container */
 }
 
 #forward {
-  position: absolute;
-    top: 80%;
-    left: 53%;
+   left: 64%;
+}
+
+#autoForward {
+   left: 55%;
+}
+
+#stop {
+   left: 50%; 
+}
+
+#backward {
+    left: 45%;
 }
 
 
-#backward {
-  position: absolute;
-    top: 80%;
-    left: 47%;
+#autoBackward {
+    left: 37.5%;
 }
 
 
 .btnStyle {
+  position: absolute;
+  top: 77%;
   border-radius: 4px;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
