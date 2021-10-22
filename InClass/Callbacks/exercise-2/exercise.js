@@ -41,25 +41,33 @@ Task 2
 - Amend your function above to only show movies after 1 second. 
 - Remember to use setTimeout to achieve that DONE */
 
-function displayMovies() {
-  const movieArea = document.querySelector("#all-movies"); //div
-  const moviesNum = document.querySelector("#movies-number"); //div
-  moviesNum.textContent = movies.length; //how many movies 
+//global elements 
+const movieArea = document.querySelector("#all-movies"); //div
+const moviesNum = document.querySelector("#movies-number"); //div
 
+//function creating html elements & content 
+function displayMov (movie) {
+  let paraEls = document.createElement("p");
+  movieArea.appendChild(paraEls);
+  paraEls.innerText = `${movie.title} - ${movie.director}.`;
+}
+
+//function to display the movies with set time & updates movie counter 
+function displayMovies() {
+  moviesNum.textContent = movies.length; //update movie count
+  movieArea.innerText = ""; //clear any previous values;
   movies.forEach((movie, index) => {
     setTimeout(() => {
-      let paraEls = document.createElement("p");
-      movieArea.appendChild(paraEls);
-      paraEls.innerText = `${movie.title} - ${movie.director}.`;
-    }, index * 1000);
+      displayMov(movie);
+    }, index * 1000); //display each movie after 1 second delay 
   });
 }
 
-//displayMovies();
+//call original movies 
+displayMovies();
 
-/* 
 
-  Task 3
+/* Task 3
 
 - create a new movie object for your favorite movie 
 - create a new function called "addMovie"
@@ -76,6 +84,7 @@ function displayMovies() {
 - Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks  */
 
+//THIS CAN BE REMOVED IF I DONT WANT TO ADD THIS MOVIE OBJECT 
 const myFavMovie = {
   title: "The Lord of the Rings",
   director: "Peter Jackson",
@@ -83,19 +92,20 @@ const myFavMovie = {
   haveWatched: true,
 };
 
+//function to push new movies into old array & update movie count
 function addMovie(movie) {
-  displayMovies();
-  setTimeout(() => {
-    //movies.push(myFavMovie);
-    const movieArea = document.querySelector("#all-movies"); //div
-    let paraEls = document.createElement("p");
-      movieArea.appendChild(paraEls);
-      paraEls.innerText = `${movie.title} - ${movie.director}.`;
-  }, 5000); //Callback not working correctly, how to get the extra 2 
-  // sec delay for the last item pushed to the array? 
+  movies.push(movie); //push new mov into array
+  setTimeout(() => { 
+    displayMov(movie);
+  }, 2000); //add new favorite movie after 2secs
+  moviesNum.innerText = movies.length;//update movie count 
 }
 
-addMovie(myFavMovie);
+// timer function to edit time of last movie added. THIS CAN BE REMOVED IF I DONT WANT TO ADD MOVIE 
+setTimeout(() => {
+  addMovie(myFavMovie);
+}, 1000 * movies.length); // adds new submitted movies after 1 sec
+
 
 /*
 
@@ -104,7 +114,50 @@ Task 4 - **Extra**
 Create a form anywhere on your page. The form should have
 - 4 input text fields, one for each property of your movie object
 - a "save" button.
+
 When the button is clicked
+
 - The field values should be used to create a new movie object literal
 - The new movie is then added to the list of movies and gets displayed on your page
 TIP: Use the functions you created on tasks 1-3 */
+
+const form = document.getElementsByTagName("form")[0];
+const inputTitle = document.createElement("input");
+inputTitle.setAttribute("placeholder", "Title");
+inputTitle.type = "text";
+form.appendChild(inputTitle);
+
+const inputDirector = document.createElement("input");
+inputDirector.setAttribute("placeholder", "Director");
+inputDirector.type = "text";
+form.appendChild(inputDirector);
+
+const inputType = document.createElement("input");
+inputType.setAttribute("placeholder", "Type");
+inputType.type = "text";
+form.appendChild(inputType);
+
+const inputWatched = document.createElement("input");
+const boxLabel = document.createElement("label");
+boxLabel.innerText = "Watched?";
+form.appendChild(boxLabel);
+inputWatched.type = "checkbox";
+form.appendChild(inputWatched);
+
+const btn = document.createElement("button");
+btn.innerText = "submit";
+form.appendChild(btn);
+
+btn.addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log(event);
+  const movie = {
+    title:inputTitle.value,
+    director: inputDirector.value,
+    type: inputType.value,
+    haveWatched: inputWatched.checked
+  }
+  addMovie(movie);
+})
+
+
