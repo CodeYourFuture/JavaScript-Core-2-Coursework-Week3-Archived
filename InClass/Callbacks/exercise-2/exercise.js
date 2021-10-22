@@ -9,7 +9,12 @@ Create a function called "showMovies" that
 - iterates through the "movies" array and
 - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
 - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
+*/
 
+
+
+
+/*
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
@@ -17,6 +22,11 @@ Create a new function called "addMovie"
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
+*/
+
+
+
+/*
 
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
@@ -60,6 +70,23 @@ const movies = [
     haveWatched: false,
   },
 ];
+
+
+
+function showMovies() {
+  movies.forEach((movie) => {
+    let para = document.createElement("p");
+    para.textContent = `${movie.title}, ${movie.director}`;
+    let allMovies = document.getElementById("all-movies");
+    allMovies.appendChild(para);
+    
+    
+  });
+  
+  let alert = document.querySelector(".alert");
+  alert.textContent = movies.length;  
+}
+setTimeout(showMovies, 2000); 
 
 // create showMovies function
 

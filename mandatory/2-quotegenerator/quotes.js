@@ -1,3 +1,109 @@
+// Selecting the body element
+let body = document.querySelector("body");
+
+//creating a new div so I can put the quote generator in
+let quoteGeneratorDiv = document.createElement("div");
+
+//this will be the header of my quote generator
+let header = document.createElement("h2");
+
+// The generator div will be part of the body, so we need to append it as a child, same for header in relation to the generator div
+body.appendChild(quoteGeneratorDiv);
+quoteGeneratorDiv.appendChild(header);
+
+//Styling how the body should display the elements, kept it noWrap (by default) and made sure its contents are centered
+body.style.display = "flex";
+body.style.justifyContent = "center";
+
+//Styling the quote generator
+quoteGeneratorDiv.style.width = "50%";
+quoteGeneratorDiv.style.display = "flex";
+//set flex to wrap in order to be able to control the design of its contents, also centered here, more presentable
+quoteGeneratorDiv.style.flexFlow = "row wrap";
+quoteGeneratorDiv.style.justifyContent = "center";
+quoteGeneratorDiv.style.backgroundColor = "rgba(100, 10, 100, 0.4)";
+quoteGeneratorDiv.style.margin = "100px 0 0 0";
+quoteGeneratorDiv.style.height = "700px";
+quoteGeneratorDiv.style.borderRadius = "50%";
+
+//header styling and adding textContent to display on load
+header.textContent = "Quote Generator";
+header.style.backgroundColor = "rgba(100, 10, 100, 0.1)";
+header.style.color = "white";
+header.style.fontWeight = "bolder";
+header.style.fontSize = "60px";
+header.style.margin = "30px 0 0 0";
+header.style.height = "auto";
+header.style.width = "75%";
+header.style.textAlign = "center";
+
+//creating a class for header so that I can apply style directly on my quotes:
+header.className = "header";
+console.log(header.className);
+
+//creating a p element, that the quote will go in, appending it as a child for the header cerated earlier, containing the title of the quote generator
+let quote = document.createElement("p");
+header.appendChild(quote);
+header.style.flexFlow = "row wrap";
+quote.style.margin = "20% 0 0 0";
+quote.style.fontSize = "40px";
+
+quote.style.width = "80%";
+
+//Creating a button for user interaction, appending it to the header as well
+let button = document.createElement("button");
+header.appendChild(button);
+
+//CSS styling for the button
+button.style.width = "100px";
+button.style.height = "50px";
+button.textContent = "Quote!";
+button.style.fontSize = "25px";
+button.style.color = "white";
+button.style.backgroundColor = "rgba(100, 10, 100, 0.1)";
+button.style.border = "none";
+button.style.borderRadius = "50%";
+
+button.addEventListener("click", setup);
+
+// adding extra features, toggle switch:
+
+let interval;
+
+function autoQuotes() {
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true) {
+    interval = setInterval(setup, 2000);
+    text.style.display = "block";
+    text.style.position = "relative";
+    text.style.margin = "40px 0 0 0";
+    text.style.width = "70px";
+    text.style.height = "70px";
+    text.style.backgroundColor = "#2196f3";
+    text.style.borderRadius = "50%";
+    text.style.padding = "10px 0 0 30%";
+    text.style.color = "white";
+    text.style.fontWeight = "bolder";
+  } else {
+    text.style.display = "none";
+    clearInterval(interval);
+  }
+}
+
+// document.querySelector(".slider").addEventListener("click", autoQuotes);
+
+//onload function that will pick a random number using the Math library combined with the length of the quotes array we want to display from
+function setup() {
+  randomPick = quotes[Math.floor(Math.random() * quotes.length)];
+
+  quote.innerHTML = `"${randomPick.quote} ${randomPick.author}`;
+}
+
+window.onload = setup;
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
