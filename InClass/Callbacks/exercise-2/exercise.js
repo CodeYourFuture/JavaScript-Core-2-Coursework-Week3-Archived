@@ -66,3 +66,18 @@ const movies = [
 // create a new movie object for your favorite movie
 
 // create addMovies function
+
+function display(movie) {
+  let list = document.getElementById("all-movies");
+  var entry = document.createElement('li');
+  entry.innerHTML = `<strong> ${movie.title} </strong> ${movie.director} <em>${movie.type}</em>`;
+  list.appendChild(entry);
+}
+
+function showMovies() {
+  movies.forEach((movie, index) => {
+    setTimeout(display, index * 2000, movie)
+  });
+}
+
+showMovies();
