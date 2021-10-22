@@ -25,7 +25,7 @@ beforeEach(async() => {
         },
         M
     });
-
+    NN
     return new Promise((res) => {
         page.window.document.addEventListener("load", res);
     });
