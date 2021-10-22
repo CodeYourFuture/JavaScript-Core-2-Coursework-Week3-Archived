@@ -1,3 +1,17 @@
+let quote = document.querySelector("#quote");
+let h1El = document.createElement("h1");
+h1El.innerText = "Quote Generator:";
+quote.appendChild(h1El);
+let buttonEl = document.createElement("button");
+buttonEl.innerText = "New Quote";
+quote.appendChild(buttonEl);
+buttonEl.addEventListener("click", () => {
+  let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
+  let pEl = document.createElement("p");
+  pEl.innerText = `${randomQuotes.quote} \n Author: ${randomQuotes.author}`;
+  quote.appendChild(pEl);
+});
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
