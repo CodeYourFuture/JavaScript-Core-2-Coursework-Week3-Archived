@@ -11,3 +11,14 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+
+setTimeout(() => {
+ document.body.style.backgroundColor = "red";
+}, 5000)
+
+
+//Task2:
+const colors = ["blue", "red", "pink", "green"]; 
+let i = 0;
+setInterval(() => {document.body.style.backgroundColor = colors[i];
+i = (i + 1) % colors.length;} , 2000); 
