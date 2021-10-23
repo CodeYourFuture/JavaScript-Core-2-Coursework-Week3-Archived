@@ -16,13 +16,17 @@
 // pickFromArray([1,2,3,4])     //maybe returns 2
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
+
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
 // A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
+// Feel free to edit them, and to add your own favorites.
+
+// That is a big list of quotes!!!
+
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -490,3 +494,43 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// Used transform & translate to center the quote div, unsure why
+// flex and align items center (vertically) didn't work when
+// applied to the body??
+
+const bodyEl = document.querySelector("body"); //grab body
+bodyEl.style.backgroundColor = "orange"; //body colour
+const quoteBox = document.createElement("div"); //create quote box
+bodyEl.appendChild(quoteBox); //append quote box
+quoteBox.classList.add("quoteBox"); //style quote box
+let quoteText = document.createElement("h3"); //h3 for main quote text
+quoteText.classList.add("quoteText");
+let author = document.createElement("p"); // para text for author
+author.classList.add("author");
+quoteBox.appendChild(quoteText); //append quote text
+quoteBox.appendChild(author); //append para text
+
+// function randomQuote (quotes) { //retrieve random quote from arr
+//   return quotes[Math.floor(Math.random()*quotes.length)];
+// }
+
+// unsure why I couldn't extract the object properties using the
+// above code, they came back undefined.
+
+const button = document.createElement("button"); //create button
+quoteBox.appendChild(button); //append button
+button.textContent = "New Quote"; //btn text
+button.classList.add("btn", "border"); //btn style
+button.style.backgroundColor = "orange"; //couldn't change the background colour in the css file - reason unknown
+
+
+function quoteGenerator() {  //function to generate random quote
+  const randomQuote = pickFromArray(quotes); //get random quote
+  quoteText.innerText = `" ${randomQuote.quote}`; //add quote text from arr item
+  author.innerText = `- ${randomQuote.author}`; //add author text from arr item
+}
+
+button.addEventListener("click", quoteGenerator); // add event listener to button
+
+window.onload = quoteGenerator; //load when window opens
