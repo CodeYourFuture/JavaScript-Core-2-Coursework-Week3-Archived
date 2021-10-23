@@ -1,1 +1,75 @@
 /** Write your CSS in here **/
+/* * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+Slideshow container */
+/* .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+} */
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+#slider {
+  display: flex;
+  flex-flow: row;
+  width: 60%;
+  margin: auto;
+
+}
+
+.mySlides {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+
+#forward {
+   left: 64%;
+}
+
+#autoForward {
+   left: 55%;
+}
+
+#stop {
+   left: 50%; 
+}
+
+#backward {
+    left: 45%;
+}
+
+
+#autoBackward {
+    left: 37.5%;
+}
+
+
+.btnStyle {
+  position: absolute;
+  top: 77%;
+  border-radius: 4px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 5px;
+   
+}
+
+.numberText {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
