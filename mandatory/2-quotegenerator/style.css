@@ -1,1 +1,15 @@
 /** Write your CSS in here **/
+.container{
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ padding-top: 25%;
+
+}
+.button{
+ background-color : 	#bdda8e;
+ color: #15f127;
+ border: none;
+ border-radius: 15%;
+ margin-top: 15%;
+}
