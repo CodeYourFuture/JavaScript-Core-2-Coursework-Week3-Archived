@@ -1,3 +1,37 @@
+
+let divCont = document.createElement("div");
+let quote = document.createElement("h5");
+let author = document.createElement("h6");
+let generateBtn = document.createElement("button");
+document.body.appendChild(divCont);
+let checkBox = document.createElement("input");
+let label = document.createElement("label");
+
+
+divCont.appendChild(quote);
+divCont.appendChild(author);
+divCont.appendChild(generateBtn);
+
+divCont.className = "container";
+generateBtn.className = "button";
+
+author.style.marginLeft = "30%";
+author.style.marginTop = "3%";
+
+generateBtn.innerText = "Generate a Random Quote";
+generateBtn.addEventListener("click", generateRandomQuote);
+
+function generateRandomQuote() {
+  let pickedQuote = pickFromArray(quotes);
+  quote.innerText = pickedQuote.quote;
+  author.innerText = pickedQuote.author;
+}
+window.onload = generateRandomQuote;
+
+
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -20,6 +54,8 @@
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
