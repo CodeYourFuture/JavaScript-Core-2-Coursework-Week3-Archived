@@ -13,13 +13,13 @@ stopBtn.addEventListener("click", pauseAlarm);
 function setAlarm() {
   let timeLeft = (inputBox.value * 1000);
   //this displays initial time left ->
- headingEl.innerHTML = `Time Remaining: ${Math.floor(timeLeft/(1000*60))}:${(timeLeft/1000)%60}`;
+ headingEl.innerHTML = `Time Remaining: ${String(Math.floor(timeLeft/(1000*60))).padStart(2, 0)}:${String((timeLeft/1000)%60).padStart(2, 0)}`;
   
  //this is timer countdown ->
   let x = setInterval(()=>{
     inputBox.value = "";
     timeLeft -= 1000;
-    headingEl.innerHTML = `Time Remaining: ${Math.floor(timeLeft/(1000*60))}:${(timeLeft/1000)%60}`;
+    headingEl.innerHTML = `Time Remaining: ${String(Math.floor(timeLeft/(1000*60))).padStart(2, 0)}:${String((timeLeft/1000)%60).padStart(2, 0)}`;
     
     //countdown stops when time is 0 and alarm goes off ->
     if (timeLeft <= 0){
