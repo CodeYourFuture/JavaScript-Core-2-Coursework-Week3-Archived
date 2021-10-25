@@ -59,10 +59,106 @@ const movies = [
     type: "horror",
     haveWatched: false,
   },
+  
 ];
 
 // create showMovies function
 
+function showMovies() {
+	let moviesDiv = document.querySelector('#all-movies');
+	let numberOfMovies = document.querySelector("#movies-number");
+	numberOfMovies.textContent = 0;
+	let number = 0;
+	
+	movies.forEach((movie, index) => {
+		//setTimeout(() => {
+      let p = document.createElement("p");
+      p.textContent = movie.title + " by " + movie.director;
+      moviesDiv.append(p);
+      number += 1;
+      numberOfMovies.textContent = number;
+    //}, 1000 * (index + 1));
+	})
+}
+
+showMovies()
 // create a new movie object for your favorite movie
 
+let newMovie = {
+  title: "Back to the future",
+  director: "Robert Zemeckis",
+  type: "fantastic",
+  haveWatched: true,
+};
+
 // create addMovies function
+
+function addMovie(newMovie){
+	movies.push(newMovie)
+	let moviesDiv = document.querySelector("#all-movies");
+	let p = document.createElement("p");
+	p.textContent = newMovie.title + " by " + newMovie.director;
+	//setTimeout(() => {
+		moviesDiv.append(p);
+	//}, 2000);
+}
+
+
+let isWatched = false;
+
+function addUserMovie (event) {
+	event.preventDefault()
+
+	let movieName = document.querySelector("#new-movie-name");
+	let movieDirector = document.querySelector("#new-movie-director");
+	let movieType = document.querySelector("#new-movie-type");
+	let watchedOrNot = document.querySelectorAll('input[type="radio"]')
+
+	movieName.style.borderColor = '';
+	movieDirector.style.borderColor = '';
+	movieType.style.borderColor = ''
+
+	if (movieName.value.length === 0 || movieDirector.value.length === 0 || movieType.value.length === 0) {
+		if (movieName.value.length === 0) {
+		movieName.placeholder = "Enter something here";
+		movieName.style.borderColor = "red";
+
+		}	
+		if (movieDirector.value.length === 0) {
+			movieDirector.placeholder = "Enter something here";
+			movieDirector.style.borderColor = "red";
+
+	}	
+	if (movieType.value.length === 0) {
+			movieType.placeholder = "Enter something here";
+			movieType.style.borderColor = "red";
+			
+	}	
+	return
+}
+	for (let radio of watchedOrNot) {
+		if (radio.checked)
+		isWatched = radio.value;
+	}
+
+	let newMovie = {
+		title: movieName.value,
+		director: movieDirector.value,
+		type: movieType.value,
+		haveWatched: isWatched
+	}
+
+	addMovie(newMovie);
+
+	movieName.value = '';
+	movieDirector.value = '';
+	movieType.value = '';
+
+	movieName.placeholder = "Name of the movie";
+	movieDirector.placeholder = "Director of the movie";
+	movieType = "Type of the movie";
+
+}
+
+let sumbitBtn = document.querySelector("#add-movie-btn");
+sumbitBtn.addEventListener('click', addUserMovie)
