@@ -11,15 +11,7 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
-document.body.style.backgroundColor = "red";
-
-function changeBackgroundColor() {
-  if (document.body.style.backgroundColor === "red") {
-    document.body.style.backgroundColor = "blue";
-  } else {
-    document.body.style.backgroundColor = "red";
-  }
-}
-
-setInterval(changeBackgroundColor, 1000);
-
+setInterval(() => {
+  document.body.style.backgroundColor =
+    document.body.style.backgroundColor === "red" ? "blue" : "red";
+}, 5000);
