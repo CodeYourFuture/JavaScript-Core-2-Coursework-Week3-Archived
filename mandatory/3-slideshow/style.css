@@ -1,1 +1,61 @@
-/** Write your CSS in here **/
+
+body{
+    box-sizing: border-box;
+}
+img{
+width: 100%;
+padding: 1rem 0;
+    
+}
+h1{
+    text-align: center;
+    
+}
+p{
+    font-size: 2rem;
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: space-around;
+}
+button {
+    background-color: rgb(233, 213, 103);
+    width: 8rem;
+    height: 3rem;
+
+}
+.slide{
+    display: block;
+}
+
+@media (min-width: 1000px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(211, 228, 236);
+       
+    }
+    h1{
+        width: 50%;
+    }
+    p{
+        width: 50%;
+    }
+    img{
+    width: 50%;
+    max-height: 500px;
+    padding: 1rem;
+    }
+     .btn {
+           width: 80%;
+           display: flex; 
+           flex-direction: row;
+           justify-content: space-around;
+           width: 50%;
+        }
+        button{
+            height: 4rem;
+            width: 6rem;
+        }
+}

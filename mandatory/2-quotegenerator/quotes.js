@@ -21,6 +21,7 @@ function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
 const quotes = [
@@ -490,3 +491,30 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+let quoteEl = document.querySelector("h1");
+let authorEl = document.querySelector("p");
+let quoteObject = pickFromArray(quotes);
+
+function displayQuote(){
+quoteEl.innerText = `"${quoteObject.quote}"`;
+authorEl.innerText = `-${quoteObject.author}`;
+}
+
+displayQuote();
+
+let btn = document.querySelector("button");
+btn.addEventListener("click", changeQuote);
+
+//generating random index
+let count = Math.floor(Math.random()*quotes.length);
+function changeQuote(){
+  //getting each quote for each click
+   if (count < quotes.length - 1){
+     quoteEl.innerText = `"${quotes[count].quote}"`;
+     authorEl.innerText = `-${quotes[count].author}`;
+     count++;
+  } else {
+    count = Math.floor(Math.random()*quotes.length);
+  }
+}

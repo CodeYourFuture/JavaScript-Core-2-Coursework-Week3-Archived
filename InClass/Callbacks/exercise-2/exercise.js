@@ -62,7 +62,47 @@ const movies = [
 ];
 
 // create showMovies function
+function showMovies(){
+  const allMovies = document.getElementById("all-movies");
+  movies.forEach(movie => {
+    const para = document.createElement("p");
+    para.innerText = `${movie.title}, By: ${movie.director}`;
+    allMovies.appendChild(para);
+  })
+  let numMovies = document.getElementById("movies-number");
+  numMovies.innerText = movies.length;
+}
+//showMovies();
 
+//setTimeout(showMovies, 1000);
 // create a new movie object for your favorite movie
 
+const myMovies = [
+  {
+    title: "Free Guy",
+    director: "Shawn Levy"
+  },
+  {
+    title: "Bird Box",
+    director: "Susanne Bier"
+  },
+  {
+    title: "Annihilation",
+    director: "Alex Garland"
+  }, 
+  {
+    title: "Girl on the train",
+    director: "Tate Taylor"
+  }
+]
 // create addMovies function
+function addMovies(){  
+  myMovies.forEach(movie => {
+    movies.push(movie);
+  })
+  
+}
+addMovies();
+showMovies();
+
+
