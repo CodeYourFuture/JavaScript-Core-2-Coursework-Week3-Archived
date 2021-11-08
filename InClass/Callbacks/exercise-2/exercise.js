@@ -63,6 +63,31 @@ const movies = [
 
 // create showMovies function
 
+function showMovies(movies){
+  movies.forEach(element => {
+    const p = document.createElement("p");
+    p.innerText = `${element.title} - ${element.director}`;
+    
+    setTimeout(() => {
+     document.getElementById("all-movies").appendChild(p);
+    }, 1000);
+  });
+  document.getElementById("movies-number").innerText = movies.length;
+}
 // create a new movie object for your favorite movie
 
+const myMovies = {
+  title: "The Matrix",
+  director: "Wachowski",
+  type: "sci-fi",
+  haveWatched: true,
+};
+
 // create addMovies function
+function addMovie(movie) {
+  movies.push(movie);
+}
+setTimeout(() => {
+  addMovie(myMovies);
+  showMovies(movies);
+}, 2000);
