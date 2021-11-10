@@ -1,1 +1,19 @@
 /** Write your CSS in here **/
+.slideshow {
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 50%;
+}
+.slideshow-buttons{
+    max-width: 750px;
+    margin: auto;
+    width: 50%;
+}
+.slideshow-button{
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-align: center;
+}

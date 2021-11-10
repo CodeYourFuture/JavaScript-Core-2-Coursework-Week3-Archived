@@ -490,3 +490,27 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+const div = document.createElement('div');
+div.className = 'quote-container';
+document.body.appendChild(div);
+
+const h5 = document.createElement('h5');
+h5.className = 'quote';
+div.appendChild(h5);
+
+const p = document.createElement('p');
+p.className = 'author';
+div.appendChild(p);
+
+const quoteBtn = document.createElement('button');
+quoteBtn.className = 'quote-btn';
+quoteBtn.innerText = 'New Quote';
+div.appendChild(quoteBtn);
+
+function getRandomQuote() { 
+  h5.innerText = pickFromArray(quotes).quote;
+  p.innerText = pickFromArray(quotes).author;
+}
+getRandomQuote();
+quoteBtn.addEventListener('click', getRandomQuote);
