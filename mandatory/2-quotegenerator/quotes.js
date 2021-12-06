@@ -1,25 +1,33 @@
-// DO NOT EDIT BELOW HERE
-
-// A function which will return one item, at
-// random, from the given array.
-//
-// Parameters
-// ----------
-// choices: an array of items to pick from.
-//
-// Returns
-// -------
-// One item of the given array.
-//
-// Examples of use
-// ---------------
-// pickFromArray([1,2,3,4])     //maybe returns 2
-// pickFromArray(coloursArray)  //maybe returns "#F38630"
-//
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const button = document.getElementById("btn");
+
+button.addEventListener("click", () => {
+  const text = pickFromArray(quotes);
+  // console.log(text, '<<<<<');
+  author.innerText = text.author;
+  title.innerText = text.quote;
+});
+let intervalId = 0;
+
+const auto = document.getElementById("auto");
+auto.addEventListener("click", () => {
+  const checkedValue = document.querySelector("#auto").checked;
+  if (checkedValue === false) {
+    clearInterval(intervalId);
+  } else {
+    intervalId = setInterval(() => {
+      const text = pickFromArray(quotes);
+      author.innerText = text.author;
+      title.innerText = text.quote;
+    }, 6000);
+  }
+});
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
