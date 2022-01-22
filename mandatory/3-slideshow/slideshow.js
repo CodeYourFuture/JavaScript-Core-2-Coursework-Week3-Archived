@@ -73,7 +73,6 @@ function timerLogic(direction) {
     automaticControl(direction);
   } else if (typeof autoTimer === "number") {
     clearInterval(autoTimer);
-    console.log("timer stopped");
     autoTimer = false;
   }
 }
