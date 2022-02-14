@@ -63,6 +63,52 @@ const movies = [
 
 // create showMovies function
 
+  function showMovies( movies){
+ 
+    movies.forEach(movie=>{
+      const creatP =  document.createElement("p")
+      creatP.innerHTML = movie.title +"  " + movie.director;
+      const allMoviesdive = document.getElementById("all-movies");
+      allMoviesdive.appendChild(creatP);
+    
+
+
+    })
+
+    const moviesNumber = document.getElementById("movies-number");
+    moviesNumber.innerHTML = movies.length;
+  }
+    //showMovies(movies);
+
+    //task 2
+
+     setTimeout(() => {
+        showMovies(movies);
+     },1000)
 // create a new movie object for your favorite movie
 
+const myFavoritMovie = {
+    title: " The Lord Of The ring",
+    director: "Richard Stanley",
+    type: "sci-fi",
+    haveWatched: true,
+  };
+  function pushMovie(movie){
+      movies.push(movie);
+    };
+   function addMovie(){
+
+    setTimeout(() => {
+      
+      pushMovie(myFavoritMovie);
+
+      
+       showMovies(movies);
+    }, 2000);
+     
+   };
+   addMovie();
+
 // create addMovies function
+
+

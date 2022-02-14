@@ -1,4 +1,23 @@
-function setAlarm() {}
+function setAlarm() {
+const getTime = document.getElementById("alarmSet");
+ let myvalue = getTime.value;
+
+ const getRemaning = document.getElementById("timeRemaining");
+ getRemaning.innerText = ` Time Remaining : ${getTime.value}`;
+
+  const intervalValue =  setInterval(()=>{
+    myvalue --;
+    //console.log(myvalue);
+    getRemaning.innerText = ` Time Remaining : ${myvalue}`;
+    if( myvalue === 0){
+      playAlarm();
+    clearInterval(intervalValue);
+    }
+  
+  },1000)
+
+
+}
 
 // DO NOT EDIT BELOW HERE
 

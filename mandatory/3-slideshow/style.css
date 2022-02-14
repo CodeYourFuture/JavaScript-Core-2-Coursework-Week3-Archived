@@ -1,1 +1,8 @@
 /** Write your CSS in here **/
+button {
+    width: 150px;
+    margin:5px;
+    background-color: rgb(175, 208, 241);
+    border:mediumpurple 1 solid;
+    
+}
