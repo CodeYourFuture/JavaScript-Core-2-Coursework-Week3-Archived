@@ -17,12 +17,7 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
 
-// A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -490,3 +485,59 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function pickFromArray(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function drawQuoteOnScreen() {
+  // grabbing the elements we need
+  const getQuoteHeader = document.querySelector("#quote");
+  const getAuthorHeader = document.querySelector("#quoteAuthor");
+
+  // setting the innerText to both our elements to be the quote
+  const generatedQuote = pickFromArray(quotes);
+  getQuoteHeader.innerText = `"${generatedQuote.quote}"`;
+  getAuthorHeader.innerText = `- ${generatedQuote.author}`;
+
+  showHelpText();
+}
+
+// makes the hidden text show after 30 seconds, this tells the user how to generate a new quote
+function showHelpText() {
+  const getHiddenText = document.querySelector("#hiddenHelpText");
+  getHiddenText.style.opacity = "0";
+  setTimeout(() => (getHiddenText.style.opacity = "0.75"), 65000);
+}
+
+let timer;
+function autoGenerate() {
+  timer = setTimeout(() => {
+    drawQuoteOnScreen();
+    autoGenerate();
+  }, 60000);
+}
+
+function setup() {
+  const autoGenerateButton = document.querySelector("#autoGenerate");
+
+  autoGenerateButton.addEventListener("click", () => {
+    if (typeof timer === "undefined" || timer === false) {
+      autoGenerateButton.style = "background: green; color: white;";
+      autoGenerateButton.innerText = "Auto-Play: ON";
+      drawQuoteOnScreen();
+      autoGenerate();
+    } else if (typeof timer === "number") {
+      clearInterval(timer);
+      autoGenerateButton.style = "initial;";
+      autoGenerateButton.innerText = "Auto-Play: OFF";
+      timer = false;
+    }
+  });
+}
+
+setup();
+drawQuoteOnScreen();
+
+// A list of quotes you can use in your app.
+// Feel free to edit them, and to add your own favorites.

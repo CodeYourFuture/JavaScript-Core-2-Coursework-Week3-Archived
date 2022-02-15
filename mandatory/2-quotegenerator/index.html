@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quote Generator</title>
     <link
       rel="stylesheet"
@@ -11,7 +14,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <div id="parentContainer" class="alignCenter">
+      <p id="hiddenHelpText" class="hiddenHelpText">
+        Click on the card to generate a new quote...
+      </p>
+      <div
+        id="quoteContainer"
+        class="card quoteContainer"
+        onclick="drawQuoteOnScreen()"
+      >
+        <h1 id="quote" class="quoteText">
+          We couldn't load a quote right now, please try again later
+        </h1>
+        <h2 id="quoteAuthor" class="authorText">- Terribly Sorry about this</h2>
+      </div>
+      <button id="autoGenerate" class="card autoGenerateButton">
+        Auto Generate
+      </button>
+    </div>
     <script src="quotes.js"></script>
   </body>
 </html>

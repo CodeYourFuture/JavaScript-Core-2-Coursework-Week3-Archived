@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slideshow</title>
     <link
       rel="stylesheet"
@@ -10,8 +13,37 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Write your HTML in here -->
+  <body class="alignCenter">
+    <div id="pageContainer">
+      <img
+        src="https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1931&q=80"
+        alt="A lovely center framed road guiding your eye through the dangerous but peaceful desert  flanking the road on all fronts. In the distance is a foreboding mountain welcoming you to wonder closer."
+        class="image card"
+        id="image"
+      />
+      <div id="buttonContainer" class="buttonsContainer">
+        <button id="autoBackButton" class="card">Auto Back</button>
+        <button id="BackwardsButton" class="card">Backwards</button>
+        <button id="stopButton" class="card">Stop</button>
+        <button id="forwardButton" class="card">Forward</button>
+        <button id="autoForwardButton" class="card">Auto Forward</button>
+      </div>
+
+      <input
+        type="range"
+        id="howLongToWait"
+        min="1"
+        max="60"
+        class="card rangeInput"
+        value="30"
+        oninput="changeTimeBetweenText(this.value)"
+        onchange="changeTimeBetweenText(this.value)"
+      />
+      <label for="howLongToWait" class="inputLabel"
+        >Time Between Pictures <br />
+        <span class="italics" id="appendedText">30s</span></label
+      >
+    </div>
     <script src="slideshow.js"></script>
   </body>
 </html>
